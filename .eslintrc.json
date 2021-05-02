@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "alias": {
+          "@": "./src"
+        },
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "import/order": ["error", { "alphabetize": { "order": "asc" } }],
+    "import/prefer-default-export": ["off"],
+    "consistent-return": ["off"],
+    "no-underscore-dangle": ["off"],
+    "@typescript-eslint/no-empty-interface": ["off"],
+    "default-case": ["off"],
+    "no-console": ["error", { "allow": ["error"] }]
+  },
+  "ignorePatterns": ["babel*", "webpack*"]
+}

@@ -1,3 +1,7 @@
+.vscode
+.env-cmdrc
+out
+
 # Logs
 logs
 *.log
@@ -19,7 +23,9 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+!coverage
+coverage/*
+!coverage/badge-branches.svg
 *.lcov
 
 # nyc test coverage
