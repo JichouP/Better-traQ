@@ -14,6 +14,7 @@ Please make the Issue(s) first. Japanese is fine.
 git clone git@github.com:JichouP/Better-traQ.git
 cd Better-traQ
 npm i
+cp example.env-cmdrc .env-cmdrc
 ```
 
 ### Build
