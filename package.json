@@ -7,7 +7,7 @@
     "dev:both": "npm run dev:traQ && npm run dev:ex-traQ",
     "dev:traQ": "env-cmd -e traQ --use-shell npm run dev",
     "dev:ex-traQ": "env-cmd -e ex-traQ --use-shell npm run dev",
-    "dev": "npm run generateManifest && npm run bundle:dev && npm run generateArtifact",
+    "dev": "npm run generateManifest && npm run bundle:dev",
     "build:both": "npm run build:traQ && npm run build:ex-traQ",
     "build:traQ": "env-cmd -e traQ --use-shell npm run build",
     "build:ex-traQ": "env-cmd -e ex-traQ --use-shell npm run build",
