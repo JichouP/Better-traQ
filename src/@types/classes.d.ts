@@ -1,0 +1,16 @@
+type Classes = import('@material-ui/styles').ClassNameMap<
+  | 'form'
+  | 'key'
+  | 'root'
+  | 'submit'
+  | 'textfield'
+  | 'tab'
+  | 'appBar'
+  | 'paper'
+  | 'shortcut'
+  | 'keybindGroup'
+  | 'keybindGroupDescription'
+  | 'keybind'
+  | 'keybindDescription'
+  | 'thumbnail'
+>;
