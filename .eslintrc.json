@@ -33,7 +33,14 @@
     "no-underscore-dangle": ["off"],
     "@typescript-eslint/no-empty-interface": ["off"],
     "default-case": ["off"],
-    "no-console": ["error", { "allow": ["error"] }]
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/jsx-props-no-spreading": ["off"]
   },
   "ignorePatterns": ["babel*", "webpack*"]
 }
