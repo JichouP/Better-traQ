@@ -6,7 +6,6 @@ const template = ({ traQHost }: { traQHost: string }) => ({
   manifest_version: 3,
   name: 'Better traQ',
   version: '2.0.0.0',
-  default_locale: 'ja',
   description: 'An Extension that Makes traQ Useful',
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
   permissions: ['declarativeContent', 'storage'],
@@ -19,7 +18,7 @@ const template = ({ traQHost }: { traQHost: string }) => ({
     { matches: [`https://${traQHost}/*`], js: ['content_scripts.js'] },
   ],
   background: { service_worker: 'background.js' },
-  content_security_policy: "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  // content_security_policy: "script-src 'self' 'unsafe-eval'; object-src 'self'",
 });
 
 (async () => {

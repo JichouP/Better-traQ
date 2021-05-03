@@ -35,12 +35,11 @@ const rules: webpack.RuleSetRule[] = [
   },
 ];
 
-const module: webpack.ModuleOptions = {
+const _module: webpack.ModuleOptions = {
   rules,
 };
 
 const config: webpack.Configuration = {
-  target: 'node',
   entry: {
     content_scripts: path.join(__dirname, 'src', 'content_scripts', 'index.ts'),
     background: path.join(__dirname, 'src', 'background', 'index.ts'),
@@ -51,7 +50,7 @@ const config: webpack.Configuration = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist', process.env.SERVICE || ''),
   },
-  module,
+  module: _module,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
     alias: {
