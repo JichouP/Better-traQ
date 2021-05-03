@@ -36,10 +36,6 @@
 
 import { browser } from 'webextension-polyfill-ts';
 
-const changeChannel = (path: string) => {
-  return exec(`changeChannel("${path}")`);
-};
-
 const exec = (text: string) => {
   const th = document.getElementsByTagName('body')[0];
   const script = document.createElement('script');
@@ -47,6 +43,10 @@ const exec = (text: string) => {
   script.textContent = `${text}`;
   th.appendChild(script);
   return th.removeChild(script);
+};
+
+const changeChannel = (path: string) => {
+  return exec(`changeChannel("${path}")`);
 };
 
 const { head } = document;
@@ -159,7 +159,7 @@ backgroundLinkElement.type = 'text/css';
         case '7':
         case '8':
         case '9':
-        case '0':
+        case '0': {
           const url = await browser.storage.sync.get(key);
           if (typeof url[key] === 'string' && url[key]) {
             changeChannel(url[key]);
@@ -168,7 +168,8 @@ backgroundLinkElement.type = 'text/css';
             alert('チャンネルを設定してください');
           }
           break;
-        case 'Escape':
+        }
+        case 'Escape': {
           document.querySelector('body')?.click();
           const messages = document.querySelectorAll(
             `[class*=${classPrefix.messages}]`
@@ -177,6 +178,7 @@ backgroundLinkElement.type = 'text/css';
             el.dispatchEvent(new Event('mouseleave'));
           });
           break;
+        }
         case 'q':
           getAllElementByPrefix<HTMLDivElement>(
             classPrefix.navigations
@@ -241,13 +243,14 @@ backgroundLinkElement.type = 'text/css';
             classPrefix.stamps
           )[0]?.click();
           break;
-        case 'b':
+        case 'b': {
           const messagesScroller = getElementByPrefix('MessagesScroller_root');
           if (!messagesScroller) {
             break;
           }
           messagesScroller.scrollTop = messagesScroller.scrollHeight;
           break;
+        }
         case 'h':
           ev.preventDefault();
           getAllElementByPrefix<HTMLInputElement>(
@@ -297,7 +300,7 @@ backgroundLinkElement.type = 'text/css';
             (document.activeElement as HTMLInputElement) || HTMLTextAreaElement
           )?.blur();
           break;
-        case 'ArrowUp':
+        case 'ArrowUp': {
           const messageInput = getElementByPrefix<HTMLTextAreaElement>(
             classPrefix.messageInput
           );
@@ -330,6 +333,7 @@ backgroundLinkElement.type = 'text/css';
             }, 0);
           }
           break;
+        }
       }
     }
   });
