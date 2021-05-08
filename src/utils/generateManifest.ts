@@ -3,13 +3,18 @@ import path from 'path';
 import mkdirp from 'mkdirp';
 
 const template = ({ traQHost }: { traQHost: string }) => ({
-  manifest_version: 3,
+  manifest_version: 2,
   name: 'Better traQ',
   version: '2.0.0.0',
   description: 'An Extension that Makes traQ Useful',
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
-  permissions: ['declarativeContent', 'storage'],
-  action: {
+  permissions: [
+    'declarativeContent',
+    'storage',
+    'tabs',
+    `https://${traQHost}/*`,
+  ],
+  page_action: {
     default_icon: { '16': '16.png', '24': '24.png', '32': '32.png' },
     default_title: 'Better traQ',
     default_popup: 'popup.html',
@@ -17,8 +22,8 @@ const template = ({ traQHost }: { traQHost: string }) => ({
   content_scripts: [
     { matches: [`https://${traQHost}/*`], js: ['content_scripts.js'] },
   ],
-  background: { service_worker: 'background.js' },
-  // content_security_policy: "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  background: { scripts: ['background.js'], persistent: false },
+  content_security_policy: "script-src 'self' 'unsafe-eval'; object-src 'self'",
 });
 
 (async () => {
