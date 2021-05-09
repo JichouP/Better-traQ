@@ -21,11 +21,12 @@ export default function BackgroundSettings(props: Props): ReactElement {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const currentBackgrounds = await getData(backgrounds);
+    const keyList = [...backgrounds, ...filterColors];
+    const currentData = await getData(keyList);
     await Promise.all(
-      backgrounds.map((background) => {
-        if (store[background] === currentBackgrounds[background]) return;
-        return setData({ [background]: store[background] });
+      keyList.map((key) => {
+        if (store[key] === currentData[key]) return;
+        return setData({ [key]: store[key] });
       })
     );
   };
@@ -77,7 +78,7 @@ export default function BackgroundSettings(props: Props): ReactElement {
           color="primary"
           className={classes.submit}
         >
-          背景・フィルタを設定（設定後要リロード）
+          背景・フィルタを設定
         </Button>
       </form>
       <img
