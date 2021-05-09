@@ -1,53 +1,55 @@
 import { Container, TextField, Button } from '@material-ui/core';
 import React, { FormEvent, ReactElement } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import {
+  CustomStorage,
+  getData,
+  setData,
+  Channel,
+  channels,
+} from '@/utils/storage';
 
 type Props = {
   classes: Classes;
-  urls: string[];
-  setUrls: React.Dispatch<React.SetStateAction<string[]>>;
+  store: CustomStorage;
+  setStore: React.Dispatch<React.SetStateAction<CustomStorage>>;
 };
 
 export default function ChannelList(props: Props): ReactElement {
-  const { classes, urls, setUrls } = props;
-  const handleUrlChange = (index: number) => (
+  const { classes, store, setStore } = props;
+
+  const onSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    const currentUrls = await getData(channels);
+    await Promise.all(
+      channels.map((channel) => {
+        if (store[channel] === currentUrls[channel]) return;
+        return setData({ [channel]: store[channel] });
+      })
+    );
+  };
+
+  const handleChange = (key: Channel) => (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { value } = event.target;
-    setUrls((currentUrls) => {
-      const newState = [...currentUrls];
-      newState[index] = value;
-      return newState;
-    });
-  };
-  const onSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    const currentUrls = await browser.storage.sync.get(
-      new Array(12).fill(null).map((_, i) => String(i))
-    );
-    const storageKeys = new Array(12).fill(null).map((_, i) => i);
-    storageKeys.forEach(async (storageKey) => {
-      if (urls[storageKey] !== currentUrls[storageKey]) {
-        await browser.storage.sync.set({ [storageKey]: urls[storageKey] });
-      }
-    });
+    setStore((prev) => ({ ...prev, [key]: value }));
   };
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
         <form className={classes.form} noValidate onSubmit={onSubmit}>
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((v) => (
+          {channels.map((v) => (
             <TextField
               key={v}
               className={classes.textfield}
               variant="outlined"
               margin="dense"
               fullWidth
-              id={`url${v}`}
-              label={`${v}`}
-              name={`url${v}`}
-              value={props.urls[v]}
-              onChange={handleUrlChange(v)}
+              id={v}
+              label={v}
+              name={v}
+              value={store[v]}
+              onChange={handleChange(v)}
               autoComplete="off"
             />
           ))}

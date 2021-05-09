@@ -1,43 +1,8 @@
-/*
- * デフォルトのキーコンフィグ
- *
- * 全般
- *  0-9: urisで指定したチャンネルへ移動
- *  Escape: テキストエリアの選択を解除（テキストエリア選択時），メニューを閉じる
- *
- * ナビゲーション
- *  q: ホーム
- *      w: ホームチャンネル
- *      e: 次の未読チャンネルを開く
- *  a: チャンネル
- *      s: 検索ボックス
- *      d: お気に入り
- *  z: アクティビティ
- *      x: 通知チャンネルのみを表示
- *      c: 同じチャンネルでは一つしかメッセージを表示しない
- *
- * メッセージ
- *  n: テキストエリアにフォーカ
- *  m: 絵文字ピッカーを開く
- *  Space: 先頭のスタンプを押す
- *  b: メッセージウィンドウ一番下にスクロール
- *  h: スタンプ検索にフォーカス
- *  ArrowUp: 編集
- *  p: 一番目のスタンプピッカーを開く
- *  o: 二番目のスタンプピッカーを開く
- *  i: 三番目のスタンプピッカーを開く
- *  u: 四番目のスタンプピッカーを開く
- *  y: 五番目のスタンプピッカーを開く
- *  t: 六番目のスタンプピッカーを開く
- * サイドバー
- *  l: サイドバー
- *  ;: 閲覧者一覧
- */
+import { channels, getData } from '@/utils/storage';
 
-import { browser } from 'webextension-polyfill-ts';
-
-const exec = (text: string) => {
-  const th = document.getElementsByTagName('body')[0];
+const exec = async (text: string) => {
+  // const th = document.getElementsByTagName('body')[0];
+  const th = document.head;
   const script = document.createElement('script');
   script.setAttribute('type', 'text/javascript');
   script.textContent = `${text}`;
@@ -49,10 +14,8 @@ const changeChannel = (path: string) => {
   return exec(`changeChannel("${path}")`);
 };
 
-const { head } = document;
-
 const backgroundLinkElement = document.createElement('style');
-backgroundLinkElement.type = 'text/css';
+// backgroundLinkElement.type = 'text/css';
 
 (async () => {
   // const storageKeys = new Array(10).fill(null).map((_, i) => `${i}`);
@@ -64,8 +27,10 @@ backgroundLinkElement.type = 'text/css';
   //     }
   // }
 
-  const backgroundUrl: string = (await browser.storage.sync.get('10'))['10'];
-  const filterColor: string = (await browser.storage.sync.get('11'))['11'];
+  const backgroundUrl: string =
+    (await getData('background-0'))['background-0'] || '';
+  const filterColor: string =
+    (await getData('filterColor-0'))['filterColor-0'] || '';
   backgroundLinkElement.textContent = `
 [class*=MainView_primary] {
     background: url(${backgroundUrl});
@@ -86,7 +51,7 @@ backgroundLinkElement.type = 'text/css';
     background: rgba(0, 0, 0, 0);
 }
 `;
-  head.appendChild(backgroundLinkElement);
+  document.head.appendChild(backgroundLinkElement);
   const classPrefix = {
     navigations: 'NavigationSelectorItem_container',
     channels: 'ChannelElementName_container',
@@ -124,9 +89,7 @@ backgroundLinkElement.type = 'text/css';
   const clickMessageTool = (i: number, stampOrDot: 0 | 1) => {
     exec(
       `(() => {
-                const messages = document.querySelectorAll('[class*=${
-                  classPrefix.messages
-                }]');
+                const messages = document.querySelectorAll('[class*=${classPrefix.messages}]');
                 messages.forEach((el) => {
                     el.dispatchEvent(new Event('mouseleave'));
                 });
@@ -134,11 +97,7 @@ backgroundLinkElement.type = 'text/css';
                     messages[messages.length - ${i}].dispatchEvent(new Event('mouseenter'));
                 }, 0);
                 window.setTimeout(() => {
-                    document.querySelectorAll('[class*=${
-                      classPrefix.messageToolsIcon
-                    }]')[${stampOrDot}].__vue__.$listeners.click({ pageX: ${
-        window.innerWidth
-      }, pageY: ${window.innerHeight / 2} });
+                    document.querySelectorAll('[class*=${classPrefix.messageToolsIcon}]')[${stampOrDot}].dispatchEvent(new Event('click'));
                 }, 0);
                 messages[messages.length - ${i}].dispatchEvent(new Event('mouseleave'));
             })()`
@@ -160,11 +119,12 @@ backgroundLinkElement.type = 'text/css';
         case '8':
         case '9':
         case '0': {
-          const url = await browser.storage.sync.get(key);
-          if (typeof url[key] === 'string' && url[key]) {
-            changeChannel(url[key]);
-            // changeChannel(url[key]);
+          const url = await getData(channels);
+          const targetChannel = url[`channel-${key}` as const];
+          if (targetChannel) {
+            changeChannel(targetChannel);
           } else {
+            // eslint-disable-next-line no-alert
             alert('チャンネルを設定してください');
           }
           break;

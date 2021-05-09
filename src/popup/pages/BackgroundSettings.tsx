@@ -1,70 +1,72 @@
 import { TextField, Button } from '@material-ui/core';
 import React, { FormEvent, ReactElement } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import {
+  Background,
+  backgrounds,
+  CustomStorage,
+  FilterColor,
+  filterColors,
+  getData,
+  setData,
+} from '@/utils/storage';
 
 type Props = {
   classes: Classes;
-  urls: string[];
-  setUrls: React.Dispatch<React.SetStateAction<string[]>>;
+  store: CustomStorage;
+  setStore: React.Dispatch<React.SetStateAction<CustomStorage>>;
 };
 
 export default function BackgroundSettings(props: Props): ReactElement {
-  const { classes, urls, setUrls } = props;
+  const { classes, store, setStore } = props;
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const currentUrls = await browser.storage.sync.get(
-      new Array(12).fill(null).map((_, i) => String(i))
+    const currentBackgrounds = await getData(backgrounds);
+    await Promise.all(
+      backgrounds.map((background) => {
+        if (store[background] === currentBackgrounds[background]) return;
+        return setData({ [background]: store[background] });
+      })
     );
-    const storageKeys = new Array(12).fill(null).map((_, i) => i);
-    storageKeys.forEach(async (storageKey) => {
-      if (urls[storageKey] !== currentUrls[storageKey]) {
-        await browser.storage.sync.set({ [storageKey]: urls[storageKey] });
-      }
-    });
   };
 
-  const handleUrlChange = (index: number) => (
+  const handleChange = (key: Background | FilterColor) => (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { value } = event.target;
-    setUrls((currentUrls) => {
-      const newState = [...currentUrls];
-      newState[index] = value;
-      return newState;
-    });
+    setStore((prev) => ({ ...prev, [key]: value }));
   };
 
   return (
     <div className={classes.paper}>
       <form className={classes.form} noValidate onSubmit={onSubmit}>
-        {[10].map((v) => (
+        {[backgrounds[0]].map((background) => (
           <TextField
-            key={v}
+            key={background}
             className={classes.textfield}
             variant="outlined"
             margin="dense"
             fullWidth
-            id={`url${v}`}
-            label="Background Image URL"
-            name={`url${v}`}
-            value={urls[v]}
-            onChange={handleUrlChange(v)}
+            id={background}
+            label={background}
+            name={background}
+            value={store[background]}
+            onChange={handleChange(background)}
             autoComplete="off"
           />
         ))}
-        {[11].map((v) => (
+        {[filterColors[0]].map((filterColor) => (
           <TextField
-            key={v}
+            key={filterColor}
             className={classes.textfield}
             variant="outlined"
             margin="dense"
             fullWidth
-            id={`url${v}`}
-            label="Filter Color"
-            name={`url${v}`}
-            value={urls[v]}
-            onChange={handleUrlChange(v)}
+            id={filterColor}
+            label={filterColor}
+            name={filterColor}
+            value={store[filterColor]}
+            onChange={handleChange(filterColor)}
             autoComplete="off"
           />
         ))}
@@ -78,7 +80,11 @@ export default function BackgroundSettings(props: Props): ReactElement {
           背景・フィルタを設定（設定後要リロード）
         </Button>
       </form>
-      <img className={classes.thumbnail} src={urls[10]} alt="thumbnail" />
+      <img
+        className={classes.thumbnail}
+        src={store['background-0']}
+        alt="thumbnail"
+      />
       <div>
         <h4 style={{ margin: '14px 0px 6px' }}>Filter Color 設定の目安</h4>
         <div>ホワイトテーマ: rgba(255, 255, 255, 0.8)</div>

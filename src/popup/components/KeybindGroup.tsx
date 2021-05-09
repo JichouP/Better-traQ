@@ -11,7 +11,7 @@ export function KeybindGroup(props: Props): ReactElement {
         {groupDescription}
       </div>
       {keybinds.map((v) => (
-        <div className={classes.keybind}>
+        <div key={v.keybind} className={classes.keybind}>
           <span className={classes.key}>{v.keybind}</span>:
           <span className={classes.keybindDescription}>{v.description}</span>
         </div>
