@@ -37,25 +37,6 @@ const backgroundLinkElement = document.createElement('style');
 }
 `;
   document.head.appendChild(backgroundLinkElement);
-  const classPrefix = {
-    navigations: 'NavigationSelectorItem_container',
-    channels: 'ChannelElementName_container',
-    filterInputs: 'FilterInput_input',
-    channelStar: 'ChannelFilter_star',
-    toggleButtons: 'ToggleButton_container',
-    messageInput: 'MessageInputTextArea_container',
-    messageEditor: 'MessageEditor_inputTextArea',
-    messageInputInsertStampButton: 'MessageInputInsertStampButton_container',
-    // stampList: 'StampPickerStampList_container',
-    stamps: 'StampPickerStampList_stampListItem',
-    messages: 'MessageElement_body',
-    openSidebar: 'ChannelSidebarHidden_icon',
-    closeSidebar: 'CloseButton_circle',
-    sidebarContent: 'SidebarContentContainer_container',
-    messageToolsIcon: 'MessageTools_icon',
-    messageToolsMenu: 'MessageToolsMenu_text',
-  };
-
   const isNotSelectedInput = () => {
     const tagName = document.activeElement?.tagName;
     return tagName !== 'INPUT' && tagName !== 'TEXTAREA';
@@ -88,10 +69,7 @@ const backgroundLinkElement = document.createElement('style');
         }
         case 'Escape': {
           document.querySelector('body')?.click();
-          const messages = document.querySelectorAll(
-            `[class*=${classPrefix.messages}]`
-          );
-          messages.forEach((el) => {
+          getElements.messages().forEach((el) => {
             el.dispatchEvent(new Event('mouseleave'));
           });
           break;
