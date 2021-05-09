@@ -48,7 +48,7 @@ export default function ChannelList(props: Props): ReactElement {
               id={v}
               label={v}
               name={v}
-              value={store[v]}
+              value={store[v] || ''}
               onChange={handleChange(v)}
               autoComplete="off"
             />
