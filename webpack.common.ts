@@ -2,7 +2,7 @@ import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import webpack from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const rules: webpack.RuleSetRule[] = [
   {
@@ -64,6 +64,12 @@ const config: webpack.Configuration = {
     new CopyWebpackPlugin({ patterns: [{ from: 'public', to: '.' }] }),
     // new BundleAnalyzerPlugin(),
   ],
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
 };
 
 export default config;

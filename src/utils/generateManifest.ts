@@ -19,6 +19,7 @@ const template = ({ traQHost }: { traQHost: string }) => ({
     default_title: 'Better traQ',
     default_popup: 'popup.html',
   },
+  options_page: 'options.html',
   content_scripts: [
     { matches: [`https://${traQHost}/*`], js: ['content_scripts.js'] },
   ],
