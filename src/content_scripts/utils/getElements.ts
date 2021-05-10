@@ -14,55 +14,54 @@ const classPrefix = {
   messageToolsIcon: 'MessageTools_icon',
   messageToolsMenu: 'MessageToolsMenu_text',
   messagesScroller: 'MessagesScroller_root',
+  desktopToolBox: 'DesktopToolBox_container',
 };
 
-const getAllElementByClassName = <T extends Element>(className: string) =>
+const getAllElementsByClassName = <T extends Element>(className: string) =>
   document.querySelectorAll<T>(`[class*=${className}]`);
 
 export const getElements = {
   navigations: (): NodeListOf<HTMLDivElement> =>
-    getAllElementByClassName(classPrefix.navigations),
+    getAllElementsByClassName(classPrefix.navigations),
   channels: (): NodeListOf<HTMLDivElement> =>
-    getAllElementByClassName(classPrefix.channels),
+    getAllElementsByClassName(classPrefix.channels),
   filterInputs: (): NodeListOf<HTMLInputElement> =>
-    getAllElementByClassName(classPrefix.filterInputs),
-  channelFilterStar: (): HTMLButtonElement =>
-    getAllElementByClassName<HTMLButtonElement>(
-      classPrefix.channelFilterStar
-    )[0],
+    getAllElementsByClassName(classPrefix.filterInputs),
+  channelFilterStar: (): NodeListOf<HTMLButtonElement> =>
+    getAllElementsByClassName(classPrefix.channelFilterStar),
   activityToggleButtons: (): NodeListOf<HTMLButtonElement> =>
-    getAllElementByClassName(classPrefix.activityToggleButtons),
+    getAllElementsByClassName(classPrefix.activityToggleButtons),
   messageInput: (): HTMLTextAreaElement => {
-    const els = getAllElementByClassName<HTMLTextAreaElement>(
+    const els = getAllElementsByClassName<HTMLTextAreaElement>(
       classPrefix.messageInput
     );
     return els[els.length - 1];
   },
   messageEditor: (): HTMLTextAreaElement | null => {
-    const els = getAllElementByClassName<HTMLTextAreaElement>(
+    const els = getAllElementsByClassName<HTMLTextAreaElement>(
       classPrefix.messageInput
     );
     if (els.length === 1) return null;
     return els[els.length - 2];
   },
-  messageInputInsertStampButton: (): HTMLDivElement =>
-    getAllElementByClassName<HTMLDivElement>(
-      classPrefix.messageInputInsertStampButton
-    )[0],
+  messageInputInsertStampButton: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.messageInputInsertStampButton),
   stamps: (): NodeListOf<HTMLImageElement> =>
-    getAllElementByClassName(classPrefix.stamps),
+    getAllElementsByClassName(classPrefix.stamps),
   messages: (): NodeListOf<HTMLDivElement> =>
-    getAllElementByClassName(classPrefix.messages),
-  openSidebar: (): SVGElement =>
-    getAllElementByClassName<SVGElement>(classPrefix.openSidebar)[0],
-  closeSidebar: (): HTMLDivElement =>
-    getAllElementByClassName<HTMLDivElement>(classPrefix.closeSidebar)[0],
+    getAllElementsByClassName(classPrefix.messages),
+  openSidebar: (): NodeListOf<SVGElement> =>
+    getAllElementsByClassName(classPrefix.openSidebar),
+  closeSidebar: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.closeSidebar),
   sidebarContent: (): NodeListOf<HTMLDivElement> =>
-    getAllElementByClassName(classPrefix.sidebarContent),
+    getAllElementsByClassName(classPrefix.sidebarContent),
   messageToolsIcon: (): NodeListOf<SVGElement> =>
-    getAllElementByClassName(classPrefix.messageToolsIcon),
+    getAllElementsByClassName(classPrefix.messageToolsIcon),
   messageToolsMenu: (): NodeListOf<HTMLSpanElement> =>
-    getAllElementByClassName(classPrefix.messageToolsMenu),
-  messagesScroller: (): HTMLDivElement =>
-    getAllElementByClassName<HTMLDivElement>(classPrefix.messagesScroller)[0],
+    getAllElementsByClassName(classPrefix.messageToolsMenu),
+  messagesScroller: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.messagesScroller),
+  desktopToolBox: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.desktopToolBox),
 };

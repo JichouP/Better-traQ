@@ -1,5 +1,5 @@
-import { getElements } from '@/content_scripts/getElements';
 import { exec } from '@/content_scripts/utils/exec';
+import { getElements } from '@/content_scripts/utils/getElements';
 import {
   clickMessageTool,
   showMessageTool,
@@ -63,7 +63,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         getElements.filterInputs()[0].focus();
         break;
       case 'd':
-        getElements.channelFilterStar().click();
+        getElements.channelFilterStar()[0].click();
         break;
       case 'z':
         getElements.navigations()[2].click();
@@ -80,10 +80,10 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         break;
       case 'm':
         ev.preventDefault();
-        getElements.messageInputInsertStampButton().click();
+        getElements.messageInputInsertStampButton()[0].click();
         break;
       case 'b': {
-        const messagesScroller = getElements.messagesScroller();
+        const messagesScroller = getElements.messagesScroller()[0];
         if (!messagesScroller) break;
         messagesScroller.scrollTop = messagesScroller.scrollHeight;
         break;
@@ -94,38 +94,43 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         break;
       case 'p':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(0);
         clickMessageTool(0);
         break;
       case 'o':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(1);
         clickMessageTool(0);
         break;
       case 'i':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(2);
         clickMessageTool(0);
         break;
       case 'u':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(3);
         clickMessageTool(0);
         break;
       case 'y':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(4);
         clickMessageTool(0);
         break;
       case 't':
         ev.preventDefault();
+        document.body.click();
         showMessageTool(5);
         clickMessageTool(0);
         break;
       case 'l':
-        (
-          getElements.openSidebar() || getElements.closeSidebar()
-        )?.dispatchEvent(new Event('click'));
+        (getElements.openSidebar() ||
+          getElements.closeSidebar())[0]?.dispatchEvent(new Event('click'));
         break;
       case ';':
         getElements.sidebarContent()[0].click();
