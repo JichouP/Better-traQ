@@ -14,8 +14,15 @@ const isNotSelectedInput = () => {
   return tagName !== 'INPUT' && tagName !== 'TEXTAREA';
 };
 
+let keyState: Map<any, boolean> = new Map();
+window.addEventListener('keyup', async (ev) => {
+  const { key } = ev;
+  keyState.set(key, false);
+});
+
 export const handler: (ev: KeyboardEvent) => void = async (ev) => {
   const { key } = ev;
+  keyState.set(key, true);
   if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
   if (isNotSelectedInput()) {
     switch (key) {
@@ -130,6 +137,60 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case ';':
         getElements.sidebarContent()[0].click();
         break;
+      case 'j': {
+        if (keyState.get('r')) {
+          const navigation_place = getElements.getNavigationIndex();
+          getElements.navigations()[(navigation_place + 1) % 5].click();
+          break;
+        } else {
+          const viewContainer = getElements.messagesScroller();
+          if (!viewContainer) break;
+          const messages = getElements.messages();
+          for (let i = 0; i < messages.length; i++) {
+            if (messages[i].getBoundingClientRect().top > 11.625) {
+              if (!messages[i + 1]) break;
+              viewContainer.scrollTo({
+                top:
+                  viewContainer.scrollTop +
+                  messages[i + 1].getBoundingClientRect().top -
+                  78,
+                behavior: 'smooth',
+              });
+              break;
+            }
+          }
+        }
+        break;
+      }
+      case 'k': {
+        if (keyState.get('r')) {
+          const navigation_place = getElements.getNavigationIndex();
+          getElements.navigations()[(navigation_place - 1 + 5) % 5].click();
+          break;
+        } else {
+          const viewContainer = getElements.messagesScroller();
+          if (!viewContainer) break;
+
+          const messages = getElements.messages();
+          for (let i = messages.length - 1; i >= 0; i--) {
+            if (messages[i].getBoundingClientRect().top < 0) {
+              if (i != 0)
+                messages[i].scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                  inline: 'nearest',
+                });
+              else
+                viewContainer.scrollTo({
+                  top: 0,
+                  behavior: 'smooth',
+                });
+              break;
+            }
+          }
+        }
+        break;
+      }
     }
   } else {
     switch (key) {

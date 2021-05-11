@@ -22,6 +22,10 @@ const getAllElementByClassName = <T extends Element>(className: string) =>
 export const getElements = {
   navigations: (): NodeListOf<HTMLDivElement> =>
     getAllElementByClassName(classPrefix.navigations),
+  getNavigationIndex: (): number =>
+    [...getElements.navigations()]
+      .map((v) => v.getAttribute('aria-selected'))
+      .findIndex((e) => e == 'true'),
   channels: (): NodeListOf<HTMLDivElement> =>
     getAllElementByClassName(classPrefix.channels),
   filterInputs: (): NodeListOf<HTMLInputElement> =>
