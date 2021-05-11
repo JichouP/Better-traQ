@@ -1,4 +1,7 @@
-import { getElements } from '@/content_scripts/getElements';
+import {
+  getElements,
+  getAllElementByClassName,
+} from '@/content_scripts/getElements';
 import { exec } from '@/content_scripts/utils/exec';
 import {
   clickMessageTool,
@@ -15,6 +18,10 @@ const isNotSelectedInput = () => {
 };
 
 let keyState: Map<any, boolean> = new Map();
+const nowState = {
+  place: 2,
+  focused: null,
+};
 window.addEventListener('keyup', async (ev) => {
   const { key } = ev;
   keyState.set(key, false);
@@ -137,12 +144,57 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case ';':
         getElements.sidebarContent()[0].click();
         break;
+      case 'f':
+        nowState.place = (nowState.place - 1 + 3) % 3;
+        console.log(nowState.place);
+        break;
+      case 'g':
+        nowState.place = (nowState.place + 1) % 3;
+        console.log(nowState.place);
+        break;
       case 'j': {
-        if (keyState.get('r')) {
+        if (nowState.place == 0) {
           const navigation_place = getElements.getNavigationIndex();
           getElements.navigations()[(navigation_place + 1) % 5].click();
           break;
-        } else {
+        } else if (nowState.place == 1) {
+          const navigation_place = getElements.getNavigationIndex();
+          const desktop = getElements.desktopNavigation();
+          if (!desktop) break;
+
+          if (navigation_place == 0 || navigation_place == 1) {
+            const channels: NodeListOf<HTMLDivElement> = getAllElementByClassName(
+              'ChannelElement_container'
+            );
+
+            let flag = false;
+            for (let i = 0; i < channels.length; i++) {
+              console.log(i, channels[i]);
+              if (channels[i].getAttribute('aria-selected') == 'true') {
+                if (!channels[i + 1]) break;
+                console.log(channels[i + 1]);
+                flag = true;
+                getAllElementByClassName<HTMLDivElement>(
+                  'ChannelElementName_container'
+                )[i + 1].click();
+                nowState.place = 2;
+              }
+            }
+            if (flag) break;
+
+            getAllElementByClassName<HTMLDivElement>(
+              'ChannelElementName_container'
+            )[0].click();
+            nowState.place = 2;
+            break;
+          } else if (navigation_place == 2) {
+            const messagePanels = getAllElementByClassName(
+              'MessagePanel_container'
+            );
+          } else {
+          }
+          break;
+        } else if (nowState.place == 2) {
           const viewContainer = getElements.messagesScroller();
           if (!viewContainer) break;
           const messages = getElements.messages();
@@ -163,18 +215,54 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         break;
       }
       case 'k': {
-        if (keyState.get('r')) {
+        if (nowState.place == 0) {
           const navigation_place = getElements.getNavigationIndex();
           getElements.navigations()[(navigation_place - 1 + 5) % 5].click();
           break;
-        } else {
+        } else if (nowState.place == 1) {
+          const navigation_place = getElements.getNavigationIndex();
+          const desktop = getElements.desktopNavigation();
+          if (!desktop) break;
+          if (navigation_place == 0 || navigation_place == 1) {
+            const channels: NodeListOf<HTMLDivElement> = getAllElementByClassName(
+              'ChannelElement_container'
+            );
+
+            let flag = false;
+            for (let i = 0; i < channels.length; i++) {
+              if (channels[i].getAttribute('aria-selected') == 'true') {
+                if (!channels[i - 1]) break;
+                console.log(channels[i - 1]);
+                flag = true;
+                getAllElementByClassName<HTMLDivElement>(
+                  'ChannelElementName_container'
+                )[i - 1].click();
+                nowState.place = 2;
+                break;
+              }
+            }
+            if (flag) break;
+
+            getAllElementByClassName<HTMLDivElement>(
+              'ChannelElementName_container'
+            )[0].click();
+            nowState.place = 2;
+            break;
+          } else if (navigation_place == 2) {
+            const messagePanels = getAllElementByClassName(
+              'MessagePanel_container'
+            );
+          } else {
+          }
+          break;
+        } else if (nowState.place == 2) {
           const viewContainer = getElements.messagesScroller();
           if (!viewContainer) break;
 
           const messages = getElements.messages();
           for (let i = messages.length - 1; i >= 0; i--) {
             if (messages[i].getBoundingClientRect().top < 0) {
-              if (i != 0)
+              if (i != 0 && i != 1)
                 messages[i].scrollIntoView({
                   behavior: 'smooth',
                   block: 'start',
@@ -191,6 +279,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         }
         break;
       }
+      case 'Enter':
+        const search = getAllElementByClassName<HTMLInputElement>(
+          'FilterInput_input'
+        )[0];
+        if (document.activeElement == search) search.blur();
+        break;
     }
   } else {
     switch (key) {

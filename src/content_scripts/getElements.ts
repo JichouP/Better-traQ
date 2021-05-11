@@ -4,10 +4,12 @@ const classPrefix = {
   filterInputs: 'FilterInput_input',
   channelFilterStar: 'ChannelFilter_star',
   activityToggleButtons: 'ToggleButton_container',
+  desktopNavigation: 'NavigationContent_container',
   messageInput: 'MessageInputTextArea_container',
   messageInputInsertStampButton: 'MessageInputInsertStampButton_container',
   stamps: 'StampPickerStampList_stampListItem',
   messages: 'MessageElement_body',
+  unreadSeparator: 'MessagesScroller_unreadSeparator',
   openSidebar: 'ChannelSidebarHidden_icon',
   closeSidebar: 'CloseButton_circle',
   sidebarContent: 'SidebarContentContainer_container',
@@ -16,8 +18,9 @@ const classPrefix = {
   messagesScroller: 'MessagesScroller_root',
 };
 
-const getAllElementByClassName = <T extends Element>(className: string) =>
-  document.querySelectorAll<T>(`[class*=${className}]`);
+export const getAllElementByClassName = <T extends Element>(
+  className: string
+) => document.querySelectorAll<T>(`[class*=${className}]`);
 
 export const getElements = {
   navigations: (): NodeListOf<HTMLDivElement> =>
@@ -36,6 +39,8 @@ export const getElements = {
     )[0],
   activityToggleButtons: (): NodeListOf<HTMLButtonElement> =>
     getAllElementByClassName(classPrefix.activityToggleButtons),
+  desktopNavigation: (): HTMLDivElement =>
+    getAllElementByClassName<HTMLDivElement>(classPrefix.desktopNavigation)[0],
   messageInput: (): HTMLTextAreaElement => {
     const els = getAllElementByClassName<HTMLTextAreaElement>(
       classPrefix.messageInput
@@ -57,6 +62,8 @@ export const getElements = {
     getAllElementByClassName(classPrefix.stamps),
   messages: (): NodeListOf<HTMLDivElement> =>
     getAllElementByClassName(classPrefix.messages),
+  unreadSeparator: (): HTMLDivElement =>
+    getAllElementByClassName<HTMLDivElement>(classPrefix.unreadSeparator)[0],
   openSidebar: (): SVGElement =>
     getAllElementByClassName<SVGElement>(classPrefix.openSidebar)[0],
   closeSidebar: (): HTMLDivElement =>
