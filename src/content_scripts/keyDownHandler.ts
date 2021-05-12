@@ -190,28 +190,28 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
           if (!viewContainer) break;
 
           // 連続スクロール
-          timer = setInterval(() => {
-            viewContainer.scrollTo({
-              top: viewContainer.scrollTop - 78 + 30,
-              behavior: 'smooth',
-            });
-          }, 100);
+          // timer = setInterval(() => {
+          //   viewContainer.scrollTo({
+          //     top: viewContainer.scrollTop - 78 + 30,
+          //     behavior: 'smooth',
+          //   });
+          // }, 100);
 
           // メッセージ毎スクロール
-          // const messages = getElements.messages();
-          // for (let i = 0; i < messages.length; i++) {
-          //   if (messages[i].getBoundingClientRect().top > 11.625) {
-          //     if (!messages[i + 1]) break;
-          //     viewContainer.scrollTo({
-          //       top:
-          //         viewContainer.scrollTop +
-          //         messages[i + 1].getBoundingClientRect().top -
-          //         78,
-          //       behavior: 'smooth',
-          //     });
-          //     break;
-          //   }
-          // }
+          const messages = getElements.messages();
+          for (let i = 0; i < messages.length; i++) {
+            if (messages[i].getBoundingClientRect().top > 11.625) {
+              if (!messages[i + 1]) break;
+              viewContainer.scrollTo({
+                top:
+                  viewContainer.scrollTop +
+                  messages[i + 1].getBoundingClientRect().top -
+                  78,
+                behavior: 'smooth',
+              });
+              break;
+            }
+          }
         }
         break;
       }
