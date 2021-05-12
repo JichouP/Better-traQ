@@ -17,9 +17,5 @@ export const showMessageTool = (n: number): void => {
  * @param stampOrMenu 0: Stamp Picker, 1: Menu
  */
 export const clickMessageTool = (stampOrMenu: 0 | 1): void => {
-  requestAnimationFrame(() => {
-    getElements
-      .messageToolsIcon()
-      [stampOrMenu].dispatchEvent(new Event('click'));
-  });
+  getElements.messageToolsIcon()[stampOrMenu].dispatchEvent(new Event('click'));
 };

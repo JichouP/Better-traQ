@@ -1,9 +1,6 @@
+import * as Actions from '@/content_scripts/actions/action';
 import { exec } from '@/content_scripts/utils/exec';
 import { getElements } from '@/content_scripts/utils/getElements';
-import {
-  clickMessageTool,
-  showMessageTool,
-} from '@/content_scripts/utils/messageTool';
 import { channels, getData } from '@/utils/storage';
 
 const changeChannel = (path: string) => {
@@ -29,8 +26,8 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case '8':
       case '9':
       case '0': {
-        const url = await getData(channels);
-        const targetChannel = url[`channel-${key}` as const];
+        const channelUrls = await getData(channels);
+        const targetChannel = channelUrls[`channel-${key}` as const];
         if (targetChannel) {
           changeChannel(targetChannel);
         } else {
@@ -47,94 +44,48 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         break;
       }
       case 'q':
-        getElements.navigations()[0].click();
-        break;
+        return Actions.clickNthNavigation(0);
       case 'w':
-        getElements.channels()[0].click();
-        break;
+        return Actions.clickNthChannelElement(0);
       case 'e':
-        getElements.channels()[1].click();
-        break;
+        return Actions.clickNthChannelElement(1);
       case 'a':
-        getElements.navigations()[1].click();
-        break;
+        return Actions.clickNthNavigation(1);
       case 's':
-        ev.preventDefault();
-        getElements.filterInputs()[0].focus();
-        break;
+        return Actions.focusNthFilterInput(ev, 0);
       case 'd':
-        getElements.channelFilterStar()[0].click();
-        break;
+        return Actions.clickChannelFilterStar();
       case 'z':
-        getElements.navigations()[2].click();
-        break;
+        return Actions.clickNthNavigation(2);
       case 'x':
-        getElements.activityToggleButtons()[0].click();
-        break;
+        return Actions.clickNthActivityToggleButton(0);
       case 'c':
-        getElements.activityToggleButtons()[1].click();
-        break;
+        return Actions.clickNthActivityToggleButton(1);
       case 'n':
-        ev.preventDefault();
-        getElements.messageInput().focus();
-        break;
+        return Actions.focusMessageInput(ev);
       case 'm':
-        ev.preventDefault();
-        getElements.messageInputInsertStampButton()[0].click();
-        break;
+        return Actions.clickMessageInputInsertStampButton(ev);
       case 'b': {
-        const messagesScroller = getElements.messagesScroller()[0];
-        if (!messagesScroller) break;
-        messagesScroller.scrollTop = messagesScroller.scrollHeight;
-        break;
+        return Actions.moveToBottomOfPage();
       }
       case 'h':
-        ev.preventDefault();
-        getElements.filterInputs()[2].focus();
-        break;
+        return Actions.focusNthFilterInput(ev, 2);
       case 'p':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(0);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 0);
       case 'o':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(1);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 1);
       case 'i':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(2);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 2);
       case 'u':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(3);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 3);
       case 'y':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(4);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 4);
       case 't':
-        ev.preventDefault();
-        document.body.click();
-        showMessageTool(5);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 5);
       case 'l':
-        (getElements.openSidebar() ||
-          getElements.closeSidebar())[0]?.dispatchEvent(new Event('click'));
-        break;
+        return Actions.toggleSidebar();
       case ';':
-        getElements.sidebarContent()[0].click();
-        break;
+        return Actions.clickNthSidebarContent(0);
     }
   } else {
     switch (key) {
@@ -144,29 +95,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         )?.blur();
         break;
       case 'ArrowUp': {
-        const messageInput = getElements.messageInput();
-        if (
-          messageInput?.value === '' &&
-          messageInput === document.activeElement
-        ) {
-          ev.preventDefault();
-          showMessageTool(0);
-          clickMessageTool(1);
-          window.setTimeout(() => {
-            if (getElements.messageToolsMenu()[2].innerText !== '編集') {
-              window.setTimeout(() => {
-                document.querySelector('body')?.click();
-              }, 0);
-              return;
-            }
-            getElements.messageToolsMenu()[2].click();
-            document.querySelector('body')?.click();
-            window.setTimeout(() => {
-              getElements.messageEditor()?.focus();
-            }, 0);
-          }, 0);
-        }
-        break;
+        return Actions.openNthMessageEditor(ev, 0);
       }
     }
   }
