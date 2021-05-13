@@ -51,7 +51,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return;
       }
       case 'Escape': {
-        document.querySelector('body')?.click();
+        document.body.click();
         getElements.messages().forEach((el) => {
           el.dispatchEvent(new Event('mouseleave'));
         });
