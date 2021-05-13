@@ -1,12 +1,6 @@
-import {
-  getElements,
-  getAllElementByClassName,
-} from '@/content_scripts/getElements';
+import * as Actions from '@/content_scripts/actions/action';
 import { exec } from '@/content_scripts/utils/exec';
-import {
-  clickMessageTool,
-  showMessageTool,
-} from '@/content_scripts/utils/messageTool';
+import { getElements } from '@/content_scripts/utils/getElements';
 import { channels, getData } from '@/utils/storage';
 
 const changeChannel = (path: string) => {
@@ -17,12 +11,12 @@ const isNotSelectedInput = () => {
   return tagName !== 'INPUT' && tagName !== 'TEXTAREA';
 };
 
-let keyState: Map<any, boolean> = new Map();
+const keyState: Map<string, boolean> = new Map();
 let timer: NodeJS.Timeout;
-const nowState = {
-  place: 2,
-  focused: null,
-};
+// const nowState = {
+//   place: 2,
+//   focused: null,
+// };
 window.addEventListener('keyup', async (ev) => {
   const { key } = ev;
   keyState.set(key, false);
@@ -46,446 +40,91 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case '8':
       case '9':
       case '0': {
-        const url = await getData(channels);
-        const targetChannel = url[`channel-${key}` as const];
+        const channelUrls = await getData(channels);
+        const targetChannel = channelUrls[`channel-${key}` as const];
         if (targetChannel) {
           changeChannel(targetChannel);
         } else {
           // eslint-disable-next-line no-alert
           alert('チャンネルを設定してください');
         }
-        break;
+        return;
       }
       case 'Escape': {
         document.querySelector('body')?.click();
         getElements.messages().forEach((el) => {
           el.dispatchEvent(new Event('mouseleave'));
         });
-        break;
+        return;
       }
       case 'q':
-        doFunctions.clickHomeNavigation();
-        break;
+        return Actions.clickNthNavigation(0);
       case 'w':
-        getElements.channels()[0].click();
-        break;
+        return Actions.clickNthChannelElement(0);
       case 'e':
-        getElements.channels()[1].click();
-        break;
+        return Actions.clickNthChannelElement(1);
       case 'a':
-        getElements.navigations()[1].click();
-        break;
+        return Actions.clickNthNavigation(1);
       case 's':
-        ev.preventDefault();
-        getElements.filterInputs()[0].focus();
-        break;
+        return Actions.focusNthFilterInput(ev, 0);
       case 'd':
-        getElements.channelFilterStar().click();
-        break;
+        return Actions.clickChannelFilterStar();
       case 'z':
-        getElements.navigations()[2].click();
-        break;
+        return Actions.clickNthNavigation(2);
       case 'x':
-        getElements.activityToggleButtons()[0].click();
-        break;
+        return Actions.clickNthActivityToggleButton(0);
       case 'c':
-        getElements.activityToggleButtons()[1].click();
-        break;
+        return Actions.clickNthActivityToggleButton(1);
       case 'n':
-        ev.preventDefault();
-        getElements.messageInput().focus();
-        break;
+        return Actions.focusMessageInput(ev);
       case 'm':
-        ev.preventDefault();
-        getElements.messageInputInsertStampButton().click();
-        break;
-      case 'b': {
-        const messagesScroller = getElements.messagesScroller();
-        if (!messagesScroller) break;
-        messagesScroller.scrollTop = messagesScroller.scrollHeight;
-        break;
-      }
+        return Actions.clickMessageInputInsertStampButton(ev);
+      case 'b':
+        return Actions.moveToBottomOfPage();
       case 'h':
-        ev.preventDefault();
-        getElements.filterInputs()[2].focus();
-        break;
+        return Actions.focusNthFilterInput(ev, 2);
       case 'p':
-        ev.preventDefault();
-        showMessageTool(0);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 0);
       case 'o':
-        ev.preventDefault();
-        showMessageTool(1);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 1);
       case 'i':
-        ev.preventDefault();
-        showMessageTool(2);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 2);
       case 'u':
-        ev.preventDefault();
-        showMessageTool(3);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 3);
       case 'y':
-        ev.preventDefault();
-        showMessageTool(4);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 4);
       case 't':
-        ev.preventDefault();
-        showMessageTool(5);
-        clickMessageTool(0);
-        break;
+        return Actions.openNthStampPicker(ev, 5);
       case 'l':
-        (
-          getElements.openSidebar() || getElements.closeSidebar()
-        )?.dispatchEvent(new Event('click'));
-        break;
+        return Actions.toggleSidebar();
       case ';':
-        getElements.sidebarContent()[0].click();
-        break;
+        return Actions.clickNthSidebarContent(0);
       case 'f':
         // doFunctions.changeMainStatePrev();
         break;
       case 'g':
         // doFunctions.changeMainStateNext();
         break;
-      case 'Tab': {
-        ev.preventDefault();
-        if (ev.shiftKey) doFunctions.moveupChannel(true);
-        else doFunctions.movedownChannel(true);
-        break;
+      case 'Tab':
+        return Actions.clickOneChannelUpOrDown(ev, true);
+      case 'v':
+        return Actions.clickHashOfSelectedChannel();
+      case 'j':
+        return Actions.focusOnOneMessageBelow();
+      case 'k':
+        return Actions.focusOnOneMessageAbove();
+      case 'Enter': {
+        if (document.activeElement === getElements.filterInputs()[0])
+          return Actions.blurActiveInputElement();
       }
-      case 'v': {
-        doFunctions.openSubchannel();
-        break;
-      }
-      case 'j': {
-        if (nowState.place == 0) {
-          doFunctions.clickNextNavigation();
-          break;
-        } else if (nowState.place == 1) {
-          const navigation_place = getElements.getNavigationIndex();
-          const desktop = getElements.desktopNavigation();
-          if (!desktop) break;
-
-          // ホームとチャンネル
-          if (navigation_place == 0 || navigation_place == 1) {
-            // doFunctions.movedownChannel();
-            break;
-          } else if (navigation_place == 2) {
-            const messagePanels = getAllElementByClassName(
-              'MessagePanel_container'
-            );
-            break;
-          } else {
-          }
-
-          // メッセージ
-        } else if (nowState.place == 2) {
-          const viewContainer = getElements.messagesScroller();
-          if (!viewContainer) break;
-
-          // 連続スクロール
-          // timer = setInterval(() => {
-          //   viewContainer.scrollTo({
-          //     top: viewContainer.scrollTop - 78 + 30,
-          //     behavior: 'smooth',
-          //   });
-          // }, 100);
-
-          // メッセージ毎スクロール
-          const messages = getElements.messages();
-          for (let i = 0; i < messages.length; i++) {
-            if (messages[i].getBoundingClientRect().top > 11.625) {
-              if (!messages[i + 1]) break;
-              viewContainer.scrollTo({
-                top:
-                  viewContainer.scrollTop +
-                  messages[i + 1].getBoundingClientRect().top -
-                  78,
-                behavior: 'smooth',
-              });
-              break;
-            }
-          }
-        }
-        break;
-      }
-      case 'k': {
-        if (nowState.place == 0) {
-          const navigation_place = getElements.getNavigationIndex();
-          getElements.navigations()[(navigation_place - 1 + 5) % 5].click();
-          break;
-        } else if (nowState.place == 1) {
-          const navigation_place = getElements.getNavigationIndex();
-          const desktop = getElements.desktopNavigation();
-          if (!desktop) break;
-          if (navigation_place == 0 || navigation_place == 1) {
-            // doFunctions.moveupChannel();
-            break;
-          } else if (navigation_place == 2) {
-            const messagePanels = getAllElementByClassName(
-              'MessagePanel_container'
-            );
-          } else {
-          }
-          break;
-        } else if (nowState.place == 2) {
-          doFunctions.scrollupMessageByMessage();
-        }
-        break;
-      }
-      case 'Enter':
-        const search = getAllElementByClassName<HTMLInputElement>(
-          'FilterInput_input'
-        )[0];
-        if (document.activeElement == search) search.blur();
-        break;
     }
   } else {
     switch (key) {
       case 'Escape':
-        (
-          (document.activeElement as HTMLInputElement) || HTMLTextAreaElement
-        )?.blur();
-        break;
+        return Actions.blurActiveInputElement();
       case 'ArrowUp': {
-        const messageInput = getElements.messageInput();
-        if (
-          messageInput?.value === '' &&
-          messageInput === document.activeElement
-        ) {
-          ev.preventDefault();
-          showMessageTool(0);
-          clickMessageTool(1);
-          window.setTimeout(() => {
-            if (getElements.messageToolsMenu()[2].innerText !== '編集') {
-              window.setTimeout(() => {
-                document.querySelector('body')?.click();
-              }, 0);
-              return;
-            }
-            getElements.messageToolsMenu()[2].click();
-            document.querySelector('body')?.click();
-            window.setTimeout(() => {
-              getElements.messageEditor()?.focus();
-            }, 0);
-          }, 0);
-        }
-        break;
+        return Actions.openNthMessageEditor(ev, 0);
       }
     }
   }
-};
-
-export const doFunctions = {
-  clickNavigationByIndex: (index: number) => {
-    if (0 <= index && index < 5) getElements.navigations()[index].click();
-    else return undefined;
-  },
-  clickNextNavigation: () =>
-    getElements
-      .navigations()
-      [(getElements.getNavigationIndex() + 1) % 5].click(),
-  clickPrevNavigation: () =>
-    getElements
-      .navigations()
-      [(getElements.getNavigationIndex() - 1 + 5) % 5].click(),
-
-  clickHomeNavigation: () => getElements.navigations()[0].click(),
-
-  clickChannelNavigation: () => getElements.navigations()[1].click(),
-  clickChannelMenuByIndex: (index: number) =>
-    getElements.channels()[index].click(),
-  focusChannelMenuSearch: () => getElements.filterInputs()[0].focus(),
-  clickChannelMenuFilterStar: () => getElements.channelFilterStar().click(),
-  movedownChannel: (isLoop: boolean) => {
-    const channels: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElement_container'
-    );
-    const channels_clicker: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElementName_container'
-    );
-
-    const index = [...channels].findIndex(
-      (v) => v.getAttribute('aria-selected') == 'true'
-    );
-    const target = channels_clicker[index + 1];
-    if (isLoop) {
-      if (!target) return channels_clicker[0].click();
-      return target.click();
-    }
-    target?.click();
-  },
-  moveupChannel: (isLoop: boolean) => {
-    const channels: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElement_container'
-    );
-    const channels_clicker: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElementName_container'
-    );
-
-    const index = [...channels].findIndex(
-      (v) => v.getAttribute('aria-selected') == 'true'
-    );
-    const target = channels_clicker[index - 1];
-    if (isLoop) {
-      if (!target) return channels_clicker[0].click();
-      return target.click();
-    }
-    target?.click();
-  },
-  openSubchannel: () => {
-    const channels: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElement_container'
-    );
-    const channels_clicker: NodeListOf<HTMLDivElement> = getAllElementByClassName(
-      'ChannelElementHash_container'
-    );
-
-    const index = [...channels].findIndex(
-      (v) => v.getAttribute('aria-selected') == 'true'
-    );
-    channels_clicker[index].click();
-  },
-
-  clickActivityNavigation: () => getElements.navigations()[2].click(),
-  clickActivityFilterNotification: () =>
-    getElements.activityToggleButtons()[0].click(),
-  clickActivityFilterChannel: () =>
-    getElements.activityToggleButtons()[1].click(),
-
-  clickUserNavigation: () => getElements.navigations()[3].click(),
-
-  clickClipNavigation: () => getElements.navigations()[4].click(),
-
-  focusMessageInput: () => getElements.messageInput().focus(),
-  clickMessageInputInsertStampButton: () =>
-    getElements.messageInputInsertStampButton().click(),
-  leaveinput: () => {
-    document.querySelector('body')?.click();
-    getElements.messages().forEach((el) => {
-      el.dispatchEvent(new Event('mouseleave'));
-    });
-  },
-  leaveNo: () => {
-    (
-      (document.activeElement as HTMLInputElement) || HTMLTextAreaElement
-    )?.blur();
-  },
-
-  initState: (place: number) => {
-    nowState.place = place;
-  },
-  changeMainStateNext: () => {
-    if (nowState.place > 0) nowState.place = nowState.place - 1;
-  },
-  changeMainStatePrev: () => {
-    if (nowState.place < 3) nowState.place = nowState.place + 1;
-  },
-
-  scrollLatestMessage: (option: number) => {
-    const messagesScroller = getElements.messagesScroller();
-    if (!messagesScroller) return;
-    messagesScroller.scrollTop = messagesScroller.scrollHeight;
-  },
-  scrollupMessage: () => {
-    const viewContainer = getElements.messagesScroller();
-    if (!viewContainer) return;
-
-    timer = setInterval(() => {
-      viewContainer.scrollTo({
-        top: viewContainer.scrollTop - 78 - 30,
-        behavior: 'smooth',
-      });
-    }, 100);
-  },
-  scrolldownMessage: () => {
-    const viewContainer = getElements.messagesScroller();
-    if (!viewContainer) return;
-
-    timer = setInterval(() => {
-      viewContainer.scrollTo({
-        top: viewContainer.scrollTop - 78 + 30,
-        behavior: 'smooth',
-      });
-    }, 100);
-  },
-  scrollupMessageByMessage: () => {
-    const viewContainer = getElements.messagesScroller();
-    if (!viewContainer) return;
-
-    const messages = getElements.messages();
-    for (let i = messages.length - 1; i >= 0; i--) {
-      if (messages[i].getBoundingClientRect().top < 0) {
-        if (i != 0 && i != 1)
-          messages[i].scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-            inline: 'nearest',
-          });
-        else
-          viewContainer.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        break;
-      }
-    }
-  },
-  scrolldownMessageByMessage: () => {
-    const viewContainer = getElements.messagesScroller();
-    if (!viewContainer) return;
-
-    // メッセージ毎スクロール
-    const messages = getElements.messages();
-    for (let i = 0; i < messages.length; i++) {
-      if (messages[i].getBoundingClientRect().top > 11.625) {
-        if (!messages[i + 1]) break;
-        viewContainer.scrollTo({
-          top:
-            viewContainer.scrollTop +
-            messages[i + 1].getBoundingClientRect().top -
-            78,
-          behavior: 'smooth',
-        });
-        break;
-      }
-    }
-  },
-  openStampsByMessage: (index: number) => {
-    showMessageTool(index);
-    clickMessageTool(0);
-  },
-
-  arrowup: () => {
-    const messageInput = getElements.messageInput();
-    if (messageInput?.value === '' && messageInput === document.activeElement) {
-      showMessageTool(0);
-      clickMessageTool(1);
-      window.setTimeout(() => {
-        if (getElements.messageToolsMenu()[2].innerText !== '編集') {
-          window.setTimeout(() => {
-            document.querySelector('body')?.click();
-          }, 0);
-          return;
-        }
-        getElements.messageToolsMenu()[2].click();
-        document.querySelector('body')?.click();
-        window.setTimeout(() => {
-          getElements.messageEditor()?.focus();
-        }, 0);
-      }, 0);
-    }
-  },
-  l: () => {
-    (getElements.openSidebar() || getElements.closeSidebar())?.dispatchEvent(
-      new Event('click')
-    );
-  },
-  openSidebarVisitor: () => getElements.sidebarContent()[0].click(),
 };

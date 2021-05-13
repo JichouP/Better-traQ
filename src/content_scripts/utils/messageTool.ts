@@ -1,4 +1,4 @@
-import { getElements } from '@/content_scripts/getElements';
+import { getElements } from '@/content_scripts/utils/getElements';
 
 /**
  * Message Toolを表示する
@@ -17,9 +17,5 @@ export const showMessageTool = (n: number): void => {
  * @param stampOrMenu 0: Stamp Picker, 1: Menu
  */
 export const clickMessageTool = (stampOrMenu: 0 | 1): void => {
-  window.setTimeout(() => {
-    getElements
-      .messageToolsIcon()
-      [stampOrMenu].dispatchEvent(new Event('click'));
-  }, 0);
+  getElements.messageToolsIcon()[stampOrMenu].dispatchEvent(new Event('click'));
 };

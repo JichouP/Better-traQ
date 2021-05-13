@@ -28,12 +28,11 @@ export default function ChannelList(props: Props): ReactElement {
     );
   };
 
-  const handleChange = (key: Channel) => (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { value } = event.target;
-    setStore((prev) => ({ ...prev, [key]: value }));
-  };
+  const handleChange =
+    (key: Channel) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      setStore((prev) => ({ ...prev, [key]: value }));
+    };
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
