@@ -100,11 +100,9 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case ';':
         return Actions.clickNthSidebarContent(0);
       case 'f':
-        // doFunctions.changeMainStatePrev();
-        break;
+        return Actions.showPrevMessageTool();
       case 'g':
-        // doFunctions.changeMainStateNext();
-        break;
+        return Actions.showNextMessageTool();
       case 'Tab':
         return Actions.clickOneChannelUpOrDown(ev, true);
       case 'v':

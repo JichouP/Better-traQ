@@ -15,6 +15,7 @@ const classPrefix = {
   openSidebar: 'ChannelSidebarHidden_icon',
   closeSidebar: 'CloseButton_circle',
   sidebarContent: 'SidebarContentContainer_container',
+  messageToolsContainer: 'MessageTools_container',
   messageToolsIcon: 'MessageTools_icon',
   messageToolsMenu: 'MessageToolsMenu_text',
   messagesScroller: 'MessagesScroller_root',
@@ -69,6 +70,8 @@ export const getElements = {
     getAllElementsByClassName(classPrefix.closeSidebar),
   sidebarContent: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName(classPrefix.sidebarContent),
+  messageToolsContainer: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.messageToolsContainer),
   messageToolsIcon: (): NodeListOf<SVGElement> =>
     getAllElementsByClassName(classPrefix.messageToolsIcon),
   messageToolsMenu: (): NodeListOf<HTMLSpanElement> =>

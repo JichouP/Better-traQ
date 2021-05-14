@@ -13,6 +13,15 @@ const getNavigationIndex = (): number =>
     .map((v) => v.getAttribute('aria-selected'))
     .findIndex((e) => e === 'true');
 
+const getIndexOfSelectedMessage = (): number | void => {
+  const messageTool = getElements.messageToolsContainer()[0];
+  if (!messageTool) return;
+  const els = messageTool.parentElement?.parentElement?.parentElement?.children;
+  const el = messageTool.parentElement?.parentElement;
+  if (!els || !el) return;
+  return [...els].length - 1 - [...els].indexOf(el);
+};
+
 export const clickNthNavigation = (i: number): void => {
   getElements.navigations()[i]?.click();
 };
@@ -207,6 +216,18 @@ export const clickCloseSidebar = (): void => {
 
 export const clickNthSidebarContent = (i: number): void => {
   getElements.sidebarContent()[i]?.click();
+};
+
+export const showPrevMessageTool = (): void => {
+  const i = getIndexOfSelectedMessage();
+  if (i === undefined) return;
+  showMessageTool(i + 1);
+};
+
+export const showNextMessageTool = (): void => {
+  const i = getIndexOfSelectedMessage();
+  if (i === undefined || i <= 0) return;
+  showMessageTool(i - 1);
 };
 
 export const clickNthMessageToolsIcon = (i: number): void => {
