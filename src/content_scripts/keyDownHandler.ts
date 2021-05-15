@@ -13,7 +13,6 @@ const isNotSelectedInput = () => {
 };
 
 const keyState: Map<string, boolean> = new Map();
-let timer: NodeJS.Timeout;
 // const nowState = {
 //   place: 2,
 //   focused: null,
@@ -22,7 +21,6 @@ window.addEventListener('keyup', async (ev) => {
   const { key } = ev;
   keyState.set(key, false);
   if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
-  clearInterval(timer);
 });
 
 export const handler: (ev: KeyboardEvent) => void = async (ev) => {

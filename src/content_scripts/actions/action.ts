@@ -1,6 +1,11 @@
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
+// const reloadState = {
+//   LatestMessage: NodeJS.Timeout,
+//   reloader: NodeJS.Timeout,
+// };
+
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
 };
@@ -9,6 +14,17 @@ const getNavigationIndex = (): number =>
   [...getElements.navigations()]
     .map((v) => v.getAttribute('aria-selected'))
     .findIndex((e) => e === 'true');
+
+const getChannelIndex = (): number => {
+  const channels = getElements.channelContainers();
+  return getNavigationIndex() === 0
+    ? [...channels].findIndex((v) => v.getAttribute('aria-selected') === 'true')
+    : channels.length -
+        1 -
+        [...channels]
+          .reverse()
+          .findIndex((v) => v.getAttribute('aria-selected') === 'true');
+};
 
 const getIndexOfSelectedMessage = (): number | undefined => {
   const messageToolElement = getElements.messageToolsContainer()[0];
@@ -39,30 +55,38 @@ export const clickNthChannelElement = (i: number): void => {
 };
 
 export const clickOneChannelUp = (isLoop: boolean): void => {
-  const channels = getElements.channelContainers();
   const channelNameContainers = getElements.channelNameContainers();
 
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  const target = channelNameContainers[targetIndex - 1];
+  const target = channelNameContainers[getChannelIndex() - 1];
+  target?.scrollIntoView({
+    block: 'nearest',
+  });
   if (isLoop) {
-    if (!target) return channelNameContainers[0].click();
+    if (!target) {
+      channelNameContainers[0]?.scrollIntoView({
+        block: 'nearest',
+      });
+      return channelNameContainers[0]?.click();
+    }
     return target.click();
   }
   target?.click();
 };
 
 export const clickOneChannelDown = (isLoop: boolean): void => {
-  const channels = getElements.channelContainers();
   const channelNameContainers = getElements.channelNameContainers();
 
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  const target = channelNameContainers[targetIndex + 1];
+  const target = channelNameContainers[getChannelIndex() + 1];
+  target?.scrollIntoView({
+    block: 'nearest',
+  });
   if (isLoop) {
-    if (!target) return channelNameContainers[0].click();
+    if (!target) {
+      channelNameContainers[0]?.scrollIntoView({
+        block: 'nearest',
+      });
+      return channelNameContainers[0]?.click();
+    }
     return target.click();
   }
   target?.click();
@@ -82,10 +106,7 @@ export const clickHashOfSelectedChannel = (): void => {
   const channelHashContainers: NodeListOf<HTMLDivElement> =
     getElements.channelHashContainers();
 
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  channelHashContainers[targetIndex].click();
+  channelHashContainers[getChannelIndex()]?.click();
 };
 
 export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
@@ -100,6 +121,8 @@ export const clickChannelFilterStar = (): void => {
 export const clickNthActivityToggleButton = (i: number): void => {
   getElements.activityToggleButtons()[i]?.click();
 };
+
+export const clickLatestMessage = (): void => {};
 
 export const focusMessageInput = (event: KeyboardEvent): void => {
   event.preventDefault();
