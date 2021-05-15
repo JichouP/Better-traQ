@@ -1,8 +1,5 @@
 import { getElements } from '@/content_scripts/utils/getElements';
-import {
-  clickMessageTool,
-  showMessageTool,
-} from '@/content_scripts/utils/messageTool';
+import * as messageTool from '@/content_scripts/utils/messageTool';
 
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
@@ -14,10 +11,11 @@ const getNavigationIndex = (): number =>
     .findIndex((e) => e === 'true');
 
 const getIndexOfSelectedMessage = (): number | void => {
-  const messageTool = getElements.messageToolsContainer()[0];
-  if (!messageTool) return;
-  const els = messageTool.parentElement?.parentElement?.parentElement?.children;
-  const el = messageTool.parentElement?.parentElement;
+  const messageToolElement = getElements.messageToolsContainer()[0];
+  if (!messageToolElement) return;
+  const els =
+    messageToolElement.parentElement?.parentElement?.parentElement?.children;
+  const el = messageToolElement.parentElement?.parentElement;
   if (!els || !el) return;
   return [...els].length - 1 - [...els].indexOf(el);
 };
@@ -117,9 +115,9 @@ export const openNthMessageEditor = (event: KeyboardEvent, i: number): void => {
   const messageInput = getElements.messageInput();
   if (messageInput?.value === '' && messageInput === document.activeElement) {
     event.preventDefault();
-    showMessageTool(i);
+    messageTool.showMessageTool(i);
     lazy(() => {
-      clickMessageTool(1);
+      messageTool.clickMessageTool(1);
     });
     lazy(() => {
       const edit = getElements.messageToolsMenu()[2];
@@ -200,9 +198,9 @@ export const mouseleaveAllMessages = (): void => {
 export const openNthStampPicker = (event: KeyboardEvent, i: number): void => {
   event.preventDefault();
   document.body.click();
-  showMessageTool(i);
+  messageTool.showMessageTool(i);
   lazy(() => {
-    clickMessageTool(0);
+    messageTool.clickMessageTool(0);
   });
 };
 
@@ -221,13 +219,13 @@ export const clickNthSidebarContent = (i: number): void => {
 export const showPrevMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
   if (i === undefined) return;
-  showMessageTool(i + 1);
+  messageTool.showMessageTool(i + 1);
 };
 
 export const showNextMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
   if (i === undefined || i <= 0) return;
-  showMessageTool(i - 1);
+  messageTool.showMessageTool(i - 1);
 };
 
 export const clickNthMessageToolsIcon = (i: number): void => {
