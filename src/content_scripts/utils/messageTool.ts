@@ -7,9 +7,9 @@ import { getElements } from '@/content_scripts/utils/getElements';
 export const showMessageTool = (n: number): void => {
   const messages = getElements.messages();
   messages.forEach((el) => {
-    el.dispatchEvent(new Event('mouseleave'));
+    el?.dispatchEvent(new Event('mouseleave'));
   });
-  messages[messages.length - 1 - n].dispatchEvent(new Event('mouseenter'));
+  messages[messages.length - 1 - n]?.dispatchEvent(new Event('mouseenter'));
 };
 
 /**
@@ -17,5 +17,7 @@ export const showMessageTool = (n: number): void => {
  * @param stampOrMenu 0: Stamp Picker, 1: Menu
  */
 export const clickMessageTool = (stampOrMenu: 0 | 1): void => {
-  getElements.messageToolsIcon()[stampOrMenu].dispatchEvent(new Event('click'));
+  getElements
+    .messageToolsIcon()
+    [stampOrMenu]?.dispatchEvent(new Event('click'));
 };

@@ -53,7 +53,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'Escape': {
         document.body.click();
         getElements.messages().forEach((el) => {
-          el.dispatchEvent(new Event('mouseleave'));
+          el?.dispatchEvent(new Event('mouseleave'));
         });
         return;
       }

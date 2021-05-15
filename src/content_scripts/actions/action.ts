@@ -191,7 +191,7 @@ export const clickNthStamp = (i: number): void => {
 
 export const mouseleaveAllMessages = (): void => {
   getElements.messages().forEach((el) => {
-    el.dispatchEvent(new Event('mouseleave'));
+    el?.dispatchEvent(new Event('mouseleave'));
   });
 };
 
