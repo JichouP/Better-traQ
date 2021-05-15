@@ -10,14 +10,14 @@ const getNavigationIndex = (): number =>
     .map((v) => v.getAttribute('aria-selected'))
     .findIndex((e) => e === 'true');
 
-const getIndexOfSelectedMessage = (): number | void => {
+const getIndexOfSelectedMessage = (): number | undefined => {
   const messageToolElement = getElements.messageToolsContainer()[0];
   if (!messageToolElement) return;
   const els =
     messageToolElement.parentElement?.parentElement?.parentElement?.children;
   const el = messageToolElement.parentElement?.parentElement;
   if (!els || !el) return;
-  return [...els].length - 1 - [...els].indexOf(el);
+  return [...els].indexOf(el);
 };
 
 export const clickNthNavigation = (i: number): void => {
@@ -111,28 +111,27 @@ export const focusMessageEditor = (event: KeyboardEvent): void => {
   getElements.messageEditor()?.focus();
 };
 
-export const openNthMessageEditor = (event: KeyboardEvent, i: number): void => {
+export const openNthMessageEditor = (
+  event: KeyboardEvent,
+  i: number,
+  direction: BetterTraQ.Direction
+): void => {
   const messageInput = getElements.messageInput();
   if (messageInput?.value === '' && messageInput === document.activeElement) {
-    event.preventDefault();
-    messageTool.showMessageTool(i);
-    lazy(() => {
-      messageTool.clickMessageTool(1);
-    });
-    lazy(() => {
-      const edit = getElements.messageToolsMenu()[2];
-      const { body } = document;
-      if (!edit) return;
-      if (edit.innerText !== '編集') {
-        return lazy(() => {
-          body.click();
-        });
-      }
-      edit.click();
-      body.click();
-      lazy(() => {
-        focusMessageEditor(event);
+    messageTool.showMessageTool(i, direction);
+    messageTool.clickMessageTool(event, 1);
+    const edit = getElements.messageToolsMenu()[2];
+    const { body } = document;
+    if (!edit) return;
+    if (edit.innerText !== '編集') {
+      return lazy(() => {
+        body.click();
       });
+    }
+    edit.click();
+    body.click();
+    lazy(() => {
+      focusMessageEditor(event);
     });
   }
 };
@@ -145,44 +144,28 @@ export const clickMessageInputInsertStampButton = (
 };
 
 export const focusOnOneMessageAbove = (): void => {
-  const scroller = getElements.messagesScroller()[0];
-  if (!scroller) return;
-
   const messages = getElements.messages();
-  for (let i = messages.length - 1; i >= 0; i -= 1) {
-    if (messages[i].getBoundingClientRect().top < 0) {
-      if (i !== 0 && i !== 1)
-        messages[i].scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
-      else
-        scroller.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
-      break;
-    }
-  }
+  const index = getIndexOfSelectedMessage() ?? messages.length;
+
+  // load old messages
+  if (index === 0)
+    return getElements.messagesScroller()[0]?.scrollTo({ top: 0 });
+
+  const targetIndex = Math.min(Math.max(index - 1, 0), messages.length - 1);
+  messageTool.showMessageTool(targetIndex, 'down');
+  messages[targetIndex]?.scrollIntoView({
+    block: 'start',
+  });
 };
 
 export const focusOnOneMessageBelow = (): void => {
-  const scroller = getElements.messagesScroller()[0];
-  if (!scroller) return;
-
   const messages = getElements.messages();
-  for (let i = 0; i < messages.length; i += 1) {
-    if (messages[i].getBoundingClientRect().top > 11.625) {
-      if (!messages[i + 1]) return;
-      scroller.scrollTo({
-        top:
-          scroller.scrollTop + messages[i + 1].getBoundingClientRect().top - 78,
-        behavior: 'smooth',
-      });
-      return;
-    }
-  }
+  const index = getIndexOfSelectedMessage() ?? messages.length - 1;
+  const targetIndex = Math.min(Math.max(index + 1, 0), messages.length - 1);
+  messageTool.showMessageTool(targetIndex, 'down');
+  messages[targetIndex]?.scrollIntoView({
+    block: 'start',
+  });
 };
 
 export const clickNthStamp = (i: number): void => {
@@ -198,9 +181,9 @@ export const mouseleaveAllMessages = (): void => {
 export const openNthStampPicker = (event: KeyboardEvent, i: number): void => {
   event.preventDefault();
   document.body.click();
-  messageTool.showMessageTool(i);
+  messageTool.showMessageTool(i, 'up');
   lazy(() => {
-    messageTool.clickMessageTool(0);
+    messageTool.clickMessageTool(event, 0);
   });
 };
 
@@ -218,14 +201,14 @@ export const clickNthSidebarContent = (i: number): void => {
 
 export const showPrevMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
-  if (i === undefined) return messageTool.showMessageTool(0);
-  messageTool.showMessageTool(i + 1);
+  if (i === undefined) return messageTool.showMessageTool(0, 'up');
+  messageTool.showMessageTool(i - 1, 'down');
 };
 
 export const showNextMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
-  if (i === undefined || i <= 0) return messageTool.showMessageTool(0);
-  messageTool.showMessageTool(i - 1);
+  if (i === undefined || i <= 0) return messageTool.showMessageTool(0, 'up');
+  messageTool.showMessageTool(i + 1, 'down');
 };
 
 export const clickNthMessageToolsIcon = (i: number): void => {
@@ -237,10 +220,12 @@ export const clickNthMessageToolsMenu = (i: number): void => {
 };
 
 export const moveToBottomOfPage = (): void => {
-  const messagesScroller = getElements.messagesScroller()[0];
-  if (messagesScroller) {
-    messagesScroller.scrollTop = messagesScroller.scrollHeight;
-  }
+  const scroller = getElements.messagesScroller()[0];
+  if (!scroller) return;
+  scroller.scrollTo({
+    behavior: 'smooth',
+    top: scroller.scrollHeight,
+  });
 };
 
 export const toggleSidebar = (): void => {

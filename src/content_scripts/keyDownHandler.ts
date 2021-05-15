@@ -1,6 +1,7 @@
 import * as Actions from '@/content_scripts/actions/action';
 import { exec } from '@/content_scripts/utils/exec';
 import { getElements } from '@/content_scripts/utils/getElements';
+import { clickMessageTool } from '@/content_scripts/utils/messageTool';
 import { channels, getData } from '@/utils/storage';
 
 const changeChannel = (path: string) => {
@@ -84,7 +85,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'h':
         return Actions.focusNthFilterInput(ev, 2);
       case 'p':
-        return Actions.openNthStampPicker(ev, 0);
+        return clickMessageTool(ev, 0);
       case 'o':
         return Actions.openNthStampPicker(ev, 1);
       case 'i':
@@ -121,7 +122,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'Escape':
         return Actions.blurActiveInputElement();
       case 'ArrowUp': {
-        return Actions.openNthMessageEditor(ev, 0);
+        return Actions.openNthMessageEditor(ev, 0, 'up');
       }
     }
   }
