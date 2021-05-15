@@ -218,13 +218,13 @@ export const clickNthSidebarContent = (i: number): void => {
 
 export const showPrevMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
-  if (i === undefined) return;
+  if (i === undefined) return messageTool.showMessageTool(0);
   messageTool.showMessageTool(i + 1);
 };
 
 export const showNextMessageTool = (): void => {
   const i = getIndexOfSelectedMessage();
-  if (i === undefined || i <= 0) return;
+  if (i === undefined || i <= 0) return messageTool.showMessageTool(0);
   messageTool.showMessageTool(i - 1);
 };
 
