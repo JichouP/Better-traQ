@@ -1,10 +1,14 @@
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
-// const reloadState = {
-//   LatestMessage: NodeJS.Timeout,
-//   reloader: NodeJS.Timeout,
-// };
+type ReloadState = {
+  latestMessage: HTMLDivElement | null;
+  reloader: number | null;
+};
+const reloadState: ReloadState = {
+  latestMessage: null,
+  reloader: null,
+};
 
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
@@ -122,7 +126,20 @@ export const clickNthActivityToggleButton = (i: number): void => {
   getElements.activityToggleButtons()[i]?.click();
 };
 
-export const clickLatestMessage = (): void => {};
+export const clickLatestMessage = (): void => {
+  if (reloadState.reloader) {
+    window.clearInterval(reloadState.reloader);
+    reloadState.reloader = null;
+    return;
+  }
+  reloadState.reloader = window.setInterval((): void => {
+    const latestMessage = getElements.activityContainer()[0];
+    if (latestMessage != reloadState.latestMessage) {
+      reloadState.latestMessage = latestMessage;
+      latestMessage.click();
+    }
+  }, 1000);
+};
 
 export const focusMessageInput = (event: KeyboardEvent): void => {
   event.preventDefault();

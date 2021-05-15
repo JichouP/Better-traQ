@@ -6,6 +6,7 @@ const classPrefix = {
   filterInputs: 'FilterInput_input',
   channelFilterStar: 'ChannelFilter_star',
   activityToggleButtons: 'ToggleButton_container',
+  activityContainer: 'MessagePanel_container',
   desktopNavigation: 'NavigationContent_container',
   messageInput: 'MessageInputTextArea_container',
   messageInputInsertStampButton: 'MessageInputInsertStampButton_container',
@@ -41,6 +42,8 @@ export const getElements = {
     getAllElementsByClassName(classPrefix.channelFilterStar),
   activityToggleButtons: (): NodeListOf<HTMLButtonElement> =>
     getAllElementsByClassName(classPrefix.activityToggleButtons),
+  activityContainer: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.activityContainer),
   desktopNavigation: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.desktopNavigation),
   messageInput: (): HTMLTextAreaElement => {
