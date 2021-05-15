@@ -3,11 +3,11 @@ import * as messageTool from '@/content_scripts/utils/messageTool';
 
 type ReloadState = {
   latestMessage: HTMLDivElement | null;
-  reloader: number | null;
+  reloader: number;
 };
 const reloadState: ReloadState = {
   latestMessage: null,
-  reloader: null,
+  reloader: 0,
 };
 
 const lazy = (fn: () => unknown) => {
@@ -127,12 +127,18 @@ export const clickNthActivityToggleButton = (i: number): void => {
 };
 
 export const clickLatestMessage = (): void => {
-  if (reloadState.reloader) {
+  if (reloadState.reloader != 0) {
     window.clearInterval(reloadState.reloader);
-    reloadState.reloader = null;
+    reloadState.reloader = 0;
     return;
   }
+  clickNthNavigation(2);
   reloadState.reloader = window.setInterval((): void => {
+    if (getNavigationIndex() != 2) {
+      window.clearInterval(reloadState.reloader);
+      reloadState.reloader = 0;
+      return;
+    }
     const latestMessage = getElements.activityContainer()[0];
     if (latestMessage != reloadState.latestMessage) {
       reloadState.latestMessage = latestMessage;
