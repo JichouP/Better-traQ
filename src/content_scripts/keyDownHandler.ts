@@ -20,7 +20,7 @@ const keyState: Map<string, boolean> = new Map();
 window.addEventListener('keyup', async (ev) => {
   const { key } = ev;
   keyState.set(key, false);
-  if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
+  // if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
 });
 
 export const handler: (ev: KeyboardEvent) => void = async (ev) => {

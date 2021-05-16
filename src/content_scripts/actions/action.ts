@@ -106,7 +106,6 @@ export const clickOneChannelUpOrDown = (
 };
 
 export const clickHashOfSelectedChannel = (): void => {
-  const channels = getElements.channelContainers();
   const channelHashContainers: NodeListOf<HTMLDivElement> =
     getElements.channelHashContainers();
 
@@ -127,20 +126,20 @@ export const clickNthActivityToggleButton = (i: number): void => {
 };
 
 export const clickLatestMessage = (): void => {
-  if (reloadState.reloader != 0) {
+  if (reloadState.reloader !== 0) {
     window.clearInterval(reloadState.reloader);
     reloadState.reloader = 0;
     return;
   }
   clickNthNavigation(2);
   reloadState.reloader = window.setInterval((): void => {
-    if (getNavigationIndex() != 2) {
+    if (getNavigationIndex() !== 2) {
       window.clearInterval(reloadState.reloader);
       reloadState.reloader = 0;
       return;
     }
     const latestMessage = getElements.activityContainer()[0];
-    if (latestMessage != reloadState.latestMessage) {
+    if (latestMessage !== reloadState.latestMessage) {
       reloadState.latestMessage = latestMessage;
       latestMessage.click();
     }
