@@ -23,7 +23,9 @@
     "test:coverage": "npm run test -- --collectCoverage",
     "test:badge": "npm run test:coverage && jest-coverage-badges",
     "test:badge:add": "npm run test:badge && git add coverage",
-    "tsc:babelConfig": "tsc babel.config.ts --skipLibCheck --newLine LF && prettier --write babel.config.js"
+    "tsc:babelConfig": "tsc babel.config.ts --skipLibCheck --newLine LF && prettier --write babel.config.js",
+    "lint": "eslint src",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

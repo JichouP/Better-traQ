@@ -1,6 +1,7 @@
 import * as Actions from '@/content_scripts/actions/action';
 import { exec } from '@/content_scripts/utils/exec';
 import { getElements } from '@/content_scripts/utils/getElements';
+import { clickMessageTool } from '@/content_scripts/utils/messageTool';
 import { channels, getData } from '@/utils/storage';
 
 const changeChannel = (path: string) => {
@@ -11,9 +12,21 @@ const isNotSelectedInput = () => {
   return tagName !== 'INPUT' && tagName !== 'TEXTAREA';
 };
 
+const keyState: Map<string, boolean> = new Map();
+// const nowState = {
+//   place: 2,
+//   focused: null,
+// };
+window.addEventListener('keyup', async (ev) => {
+  const { key } = ev;
+  keyState.set(key, false);
+  // if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
+});
+
 export const handler: (ev: KeyboardEvent) => void = async (ev) => {
   const { key } = ev;
-  if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
+  keyState.set(key, true);
+  if (ev.altKey || ev.ctrlKey || ev.metaKey) return; // Shift + Tab使います
   if (isNotSelectedInput()) {
     switch (key) {
       case '1':
@@ -34,14 +47,14 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
           // eslint-disable-next-line no-alert
           alert('チャンネルを設定してください');
         }
-        break;
+        return;
       }
       case 'Escape': {
-        document.querySelector('body')?.click();
+        document.body.click();
         getElements.messages().forEach((el) => {
-          el.dispatchEvent(new Event('mouseleave'));
+          el?.dispatchEvent(new Event('mouseleave'));
         });
-        break;
+        return;
       }
       case 'q':
         return Actions.clickNthNavigation(0);
@@ -65,13 +78,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusMessageInput(ev);
       case 'm':
         return Actions.clickMessageInputInsertStampButton(ev);
-      case 'b': {
+      case 'b':
         return Actions.moveToBottomOfPage();
-      }
       case 'h':
         return Actions.focusNthFilterInput(ev, 2);
       case 'p':
-        return Actions.openNthStampPicker(ev, 0);
+        return clickMessageTool(ev, 0);
       case 'o':
         return Actions.openNthStampPicker(ev, 1);
       case 'i':
@@ -86,16 +98,31 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.toggleSidebar();
       case ';':
         return Actions.clickNthSidebarContent(0);
+      case 'f':
+        return Actions.showPrevMessageTool();
+      case 'g':
+        return Actions.showNextMessageTool();
+      case 'Tab':
+        return Actions.clickOneChannelUpOrDown(ev, true);
+      case 'v':
+        return Actions.clickHashOfSelectedChannel();
+      case 'j':
+        return Actions.focusOnOneMessageBelow();
+      case 'k':
+        return Actions.focusOnOneMessageAbove();
+      case 'r':
+        return Actions.clickLatestMessage();
+      case 'Enter': {
+        if (document.activeElement === getElements.filterInputs()[0])
+          return Actions.blurActiveInputElement();
+      }
     }
   } else {
     switch (key) {
       case 'Escape':
-        (
-          (document.activeElement as HTMLInputElement) || HTMLTextAreaElement
-        )?.blur();
-        break;
+        return Actions.blurActiveInputElement();
       case 'ArrowUp': {
-        return Actions.openNthMessageEditor(ev, 0);
+        return Actions.openNthMessageEditor(ev, 0, 'up');
       }
     }
   }
