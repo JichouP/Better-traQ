@@ -145,6 +145,13 @@ export const focusSearchFilterInput = (
   });
 };
 
+export const clickChannelHierarchyUp = (): void => {
+  const channelHierarchy = getElements
+    .headerChannelName()
+    .querySelectorAll('a');
+  channelHierarchy[channelHierarchy.length - 1].click();
+};
+
 export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
   event.preventDefault();
   getElements.filterInputs()[i]?.focus();
