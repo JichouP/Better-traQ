@@ -25,18 +25,18 @@ export default function BackgroundSettings(props: Props): ReactElement {
     const currentData = await getData(keyList);
     await Promise.all(
       keyList.map((key) => {
-        if (store[key] === currentData[key]) return;
+        if (store[key] !== currentData[key]) return;
         return setData({ [key]: store[key] });
       })
     );
   };
 
-  const handleChange = (key: Background | FilterColor) => (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { value } = event.target;
-    setStore((prev) => ({ ...prev, [key]: value }));
-  };
+  const handleChange =
+    (key: Background | FilterColor) =>
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      setStore((prev) => ({ ...prev, [key]: value }));
+    };
 
   return (
     <div className={classes.paper}>
