@@ -55,12 +55,6 @@ export const clickNthDesktopToolBox = (i: number): void => {
 };
 
 export const clickNthChannelElement = (i: number): HTMLDivElement => {
-  let j = 0;
-  getElements.channelNameContainers().forEach((e) => {
-    // eslint-disable-next-line no-console
-    console.log(j, e);
-    j += 1;
-  });
   const channelNameContainers = getElements.channelNameContainers()[i];
   channelNameContainers?.scrollIntoView({
     block: 'nearest',
@@ -116,6 +110,43 @@ export const clickNthChannelHash = (index: number): void => {
     getElements.channelHashContainers();
 
   channelHashContainers[index]?.click();
+};
+
+export const clickChannelNavigation = (): void => {
+  clickNthNavigation(1);
+  lazy(() => {
+    const channelList = getElements.headerChannelName();
+    const channelHierarchy = channelList.querySelectorAll('a');
+    const channelCurrent = channelList.querySelectorAll(
+      '[class^="HeaderChannelName_current_"]'
+    )[0];
+
+    let channelNameContainers = getElements.channelNameContainers();
+    for (let i = 1; i < channelHierarchy.length; i += 1) {
+      const index = [...channelNameContainers].findIndex(
+        (v) =>
+          v.querySelector('span')?.textContent ===
+          channelHierarchy[i].textContent
+      );
+      // eslint-disable-next-line no-console
+      console.log(channelHierarchy[i].textContent);
+      // clickNthChannelElement(index);
+      clickNthChannelHash(index);
+      // eslint-disable-next-line no-loop-func
+      lazy(() => {
+        channelNameContainers = getElements.channelNameContainers();
+      });
+      // channelNameContainers = channelNameContainers[index].querySelectorAll(
+      //   '[class*="ChannelElementName_container"]'
+      // );
+    }
+    [...channelNameContainers]
+      .find(
+        (v) =>
+          v.querySelector('span')?.textContent === channelCurrent?.textContent
+      )
+      ?.click();
+  });
 };
 
 export const focusSearchFilterInput = (

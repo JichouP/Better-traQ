@@ -64,6 +64,8 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickNthChannelElement(1);
       case 'a':
         return Actions.clickNthNavigation(1);
+      case 'A':
+        return Actions.clickChannelNavigation();
       case 's':
         return Actions.focusSearchFilterInput(false);
       case 'S':
