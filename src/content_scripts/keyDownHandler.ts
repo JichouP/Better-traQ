@@ -13,7 +13,6 @@ const isNotSelectedInput = () => {
 };
 
 const keyState: Map<string, boolean> = new Map();
-let timer: NodeJS.Timeout;
 // const nowState = {
 //   place: 2,
 //   focused: null,
@@ -21,8 +20,7 @@ let timer: NodeJS.Timeout;
 window.addEventListener('keyup', async (ev) => {
   const { key } = ev;
   keyState.set(key, false);
-  if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
-  clearInterval(timer);
+  // if (ev.altKey || ev.shiftKey || ev.ctrlKey || ev.metaKey) return;
 });
 
 export const handler: (ev: KeyboardEvent) => void = async (ev) => {
@@ -67,7 +65,9 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'a':
         return Actions.clickNthNavigation(1);
       case 's':
-        return Actions.focusNthFilterInput(ev, 0);
+        return Actions.focusSearchFilterInput(false);
+      case 'S':
+        return Actions.focusSearchFilterInput(true);
       case 'd':
         return Actions.clickChannelFilterStar();
       case 'z':
@@ -112,10 +112,8 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusOnOneMessageBelow();
       case 'k':
         return Actions.focusOnOneMessageAbove();
-      case 'Enter': {
-        if (document.activeElement === getElements.filterInputs()[0])
-          return Actions.blurActiveInputElement();
-      }
+      case 'r':
+        return Actions.clickLatestMessage();
     }
   } else {
     switch (key) {
@@ -123,6 +121,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.blurActiveInputElement();
       case 'ArrowUp': {
         return Actions.openNthMessageEditor(ev, 0, 'up');
+      }
+      case 'Enter': {
+        if (document.activeElement === getElements.filterInputs()[0]) {
+          Actions.blurActiveInputElement();
+          return Actions.clickNthChannelElement(0);
+        }
       }
     }
   }

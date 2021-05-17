@@ -6,7 +6,10 @@ const classPrefix = {
   filterInputs: 'FilterInput_input',
   channelFilterStar: 'ChannelFilter_star',
   activityToggleButtons: 'ToggleButton_container',
+  activityContainer: 'MessagePanel_container',
   desktopNavigation: 'NavigationContent_container',
+  headerContainer: 'MainViewHeader_container',
+  headerChannelName: 'HeaderChannelName_container',
   messageInput: 'MessageInputTextArea_container',
   messageInputInsertStampButton: 'MessageInputInsertStampButton_container',
   stamps: 'StampPickerStampList_stampListItem',
@@ -26,23 +29,43 @@ export const getAllElementsByClassName = <T extends Element>(
   className: string
 ): NodeListOf<T> => document.querySelectorAll<T>(`[class*=${className}]`);
 
+export const getChannelsInView = <T extends Element>(
+  className: string
+): NodeListOf<T> => {
+  const channelContainers = [
+    ...document.querySelectorAll<HTMLDivElement>(
+      `[class*="NavigationContent_content"]`
+    ),
+  ].find((e) => getComputedStyle(e).display !== 'none');
+  if (!channelContainers) {
+    return getAllElementsByClassName('AAA');
+  }
+  return channelContainers.querySelectorAll<T>(`[class*=${className}]`);
+};
+
 export const getElements = {
   navigations: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName(classPrefix.navigations),
   channelContainers: (): NodeListOf<HTMLDivElement> =>
-    getAllElementsByClassName(classPrefix.channelContainers),
+    getChannelsInView(classPrefix.channelContainers),
   channelNameContainers: (): NodeListOf<HTMLDivElement> =>
-    getAllElementsByClassName(classPrefix.channelNameContainers),
+    getChannelsInView(classPrefix.channelNameContainers),
   channelHashContainers: (): NodeListOf<HTMLDivElement> =>
-    getAllElementsByClassName(classPrefix.channelHashContainers),
+    getChannelsInView(classPrefix.channelHashContainers),
   filterInputs: (): NodeListOf<HTMLInputElement> =>
     getAllElementsByClassName(classPrefix.filterInputs),
   channelFilterStar: (): NodeListOf<HTMLButtonElement> =>
     getAllElementsByClassName(classPrefix.channelFilterStar),
   activityToggleButtons: (): NodeListOf<HTMLButtonElement> =>
     getAllElementsByClassName(classPrefix.activityToggleButtons),
+  activityContainer: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.activityContainer),
   desktopNavigation: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.desktopNavigation),
+  headerContainers: (): HTMLDivElement =>
+    getAllElementsByClassName<HTMLDivElement>(classPrefix.headerContainer)[0],
+  headerChannelName: (): HTMLDivElement =>
+    getAllElementsByClassName<HTMLDivElement>(classPrefix.headerChannelName)[0],
   messageInput: (): HTMLTextAreaElement => {
     const els = getAllElementsByClassName<HTMLTextAreaElement>(
       classPrefix.messageInput

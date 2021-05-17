@@ -1,6 +1,15 @@
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
+type ReloadState = {
+  latestMessage: HTMLDivElement | null;
+  reloader: number;
+};
+const reloadState: ReloadState = {
+  latestMessage: null,
+  reloader: 0,
+};
+
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
 };
@@ -9,6 +18,17 @@ const getNavigationIndex = (): number =>
   [...getElements.navigations()]
     .map((v) => v.getAttribute('aria-selected'))
     .findIndex((e) => e === 'true');
+
+const getChannelIndex = (): number => {
+  const channels = getElements.channelContainers();
+  return getNavigationIndex() === 0
+    ? [...channels].findIndex((v) => v.getAttribute('aria-selected') === 'true')
+    : channels.length -
+        1 -
+        [...channels]
+          .reverse()
+          .findIndex((v) => v.getAttribute('aria-selected') === 'true');
+};
 
 const getIndexOfSelectedMessage = (): number | undefined => {
   const messageToolElement = getElements.messageToolsContainer()[0];
@@ -34,38 +54,45 @@ export const clickNthDesktopToolBox = (i: number): void => {
   getElements.desktopToolBox()[i]?.click();
 };
 
-export const clickNthChannelElement = (i: number): void => {
-  getElements.channelNameContainers()[i]?.click();
+export const clickNthChannelElement = (i: number): HTMLDivElement => {
+  let j = 0;
+  getElements.channelNameContainers().forEach((e) => {
+    // eslint-disable-next-line no-console
+    console.log(j, e);
+    j += 1;
+  });
+  const channelNameContainers = getElements.channelNameContainers()[i];
+  channelNameContainers?.scrollIntoView({
+    block: 'nearest',
+  });
+  channelNameContainers?.click();
+  return channelNameContainers;
+};
+
+export const clickNameChannelElement = (name: string): number => {
+  const channelNameContainers = getElements.channelNameContainers();
+  const targetIndex = [...channelNameContainers]
+    .map((v) => v.querySelector('span')?.textContent)
+    .findIndex((e) => e === name);
+  channelNameContainers[targetIndex]?.scrollIntoView({
+    block: 'nearest',
+  });
+  channelNameContainers[targetIndex]?.click();
+  return targetIndex;
 };
 
 export const clickOneChannelUp = (isLoop: boolean): void => {
-  const channels = getElements.channelContainers();
-  const channelNameContainers = getElements.channelNameContainers();
-
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  const target = channelNameContainers[targetIndex - 1];
-  if (isLoop) {
-    if (!target) return channelNameContainers[0].click();
-    return target.click();
+  const target = clickNthChannelElement(getChannelIndex() - 1);
+  if (isLoop && !target) {
+    clickNthChannelElement(0);
   }
-  target?.click();
 };
 
 export const clickOneChannelDown = (isLoop: boolean): void => {
-  const channels = getElements.channelContainers();
-  const channelNameContainers = getElements.channelNameContainers();
-
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  const target = channelNameContainers[targetIndex + 1];
-  if (isLoop) {
-    if (!target) return channelNameContainers[0].click();
-    return target.click();
+  const target = clickNthChannelElement(getChannelIndex() + 1);
+  if (isLoop && !target) {
+    clickNthChannelElement(0);
   }
-  target?.click();
 };
 
 export const clickOneChannelUpOrDown = (
@@ -78,14 +105,44 @@ export const clickOneChannelUpOrDown = (
 };
 
 export const clickHashOfSelectedChannel = (): void => {
-  const channels = getElements.channelContainers();
   const channelHashContainers: NodeListOf<HTMLDivElement> =
     getElements.channelHashContainers();
 
-  const targetIndex = [...channels].findIndex(
-    (v) => v.getAttribute('aria-selected') === 'true'
-  );
-  channelHashContainers[targetIndex].click();
+  channelHashContainers[getChannelIndex()]?.click();
+};
+
+export const clickNthChannelHash = (index: number): void => {
+  const channelHashContainers: NodeListOf<HTMLDivElement> =
+    getElements.channelHashContainers();
+
+  channelHashContainers[index]?.click();
+};
+
+export const focusSearchFilterInput = (
+  startFromSelectedChannel: boolean
+): void => {
+  clickNthNavigation(1);
+  lazy(() => {
+    const filterInput = getElements.filterInputs()[0];
+    if (startFromSelectedChannel) {
+      const channelList = getElements.headerChannelName();
+      const channelHierarchy = channelList.querySelectorAll('a');
+      const channelCurrent = channelList.querySelectorAll(
+        '[class^="HeaderChannelName_current_"]'
+      );
+
+      let searchText = '';
+      // skip #
+      for (let i = 1; i < channelHierarchy.length; i += 1) {
+        searchText += channelHierarchy[i].textContent;
+        searchText += '/';
+      }
+      searchText += channelCurrent[0]?.textContent;
+      searchText += '/';
+      filterInput.value = searchText;
+    }
+    filterInput?.focus();
+  });
 };
 
 export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
@@ -99,6 +156,27 @@ export const clickChannelFilterStar = (): void => {
 
 export const clickNthActivityToggleButton = (i: number): void => {
   getElements.activityToggleButtons()[i]?.click();
+};
+
+export const clickLatestMessage = (): void => {
+  if (reloadState.reloader !== 0) {
+    window.clearInterval(reloadState.reloader);
+    reloadState.reloader = 0;
+    return;
+  }
+  clickNthNavigation(2);
+  reloadState.reloader = window.setInterval((): void => {
+    if (getNavigationIndex() !== 2) {
+      window.clearInterval(reloadState.reloader);
+      reloadState.reloader = 0;
+      return;
+    }
+    const latestMessage = getElements.activityContainer()[0];
+    if (latestMessage !== reloadState.latestMessage) {
+      reloadState.latestMessage = latestMessage;
+      latestMessage.click();
+    }
+  }, 1000);
 };
 
 export const focusMessageInput = (event: KeyboardEvent): void => {
