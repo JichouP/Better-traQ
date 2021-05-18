@@ -107,7 +107,10 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'g':
         return Actions.showNextMessageTool();
       case 'Tab':
-        return Actions.clickOneChannelUpOrDown(ev, true);
+        if (ev.shiftKey) {
+          return Actions.clickOneChannelUp(ev, true);
+        }
+        return Actions.clickOneChannelDown(ev, true);
       case 'v':
         return Actions.clickHashOfSelectedChannel();
       case 'j':

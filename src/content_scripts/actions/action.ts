@@ -1,3 +1,4 @@
+import { WatchIgnorePlugin } from 'webpack';
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
@@ -14,20 +15,33 @@ const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
 };
 
+// library
 const getNavigationIndex = (): number =>
-  [...getElements.navigations()]
-    .map((v) => v.getAttribute('aria-selected'))
-    .findIndex((e) => e === 'true');
+  [...getElements.navigations()].findIndex(
+    (v) => v.getAttribute('aria-selected') === 'true'
+  );
 
-const getChannelIndex = (): number => {
-  const channels = getElements.channelContainers();
-  return getNavigationIndex() === 0
-    ? [...channels].findIndex((v) => v.getAttribute('aria-selected') === 'true')
-    : channels.length -
-        1 -
-        [...channels]
-          .reverse()
-          .findIndex((v) => v.getAttribute('aria-selected') === 'true');
+const getChannelIndex = (): number =>
+  [...getElements.channelContainers()].findIndex(
+    (v) => v.getAttribute('aria-selected') === 'true'
+  );
+
+const isOpenedChannelHash = (index: number): boolean =>
+  getElements
+    .channelHashContainersHash()
+    [index]?.hasAttribute('data-is-opened') ?? false;
+
+const getSelectedChannelName = (): string[] => {
+  const channelList = getElements.headerChannelName();
+  const channelAncestor = channelList.querySelectorAll(
+    '[class^="HeaderChannelName_ancestor_"]'
+  );
+  const channelCurrent = channelList.querySelectorAll(
+    '[class^="HeaderChannelName_current_"]'
+  )[0];
+  const channelNames = [...channelAncestor].map((e) => e.textContent ?? '');
+  channelNames.push(channelCurrent.textContent ?? '');
+  return channelNames;
 };
 
 const getIndexOfSelectedMessage = (): number | undefined => {
@@ -40,15 +54,16 @@ const getIndexOfSelectedMessage = (): number | undefined => {
   return [...els].indexOf(el);
 };
 
+// click Navigation Button
 export const clickNthNavigation = (i: number): void => {
   getElements.navigations()[i]?.click();
 };
 
 export const clickNextNavigation = (): void =>
-  getElements.navigations()[(getNavigationIndex() + 1) % 5].click();
+  clickNthNavigation((getNavigationIndex() + 1) % 5);
 
 export const clickPrevNavigation = (): void =>
-  getElements.navigations()[(getNavigationIndex() - 1 + 5) % 5].click();
+  clickNthNavigation((getNavigationIndex() - 1 + 5) % 5);
 
 export const clickNthDesktopToolBox = (i: number): void => {
   getElements.desktopToolBox()[i]?.click();
@@ -75,78 +90,57 @@ export const clickNameChannelElement = (name: string): number => {
   return targetIndex;
 };
 
-export const clickOneChannelUp = (isLoop: boolean): void => {
+export const clickOneChannelUp = (
+  event: KeyboardEvent,
+  isLoop: boolean
+): void => {
+  event.preventDefault();
   const target = clickNthChannelElement(getChannelIndex() - 1);
   if (isLoop && !target) {
     clickNthChannelElement(0);
   }
 };
 
-export const clickOneChannelDown = (isLoop: boolean): void => {
+export const clickOneChannelDown = (
+  event: KeyboardEvent,
+  isLoop: boolean
+): void => {
+  event.preventDefault();
   const target = clickNthChannelElement(getChannelIndex() + 1);
   if (isLoop && !target) {
     clickNthChannelElement(0);
   }
 };
 
-export const clickOneChannelUpOrDown = (
-  event: KeyboardEvent,
-  isLoop: boolean
-): void => {
-  event.preventDefault();
-  if (event.shiftKey) clickOneChannelUp(isLoop);
-  else clickOneChannelDown(isLoop);
-};
-
-export const clickHashOfSelectedChannel = (): void => {
-  const channelHashContainers: NodeListOf<HTMLDivElement> =
-    getElements.channelHashContainers();
-
-  channelHashContainers[getChannelIndex()]?.click();
-};
-
 export const clickNthChannelHash = (index: number): void => {
   const channelHashContainers: NodeListOf<HTMLDivElement> =
     getElements.channelHashContainers();
-
   channelHashContainers[index]?.click();
 };
 
+export const clickHashOfSelectedChannel = (): void =>
+  clickNthChannelHash(getChannelIndex());
+
 export const clickChannelNavigation = (): void => {
   clickNthNavigation(1);
-  lazy(() => {
-    const channelList = getElements.headerChannelName();
-    const channelHierarchy = channelList.querySelectorAll('a');
-    const channelCurrent = channelList.querySelectorAll(
-      '[class^="HeaderChannelName_current_"]'
-    )[0];
+  const channelNames = getSelectedChannelName();
 
-    let channelNameContainers = getElements.channelNameContainers();
-    for (let i = 1; i < channelHierarchy.length; i += 1) {
-      const index = [...channelNameContainers].findIndex(
-        (v) =>
-          v.querySelector('span')?.textContent ===
-          channelHierarchy[i].textContent
-      );
-      // eslint-disable-next-line no-console
-      console.log(channelHierarchy[i].textContent);
-      // clickNthChannelElement(index);
-      clickNthChannelHash(index);
-      // eslint-disable-next-line no-loop-func
+  setTimeout(() => {
+    for (let i = 0; i < channelNames.length; i += 1) {
       lazy(() => {
-        channelNameContainers = getElements.channelNameContainers();
+        const index = [...getElements.channelNameContainers()].findIndex(
+          (v) => v.querySelector('span')?.textContent === channelNames[i]
+        );
+        if (
+          getElements
+            .channelHashContainersHash()
+            [index]?.hasAttribute('data-is-opened') === false
+        ) {
+          clickNthChannelHash(index);
+        }
       });
-      // channelNameContainers = channelNameContainers[index].querySelectorAll(
-      //   '[class*="ChannelElementName_container"]'
-      // );
     }
-    [...channelNameContainers]
-      .find(
-        (v) =>
-          v.querySelector('span')?.textContent === channelCurrent?.textContent
-      )
-      ?.click();
-  });
+  }, 0);
 };
 
 export const focusSearchFilterInput = (
@@ -156,20 +150,13 @@ export const focusSearchFilterInput = (
   lazy(() => {
     const filterInput = getElements.filterInputs()[0];
     if (startFromSelectedChannel) {
-      const channelList = getElements.headerChannelName();
-      const channelHierarchy = channelList.querySelectorAll('a');
-      const channelCurrent = channelList.querySelectorAll(
-        '[class^="HeaderChannelName_current_"]'
-      );
+      const channelList = getSelectedChannelName();
 
       let searchText = '';
-      // skip #
-      for (let i = 1; i < channelHierarchy.length; i += 1) {
-        searchText += channelHierarchy[i].textContent;
+      for (let i = 1; i < channelList.length; i += 1) {
+        searchText += channelList[i];
         searchText += '/';
       }
-      searchText += channelCurrent[0]?.textContent;
-      searchText += '/';
       filterInput.value = searchText;
     }
     filterInput?.focus();
