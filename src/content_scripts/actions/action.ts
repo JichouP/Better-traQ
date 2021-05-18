@@ -1,4 +1,3 @@
-import { WatchIgnorePlugin } from 'webpack';
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
@@ -25,11 +24,6 @@ const getChannelIndex = (): number =>
   [...getElements.channelContainers()].findIndex(
     (v) => v.getAttribute('aria-selected') === 'true'
   );
-
-const isOpenedChannelHash = (index: number): boolean =>
-  getElements
-    .channelHashContainersHash()
-    [index]?.hasAttribute('data-is-opened') ?? false;
 
 const getSelectedChannelName = (): string[] => {
   const channelList = getElements.headerChannelName();
@@ -69,6 +63,7 @@ export const clickNthDesktopToolBox = (i: number): void => {
   getElements.desktopToolBox()[i]?.click();
 };
 
+// click channels
 export const clickNthChannelElement = (i: number): HTMLDivElement => {
   const channelNameContainers = getElements.channelNameContainers()[i];
   channelNameContainers?.scrollIntoView({
@@ -121,7 +116,7 @@ export const clickNthChannelHash = (index: number): void => {
 export const clickHashOfSelectedChannel = (): void =>
   clickNthChannelHash(getChannelIndex());
 
-export const clickChannelNavigation = (): void => {
+export const clickOpenSelectedChannel = (): void => {
   clickNthNavigation(1);
   const channelNames = getSelectedChannelName();
 
@@ -146,7 +141,19 @@ export const clickChannelNavigation = (): void => {
   });
 };
 
-export const focusSearchFilterInput = (
+export const clickChannelHierarchyUp = (): void => {
+  const channelHierarchy = getElements
+    .headerChannelName()
+    .querySelectorAll<HTMLDivElement>('[class^="HeaderChannelName_ancestor_"]');
+  channelHierarchy[channelHierarchy.length - 1].click();
+};
+
+export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
+  event.preventDefault();
+  getElements.filterInputs()[i]?.focus();
+};
+
+export const focusSearchFilterInputSelectedChannel = (
   startFromSelectedChannel: boolean
 ): void => {
   clickNthNavigation(1);
@@ -156,7 +163,7 @@ export const focusSearchFilterInput = (
       const channelList = getSelectedChannelName();
 
       let searchText = '';
-      for (let i = 1; i < channelList.length; i += 1) {
+      for (let i = 0; i < channelList.length; i += 1) {
         searchText += channelList[i];
         searchText += '/';
       }
@@ -164,18 +171,6 @@ export const focusSearchFilterInput = (
     }
     filterInput?.focus();
   });
-};
-
-export const clickChannelHierarchyUp = (): void => {
-  const channelHierarchy = getElements
-    .headerChannelName()
-    .querySelectorAll('a');
-  channelHierarchy[channelHierarchy.length - 1].click();
-};
-
-export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
-  event.preventDefault();
-  getElements.filterInputs()[i]?.focus();
 };
 
 export const clickChannelFilterStar = (): void => {
