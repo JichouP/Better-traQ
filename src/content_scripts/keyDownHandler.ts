@@ -114,6 +114,10 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusOnOneMessageAbove();
       case 'r':
         return Actions.clickLatestMessage();
+      case '[':
+        return Actions.clickChannelForward();
+      case ']':
+        return Actions.clickChannelBack();
     }
   } else {
     switch (key) {
