@@ -125,7 +125,7 @@ export const clickChannelNavigation = (): void => {
   clickNthNavigation(1);
   const channelNames = getSelectedChannelName();
 
-  setTimeout(() => {
+  lazy(() => {
     for (let i = 0; i < channelNames.length; i += 1) {
       lazy(() => {
         const index = [...getElements.channelNameContainers()].findIndex(
@@ -138,9 +138,12 @@ export const clickChannelNavigation = (): void => {
         ) {
           clickNthChannelHash(index);
         }
+        lazy(() => {
+          clickNthChannelElement(index);
+        });
       });
     }
-  }, 0);
+  });
 };
 
 export const focusSearchFilterInput = (
