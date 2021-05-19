@@ -25,7 +25,7 @@ export default function BackgroundSettings(props: Props): ReactElement {
     const currentData = await getData(keyList);
     await Promise.all(
       keyList.map((key) => {
-        if (store[key] !== currentData[key]) return;
+        if (store[key] === currentData[key]) return;
         return setData({ [key]: store[key] });
       })
     );
@@ -51,7 +51,7 @@ export default function BackgroundSettings(props: Props): ReactElement {
             id={background}
             label={background}
             name={background}
-            value={store[background]}
+            value={store[background] || ''}
             onChange={handleChange(background)}
             autoComplete="off"
           />
@@ -66,7 +66,7 @@ export default function BackgroundSettings(props: Props): ReactElement {
             id={filterColor}
             label={filterColor}
             name={filterColor}
-            value={store[filterColor]}
+            value={store[filterColor] || ''}
             onChange={handleChange(filterColor)}
             autoComplete="off"
           />
