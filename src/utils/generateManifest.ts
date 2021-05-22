@@ -10,7 +10,7 @@ const template = ({
   service: string;
 }) => ({
   manifest_version: 2,
-  name: 'Better traQ',
+  name: `Better ${service}`,
   version: '2.0.0.0',
   description: `An Extension that Makes ${service} Useful`,
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
