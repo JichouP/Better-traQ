@@ -336,6 +336,18 @@ export const clickNthMessageToolsMenu = (i: number): void => {
   getElements.messageToolsMenu()[i]?.dispatchEvent(new Event('click'));
 };
 
+export const clickSpoilersOfSelectedMessage = (): void => {
+  const messageToolContainer = getElements.messageToolsContainer()[0];
+  if (
+    !messageToolContainer ||
+    !(messageToolContainer.parentElement instanceof HTMLDivElement)
+  )
+    return;
+  getElements
+    .spoilersInElement(messageToolContainer.parentElement)
+    .forEach((v) => v.click());
+};
+
 export const moveToBottomOfPage = (): void => {
   const scroller = getElements.messagesScroller()[0];
   if (!scroller) return;

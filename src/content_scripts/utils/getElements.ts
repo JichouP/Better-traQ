@@ -25,6 +25,7 @@ const classPrefix = {
   messageToolsMenu: 'MessageToolsMenu_text',
   messagesScroller: 'MessagesScroller_root',
   desktopToolBox: 'DesktopToolBox_container',
+  spoiler: 'spoiler',
 };
 
 export const getAllElementsByClassName = <T extends Element>(
@@ -109,4 +110,7 @@ export const getElements = {
     getAllElementsByClassName(classPrefix.messagesScroller),
   desktopToolBox: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName(classPrefix.desktopToolBox),
+  spoilersInElement: (parent: HTMLDivElement): NodeListOf<HTMLSpanElement> => {
+    return parent.querySelectorAll(`.${classPrefix.spoiler}`);
+  },
 };
