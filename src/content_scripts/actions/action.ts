@@ -164,19 +164,24 @@ export const openNthMessageEditor = (
   const messageInput = getElements.messageInput();
   if (messageInput?.value === '' && messageInput === document.activeElement) {
     messageTool.showMessageTool(i, direction);
-    messageTool.clickMessageTool(event, 1);
-    const edit = getElements.messageToolsMenu()[2];
-    const { body } = document;
-    if (!edit) return;
-    if (edit.innerText !== '編集') {
-      return lazy(() => {
-        body.click();
-      });
-    }
-    edit.click();
-    body.click();
     lazy(() => {
-      focusMessageEditor(event);
+      messageTool.clickMessageTool(event, 1);
+    });
+    lazy(() => {
+      const edit = getElements.messageToolsMenu()[2];
+      const { body } = document;
+      if (!edit) return;
+      if (edit.innerText !== '編集') {
+        return lazy(() => {
+          const messages = getElements.messages();
+          messages[messages.length - 1].dispatchEvent(new Event('mouseleave'));
+          body.click();
+        });
+      }
+      edit.click();
+      lazy(() => {
+        focusMessageEditor(event);
+      });
     });
   }
 };
