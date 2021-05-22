@@ -40,7 +40,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case '9':
       case '0': {
         const channelUrls = await getData(channels);
-        const targetChannel = channelUrls[`channel-${key}` as const];
+        const targetChannel = channelUrls[`channel${key}` as const];
         if (targetChannel) {
           changeChannel(targetChannel);
         } else {
