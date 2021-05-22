@@ -1,14 +1,15 @@
+import reloadStore from '@/content_scripts/store/ReloadStore';
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
-type ReloadState = {
-  latestMessage: HTMLDivElement | null;
-  reloader: number;
-};
-const reloadState: ReloadState = {
-  latestMessage: null,
-  reloader: 0,
-};
+// type ReloadState = {
+//   latestMessage: HTMLDivElement | null;
+//   reloader: number;
+// };
+// const reloadState: ReloadState = {
+//   latestMessage: null,
+//   reloader: 0,
+// };
 
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
@@ -190,24 +191,26 @@ export const clickNthActivityToggleButton = (i: number): void => {
 };
 
 export const clickLatestMessage = (): void => {
-  if (reloadState.reloader !== 0) {
-    window.clearInterval(reloadState.reloader);
-    reloadState.reloader = 0;
+  const current = reloadStore.get();
+  if (current.reloader !== 0) {
+    window.clearInterval(current.reloader);
+    reloadStore.set({ reloader: 0 });
     return;
   }
   clickNthNavigation(2);
-  reloadState.reloader = window.setInterval((): void => {
+  const reloader = window.setInterval((): void => {
     if (getNavigationIndex() !== 2) {
-      window.clearInterval(reloadState.reloader);
-      reloadState.reloader = 0;
+      window.clearInterval(current.reloader);
+      reloadStore.set({ reloader: 0 });
       return;
     }
     const latestMessage = getElements.activityContainer()[0];
-    if (latestMessage !== reloadState.latestMessage) {
-      reloadState.latestMessage = latestMessage;
+    if (latestMessage !== current.latestMessage) {
+      reloadStore.set({ latestMessage });
       latestMessage.click();
     }
   }, 1000);
+  reloadStore.set({ reloader });
 };
 
 export const focusMessageInput = (event: KeyboardEvent): void => {
