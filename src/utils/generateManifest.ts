@@ -2,11 +2,17 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
 
-const template = ({ traQHost }: { traQHost: string }) => ({
+const template = ({
+  traQHost,
+  service,
+}: {
+  traQHost: string;
+  service: string;
+}) => ({
   manifest_version: 2,
   name: 'Better traQ',
   version: '2.0.0.0',
-  description: 'An Extension that Makes traQ Useful',
+  description: `An Extension that Makes ${service} Useful`,
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
   permissions: [
     'declarativeContent',
@@ -29,13 +35,14 @@ const template = ({ traQHost }: { traQHost: string }) => ({
 
 (async () => {
   const traQHost = process.env.HOST;
-  const outDir = `dist/${process.env.SERVICE}`;
-  if (!traQHost) {
-    throw new Error('Environment variable is not set');
+  const service = process.env.SERVICE;
+  if (!traQHost || !service) {
+    throw new Error('Environment variable is not set correctly');
   }
+  const outDir = `dist/${service}`;
   await mkdirp(outDir);
   await fs.writeFile(
     path.resolve(outDir, 'manifest.json'),
-    JSON.stringify(template({ traQHost }), null, 2)
+    JSON.stringify(template({ traQHost, service }), null, 2)
   );
 })();
