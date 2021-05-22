@@ -83,7 +83,7 @@ export default function BackgroundSettings(props: Props): ReactElement {
       </form>
       <img
         className={classes.thumbnail}
-        src={store['background-0']}
+        src={store.background0}
         alt="thumbnail"
       />
       <div>
