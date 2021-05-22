@@ -64,8 +64,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickNthChannelElement(1);
       case 'a':
         return Actions.clickNthNavigation(1);
+      case 'A':
+        return Actions.clickOpenSelectedChannel();
       case 's':
-        return Actions.focusNthFilterInput(ev, 0);
+        return Actions.focusSearchFilterInputSelectedChannel(false);
+      case 'S':
+        return Actions.focusSearchFilterInputSelectedChannel(true);
       case 'd':
         return Actions.clickChannelFilterStar();
       case 'z':
@@ -99,7 +103,10 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case ';':
         return Actions.clickNthSidebarContent(0);
       case 'Tab':
-        return Actions.clickOneChannelUpOrDown(ev, true);
+        if (ev.shiftKey) {
+          return Actions.clickOneChannelUp(ev, true);
+        }
+        return Actions.clickOneChannelDown(ev, true);
       case 'v':
         return Actions.clickHashOfSelectedChannel();
       case 'j':
@@ -108,13 +115,14 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusOnOneMessageAbove();
       case 'r':
         return Actions.clickLatestMessage();
-      case '@': {
+      case '@':
         return Actions.clickSpoilersOfSelectedMessage();
-      }
-      case 'Enter': {
-        if (document.activeElement === getElements.filterInputs()[0])
-          return Actions.blurActiveInputElement();
-      }
+      case '[':
+        return Actions.clickChannelForward();
+      case ']':
+        return Actions.clickChannelBack();
+      case ',':
+        return Actions.clickChannelHierarchyUp();
     }
   } else {
     switch (key) {
@@ -122,6 +130,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.blurActiveInputElement();
       case 'ArrowUp': {
         return Actions.openNthMessageEditor(ev, 0, 'up');
+      }
+      case 'Enter': {
+        if (document.activeElement === getElements.filterInputs()[0]) {
+          Actions.blurActiveInputElement();
+          return Actions.clickNthChannelElement(0);
+        }
       }
     }
   }
