@@ -1,3 +1,4 @@
+import { migrate } from '@/background/migrate';
 import { HOST } from '@/env';
 
 chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
@@ -12,3 +13,7 @@ chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
     },
   ]);
 });
+
+// migrate to V2
+
+chrome.runtime.onInstalled.addListener(migrate);

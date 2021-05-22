@@ -57,76 +57,76 @@ export const setData = async (data: CustomStorage): Promise<void> => {
 };
 
 export type Channel =
-  | 'channel-0'
-  | 'channel-1'
-  | 'channel-2'
-  | 'channel-3'
-  | 'channel-4'
-  | 'channel-5'
-  | 'channel-6'
-  | 'channel-7'
-  | 'channel-8'
-  | 'channel-9';
+  | 'channel0'
+  | 'channel1'
+  | 'channel2'
+  | 'channel3'
+  | 'channel4'
+  | 'channel5'
+  | 'channel6'
+  | 'channel7'
+  | 'channel8'
+  | 'channel9';
 
 export const channels: Channel[] = [
-  'channel-0',
-  'channel-1',
-  'channel-2',
-  'channel-3',
-  'channel-4',
-  'channel-5',
-  'channel-6',
-  'channel-7',
-  'channel-8',
-  'channel-9',
+  'channel0',
+  'channel1',
+  'channel2',
+  'channel3',
+  'channel4',
+  'channel5',
+  'channel6',
+  'channel7',
+  'channel8',
+  'channel9',
 ];
 
 export type Background =
-  | 'background-0'
-  | 'background-1'
-  | 'background-2'
-  | 'background-3'
-  | 'background-4'
-  | 'background-5'
-  | 'background-6'
-  | 'background-7'
-  | 'background-8'
-  | 'background-9';
+  | 'background0'
+  | 'background1'
+  | 'background2'
+  | 'background3'
+  | 'background4'
+  | 'background5'
+  | 'background6'
+  | 'background7'
+  | 'background8'
+  | 'background9';
 
 export const backgrounds: Background[] = [
-  'background-0',
-  'background-1',
-  'background-2',
-  'background-3',
-  'background-4',
-  'background-5',
-  'background-6',
-  'background-7',
-  'background-8',
-  'background-9',
+  'background0',
+  'background1',
+  'background2',
+  'background3',
+  'background4',
+  'background5',
+  'background6',
+  'background7',
+  'background8',
+  'background9',
 ];
 
 export type FilterColor =
-  | 'filterColor-0'
-  | 'filterColor-1'
-  | 'filterColor-2'
-  | 'filterColor-3'
-  | 'filterColor-4'
-  | 'filterColor-5'
-  | 'filterColor-6'
-  | 'filterColor-7'
-  | 'filterColor-8'
-  | 'filterColor-9';
+  | 'filterColor0'
+  | 'filterColor1'
+  | 'filterColor2'
+  | 'filterColor3'
+  | 'filterColor4'
+  | 'filterColor5'
+  | 'filterColor6'
+  | 'filterColor7'
+  | 'filterColor8'
+  | 'filterColor9';
 
 export const filterColors: FilterColor[] = [
-  'filterColor-0',
-  'filterColor-1',
-  'filterColor-2',
-  'filterColor-3',
-  'filterColor-4',
-  'filterColor-5',
-  'filterColor-6',
-  'filterColor-7',
-  'filterColor-8',
-  'filterColor-9',
+  'filterColor0',
+  'filterColor1',
+  'filterColor2',
+  'filterColor3',
+  'filterColor4',
+  'filterColor5',
+  'filterColor6',
+  'filterColor7',
+  'filterColor8',
+  'filterColor9',
 ];

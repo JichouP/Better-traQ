@@ -3,6 +3,7 @@ const classPrefix = {
   channelContainers: 'ChannelElement_container',
   channelNameContainers: 'ChannelElementName_container',
   channelHashContainers: 'ChannelElementHash_container',
+  channelHashContainersHash: 'ChannelElementHash_hash',
   filterInputs: 'FilterInput_input',
   channelFilterStar: 'ChannelFilter_star',
   popupNavigatorButtons: 'PopupNavigator_popupNavigatorItem',
@@ -53,6 +54,8 @@ export const getElements = {
     getChannelsInView(classPrefix.channelNameContainers),
   channelHashContainers: (): NodeListOf<HTMLDivElement> =>
     getChannelsInView(classPrefix.channelHashContainers),
+  channelHashContainersHash: (): NodeListOf<HTMLDivElement> =>
+    getChannelsInView(classPrefix.channelHashContainersHash),
   filterInputs: (): NodeListOf<HTMLInputElement> =>
     getAllElementsByClassName(classPrefix.filterInputs),
   channelFilterStar: (): NodeListOf<HTMLButtonElement> =>

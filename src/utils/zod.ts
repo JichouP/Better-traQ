@@ -5,34 +5,34 @@ export const zLocalConfigStorage = {
 };
 
 export const zCustomStorage = {
-  'channel-0': z.string().optional(), // チャンネル0
-  'channel-1': z.string().optional(), // チャンネル1
-  'channel-2': z.string().optional(), // チャンネル2
-  'channel-3': z.string().optional(), // チャンネル3
-  'channel-4': z.string().optional(), // チャンネル4
-  'channel-5': z.string().optional(), // チャンネル5
-  'channel-6': z.string().optional(), // チャンネル6
-  'channel-7': z.string().optional(), // チャンネル7
-  'channel-8': z.string().optional(), // チャンネル8
-  'channel-9': z.string().optional(), // チャンネル9
-  'background-0': z.string().optional(), // Background URL
-  'background-1': z.string().optional(), // Background URL
-  'background-2': z.string().optional(), // Background URL
-  'background-3': z.string().optional(), // Background URL
-  'background-4': z.string().optional(), // Background URL
-  'background-5': z.string().optional(), // Background URL
-  'background-6': z.string().optional(), // Background URL
-  'background-7': z.string().optional(), // Background URL
-  'background-8': z.string().optional(), // Background URL
-  'background-9': z.string().optional(), // Background URL
-  'filterColor-0': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-1': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-2': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-3': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-4': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-5': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-6': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-7': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-8': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
-  'filterColor-9': z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  channel0: z.string().optional(), // チャンネル0
+  channel1: z.string().optional(), // チャンネル1
+  channel2: z.string().optional(), // チャンネル2
+  channel3: z.string().optional(), // チャンネル3
+  channel4: z.string().optional(), // チャンネル4
+  channel5: z.string().optional(), // チャンネル5
+  channel6: z.string().optional(), // チャンネル6
+  channel7: z.string().optional(), // チャンネル7
+  channel8: z.string().optional(), // チャンネル8
+  channel9: z.string().optional(), // チャンネル9
+  background0: z.string().optional(), // Background URL
+  background1: z.string().optional(), // Background URL
+  background2: z.string().optional(), // Background URL
+  background3: z.string().optional(), // Background URL
+  background4: z.string().optional(), // Background URL
+  background5: z.string().optional(), // Background URL
+  background6: z.string().optional(), // Background URL
+  background7: z.string().optional(), // Background URL
+  background8: z.string().optional(), // Background URL
+  background9: z.string().optional(), // Background URL
+  filterColor0: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor1: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor2: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor3: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor4: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor5: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor6: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor7: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor8: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
+  filterColor9: z.string().optional(), // Filter RGBA string e.g. rgba(36, 43, 51, 0.8), rgba(255, 255, 255, 0.8)
 };

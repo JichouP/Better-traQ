@@ -3,9 +3,9 @@ import { getData } from '@/utils/storage';
 export const updateBackground = async (): Promise<void> => {
   const backgroundLinkElement = document.createElement('style');
   const backgroundUrl: string =
-    (await getData('background-0'))['background-0'] || '';
+    (await getData('background0')).background0 || '';
   const filterColor: string =
-    (await getData('filterColor-0'))['filterColor-0'] || '';
+    (await getData('filterColor0')).filterColor0 || '';
   backgroundLinkElement.textContent = `
 [class*=MainView_primary] {
 background: url(${backgroundUrl});

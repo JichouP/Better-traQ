@@ -21,7 +21,6 @@ export const App = (): ReactElement => {
 
   useEffect(() => {
     getAllData().then(setStore);
-    getAllData().then(console.error);
   }, []);
 
   return (

@@ -40,7 +40,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case '9':
       case '0': {
         const channelUrls = await getData(channels);
-        const targetChannel = channelUrls[`channel-${key}` as const];
+        const targetChannel = channelUrls[`channel${key}` as const];
         if (targetChannel) {
           changeChannel(targetChannel);
         } else {
@@ -64,10 +64,12 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickNthChannelElement(1);
       case 'a':
         return Actions.clickNthNavigation(1);
+      case 'A':
+        return Actions.clickOpenSelectedChannel();
       case 's':
-        return Actions.focusSearchFilterInput(false);
+        return Actions.focusSearchFilterInputSelectedChannel(false);
       case 'S':
-        return Actions.focusSearchFilterInput(true);
+        return Actions.focusSearchFilterInputSelectedChannel(true);
       case 'd':
         return Actions.clickChannelFilterStar();
       case 'z':
@@ -100,12 +102,11 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.toggleSidebar();
       case ';':
         return Actions.clickNthSidebarContent(0);
-      case 'f':
-        return Actions.showPrevMessageTool();
-      case 'g':
-        return Actions.showNextMessageTool();
       case 'Tab':
-        return Actions.clickOneChannelUpOrDown(ev, true);
+        if (ev.shiftKey) {
+          return Actions.clickOneChannelUp(ev, true);
+        }
+        return Actions.clickOneChannelDown(ev, true);
       case 'v':
         return Actions.clickHashOfSelectedChannel();
       case 'j':
@@ -118,6 +119,8 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickChannelForward();
       case ']':
         return Actions.clickChannelBack();
+      case ',':
+        return Actions.clickChannelHierarchyUp();
     }
   } else {
     switch (key) {
