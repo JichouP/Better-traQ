@@ -50,7 +50,7 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return;
       }
       case 'Escape': {
-        document.body.click();
+        document.body?.click();
         getElements.messages().forEach((el) => {
           el?.dispatchEvent(new Event('mouseleave'));
         });
@@ -88,16 +88,6 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusNthFilterInput(ev, 2);
       case 'p':
         return clickMessageTool(ev, 0);
-      case 'o':
-        return Actions.openNthStampPicker(ev, 1);
-      case 'i':
-        return Actions.openNthStampPicker(ev, 2);
-      case 'u':
-        return Actions.openNthStampPicker(ev, 3);
-      case 'y':
-        return Actions.openNthStampPicker(ev, 4);
-      case 't':
-        return Actions.openNthStampPicker(ev, 5);
       case 'l':
         return Actions.toggleSidebar();
       case ';':

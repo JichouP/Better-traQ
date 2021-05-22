@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     height: 600,
     maxHeight: 600,
     minHeight: 600,
-    overflow: 'hidden',
+    overflow: 'scroll',
   },
   appBar: {
     background: '#fafafa',
@@ -24,12 +24,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'center',
   },
   form: {
-    marginTop: 10,
+    marginTop: 0,
     margin: 0,
     padding: 0,
   },
   textfield: {
-    height: 40,
+    height: 38,
     marginTop: 4,
     marginBottom: 0,
   },
@@ -38,8 +38,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
     background: '#005bac',
   },
   shortcut: {
-    height: 500,
-    maxHeight: 496,
+    // height: 500,
+    maxHeight: 700,
     width: 452,
     display: 'flex',
     flexDirection: 'column',

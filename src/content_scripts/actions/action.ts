@@ -146,7 +146,7 @@ export const clickChannelHierarchyUp = (): void => {
   const channelHierarchy = getElements
     .headerChannelName()
     .querySelectorAll<HTMLDivElement>('[class^="HeaderChannelName_ancestor_"]');
-  channelHierarchy[channelHierarchy.length - 1].click();
+  channelHierarchy[channelHierarchy.length - 1]?.click();
 };
 
 export const focusNthFilterInput = (event: KeyboardEvent, i: number): void => {
@@ -207,7 +207,7 @@ export const clickLatestMessage = (): void => {
     const latestMessage = getElements.activityContainer()[0];
     if (latestMessage !== current.latestMessage) {
       reloadStore.set({ latestMessage });
-      latestMessage.click();
+      latestMessage?.click();
     }
   }, 1000);
   reloadStore.set({ reloader });
@@ -242,10 +242,10 @@ export const openNthMessageEditor = (
         return lazy(() => {
           const messages = getElements.messages();
           messages[messages.length - 1].dispatchEvent(new Event('mouseleave'));
-          body.click();
+          body?.click();
         });
       }
-      edit.click();
+      edit?.click();
       lazy(() => {
         focusMessageEditor(event);
       });
@@ -286,7 +286,7 @@ export const focusOnOneMessageBelow = (): void => {
 };
 
 export const clickNthStamp = (i: number): void => {
-  getElements.stamps()[i].click();
+  getElements.stamps()[i]?.click();
 };
 
 export const mouseleaveAllMessages = (): void => {
@@ -297,7 +297,7 @@ export const mouseleaveAllMessages = (): void => {
 
 export const openNthStampPicker = (event: KeyboardEvent, i: number): void => {
   event.preventDefault();
-  document.body.click();
+  document.body?.click();
   messageTool.showMessageTool(i, 'up');
   lazy(() => {
     messageTool.clickMessageTool(event, 0);
@@ -345,7 +345,7 @@ export const clickSpoilersOfSelectedMessage = (): void => {
     return;
   getElements
     .spoilersInElement(messageToolContainer.parentElement)
-    .forEach((v) => v.click());
+    .forEach((v) => v?.click());
 };
 
 export const moveToBottomOfPage = (): void => {
