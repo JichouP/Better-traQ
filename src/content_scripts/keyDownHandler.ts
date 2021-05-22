@@ -98,10 +98,6 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.toggleSidebar();
       case ';':
         return Actions.clickNthSidebarContent(0);
-      case 'f':
-        return Actions.showPrevMessageTool();
-      case 'g':
-        return Actions.showNextMessageTool();
       case 'Tab':
         return Actions.clickOneChannelUpOrDown(ev, true);
       case 'v':
