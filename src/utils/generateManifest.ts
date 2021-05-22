@@ -14,12 +14,7 @@ const template = ({
   version: '2.0.0.0',
   description: `An Extension that Makes ${service} Useful`,
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
-  permissions: [
-    'declarativeContent',
-    'storage',
-    'tabs',
-    `https://${traQHost}/*`,
-  ],
+  permissions: ['declarativeContent', 'storage'],
   page_action: {
     default_icon: { '16': '16.png', '24': '24.png', '32': '32.png' },
     default_title: 'Better traQ',
