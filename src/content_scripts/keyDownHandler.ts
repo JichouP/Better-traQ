@@ -108,6 +108,9 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.focusOnOneMessageAbove();
       case 'r':
         return Actions.clickLatestMessage();
+      case '@': {
+        return Actions.clickSpoilersOfSelectedMessage();
+      }
       case 'Enter': {
         if (document.activeElement === getElements.filterInputs()[0])
           return Actions.blurActiveInputElement();
