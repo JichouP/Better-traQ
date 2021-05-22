@@ -177,6 +177,14 @@ export const clickChannelFilterStar = (): void => {
   getElements.channelFilterStar()[0]?.click();
 };
 
+export const clickChannelForward = (): void => {
+  getElements.popupNavigatorButtons()[0]?.click();
+};
+
+export const clickChannelBack = (): void => {
+  getElements.popupNavigatorButtons()[1]?.click();
+};
+
 export const clickNthActivityToggleButton = (i: number): void => {
   getElements.activityToggleButtons()[i]?.click();
 };

@@ -6,6 +6,7 @@ const classPrefix = {
   channelHashContainersHash: 'ChannelElementHash_hash',
   filterInputs: 'FilterInput_input',
   channelFilterStar: 'ChannelFilter_star',
+  popupNavigatorButtons: 'PopupNavigator_popupNavigatorItem',
   activityToggleButtons: 'ToggleButton_container',
   activityContainer: 'MessagePanel_container',
   desktopNavigation: 'NavigationContent_container',
@@ -59,6 +60,8 @@ export const getElements = {
     getAllElementsByClassName(classPrefix.filterInputs),
   channelFilterStar: (): NodeListOf<HTMLButtonElement> =>
     getAllElementsByClassName(classPrefix.channelFilterStar),
+  popupNavigatorButtons: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName(classPrefix.popupNavigatorButtons),
   activityToggleButtons: (): NodeListOf<HTMLButtonElement> =>
     getAllElementsByClassName(classPrefix.activityToggleButtons),
   activityContainer: (): NodeListOf<HTMLDivElement> =>
