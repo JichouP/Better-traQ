@@ -2,15 +2,6 @@ import reloadStore from '@/content_scripts/store/ReloadStore';
 import { getElements } from '@/content_scripts/utils/getElements';
 import * as messageTool from '@/content_scripts/utils/messageTool';
 
-// type ReloadState = {
-//   latestMessage: HTMLDivElement | null;
-//   reloader: number;
-// };
-// const reloadState: ReloadState = {
-//   latestMessage: null,
-//   reloader: 0,
-// };
-
 const lazy = (fn: () => unknown) => {
   requestAnimationFrame(fn);
 };
