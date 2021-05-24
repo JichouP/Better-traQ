@@ -170,11 +170,11 @@ export const clickChannelFilterStar = (): void => {
 };
 
 export const clickChannelForward = (): void => {
-  getElements.popupNavigatorButtons()[0]?.click();
+  getElements.popupNavigatorButtons()[1]?.click();
 };
 
 export const clickChannelBack = (): void => {
-  getElements.popupNavigatorButtons()[1]?.click();
+  getElements.popupNavigatorButtons()[0]?.click();
 };
 
 export const clickNthActivityToggleButton = (i: number): void => {
@@ -262,7 +262,7 @@ export const focusOnOneMessageAbove = (): void => {
   const targetIndex = Math.min(Math.max(index - 1, 0), messages.length - 1);
   messageTool.showMessageTool(targetIndex, 'down');
   messages[targetIndex]?.scrollIntoView({
-    block: 'start',
+    block: 'nearest',
   });
 };
 
@@ -272,7 +272,7 @@ export const focusOnOneMessageBelow = (): void => {
   const targetIndex = Math.min(Math.max(index + 1, 0), messages.length - 1);
   messageTool.showMessageTool(targetIndex, 'down');
   messages[targetIndex]?.scrollIntoView({
-    block: 'start',
+    block: 'nearest',
   });
 };
 
