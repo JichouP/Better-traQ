@@ -11,7 +11,7 @@ const template = ({
 }) => ({
   manifest_version: 2,
   name: `Better ${service}`,
-  version: '2.0.0.0',
+  version: '2.0.0.1',
   description: `An Extension that Makes ${service} Useful`,
   icons: { '16': '16.png', '48': '48.png', '128': '128.png' },
   permissions: ['declarativeContent', 'storage'],
