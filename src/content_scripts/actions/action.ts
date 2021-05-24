@@ -352,9 +352,6 @@ export const toggleSidebar = (): void => {
   (
     getElements.openSidebar()[0] || getElements.closeSidebar()[0]
   )?.dispatchEvent(new Event('click'));
-  lazy(() => {
-    clickNthSidebarContent(0);
-  });
 };
 
 export const blurActiveInputElement = (): void => {

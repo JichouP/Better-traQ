@@ -62,21 +62,15 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickNthChannelElement(0);
       case 'e':
         return Actions.clickNthChannelElement(1);
-      case 'r':
-        return Actions.clickChannelBack();
-      case 't':
-        return Actions.clickChannelForward();
       case 'a':
         return Actions.clickNthNavigation(1);
       case 'A':
         return Actions.clickOpenSelectedChannel();
       case 's':
         return Actions.focusSearchFilterInputSelectedChannel(false);
-      case 'd':
+      case 'S':
         return Actions.focusSearchFilterInputSelectedChannel(true);
-      case 'f':
-        return Actions.clickChannelHierarchyUp();
-      case 'g':
+      case 'd':
         return Actions.clickChannelFilterStar();
       case 'z':
         return Actions.clickNthNavigation(2);
@@ -84,32 +78,41 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickNthActivityToggleButton(0);
       case 'c':
         return Actions.clickNthActivityToggleButton(1);
-      case '-':
-        return Actions.clickLatestMessage();
       case 'n':
         return Actions.focusMessageInput(ev);
       case 'm':
         return Actions.clickMessageInputInsertStampButton(ev);
-      case 'h':
-        return Actions.focusNthFilterInput(ev, 2);
-      case 'j':
-        return Actions.focusOnOneMessageBelow();
-      case 'k':
-        return Actions.focusOnOneMessageAbove();
       case 'b':
         return Actions.moveToBottomOfPage();
-      case 'u':
-        return Actions.clickOneChannelDown(ev, true);
-      case 'i':
-        return Actions.clickOneChannelUp(ev, true);
-      case 'o':
-        return Actions.clickHashOfSelectedChannel();
+      case 'h':
+        return Actions.focusNthFilterInput(ev, 2);
       case 'p':
         return clickMessageTool(ev, 0);
       case 'l':
         return Actions.toggleSidebar();
+      case ';':
+        return Actions.clickNthSidebarContent(0);
+      case 'Tab':
+        if (ev.shiftKey) {
+          return Actions.clickOneChannelUp(ev, true);
+        }
+        return Actions.clickOneChannelDown(ev, true);
+      case 'v':
+        return Actions.clickHashOfSelectedChannel();
+      case 'j':
+        return Actions.focusOnOneMessageBelow();
+      case 'k':
+        return Actions.focusOnOneMessageAbove();
+      case 'r':
+        return Actions.clickLatestMessage();
       case '@':
         return Actions.clickSpoilersOfSelectedMessage();
+      case '[':
+        return Actions.clickChannelForward();
+      case ']':
+        return Actions.clickChannelBack();
+      case ',':
+        return Actions.clickChannelHierarchyUp();
     }
   } else {
     switch (key) {
