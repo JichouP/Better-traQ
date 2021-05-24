@@ -170,11 +170,11 @@ export const clickChannelFilterStar = (): void => {
 };
 
 export const clickChannelForward = (): void => {
-  getElements.popupNavigatorButtons()[0]?.click();
+  getElements.popupNavigatorButtons()[1]?.click();
 };
 
 export const clickChannelBack = (): void => {
-  getElements.popupNavigatorButtons()[1]?.click();
+  getElements.popupNavigatorButtons()[0]?.click();
 };
 
 export const clickNthActivityToggleButton = (i: number): void => {
@@ -352,9 +352,6 @@ export const toggleSidebar = (): void => {
   (
     getElements.openSidebar()[0] || getElements.closeSidebar()[0]
   )?.dispatchEvent(new Event('click'));
-  lazy(() => {
-    clickNthSidebarContent(0);
-  });
 };
 
 export const blurActiveInputElement = (): void => {
