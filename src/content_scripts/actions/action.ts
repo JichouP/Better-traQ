@@ -37,7 +37,11 @@ const getIndexOfSelectedMessage = (): number | undefined => {
     messageToolElement.parentElement?.parentElement?.parentElement?.children;
   const el = messageToolElement.parentElement?.parentElement;
   if (!els || !el) return;
-  return [...els].indexOf(el);
+  const index = [...els].indexOf(el);
+  if (getElements.nomoreSeparator().length) {
+    return index - 1;
+  }
+  return index;
 };
 
 // click Navigation Button
@@ -260,6 +264,8 @@ export const focusOnOneMessageAbove = (): void => {
     return getElements.messagesScroller()[0]?.scrollTo({ top: 0 });
 
   const targetIndex = Math.min(Math.max(index - 1, 0), messages.length - 1);
+  // eslint-disable-next-line no-console
+  console.log(messages, index, targetIndex);
   messageTool.showMessageTool(targetIndex, 'down');
   messages[targetIndex]?.scrollIntoView({
     block: 'nearest',

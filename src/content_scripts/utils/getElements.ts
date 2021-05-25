@@ -17,6 +17,7 @@ const classPrefix = {
   stamps: 'StampPickerStampList_stampListItem',
   messages: 'MessageElement_body',
   unreadSeparator: 'MessagesScroller_unreadSeparator',
+  nomoreSeparator: 'MessagesScroller_noMoreSeparator',
   openSidebar: 'ChannelSidebarHidden_icon',
   closeSidebar: 'CloseButton_circle',
   sidebarContent: 'SidebarContentContainer_container',
@@ -94,6 +95,8 @@ export const getElements = {
     getAllElementsByClassName(classPrefix.messages),
   unreadSeparator: (): HTMLDivElement =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.unreadSeparator)[0],
+  nomoreSeparator: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName<HTMLDivElement>(classPrefix.nomoreSeparator),
   openSidebar: (): NodeListOf<SVGElement> =>
     getAllElementsByClassName(classPrefix.openSidebar),
   closeSidebar: (): NodeListOf<HTMLDivElement> =>
