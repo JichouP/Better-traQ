@@ -73,9 +73,9 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 's':
         return Actions.focusSearchFilterInputSelectedChannel(false);
       case 'd':
-        return Actions.focusSearchFilterInputSelectedChannel(true);
-      case 'f':
         return Actions.clickChannelHierarchyUp();
+      case 'f':
+        return Actions.focusSearchFilterInputSelectedChannel(true);
       case 'g':
         return Actions.clickChannelFilterStar();
       case 'z':
