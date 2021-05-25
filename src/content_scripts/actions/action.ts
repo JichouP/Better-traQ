@@ -264,8 +264,6 @@ export const focusOnOneMessageAbove = (): void => {
     return getElements.messagesScroller()[0]?.scrollTo({ top: 0 });
 
   const targetIndex = Math.min(Math.max(index - 1, 0), messages.length - 1);
-  // eslint-disable-next-line no-console
-  console.log(messages, index, targetIndex);
   messageTool.showMessageTool(targetIndex, 'down');
   messages[targetIndex]?.scrollIntoView({
     block: 'nearest',
