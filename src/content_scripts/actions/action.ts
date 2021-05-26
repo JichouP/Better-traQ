@@ -208,6 +208,30 @@ export const clickLatestMessage = (): void => {
   reloadStore.set({ reloader });
 };
 
+export const focusSearchFilterInputDM = (
+  startFromSelectedChannel: boolean
+): void => {
+  clickNthNavigation(3);
+  lazy(() => {
+    const filterInput = getElements.filterInputs()[1];
+    if (startFromSelectedChannel) {
+      const channelList = getSelectedChannelName();
+
+      let searchText = '';
+      for (let i = 0; i < channelList.length; i += 1) {
+        searchText += channelList[i];
+        searchText += '/';
+      }
+      filterInput.value = searchText;
+    }
+    filterInput?.focus();
+  });
+};
+
+export const clickNthUserElement = (index: number): void => {
+  getElements.userContainers()[index]?.click();
+};
+
 export const focusMessageInput = (event: KeyboardEvent): void => {
   event.preventDefault();
   getElements.messageInput()?.focus();
