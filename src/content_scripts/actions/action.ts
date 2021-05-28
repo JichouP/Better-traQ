@@ -116,24 +116,22 @@ export const clickOpenSelectedChannel = (): void => {
   clickNthNavigation(1);
   const channelNames = getSelectedChannelName();
 
-  lazy(() => {
-    for (let i = 0; i < channelNames.length; i += 1) {
+  channelNames.forEach((channelName) => {
+    lazy(() => {
+      const index = [...getElements.channelNameContainers()].findIndex(
+        (v) => v.querySelector('span')?.textContent === channelName
+      );
+      if (
+        getElements
+          .channelHashContainersHash()
+          [index]?.hasAttribute('data-is-opened') === false
+      ) {
+        clickNthChannelHash(index);
+      }
       lazy(() => {
-        const index = [...getElements.channelNameContainers()].findIndex(
-          (v) => v.querySelector('span')?.textContent === channelNames[i]
-        );
-        if (
-          getElements
-            .channelHashContainersHash()
-            [index]?.hasAttribute('data-is-opened') === false
-        ) {
-          clickNthChannelHash(index);
-        }
-        lazy(() => {
-          clickNthChannelElement(index);
-        });
+        clickNthChannelElement(index);
       });
-    }
+    });
   });
 };
 
