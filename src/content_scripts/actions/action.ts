@@ -157,12 +157,7 @@ export const focusSearchFilterInputSelectedChannel = (
     const filterInput = getElements.filterInputs()[0];
     if (startFromSelectedChannel) {
       const channelList = getSelectedChannelName();
-
-      let searchText = '';
-      for (let i = 0; i < channelList.length; i += 1) {
-        searchText += channelList[i];
-        searchText += '/';
-      }
+      const searchText = `${channelList.join('/')}/`;
       filterInput.value = searchText;
     }
     filterInput?.focus();
@@ -208,22 +203,10 @@ export const clickLatestMessage = (): void => {
   reloadStore.set({ reloader });
 };
 
-export const focusSearchFilterInputDM = (
-  startFromSelectedChannel: boolean
-): void => {
+export const focusSearchFilterInputDM = (): void => {
   clickNthNavigation(3);
   lazy(() => {
     const filterInput = getElements.filterInputs()[1];
-    if (startFromSelectedChannel) {
-      const channelList = getSelectedChannelName();
-
-      let searchText = '';
-      for (let i = 0; i < channelList.length; i += 1) {
-        searchText += channelList[i];
-        searchText += '/';
-      }
-      filterInput.value = searchText;
-    }
     filterInput?.focus();
   });
 };
