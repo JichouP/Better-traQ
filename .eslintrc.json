@@ -42,5 +42,5 @@
     ],
     "react/jsx-props-no-spreading": ["off"]
   },
-  "ignorePatterns": ["babel*", "webpack*"]
+  "ignorePatterns": ["babel*", "webpack*", "gulpfile.js"]
 }
