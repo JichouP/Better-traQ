@@ -9,8 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.4.0
+
       - name: Install Dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Test
         run: npm test
