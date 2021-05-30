@@ -72,6 +72,8 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         return Actions.clickOpenSelectedChannel();
       case 's':
         return Actions.focusSearchFilterInputSelectedChannel(false);
+      case 'S':
+        return Actions.focusSearchFilterInputDM();
       case 'd':
         return Actions.clickChannelHierarchyUp();
       case 'f':
@@ -122,6 +124,10 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
         if (document.activeElement === getElements.filterInputs()[0]) {
           Actions.blurActiveInputElement();
           return Actions.clickNthChannelElement(0);
+        }
+        if (document.activeElement === getElements.filterInputs()[1]) {
+          Actions.blurActiveInputElement();
+          return Actions.clickNthUserElement(0);
         }
       }
     }

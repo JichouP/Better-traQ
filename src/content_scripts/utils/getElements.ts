@@ -18,6 +18,7 @@ const classPrefix = {
   messages: 'MessageElement_body',
   unreadSeparator: 'MessagesScroller_unreadSeparator',
   nomoreSeparator: 'MessagesScroller_noMoreSeparator',
+  userContainers: 'UsersElement_container',
   openSidebar: 'ChannelSidebarHidden_icon',
   closeSidebar: 'CloseButton_circle',
   sidebarContent: 'SidebarContentContainer_container',
@@ -97,6 +98,8 @@ export const getElements = {
     getAllElementsByClassName<HTMLDivElement>(classPrefix.unreadSeparator)[0],
   nomoreSeparator: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.nomoreSeparator),
+  userContainers: (): NodeListOf<HTMLDivElement> =>
+    getAllElementsByClassName<HTMLDivElement>(classPrefix.userContainers),
   openSidebar: (): NodeListOf<SVGElement> =>
     getAllElementsByClassName(classPrefix.openSidebar),
   closeSidebar: (): NodeListOf<HTMLDivElement> =>
