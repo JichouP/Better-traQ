@@ -51,15 +51,22 @@ Esc テキストエリアの選択を解除
 
 ## Contribution
 
-Please make the Issue(s) first. Japanese is fine.
+まずは [Issue を立ててください](https://github.com/JichouP/Better-traQ/issues/new)
 
 ### Setup
 
 ```shell
 git clone git@github.com:JichouP/Better-traQ.git
 cd Better-traQ
-npm i
+npx pnpm i
 cp example.env-cmdrc .env-cmdrc
+```
+
+### Watch
+
+```shell
+npm run watch:traQ
+npm run watch:ex-traQ
 ```
 
 ### Build
