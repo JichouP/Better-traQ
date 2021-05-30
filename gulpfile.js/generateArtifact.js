@@ -7,7 +7,7 @@ function generateArtifact(distDir, outDir, SERVICE) {
     const output = fs.createWriteStream(`${outDir}/${SERVICE}.zip`);
     const archive = archiver('zip', { zlib: { level: 9 } });
     archive.pipe(output);
-    archive.glob(`${SERVICE}/*`, { cwd: distDir });
+    archive.glob(`*`, { cwd: distDir });
     await archive.finalize();
     cb();
   };
