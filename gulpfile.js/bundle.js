@@ -1,6 +1,6 @@
 const esbuild = require('esbuild');
 
-function bundle({ outdir, watch, minify }) {
+function bundle({ outdir, watch, minify, HOST }) {
   return async function bundle(cb) {
     await esbuild.build({
       entryPoints: {
@@ -10,6 +10,7 @@ function bundle({ outdir, watch, minify }) {
         popup: 'src/popup/index.tsx',
       },
       bundle: true,
+      define: { 'process.env.HOST': `'${HOST}'` },
       outdir,
       watch: watch && {
         onRebuild: (err, res) => {
