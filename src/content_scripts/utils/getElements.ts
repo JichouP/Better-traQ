@@ -1,7 +1,7 @@
 const classPrefix = {
   navigations: 'NavigationSelectorItem_container',
   channelContainers: 'ChannelElement_container',
-  channelNameContainers: 'ChannelElementName_container',
+  channelNameContainers: '_container_sfb6m_1',
   channelHashContainers: 'ChannelElementHash_container',
   channelHashContainersHash: 'ChannelElementHash_hash',
   filterInputs: 'FilterInput_input',
@@ -54,7 +54,8 @@ export const getElements = {
   channelContainers: (): NodeListOf<HTMLDivElement> =>
     getChannelsInView(classPrefix.channelContainers),
   channelNameContainers: (): NodeListOf<HTMLDivElement> =>
-    getChannelsInView(classPrefix.channelNameContainers),
+    getAllElementsByClassName(classPrefix.channelNameContainers),
+  // getChannelsInView(classPrefix.channelNameContainers),
   channelHashContainers: (): NodeListOf<HTMLDivElement> =>
     getChannelsInView(classPrefix.channelHashContainers),
   channelHashContainersHash: (): NodeListOf<HTMLDivElement> =>
