@@ -19,11 +19,9 @@ const getChannelIndex = (): number =>
 
 const getSelectedChannelName = (): string[] => {
   const channelList = getElements.headerChannelName();
-  const channelAncestor = channelList.querySelectorAll(
-    '[class^="HeaderChannelName_ancestor_"]'
-  );
+  const channelAncestor = channelList.querySelectorAll('[class*="_ancestor_"]');
   const channelCurrent = channelList.querySelectorAll(
-    '[class^="HeaderChannelName_current_"]'
+    '[class*="_current_"]'
   )[0];
   const channelNames = [...channelAncestor].map((e) => e.textContent ?? '');
   channelNames.push(channelCurrent.textContent ?? '');
@@ -138,7 +136,7 @@ export const clickOpenSelectedChannel = (): void => {
 export const clickChannelHierarchyUp = (): void => {
   const channelHierarchy = getElements
     .headerChannelName()
-    .querySelectorAll<HTMLDivElement>('[class^="HeaderChannelName_ancestor_"]');
+    .querySelectorAll<HTMLDivElement>('[class^="_ancestor_"]');
   channelHierarchy[channelHierarchy.length - 1]?.click();
 };
 
@@ -152,7 +150,7 @@ export const focusSearchFilterInputSelectedChannel = (
 ): void => {
   clickNthNavigation(1);
   lazy(() => {
-    const filterInput = getElements.filterInputs()[0];
+    const filterInput = getElements.filterInputs()[1];
     if (startFromSelectedChannel) {
       const channelList = getSelectedChannelName();
       const searchText = `${channelList.join('/')}/`;
@@ -204,7 +202,7 @@ export const clickLatestMessage = (): void => {
 export const focusSearchFilterInputDM = (): void => {
   clickNthNavigation(3);
   lazy(() => {
-    const filterInput = getElements.filterInputs()[1];
+    const filterInput = getElements.filterInputs()[2];
     filterInput?.focus();
   });
 };
@@ -257,7 +255,7 @@ export const clickMessageInputInsertStampButton = (
   event: KeyboardEvent
 ): void => {
   event.preventDefault();
-  getElements.messageInputInsertStampButton()[0]?.click();
+  getElements.messageInputInsertStampButton()[1]?.click();
 };
 
 export const focusOnOneMessageAbove = (): void => {

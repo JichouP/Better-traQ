@@ -1,29 +1,29 @@
 const classPrefix = {
-  navigations: 'NavigationSelectorItem_container',
-  channelContainers: 'ChannelElement_container',
+  navigations: '_item_', // _container_zd9i2_1
+  channelContainers: '_container_clmmo_',
   channelNameContainers: '_container_sfb6m_1',
-  channelHashContainers: 'ChannelElementHash_container',
-  channelHashContainersHash: 'ChannelElementHash_hash',
-  filterInputs: 'FilterInput_input',
-  channelFilterStar: 'ChannelFilter_star',
-  popupNavigatorButtons: 'PopupNavigator_popupNavigatorItem',
+  channelHashContainers: '_channelHash_clmmo_',
+  channelHashContainersHash: '_hash_',
+  filterInputs: '_input_',
+  channelFilterStar: '_star_',
+  popupNavigatorButtons: '_popupNavigatorItem_',
   activityToggleButtons: 'ToggleButton_container',
   activityContainer: 'MessagePanel_container',
   desktopNavigation: 'NavigationContent_container',
-  headerContainer: 'MainViewHeader_container',
-  headerChannelName: 'HeaderChannelName_container',
-  messageInput: 'MessageInputTextArea_container',
-  messageInputInsertStampButton: 'MessageInputInsertStampButton_container',
+  headerContainer: '_headerContainer_',
+  headerChannelName: '_header_',
+  messageInput: '_textarea_',
+  messageInputInsertStampButton: '_container_155zf_1',
   stamps: 'StampPickerStampList_stampListItem',
-  messages: 'MessageElement_body',
+  messages: '_body_',
   unreadSeparator: 'MessagesScroller_unreadSeparator',
   nomoreSeparator: 'MessagesScroller_noMoreSeparator',
   userContainers: 'UsersElement_container',
   openSidebar: 'ChannelSidebarHidden_icon',
   closeSidebar: 'CloseButton_circle',
   sidebarContent: 'SidebarContentContainer_container',
-  messageToolsContainer: 'MessageTools_container',
-  messageToolsIcon: 'MessageTools_icon',
+  messageToolsContainer: '_tools_',
+  messageToolsIcon: '_icon_924z4_46',
   messageToolsMenu: 'MessageToolsMenu_text',
   messagesScroller: 'MessagesScroller_root',
   desktopToolBox: 'DesktopToolBox_container',
@@ -31,8 +31,12 @@ const classPrefix = {
 };
 
 export const getAllElementsByClassName = <T extends Element>(
-  className: string
-): NodeListOf<T> => document.querySelectorAll<T>(`[class*=${className}]`);
+  className: string,
+  element?: Element
+): NodeListOf<T> =>
+  element
+    ? element.querySelectorAll<T>(`[class*=${className}]`)
+    : document.querySelectorAll<T>(`[class*=${className}]`);
 
 export const getChannelsInView = <T extends Element>(
   className: string
@@ -73,7 +77,7 @@ export const getElements = {
   desktopNavigation: (): NodeListOf<HTMLDivElement> =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.desktopNavigation),
   headerContainers: (): HTMLDivElement =>
-    getAllElementsByClassName<HTMLDivElement>(classPrefix.headerContainer)[0],
+    getAllElementsByClassName<HTMLDivElement>(classPrefix.headerContainer)[1],
   headerChannelName: (): HTMLDivElement =>
     getAllElementsByClassName<HTMLDivElement>(classPrefix.headerChannelName)[0],
   messageInput: (): HTMLTextAreaElement => {
