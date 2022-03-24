@@ -7,13 +7,13 @@ export const updateBackground = async (): Promise<void> => {
   const filterColor: string =
     (await getData('filterColor0')).filterColor0 || '';
   backgroundLinkElement.textContent = `
-[class*=_container_1h8qo_1] {
+[class*=_container_nm157_1] {
 background: url(${backgroundUrl});
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 }
-[class*=_container_90dms_1] {
+[class*=_container_1rhtv_1] {
 background: ${filterColor || 'rgba(255, 255, 255, 0.8)'};
 }
 [class*=ClipsView_container] {
@@ -29,3 +29,6 @@ background: ${filterColor || 'rgba(255, 255, 255, 0.8)'};
   // `;
   document.head.appendChild(backgroundLinkElement);
 };
+
+// _container_nm157_1
+// _container_1rhtv_1
