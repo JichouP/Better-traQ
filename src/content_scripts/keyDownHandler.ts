@@ -120,16 +120,17 @@ export const handler: (ev: KeyboardEvent) => void = async (ev) => {
       case 'ArrowUp': {
         return Actions.openNthMessageEditor(ev, 0, 'up');
       }
-      case 'Enter': {
-        if (document.activeElement === getElements.filterInputs()[0]) {
-          Actions.blurActiveInputElement();
-          return Actions.clickNthChannelElement(0);
-        }
-        if (document.activeElement === getElements.filterInputs()[1]) {
-          Actions.blurActiveInputElement();
-          return Actions.clickNthUserElement(0);
-        }
-      }
+      // 検索機能と競合してるのでコメントアウト
+      // case 'Enter': {
+      //   if (document.activeElement === getElements.filterInputs()[0]) {
+      //     Actions.blurActiveInputElement();
+      //     return Actions.clickNthChannelElement(0);
+      //   }
+      //   if (document.activeElement === getElements.filterInputs()[1]) {
+      //     Actions.blurActiveInputElement();
+      //     return Actions.clickNthUserElement(0);
+      //   }
+      // }
     }
   }
 };
