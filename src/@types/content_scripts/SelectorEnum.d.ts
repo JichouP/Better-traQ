@@ -1,6 +1,7 @@
 type SelectorEnum =
   // NavigationBar
   /// Popup
+  | 'popupNavigator'
   | 'previousPage'
   | 'nextPage'
   /// Homeタブ
@@ -9,13 +10,44 @@ type SelectorEnum =
   | 'navigationBarHomeTopUnreadChannel'
   /// Channelsタブ
   | 'navigationSelectorChannelsTab'
-  | 'navigationBarChannelsChannelFilter'
+  | 'navigationBarChannelsChannelFilterInput'
+  | 'navigationBarChannelsChannelFilterStar'
+  | 'navigationBarChannelsChannelList'
+  | 'navigationBarChannelsChannelSelectedChannelHash'
   /// Activityタブ
   | 'navigationSelectorActivityTab'
+  | 'navigationBarActivityIsNotAllToggleButton'
+  | 'navigationBarActivityIsPerChannelToggleButton'
+  | 'navigationBarActivityLatestMessage'
   /// Usersタブ
   | 'navigationSelectorUsersTab'
+  | 'navigationBarUsersUserFilterInput'
   /// Clipタブ
   | 'navigationSelectorClipTab'
-  // MainView
+  // ChannelView
+  | 'channelHeaderChannelName'
+  | 'channelViewMessageList'
+  | 'channelViewLatestMessage'
+  | 'channelView2ndLatestMessage'
+  | 'channelView3rdLatestMessage'
+  | 'channelView4thLatestMessage'
+  | 'channelView5thLatestMessage'
+  | 'channelView6thLatestMessage'
+  | 'channelView7thLatestMessage'
+  | 'channelView8thLatestMessage'
+  | 'channelView9thLatestMessage'
+  | 'channelViewMessageToolStamp'
+  | 'channelViewMessageToolDots'
+  | 'channelViewContextMenuRemovePin'
+  | 'channelViewContextMenuAddPin'
+  | 'channelViewContextMenuClipMessage'
+  | 'channelViewContextMenuEditMessage'
+  | 'channelViewContextMenuCopyLink'
+  | 'channelViewContextMenuEmbedMessage'
+  | 'channelViewContextMenuCopyMarkdown'
+  | 'channelViewContextMenuDeleteMessage'
+  | 'channelViewMessageInput'
+  | 'channelViewMessageInputStampButton'
   // SideBar
-  | 'sidebarOpener';
+  | 'sidebarOpener'
+  | 'sidebarContentViewers';
