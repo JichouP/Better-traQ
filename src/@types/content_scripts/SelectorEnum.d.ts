@@ -39,6 +39,7 @@ type SelectorEnum =
   | 'channelView9thLatestMessage'
   | 'channelViewMessageToolStamp'
   | 'channelViewMessageToolDots'
+  | 'channelViewContextMenuList'
   | 'channelViewContextMenuRemovePin'
   | 'channelViewContextMenuAddPin'
   | 'channelViewContextMenuClipMessage'
@@ -51,4 +52,5 @@ type SelectorEnum =
   | 'channelViewMessageInputStampButton'
   // SideBar
   | 'sidebarOpener'
+  | 'sidebarCloser'
   | 'sidebarContentViewers';
