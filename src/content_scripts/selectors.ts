@@ -3,7 +3,7 @@
 /**
  * ホームチャンネルが存在するかどうか
  */
-const homeChannelExists: boolean =
+const homeChannelExists: () => boolean = () =>
   document.querySelector(
     '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div > h3'
   )?.innerHTML === 'ホームチャンネル';
@@ -42,11 +42,11 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   nextPage: () => '#popup-navigator > div > div:nth-child(2)',
   navigationSelectorHomeTab: () => navigationSelector(2),
   navigationBarHomeHomeChannel: () =>
-    homeChannelExists
+    homeChannelExists()
       ? '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)'
       : null,
   navigationBarHomeTopUnreadChannel: () =>
-    homeChannelExists
+    homeChannelExists()
       ? '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2)' // ホームチャンネルが存在する場合は2番目
       : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)', // ホームチャンネルが存在しない場合は1番目
   navigationSelectorChannelsTab: () => navigationSelector(3),
