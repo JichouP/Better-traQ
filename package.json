@@ -1,0 +1,67 @@
+{
+  "name": "better-traq",
+  "version": "1.0.0",
+  "description": "An Extension that Makes traQ Useful",
+  "main": "index.js",
+  "scripts": {
+    "watch:traQ": "env-cmd -e traQ --use-shell ts-node --transpile-only ./scripts/watch.ts",
+    "watch:ex-traQ": "env-cmd -e ex-traQ --use-shell gulp watch",
+    "build:both": "npm run build:traQ && npm run build:ex-traQ",
+    "build:traQ": "env-cmd -e traQ --use-shell ts-node --transpile-only ./scripts/build.ts",
+    "build:ex-traQ": "env-cmd -e ex-traQ --use-shell gulp build",
+    "lint": "eslint src",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JichouP/Better-traQ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JichouP/Better-traQ/issues"
+  },
+  "homepage": "https://github.com/JichouP/Better-traQ#readme",
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "env-cmd": "^10.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "webextension-polyfill": "^0.9.0",
+    "zod": "^3.14.4"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.3.1",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
+    "@types/webextension-polyfill": "^0.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "esbuild": "^0.14.38",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "gulp": "^4.0.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "4.6.3"
+  },
+  "lint-staged": {
+    "*.{md,html,css,json}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}

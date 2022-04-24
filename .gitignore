@@ -1,3 +1,7 @@
+.vscode
+.env-cmdrc
+out
+
 # Logs
 logs
 *.log
