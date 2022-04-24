@@ -4,7 +4,7 @@ type Dispatch = (element: HTMLElement) => void;
  * clickイベントを発火する
  */
 export const click: Dispatch = (element) => {
-  const event = new Event("click");
+  const event = new Event('click');
   element.dispatchEvent(event);
 };
 
@@ -12,7 +12,7 @@ export const click: Dispatch = (element) => {
  * mousedownイベントを発火させる
  */
 export const mousedown: Dispatch = (element) => {
-  const event = new Event("mousedown");
+  const event = new Event('mousedown');
   element.dispatchEvent(event);
 };
 
@@ -20,7 +20,7 @@ export const mousedown: Dispatch = (element) => {
  * mouseenterイベントを発火させる
  */
 export const mouseenter: Dispatch = (element) => {
-  const event = new Event("mouseenter");
+  const event = new Event('mouseenter');
   element.dispatchEvent(event);
 };
 
@@ -28,7 +28,7 @@ export const mouseenter: Dispatch = (element) => {
  * mouseleaveイベントを発火させる
  */
 export const mouseleave: Dispatch = (element) => {
-  const event = new Event("mouseleave");
+  const event = new Event('mouseleave');
   element.dispatchEvent(event);
 };
 
@@ -36,6 +36,6 @@ export const mouseleave: Dispatch = (element) => {
  * blurイベントを発火させる
  */
 export const blur: Dispatch = (element) => {
-  const event = new Event("blur");
+  const event = new Event('blur');
   element.dispatchEvent(event);
 };

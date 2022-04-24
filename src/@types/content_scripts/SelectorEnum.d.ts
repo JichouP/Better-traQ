@@ -1,21 +1,21 @@
 type SelectorEnum =
   // NavigationBar
   /// Popup
-  | "previousPage"
-  | "nextPage"
+  | 'previousPage'
+  | 'nextPage'
   /// Homeタブ
-  | "navigationSelectorHomeTab"
-  | "navigationBarHomeHomeChannel"
-  | "navigationBarHomeTopUnreadChannel"
+  | 'navigationSelectorHomeTab'
+  | 'navigationBarHomeHomeChannel'
+  | 'navigationBarHomeTopUnreadChannel'
   /// Channelsタブ
-  | "navigationSelectorChannelsTab"
-  | "navigationBarChannelsChannelFilter"
+  | 'navigationSelectorChannelsTab'
+  | 'navigationBarChannelsChannelFilter'
   /// Activityタブ
-  | "navigationSelectorActivityTab"
+  | 'navigationSelectorActivityTab'
   /// Usersタブ
-  | "navigationSelectorUsersTab"
+  | 'navigationSelectorUsersTab'
   /// Clipタブ
-  | "navigationSelectorClipTab"
+  | 'navigationSelectorClipTab'
   // MainView
   // SideBar
-  | "sidebarOpener";
+  | 'sidebarOpener';

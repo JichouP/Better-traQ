@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import fs from "fs";
-import path from "path";
-import esbuild from "esbuild";
+import fs from 'fs';
+import path from 'path';
+import esbuild from 'esbuild';
 
 const template = ({
   HOST,
@@ -17,31 +17,31 @@ const template = ({
   version: `${VERSION}`,
   action: {
     default_icon: {
-      "16": "16.png",
-      "24": "24.png",
-      "32": "32.png",
+      '16': '16.png',
+      '24': '24.png',
+      '32': '32.png',
     },
     default_title: `Better ${SERVICE}`,
-    default_popup: "popup.html",
+    default_popup: 'popup.html',
   },
   description: `An Extension that Makes ${SERVICE} Useful`,
   icons: {
-    "16": "16.png",
-    "48": "48.png",
-    "128": "128.png",
+    '16': '16.png',
+    '48': '48.png',
+    '128': '128.png',
   },
-  permissions: ["declarativeContent", "storage", "scripting"],
+  permissions: ['declarativeContent', 'storage', 'scripting'],
   background: {
-    service_worker: "background.js",
-    type: "module",
+    service_worker: 'background.js',
+    type: 'module',
   },
   content_scripts: [
     {
       matches: [`https://${HOST}/*`],
-      js: ["content_scripts.js"],
+      js: ['content_scripts.js'],
     },
   ],
-  options_page: "options.html",
+  options_page: 'options.html',
 });
 
 const generateManifestPlugin = ({
@@ -55,12 +55,12 @@ const generateManifestPlugin = ({
   VERSION: string;
   distDir: string;
 }): esbuild.Plugin => ({
-  name: "generateManifestPlugin",
+  name: 'generateManifestPlugin',
   setup: (build) => {
     build.onStart(async () => {
       await fs.promises.mkdir(distDir, { recursive: true });
       await fs.promises.writeFile(
-        path.resolve(distDir, "manifest.json"),
+        path.resolve(distDir, 'manifest.json'),
         JSON.stringify(template({ HOST, SERVICE, VERSION }), null, 2)
       );
     });
