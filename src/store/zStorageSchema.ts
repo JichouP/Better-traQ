@@ -13,28 +13,30 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
       task: z.array(
         z.object({
           name: z.string(),
-          keybind: z.array(
+          keybinds: z.array(
             z.object({
               key: z.string(),
               shiftKey: z.boolean().optional(),
               ctrlKey: z.boolean().optional(),
               altKey: z.boolean().optional(),
               metaKey: z.boolean().optional(),
-              condition: schemaForType<Condition>()(
-                z.union([
-                  z.literal('isSelectedInputOrTextarea'),
-                  z.literal('!isSelectedInputOrTextarea'),
-                  z.literal('isOpenSidebar'),
-                  z.literal('!isOpenSidebar'),
-                  z.literal('homeChannelExists'),
-                  z.literal('!homeChannelExists'),
-                  z.literal('unreadChannelExists'),
-                  z.literal('!unreadChannelExists'),
-                ])
+              conditions: schemaForType<Condition[]>()(
+                z.array(
+                  z.union([
+                    z.literal('isSelectedInputOrTextarea'),
+                    z.literal('!isSelectedInputOrTextarea'),
+                    z.literal('isOpenSidebar'),
+                    z.literal('!isOpenSidebar'),
+                    z.literal('homeChannelExists'),
+                    z.literal('!homeChannelExists'),
+                    z.literal('unreadChannelExists'),
+                    z.literal('!unreadChannelExists'),
+                  ])
+                )
               ),
             })
           ),
-          action: z.array(
+          actions: z.array(
             z.union([
               z.literal('clickPreviousPage'),
               z.literal('clickNextPage'),

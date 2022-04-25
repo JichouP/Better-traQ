@@ -4,5 +4,5 @@ type Keybind = {
   ctrlKey?: boolean;
   altKey?: boolean;
   metaKey?: boolean;
-  condition?: Condition;
+  conditions: Condition[];
 };

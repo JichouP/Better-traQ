@@ -1,5 +1,5 @@
 type Task = {
   name: string;
-  keybind: Keybind[];
-  action: ActionEnum[];
+  keybinds: Keybind[];
+  actions: ActionEnum[];
 };
