@@ -1,12 +1,5 @@
 // regex %\.\w+ >% >%
-
-/**
- * ホームチャンネルが存在するかどうか
- */
-const homeChannelExists: () => boolean = () =>
-  document.querySelector(
-    '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div > h3'
-  )?.innerHTML === 'ホームチャンネル';
+import homeChannelExists from './conditions/homeChannelExists';
 
 const navigationSelector = (n: number) =>
   `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(${n})`;

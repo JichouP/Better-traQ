@@ -1,9 +1,9 @@
 type Condition =
   | 'isSelectedInputOrTextarea'
-  | '!isSelectedInputOrTextarea'
+  | 'notIsSelectedInputOrTextarea'
   | 'isOpenSidebar'
-  | '!isOpenSidebar'
+  | 'notIsOpenSidebar'
   | 'homeChannelExists'
-  | '!homeChannelExists'
+  | 'notHomeChannelExists'
   | 'unreadChannelExists'
-  | '!unreadChannelExists';
+  | 'notUnreadChannelExists';
