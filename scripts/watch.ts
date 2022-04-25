@@ -4,11 +4,11 @@ import esbuild from 'esbuild';
 import copyPlugin from './plugins/copyPlugin';
 import generateManifestPlugin from './plugins/generateManifestPlugin';
 
-const { HOST, SERVICE, VERSION } = process.env;
-if (!HOST || !SERVICE || !VERSION)
+const { HOST, SERVICE, VERSION, BROWSER } = process.env;
+if (!HOST || !SERVICE || !VERSION || !BROWSER)
   throw new Error('Environment variable is not set correctly');
 
-const distDir = `dist/${SERVICE}`;
+const distDir = `dist/${SERVICE}/${BROWSER}`;
 const assetDir = 'public';
 
 esbuild.build({
@@ -35,6 +35,6 @@ esbuild.build({
   },
   plugins: [
     copyPlugin(assetDir, distDir),
-    generateManifestPlugin({ HOST, SERVICE, VERSION, distDir }),
+    generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
   ],
 });

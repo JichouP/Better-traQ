@@ -4,12 +4,12 @@ import copyPlugin from './plugins/copyPlugin';
 import generateManifestPlugin from './plugins/generateManifestPlugin';
 import zipPlugin from './plugins/zipPlugin';
 
-const { HOST, SERVICE, VERSION } = process.env;
-if (!HOST || !SERVICE || !VERSION)
+const { HOST, SERVICE, VERSION, BROWSER } = process.env;
+if (!HOST || !SERVICE || !VERSION || !BROWSER)
   throw new Error('Environment variable is not set correctly');
 
 const outDir = 'out';
-const distDir = `dist/${SERVICE}`;
+const distDir = `dist/${SERVICE}/${BROWSER}`;
 const assetDir = 'public';
 
 esbuild.build({
@@ -25,7 +25,7 @@ esbuild.build({
   minify: true,
   plugins: [
     copyPlugin(assetDir, distDir),
-    generateManifestPlugin({ HOST, SERVICE, VERSION, distDir }),
-    zipPlugin(distDir, outDir, `${SERVICE}-${VERSION}.zip`),
+    generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
+    zipPlugin(distDir, outDir, `${SERVICE}-${BROWSER}-${VERSION}.zip`),
   ],
 });
