@@ -18,6 +18,7 @@
     "build:traQ:edge": "env-cmd -e \"traQ,edge\" ts-node --transpile-only ./scripts/build.ts",
     "build:ex-traQ:edge": "env-cmd -e \"ex-traQ,edge\" ts-node --transpile-only ./scripts/build.ts",
     "lint": "eslint src",
+    "typeCheck": "tsc --noEmit",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm"
   },
