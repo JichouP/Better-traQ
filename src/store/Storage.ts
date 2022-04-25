@@ -3,7 +3,7 @@ import z from 'zod';
 import storageSetting from './StorageSetting';
 import zStorageSchema from './zStorageSchema';
 
-type Storage = z.infer<typeof zStorageSchema>;
+export type Storage = z.infer<typeof zStorageSchema>;
 
 const getStorage = async (): Promise<Browser.Storage.StorageArea> => {
   const { isSettingSync } = await storageSetting.get();
