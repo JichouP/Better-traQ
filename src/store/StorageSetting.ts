@@ -2,7 +2,7 @@ import Browser from 'webextension-polyfill';
 import z from 'zod';
 
 const StorageSettingSchema = z.object({
-  isSettingSync: z.boolean(),
+  isSettingSync: z.boolean().default(true),
 });
 
 type StorageSetting = z.infer<typeof StorageSettingSchema>;
