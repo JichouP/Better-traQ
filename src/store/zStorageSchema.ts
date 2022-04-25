@@ -2,14 +2,14 @@ import z from 'zod';
 import schemaForType from '@/utils/schemaForType';
 
 type StorageSchema = {
-  migrateVersion: number;
+  migrationVersion?: number;
   task: Task[];
 };
 
 export const zStorageSchema = schemaForType<StorageSchema>()(
   z
     .object({
-      migrateVersion: z.number(),
+      migrationVersion: z.number().optional(),
       task: z.array(
         z.object({
           name: z.string(),
