@@ -56,8 +56,9 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                 z.literal('clickNavigationBarChannelsNextChannel'),
                 z.literal('clickNavigationBarChannelsPreviousChannel'),
                 z.literal(
-                  'clickNavigationBarChannelsChannelSelectedChannelHash'
+                  'clickNavigationBarChannelsChannelCurrentChannelHash'
                 ),
+                z.literal('scrollNavigationBarChannelsToCurrentChannel'),
                 z.literal('clickNavigationSelectorActivityTab'),
                 z.literal('clickNavigationBarActivityIsNotAllToggleButton'),
                 z.literal('clickNavigationBarActivityIsPerChannelToggleButton'),

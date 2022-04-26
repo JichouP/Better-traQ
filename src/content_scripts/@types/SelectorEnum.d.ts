@@ -13,8 +13,8 @@ type SelectorEnum =
   | 'navigationBarChannelsChannelFilterInput'
   | 'navigationBarChannelsChannelFilterStar'
   | 'navigationBarChannelsChannelList'
-  | 'navigationBarChannelsChannelSelectedChannel'
-  | 'navigationBarChannelsChannelSelectedChannelHash'
+  | 'navigationBarChannelsChannelCurrentChannel'
+  | 'navigationBarChannelsChannelCurrentChannelHash'
   /// Activityタブ
   | 'navigationSelectorActivityTab'
   | 'navigationBarActivityIsNotAllToggleButton'

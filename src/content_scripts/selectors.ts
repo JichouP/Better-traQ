@@ -49,9 +49,9 @@ const selectors: Record<SelectorEnum, () => string | null> = {
     '#app > div > div > div > div > div > div > div > div > div > div > button',
   navigationBarChannelsChannelList: () =>
     '#app > div > div > div > div > div > div > div > div > div > div:nth-child(3)',
-  navigationBarChannelsChannelSelectedChannel: () =>
+  navigationBarChannelsChannelCurrentChannel: () =>
     '#app > div > div > div > div > div > div > div > div > div > div:nth-child(3) [aria-selected=true][class^=_container]',
-  navigationBarChannelsChannelSelectedChannelHash: () =>
+  navigationBarChannelsChannelCurrentChannelHash: () =>
     '#app > div > div > div > div > div > div > div > div > div > div:nth-child(3) [aria-selected=true][class^=_hash]',
   navigationSelectorActivityTab: () => navigationSelector(4),
   navigationBarActivityIsNotAllToggleButton: () =>
