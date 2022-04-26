@@ -3,7 +3,7 @@ import storage, { Storage } from '@/store/Storage';
 import storageSetting from '@/store/StorageSetting';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const migration0 = async (_data: Storage): Promise<Storage> => {
+const migration0 = async (_data?: Storage): Promise<Storage> => {
   await storage.clear();
   await storageSetting.update({
     isSettingSync: true,
