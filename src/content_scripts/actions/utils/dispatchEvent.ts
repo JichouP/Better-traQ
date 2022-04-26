@@ -1,4 +1,4 @@
-type Dispatch = (element: HTMLElement) => void;
+type Dispatch = (element: HTMLElement | SVGElement) => void;
 
 /**
  * clickイベントを発火する
@@ -37,5 +37,13 @@ export const mouseleave: Dispatch = (element) => {
  */
 export const blur: Dispatch = (element) => {
   const event = new Event('blur');
+  element.dispatchEvent(event);
+};
+
+/**
+ * hashをクリックする
+ */
+export const clickHash: Dispatch = (element) => {
+  const event = new MouseEvent('mousedown', { button: 0 });
   element.dispatchEvent(event);
 };

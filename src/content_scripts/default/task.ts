@@ -27,7 +27,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationSelectorHomeTab'],
+    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorHomeTab'],
   },
   {
     name: 'ホームチャンネルをクリック',
@@ -37,7 +37,11 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarHomeHomeChannel'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'clickNavigationSelectorHomeTab',
+      'clickNavigationBarHomeHomeChannel',
+    ],
   },
   {
     name: 'トップ未読チャンネルをクリック',
@@ -47,7 +51,11 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarHomeTopUnreadChannel'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'clickNavigationSelectorHomeTab',
+      'clickNavigationBarHomeTopUnreadChannel',
+    ],
   },
   {
     name: 'チャンネルタブをクリック',
@@ -57,7 +65,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationSelectorChannelsTab'],
+    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorChannelsTab'],
   },
   {
     name: '現在のチャンネルまでツリーを展開',
@@ -70,7 +78,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'clickNavigationSelectorChannelsTab',
-      'clickNavigationBarChannelsExpandTreeToCurrentChannel',
+      'expandNavigationBarChannelsTreeToCurrentChannel',
       'sleep100ms',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
@@ -83,7 +91,12 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsNextChannel'],
+    actions: [
+      'clickNavigationSelectorChannelsTab',
+      'expandNavigationBarChannelsTreeToCurrentChannel',
+      'clickNavigationBarChannelsNextChannel',
+      'scrollNavigationBarChannelsToCurrentChannel',
+    ],
   },
   {
     name: '前のチャンネルをクリック',
@@ -93,7 +106,12 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsPreviousChannel'],
+    actions: [
+      'clickNavigationSelectorChannelsTab',
+      'expandNavigationBarChannelsTreeToCurrentChannel',
+      'clickNavigationBarChannelsPreviousChannel',
+      'scrollNavigationBarChannelsToCurrentChannel',
+    ],
   },
   {
     name: '現在のチャンネルの展開/折りたたみ',
@@ -103,7 +121,10 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsChannelCurrentChannelHash'],
+    actions: [
+      'clickNavigationBarChannelsChannelCurrentChannelHash',
+      'scrollNavigationBarChannelsToCurrentChannel',
+    ],
   },
   {
     name: 'チャンネルフィルターにフォーカス',
@@ -114,6 +135,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
+      'scrollTopOfNavigationBar',
       'clickNavigationSelectorChannelsTab',
       'focusNavigationBarChannelsChannelFilterInput',
     ],
@@ -128,6 +150,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
+      'scrollTopOfNavigationBar',
       'clickNavigationSelectorUsersTab',
       'focusNavigationBarUsersUserFilterInput',
     ],
@@ -151,6 +174,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
+      'scrollTopOfNavigationBar',
       'clickNavigationSelectorChannelsTab',
       'focusNavigationBarChannelsChannelFilterInput',
       'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
@@ -164,7 +188,10 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsChannelFilterStar'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'clickNavigationBarChannelsChannelFilterStar',
+    ],
   },
   {
     name: 'アクティビティタブをクリック',
@@ -174,7 +201,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationSelectorActivityTab'],
+    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorActivityTab'],
   },
   {
     name: '「通知/未読購読チャンネルのみを表示」をクリック',
@@ -184,7 +211,10 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarActivityIsNotAllToggleButton'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'clickNavigationBarActivityIsNotAllToggleButton',
+    ],
   },
   {
     name: '「同じチャンネルでは一つしかメッセージを表示しない」をクリック',
@@ -194,7 +224,10 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarActivityIsPerChannelToggleButton'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'clickNavigationBarActivityIsPerChannelToggleButton',
+    ],
   },
   {
     name: 'アクティビティのフォーローモードのトグル',
@@ -204,7 +237,10 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['toggleNavigationBarActivityFollowMode'],
+    actions: [
+      'scrollTopOfNavigationBar',
+      'toggleNavigationBarActivityFollowMode',
+    ],
   },
   {
     name: 'メッセージ入力欄にフォーカス',
@@ -277,14 +313,34 @@ const defaultTasks: Task[] = [
     actions: ['clickChannelViewLatestMessageStampPicker'],
   },
   {
-    name: 'サイドバーのトグル',
+    name: 'サイドバーを開く',
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsSelectedInputOrTextarea', 'notIsOpenSidebar'],
       },
     ],
-    actions: ['toggleSidebar'],
+    actions: ['clickSidebarOpener'],
+  },
+  {
+    name: 'サイドバーを閉じる',
+    keybinds: [
+      {
+        key: 'l',
+        conditions: ['notIsSelectedInputOrTextarea', 'isOpenSidebar'],
+      },
+    ],
+    actions: ['clickSidebarCloser'],
+  },
+  {
+    name: '閲覧者を開く/閉じる',
+    keybinds: [
+      {
+        key: ';',
+        conditions: ['notIsSelectedInputOrTextarea', 'isOpenSidebar'],
+      },
+    ],
+    actions: ['clickSidebarContentViewers'],
   },
   {
     name: '選択したメッセージのスポイラーをクリック',
@@ -305,6 +361,16 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: ['blurActiveInputElement'],
+  },
+  {
+    name: 'すべての Message Tool を閉じる',
+    keybinds: [
+      {
+        key: 'Escape',
+        conditions: ['notIsSelectedInputOrTextarea'],
+      },
+    ],
+    actions: ['mouseleaveChannelViewAllMessages'],
   },
 ];
 

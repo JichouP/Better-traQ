@@ -1,5 +1,6 @@
 type SelectorEnum =
   // NavigationBar
+  | 'navigationBar'
   /// Popup
   | 'popupNavigator'
   | 'previousPage'

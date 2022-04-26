@@ -1,6 +1,7 @@
 type ActionEnum =
   | 'clickPreviousPage'
   | 'clickNextPage'
+  | 'scrollTopOfNavigationBar'
   | 'clickNavigationSelectorHomeTab'
   | 'clickNavigationBarHomeHomeChannel'
   | 'clickNavigationBarHomeTopUnreadChannel'
@@ -8,7 +9,7 @@ type ActionEnum =
   | 'focusNavigationBarChannelsChannelFilterInput'
   | 'inputCurrentChannelNameNavigationBarChannelsChannelFilter'
   | 'clickNavigationBarChannelsChannelFilterStar'
-  | 'clickNavigationBarChannelsExpandTreeToCurrentChannel'
+  | 'expandNavigationBarChannelsTreeToCurrentChannel'
   | 'clickNavigationBarChannelsNextChannel'
   | 'clickNavigationBarChannelsPreviousChannel'
   | 'clickNavigationBarChannelsChannelCurrentChannelHash'
@@ -54,7 +55,7 @@ type ActionEnum =
   | 'clickChannelViewMessageInputStampButton'
   | 'clickSidebarOpener'
   | 'clickSidebarCloser'
-  | 'toggleSidebar'
   | 'clickSidebarContentViewers'
   | 'blurActiveInputElement'
+  | 'mouseleaveChannelViewAllMessages'
   | 'sleep100ms';

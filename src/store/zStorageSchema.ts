@@ -39,6 +39,7 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
             ),
             actions: z.array(
               z.union([
+                z.literal('scrollTopOfNavigationBar'),
                 z.literal('clickPreviousPage'),
                 z.literal('clickNextPage'),
                 z.literal('clickNavigationSelectorHomeTab'),
@@ -50,9 +51,7 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                   'inputCurrentChannelNameNavigationBarChannelsChannelFilter'
                 ),
                 z.literal('clickNavigationBarChannelsChannelFilterStar'),
-                z.literal(
-                  'clickNavigationBarChannelsExpandTreeToCurrentChannel'
-                ),
+                z.literal('expandNavigationBarChannelsTreeToCurrentChannel'),
                 z.literal('clickNavigationBarChannelsNextChannel'),
                 z.literal('clickNavigationBarChannelsPreviousChannel'),
                 z.literal(
@@ -122,9 +121,9 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                 z.literal('clickChannelViewMessageInputStampButton'),
                 z.literal('clickSidebarOpener'),
                 z.literal('clickSidebarCloser'),
-                z.literal('toggleSidebar'),
                 z.literal('clickSidebarContentViewers'),
                 z.literal('blurActiveInputElement'),
+                z.literal('mouseleaveChannelViewAllMessages'),
                 z.literal('sleep100ms'),
               ])
             ),

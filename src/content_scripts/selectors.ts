@@ -4,8 +4,10 @@ import homeChannelExists from './conditions/homeChannelExists';
 const navigationSelector = (n: number) =>
   `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(${n})`;
 
+// const channelViewNthLatestMessage = (n: number) =>
+// `#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-last-child(${n})`;
 const channelViewNthLatestMessage = (n: number) =>
-  `#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-last-child(${n})`;
+  `div[class*=viewport] > div:nth-last-child(${n})`;
 
 const navigationBarActivityButton = (n: number) =>
   `#app > div > div > div > div > div > div > div > div > div > button:nth-child(${n})`;
@@ -30,6 +32,8 @@ const ifMyMessageContextMenu = (): boolean =>
  * Selectorのリストを返す関数
  */
 const selectors: Record<SelectorEnum, () => string | null> = {
+  navigationBar: () =>
+    '#app > div > div > div > div > div > div:nth-child(2) > div:nth-child(1)',
   popupNavigator: () => navigationSelector(1),
   previousPage: () => '#popup-navigator > div > div:nth-child(1)',
   nextPage: () => '#popup-navigator > div > div:nth-child(2)',
@@ -66,8 +70,9 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   navigationSelectorClipTab: () => navigationSelector(6),
   channelHeaderChannelName: () =>
     '#header > header > div > h2 > div > div:nth-child(1)',
-  channelViewMessageList: () =>
-    '#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1)',
+  // channelViewMessageList: () =>
+  //   '#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1)',
+  channelViewMessageList: () => 'div[class*=viewport]',
   channelViewLatestMessage: () => channelViewNthLatestMessage(1),
   channelView2ndLatestMessage: () => channelViewNthLatestMessage(2),
   channelView3rdLatestMessage: () => channelViewNthLatestMessage(3),
@@ -102,7 +107,7 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   channelViewMessageInput: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div > textarea',
   channelViewMessageInputStampButton: () =>
-    '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(3) > div > svg',
+    '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(3) > div[title=スタンプを挿入]',
   sidebarOpener: () => '#sidebar-opener > div > svg',
   sidebarCloser: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > button > div',

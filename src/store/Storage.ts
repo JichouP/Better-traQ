@@ -19,6 +19,12 @@ export const get = async (): Promise<Storage> => {
   return zStorageSchema.parse(data);
 };
 
+export const unsafeGet = async (): Promise<Storage> => {
+  const storage = await getStorage();
+  const data = await storage.get(Object.keys(zStorageSchema.shape));
+  return data as Storage;
+};
+
 export const update = async (newData: Storage) => {
   const storage = await getStorage();
   await storage.set(zStorageSchema.parse(newData));
@@ -31,6 +37,7 @@ export const clear = async () => {
 
 const storage = {
   get,
+  unsafeGet,
   update,
   clear,
 };

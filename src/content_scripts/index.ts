@@ -1,11 +1,12 @@
 import migration from './migrations/migration';
-// import migration0 from './migrations/migration0';
 import taskHandlerBuilder from './taskHandlerBuilder';
-
-migration();
+import storage, { unsafeGet } from '@/store/Storage';
 
 const init = async () => {
-  // migration0();
+  // await storage.clear();
+  await migration();
+  // const a = await unsafeGet();
+  // console.log(JSON.stringify(a).length, a);
   const taskHandler = await taskHandlerBuilder();
   document.addEventListener('keydown', taskHandler);
 };
