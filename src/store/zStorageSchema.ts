@@ -17,10 +17,10 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
             keybinds: z.array(
               z.object({
                 key: z.string(),
-                shiftKey: z.boolean(),
-                ctrlKey: z.boolean(),
-                altKey: z.boolean(),
-                metaKey: z.boolean(),
+                shiftKey: z.boolean().optional(),
+                ctrlKey: z.boolean().optional(),
+                altKey: z.boolean().optional(),
+                metaKey: z.boolean().optional(),
                 conditions: schemaForType<Condition[]>()(
                   z.array(
                     z.union([

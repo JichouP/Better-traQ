@@ -4,10 +4,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'r',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -18,10 +14,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 't',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -32,10 +24,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'q',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -46,10 +34,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'w',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -60,10 +44,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'e',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -74,10 +54,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'a',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -89,9 +65,6 @@ const defaultTasks: Task[] = [
       {
         key: 'A',
         shiftKey: true,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -102,10 +75,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'u',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -116,10 +85,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'i',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -130,10 +95,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'o',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -144,14 +105,13 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 's',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['focusNavigationBarChannelsChannelFilterInput'],
+    actions: [
+      'clickNavigationSelectorChannelsTab',
+      'focusNavigationBarChannelsChannelFilterInput',
+    ],
   },
   {
     name: 'ユーザーフィルターにフォーカス',
@@ -159,23 +119,19 @@ const defaultTasks: Task[] = [
       {
         key: 'S',
         shiftKey: true,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['focusNavigationBarUsersUserFilterInput'],
+    actions: [
+      'clickNavigationSelectorUsersTab',
+      'focusNavigationBarUsersUserFilterInput',
+    ],
   },
   {
     name: '親チャンネル名をクリック',
     keybinds: [
       {
         key: 'd',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -186,14 +142,11 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'f',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
     actions: [
+      'clickNavigationSelectorChannelsTab',
       'focusNavigationBarChannelsChannelFilterInput',
       'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
     ],
@@ -203,10 +156,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'g',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -217,10 +166,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'z',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -231,10 +176,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'x',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -245,10 +186,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'c',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -259,10 +196,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '-',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -273,10 +206,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'n',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -287,10 +216,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'm',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -301,10 +226,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'ArrowUp',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['isSelectedInputOrTextarea'],
       },
     ],
@@ -315,10 +236,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'j',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -329,10 +246,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'k',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -343,10 +256,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'b',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -357,10 +266,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'p',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -371,10 +276,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -385,10 +286,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '@',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
@@ -399,10 +296,6 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        shiftKey: false,
-        ctrlKey: false,
-        altKey: false,
-        metaKey: false,
         conditions: ['isSelectedInputOrTextarea'],
       },
     ],
