@@ -125,6 +125,7 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                 z.literal('toggleSidebar'),
                 z.literal('clickSidebarContentViewers'),
                 z.literal('blurActiveInputElement'),
+                z.literal('sleep100ms'),
               ])
             ),
           })

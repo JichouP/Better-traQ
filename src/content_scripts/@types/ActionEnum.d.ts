@@ -56,4 +56,5 @@ type ActionEnum =
   | 'clickSidebarCloser'
   | 'toggleSidebar'
   | 'clickSidebarContentViewers'
-  | 'blurActiveInputElement';
+  | 'blurActiveInputElement'
+  | 'sleep100ms';

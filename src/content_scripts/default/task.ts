@@ -68,7 +68,12 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsExpandTreeToCurrentChannel'],
+    actions: [
+      'clickNavigationSelectorChannelsTab',
+      'clickNavigationBarChannelsExpandTreeToCurrentChannel',
+      'sleep100ms',
+      'scrollNavigationBarChannelsToCurrentChannel',
+    ],
   },
   {
     name: '次のチャンネルをクリック',
@@ -98,7 +103,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickNavigationBarChannelsChannelSelectedChannelHash'],
+    actions: ['clickNavigationBarChannelsChannelCurrentChannelHash'],
   },
   {
     name: 'チャンネルフィルターにフォーカス',
