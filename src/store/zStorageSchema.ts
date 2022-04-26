@@ -26,6 +26,8 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                     z.union([
                       z.literal('isSelectedInputOrTextarea'),
                       z.literal('notIsSelectedInputOrTextarea'),
+                      z.literal('isSelectedInputOrTextareaEmpty'),
+                      z.literal('notIsSelectedInputOrTextareaEmpty'),
                       z.literal('isOpenSidebar'),
                       z.literal('notIsOpenSidebar'),
                       z.literal('homeChannelExists'),
@@ -39,9 +41,9 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
             ),
             actions: z.array(
               z.union([
-                z.literal('scrollTopOfNavigationBar'),
                 z.literal('clickPreviousPage'),
                 z.literal('clickNextPage'),
+                z.literal('scrollTopOfNavigationBar'),
                 z.literal('clickNavigationSelectorHomeTab'),
                 z.literal('clickNavigationBarHomeHomeChannel'),
                 z.literal('clickNavigationBarHomeTopUnreadChannel'),
