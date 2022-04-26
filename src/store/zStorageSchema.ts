@@ -25,13 +25,13 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                   z.array(
                     z.union([
                       z.literal('isSelectedInputOrTextarea'),
-                      z.literal('!isSelectedInputOrTextarea'),
+                      z.literal('notIsSelectedInputOrTextarea'),
                       z.literal('isOpenSidebar'),
-                      z.literal('!isOpenSidebar'),
+                      z.literal('notIsOpenSidebar'),
                       z.literal('homeChannelExists'),
-                      z.literal('!homeChannelExists'),
+                      z.literal('notHomeChannelExists'),
                       z.literal('unreadChannelExists'),
-                      z.literal('!unreadChannelExists'),
+                      z.literal('notUnreadChannelExists'),
                     ])
                   )
                 ),
