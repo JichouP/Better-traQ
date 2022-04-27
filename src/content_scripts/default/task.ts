@@ -267,7 +267,10 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'ArrowUp',
-        conditions: ['isSelectedInputOrTextarea'],
+        conditions: [
+          'isSelectedInputOrTextarea',
+          'isSelectedInputOrTextareaEmpty',
+        ],
       },
     ],
     actions: ['clickChannelViewLatestMessageContextMenuEditMessage'],
