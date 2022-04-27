@@ -27,7 +27,7 @@ const template = ({
               '32': '32.png',
             },
             default_title: `Better ${SERVICE}`,
-            default_popup: 'popup.html',
+            // default_popup: 'popup.html',
           },
           description: `An Extension that Makes ${SERVICE} Useful`,
           icons: {
@@ -35,7 +35,7 @@ const template = ({
             '48': '48.png',
             '128': '128.png',
           },
-          permissions: ['declarativeContent', 'storage', 'scripting'],
+          permissions: ['declarativeContent', 'storage', 'scripting', 'action'],
           background: { scripts: ['background.js'], persistent: false },
           content_scripts: [
             {
@@ -56,7 +56,7 @@ const template = ({
               '32': '32.png',
             },
             default_title: `Better ${SERVICE}`,
-            default_popup: 'popup.html',
+            // default_popup: 'popup.html',
           },
           description: `An Extension that Makes ${SERVICE} Useful`,
           icons: {
