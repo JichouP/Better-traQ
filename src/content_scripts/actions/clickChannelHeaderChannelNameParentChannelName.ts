@@ -2,18 +2,17 @@ import selectors from '../selectors';
 
 const clickChannelHeaderChannelNameParentChannelName = () => {
   // Header のチャンネル名の親要素を取得
-  const selector = selectors.channelHeaderChannelName();
-  if (!selector) return;
-  const el = document.querySelector<HTMLDivElement>(selector);
-  if (!el) return;
+  const channelNameSelector = selectors.channelHeaderChannelName();
+  if (!channelNameSelector) return;
+  const channelNameEl =
+    document.querySelector<HTMLDivElement>(channelNameSelector);
+  if (!channelNameEl) return;
   // 親チャンネル名のテキストを取得
   // ハッシュマークは削除
   const [, ...channelNames] = [
-    ...el.querySelectorAll<HTMLAnchorElement>(':scope a'),
+    ...channelNameEl.querySelectorAll<HTMLAnchorElement>(':scope a'),
   ];
-  const target = channelNames.at(-1);
-  if (!target) return;
-  target.click();
+  channelNames.at(-1)?.click();
 };
 
 export default clickChannelHeaderChannelNameParentChannelName;

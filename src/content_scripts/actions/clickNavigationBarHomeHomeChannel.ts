@@ -2,11 +2,12 @@ import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
 const clickNavigationBarHomeHomeChannel = () => {
-  const selector = selectors.navigationBarHomeHomeChannel();
-  if (!selector) return;
-  const el = document.querySelector<HTMLDivElement>(selector);
-  if (!el) return;
-  mousedown(el);
+  const homeChannelSelector = selectors.navigationBarHomeHomeChannel();
+  if (!homeChannelSelector) return;
+  const homeChannelEl =
+    document.querySelector<HTMLDivElement>(homeChannelSelector);
+  if (!homeChannelEl) return;
+  mousedown(homeChannelEl);
 };
 
 export default clickNavigationBarHomeHomeChannel;

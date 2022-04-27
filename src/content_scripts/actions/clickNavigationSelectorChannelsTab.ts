@@ -1,11 +1,9 @@
 import selectors from '../selectors';
 
 const clickNavigationSelectorChannelsTab = () => {
-  const selector = selectors.navigationSelectorChannelsTab();
-  if (!selector) return;
-  const el = document.querySelector<HTMLDivElement>(selector);
-  if (!el) return;
-  el.click();
+  const channelsTabSelector = selectors.navigationSelectorChannelsTab();
+  if (!channelsTabSelector) return;
+  document.querySelector<HTMLDivElement>(channelsTabSelector)?.click();
 };
 
 export default clickNavigationSelectorChannelsTab;

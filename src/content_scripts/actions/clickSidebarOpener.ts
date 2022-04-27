@@ -2,11 +2,11 @@ import selectors from '../selectors';
 import { click } from './utils/dispatchEvent';
 
 const clickSidebarOpener = () => {
-  const selector = selectors.sidebarOpener();
-  if (!selector) return;
-  const el = document.querySelector<SVGElement>(selector);
-  if (!el) return;
-  click(el);
+  const openerSelector = selectors.sidebarOpener();
+  if (!openerSelector) return;
+  const openerEl = document.querySelector<SVGElement>(openerSelector);
+  if (!openerEl) return;
+  click(openerEl);
 };
 
 export default clickSidebarOpener;

@@ -7,7 +7,6 @@ const clickChannelView2ndLatestMessageStampPicker = () => {
   if (!messageSelector) return;
   const messageEl = document.querySelector<HTMLDivElement>(messageSelector);
   if (!messageEl) return;
-
   mouseenter(messageEl);
   lazy(() => {
     const stampPickerSelector = selectors.channelViewMessageToolStamp();

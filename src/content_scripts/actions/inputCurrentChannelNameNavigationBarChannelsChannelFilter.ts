@@ -2,13 +2,16 @@ import selectors from '../selectors';
 import getCurrentChannelNames from './utils/getCurrentChannelNames';
 
 const inputCurrentChannelNameNavigationBarChannelsChannelFilter = () => {
-  const selector = selectors.navigationBarChannelsChannelFilterInput();
-  if (!selector) return;
-  const el = document.querySelector<HTMLInputElement>(selector);
-  if (!el) return;
+  const channelFilterInputSelector =
+    selectors.navigationBarChannelsChannelFilterInput();
+  if (!channelFilterInputSelector) return;
+  const channelFilterInputEl = document.querySelector<HTMLInputElement>(
+    channelFilterInputSelector
+  );
+  if (!channelFilterInputEl) return;
   const currentChannelNames = getCurrentChannelNames();
   if (!currentChannelNames) return;
-  el.value = currentChannelNames.join('/');
+  channelFilterInputEl.value = currentChannelNames.join('/');
 };
 
 export default inputCurrentChannelNameNavigationBarChannelsChannelFilter;

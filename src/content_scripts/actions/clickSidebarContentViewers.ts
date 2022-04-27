@@ -1,11 +1,9 @@
 import selectors from '../selectors';
 
 const clickSidebarContentViewers = () => {
-  const selector = selectors.sidebarContentViewers();
-  if (!selector) return;
-  const el = document.querySelector<HTMLElement>(selector);
-  if (!el) return;
-  el.click();
+  const viewersSelector = selectors.sidebarContentViewers();
+  if (!viewersSelector) return;
+  document.querySelector<HTMLDivElement>(viewersSelector)?.click();
 };
 
 export default clickSidebarContentViewers;

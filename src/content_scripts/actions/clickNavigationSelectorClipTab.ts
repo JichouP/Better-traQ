@@ -1,11 +1,9 @@
 import selectors from '../selectors';
 
 const clickNavigationSelectorClipTab = () => {
-  const selector = selectors.navigationSelectorClipTab();
-  if (!selector) return;
-  const el = document.querySelector<HTMLDivElement>(selector);
-  if (!el) return;
-  el.click();
+  const clipTabSelector = selectors.navigationSelectorClipTab();
+  if (!clipTabSelector) return;
+  document.querySelector<HTMLDivElement>(clipTabSelector)?.click();
 };
 
 export default clickNavigationSelectorClipTab;

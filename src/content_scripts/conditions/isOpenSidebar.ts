@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
 const isOpenSidebar = (): boolean => {
-  const selector = selectors.sidebarOpener();
-  if (!selector) return false;
-  const sidebarOpener = document.querySelector(selector);
+  const openerSelector = selectors.sidebarOpener();
+  if (!openerSelector) return false;
+  const sidebarOpener = document.querySelector(openerSelector);
   return sidebarOpener === null;
 };
 

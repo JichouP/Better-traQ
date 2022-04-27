@@ -1,11 +1,14 @@
 import selectors from '../selectors';
 
 const scrollToBottomOfChannelView = () => {
-  const selector = selectors.channelViewMessageList();
-  if (!selector) return;
-  const el = document.querySelector<HTMLDivElement>(selector);
-  if (!el) return;
-  el.parentElement?.scrollTo({ top: el.parentElement.scrollHeight });
+  const messageListSelector = selectors.channelViewMessageList();
+  if (!messageListSelector) return;
+  const messageListEl =
+    document.querySelector<HTMLDivElement>(messageListSelector);
+  if (!messageListEl) return;
+  messageListEl.parentElement?.scrollTo({
+    top: messageListEl.parentElement.scrollHeight,
+  });
 };
 
 export default scrollToBottomOfChannelView;

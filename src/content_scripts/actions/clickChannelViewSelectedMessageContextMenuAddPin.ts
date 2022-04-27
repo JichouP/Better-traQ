@@ -11,9 +11,7 @@ const clickChannelViewSelectedMessageContextMenuAddPin = () => {
   lazy(() => {
     const targetSelector = selectors.channelViewContextMenuAddPin();
     if (!targetSelector) return;
-    const targetEl = document.querySelector<HTMLDivElement>(targetSelector);
-    if (!targetEl) return;
-    targetEl.click();
+    document.querySelector<HTMLDivElement>(targetSelector)?.click();
   });
 };
 

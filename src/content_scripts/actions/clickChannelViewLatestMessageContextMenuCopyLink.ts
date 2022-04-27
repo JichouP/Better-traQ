@@ -9,7 +9,6 @@ const clickChannelViewLatestMessageContextMenuCopyLink = () => {
     latestMessageSelector
   );
   if (!latestMessageEl) return;
-
   mouseenter(latestMessageEl);
   lazy(() => {
     const dotsSelector = selectors.channelViewMessageToolDots();
@@ -20,9 +19,7 @@ const clickChannelViewLatestMessageContextMenuCopyLink = () => {
     lazy(() => {
       const targetSelector = selectors.channelViewContextMenuCopyLink();
       if (!targetSelector) return;
-      const targetEl = document.querySelector<HTMLDivElement>(targetSelector);
-      if (!targetEl) return;
-      targetEl.click();
+      document.querySelector<HTMLDivElement>(targetSelector)?.click();
     });
   });
 };

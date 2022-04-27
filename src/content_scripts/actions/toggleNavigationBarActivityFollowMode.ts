@@ -2,8 +2,8 @@ import selectors from '../selectors';
 import followModeStore from '@/store/ForrowModeStore';
 
 const isActivity = () => {
-  const selector = `${selectors.navigationBar()} > h2`;
-  const el = document.querySelector<HTMLDivElement>(selector);
+  const navigationBarTitleSelector = `${selectors.navigationBar()} > h2`;
+  const el = document.querySelector<HTMLDivElement>(navigationBarTitleSelector);
   if (!el) return false;
   return el.innerHTML === 'アクティビティ';
 };

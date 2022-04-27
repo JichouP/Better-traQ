@@ -1,9 +1,10 @@
 import selectors from '../selectors';
 
 const focusNavigationBarChannelsChannelFilterInput = () => {
-  const selector = selectors.navigationBarChannelsChannelFilterInput();
-  if (!selector) return;
-  document.querySelector<HTMLInputElement>(selector)?.focus();
+  const channelFilterInputSelector =
+    selectors.navigationBarChannelsChannelFilterInput();
+  if (!channelFilterInputSelector) return;
+  document.querySelector<HTMLInputElement>(channelFilterInputSelector)?.focus();
 };
 
 export default focusNavigationBarChannelsChannelFilterInput;

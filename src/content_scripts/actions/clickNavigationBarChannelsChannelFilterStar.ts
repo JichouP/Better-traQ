@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
 const clickNavigationBarChannelsChannelFilterStar = () => {
-  const selector = selectors.navigationBarChannelsChannelFilterStar();
-  if (!selector) return;
-  document.querySelector<HTMLDivElement>(selector)?.click();
+  const starSelector = selectors.navigationBarChannelsChannelFilterStar();
+  if (!starSelector) return;
+  document.querySelector<HTMLDivElement>(starSelector)?.click();
 };
 
 export default clickNavigationBarChannelsChannelFilterStar;

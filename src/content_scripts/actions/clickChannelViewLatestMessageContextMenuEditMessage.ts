@@ -10,7 +10,6 @@ const clickChannelViewLatestMessageContextMenuEditMessage = () => {
     latestMessageSelector
   );
   if (!latestMessageEl) return;
-
   // マウスポインタでメッセージツールが出ている場合
   mouseleaveChannelViewAllMessages();
   lazy(() => {
@@ -24,9 +23,7 @@ const clickChannelViewLatestMessageContextMenuEditMessage = () => {
       lazy(() => {
         const targetSelector = selectors.channelViewContextMenuEditMessage();
         if (!targetSelector) return;
-        const targetEl = document.querySelector<HTMLDivElement>(targetSelector);
-        if (!targetEl) return;
-        targetEl.click();
+        document.querySelector<HTMLDivElement>(targetSelector)?.click();
       });
     });
   });

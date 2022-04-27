@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
 const clickPreviousPage = () => {
-  const selector = selectors.previousPage();
-  if (!selector) return;
-  document.querySelector<HTMLDivElement>(selector)?.click();
+  const previousPageSelector = selectors.previousPage();
+  if (!previousPageSelector) return;
+  document.querySelector<HTMLDivElement>(previousPageSelector)?.click();
 };
 
 export default clickPreviousPage;

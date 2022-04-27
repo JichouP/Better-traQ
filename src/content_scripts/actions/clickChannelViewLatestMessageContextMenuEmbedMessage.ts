@@ -9,7 +9,6 @@ const clickChannelViewLatestMessageContextMenuEmbedMessage = () => {
     latestMessageSelector
   );
   if (!latestMessageEl) return;
-
   mouseenter(latestMessageEl);
   lazy(() => {
     const dotsSelector = selectors.channelViewMessageToolDots();
@@ -20,9 +19,7 @@ const clickChannelViewLatestMessageContextMenuEmbedMessage = () => {
     lazy(() => {
       const targetSelector = selectors.channelViewContextMenuEmbedMessage();
       if (!targetSelector) return;
-      const targetEl = document.querySelector<HTMLDivElement>(targetSelector);
-      if (!targetEl) return;
-      targetEl.click();
+      document.querySelector<HTMLDivElement>(targetSelector)?.click();
     });
   });
 };

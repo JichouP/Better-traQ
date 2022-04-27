@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
 const clickNextPage = () => {
-  const selector = selectors.nextPage();
-  if (!selector) return;
-  document.querySelector<HTMLDivElement>(selector)?.click();
+  const nextPageSelector = selectors.nextPage();
+  if (!nextPageSelector) return;
+  document.querySelector<HTMLDivElement>(nextPageSelector)?.click();
 };
 
 export default clickNextPage;
