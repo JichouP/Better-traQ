@@ -16,12 +16,12 @@ const logPlugin = ({
     build.onStart(() => {
       const now = `[\x1b[90m${new Date().toLocaleTimeString()}\x1b[39m]`;
       const meta = `[\x1b[90m${SERVICE} ${BROWSER} v${VERSION}\x1b[39m]`;
-      console.log(`${now} ${meta} Build started`);
+      console.log(`${now} ${meta} Build Started`);
     });
     build.onEnd(() => {
       const now = `[\x1b[90m${new Date().toLocaleTimeString()}\x1b[39m]`;
       const meta = `[\x1b[90m${SERVICE} ${BROWSER} v${VERSION}\x1b[39m]`;
-      console.log(`${now} ${meta} Build finished`);
+      console.log(`${now} ${meta} \x1b[32mBuild Finished\x1b[39m`);
     });
   },
 });
