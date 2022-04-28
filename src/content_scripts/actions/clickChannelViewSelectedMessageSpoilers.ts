@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const clickSpoilersOfSelectedMessage = () => {
+const clickChannelViewSelectedMessageSpoilers = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -22,4 +22,4 @@ const clickSpoilersOfSelectedMessage = () => {
   spoilers.forEach((spoiler) => spoiler.click());
 };
 
-export default clickSpoilersOfSelectedMessage;
+export default clickChannelViewSelectedMessageSpoilers;

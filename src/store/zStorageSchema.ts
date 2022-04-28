@@ -118,7 +118,8 @@ export const zStorageSchema = schemaForType<StorageSchema>()(
                 z.literal(
                   'clickChannelViewSelectedMessageContextMenuDeleteMessage'
                 ),
-                z.literal('clickSpoilersOfSelectedMessage'),
+                z.literal('clickChannelViewSelectedMessageSpoilers'),
+                z.literal('clickChannelViewSelectedMessageStamps'),
                 z.literal('focusChannelViewMessageInput'),
                 z.literal('clickChannelViewMessageInputStampButton'),
                 z.literal('clickSidebarOpener'),

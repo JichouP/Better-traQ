@@ -353,7 +353,17 @@ const defaultTasks: Task[] = [
         conditions: ['notIsSelectedInputOrTextarea'],
       },
     ],
-    actions: ['clickSpoilersOfSelectedMessage'],
+    actions: ['clickChannelViewSelectedMessageSpoilers'],
+  },
+  {
+    name: '選択したメッセージのスタンプをクリック',
+    keybinds: [
+      {
+        key: ' ',
+        conditions: ['notIsSelectedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessageStamps'],
   },
   {
     name: 'フォーカスを外す',
