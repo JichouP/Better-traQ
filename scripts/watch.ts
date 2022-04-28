@@ -21,7 +21,10 @@ esbuild.build({
     popup: 'src/popup/index.tsx',
   },
   bundle: true,
-  define: { 'process.env.HOST': `'${HOST}'` },
+  define: {
+    'process.env.HOST': `'${HOST}'`,
+    'process.env.VERSION': `'${VERSION}'`,
+  },
   outdir: distDir,
   watch: {
     onRebuild: (err, res) => {
@@ -40,4 +43,5 @@ esbuild.build({
     generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
     tailwindcssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
   ],
+  loader: { '.svg': 'text' },
 });

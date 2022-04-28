@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Moon = () => (
+type Props = {
+  className: string;
+};
+
+const Moon: FC<Props> = ({ className }) => (
   <svg
-    className="w-8 h-8"
+    className={className}
     width="24"
     height="24"
     viewBox="0 0 24 24"

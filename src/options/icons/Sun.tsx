@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Sun = () => (
+type Props = {
+  className: string;
+};
+
+const Sun: FC<Props> = ({ className }) => (
   <svg
-    className="w-8 h-8"
-    width="24"
-    height="24"
+    className={className}
     viewBox="0 0 24 24"
     strokeWidth="2"
     stroke="currentColor"

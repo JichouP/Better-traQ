@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useRecoilState } from 'recoil';
 import Layout from './components/Layout';
-import About from './pages/About';
+import Docs from './pages/Docs';
 import Home from './pages/Home';
 import pageState from './states/pageState';
 
@@ -13,8 +13,8 @@ const Router: FC = () => {
         switch (page) {
           case 'home':
             return <Home />;
-          case 'about':
-            return <About />;
+          case 'docs':
+            return <Docs />;
         }
       })()}
     </Layout>

@@ -12,10 +12,14 @@ const ThemeToggleButton = () => {
   return (
     <button
       type="button"
-      className="btn btn-circle btn-ghost"
+      className="btn btn-sm btn-circle btn-ghost"
       onClick={toggleTheme}
     >
-      {theme === 'light' ? <Sun /> : <Moon />}
+      {theme === 'light' ? (
+        <Sun className="w-6 h-6" />
+      ) : (
+        <Moon className="w-6 h-6" />
+      )}
     </button>
   );
 };
