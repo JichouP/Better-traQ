@@ -5,6 +5,7 @@ specifiers:
   '@types/node': ^17.0.29
   '@types/react': ^18.0.8
   '@types/react-dom': ^18.0.2
+  '@types/react-table': ^7.7.11
   '@types/tailwindcss': ^3.0.10
   '@types/webextension-polyfill': ^0.8.3
   '@typescript-eslint/eslint-plugin': ^5.21.0
@@ -29,6 +30,7 @@ specifiers:
   prettier: ^2.6.2
   react: ^18.1.0
   react-dom: ^18.1.0
+  react-table: ^7.7.0
   recoil: ^0.7.2
   tailwindcss: ^3.0.24
   ts-node: ^10.7.0
@@ -41,6 +43,7 @@ dependencies:
   env-cmd: 10.1.0
   react: 18.1.0
   react-dom: 18.1.0_react@18.1.0
+  react-table: 7.7.0_react@18.1.0
   recoil: 0.7.2_react-dom@18.1.0+react@18.1.0
   webextension-polyfill: 0.9.0
   zod: 3.14.4
@@ -50,6 +53,7 @@ devDependencies:
   '@types/node': 17.0.29
   '@types/react': 18.0.8
   '@types/react-dom': 18.0.2
+  '@types/react-table': 7.7.11
   '@types/tailwindcss': 3.0.10
   '@types/webextension-polyfill': 0.8.3
   '@typescript-eslint/eslint-plugin': 5.21.0_829e74f28e9c9eb05edda582d47d45b8
@@ -207,6 +211,12 @@ packages:
 
   /@types/react-dom/18.0.2:
     resolution: {integrity: sha512-UxeS+Wtj5bvLRREz9tIgsK4ntCuLDo0EcAcACgw3E+9wE8ePDr9uQpq53MfcyxyIS55xJ+0B6mDS8c4qkkHLBg==}
+    dependencies:
+      '@types/react': 18.0.8
+    dev: true
+
+  /@types/react-table/7.7.11:
+    resolution: {integrity: sha512-Ntfr4EMWgqf/m/CxfmiHww5HvE1nOfK3yEm3NJ3ZWv9IkdteqTOklG3rJtFCtICKAkr3q5pqajkm0y1+WnmdbA==}
     dependencies:
       '@types/react': 18.0.8
     dev: true
@@ -3697,6 +3707,14 @@ packages:
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-table/7.7.0_react@18.1.0:
+    resolution: {integrity: sha512-jBlj70iBwOTvvImsU9t01LjFjy4sXEtclBovl3mTiqjz23Reu0DKnRza4zlLtOPACx6j2/7MrQIthIK1Wi+LIA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0-0
+    dependencies:
+      react: 18.1.0
+    dev: false
 
   /react/18.1.0:
     resolution: {integrity: sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==}

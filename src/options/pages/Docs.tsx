@@ -1,5 +1,5 @@
 import React from 'react';
 
-const About = () => <div>About</div>;
+const Docs = () => <p className="text-lg text-center">未実装です</p>;
 
-export default About;
+export default Docs;
