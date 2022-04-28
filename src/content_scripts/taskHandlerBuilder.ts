@@ -11,7 +11,6 @@ const taskHandlerBuilder = async (): Promise<TaskHandler> => {
   const { task } = await storage.get();
 
   return async (ev) => {
-    let handled = false;
     const { key, shiftKey, ctrlKey, altKey, metaKey } = ev;
     const targetTasks = task.filter(
       ({ keybinds }) =>
@@ -37,15 +36,14 @@ const taskHandlerBuilder = async (): Promise<TaskHandler> => {
           return;
         }
 
+        ev.preventDefault();
+
         const actionList = actionNames.map((actionName) => actions[actionName]);
         for (const action of actionList) {
           await lazy(action);
-          handled = true;
         }
       }
     );
-
-    if (handled) ev.preventDefault();
   };
 };
 
