@@ -3,7 +3,8 @@
 import esbuild from 'esbuild';
 import copyPlugin from './plugins/copyPlugin';
 import generateManifestPlugin from './plugins/generateManifestPlugin';
-import tailwindCssPlugin from './plugins/tailwindcssPlugin';
+import logPlugin from './plugins/logPlugin';
+import tailwindcssPlugin from './plugins/tailwindcssPlugin';
 
 const { HOST, SERVICE, VERSION, BROWSER } = process.env;
 if (!HOST || !SERVICE || !VERSION || !BROWSER)
@@ -28,15 +29,15 @@ esbuild.build({
       if (err) {
         return console.error(`${now} ${err}`);
       }
-      console.log(`${now} Update detected. Rebuilt.`);
       if (res && res.warnings.length) {
         console.log(`${now} ${res.warnings}`);
       }
     },
   },
   plugins: [
+    logPlugin({ SERVICE, VERSION, BROWSER }),
     copyPlugin(assetDir, distDir),
     generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
-    tailwindCssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
+    tailwindcssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
   ],
 });

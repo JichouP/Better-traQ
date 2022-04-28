@@ -2,7 +2,8 @@
 import esbuild from 'esbuild';
 import copyPlugin from './plugins/copyPlugin';
 import generateManifestPlugin from './plugins/generateManifestPlugin';
-import tailwindCssPlugin from './plugins/tailwindcssPlugin';
+import logPlugin from './plugins/logPlugin';
+import tailwindcssPlugin from './plugins/tailwindcssPlugin';
 import zipPlugin from './plugins/zipPlugin';
 
 const { HOST, SERVICE, VERSION, BROWSER } = process.env;
@@ -25,9 +26,10 @@ esbuild.build({
   outdir: distDir,
   minify: true,
   plugins: [
+    logPlugin({ SERVICE, VERSION, BROWSER }),
     copyPlugin(assetDir, distDir),
     generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
-    tailwindCssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
+    tailwindcssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
     zipPlugin(distDir, outDir, `${SERVICE}-${BROWSER}-${VERSION}.zip`),
   ],
 });
