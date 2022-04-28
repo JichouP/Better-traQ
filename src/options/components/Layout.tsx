@@ -18,7 +18,10 @@ const Layout: FC<Props> = ({ children }) => (
           </div>
         </div>
       </header> */}
-      <div id="content" className="flex flex-col justify-center h-screen">
+      <div
+        id="content"
+        className="flex flex-col justify-center h-screen max-h-screen"
+      >
         {children}
       </div>
     </main>

@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 import Layout from './components/Layout';
 import Docs from './pages/Docs';
 import Home from './pages/Home';
+import Setting from './pages/Setting';
 import pageState from './states/pageState';
 
 const Router: FC = () => {
@@ -15,6 +16,8 @@ const Router: FC = () => {
             return <Home />;
           case 'docs':
             return <Docs />;
+          case 'setting':
+            return <Setting />;
         }
       })()}
     </Layout>

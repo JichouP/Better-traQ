@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
 
 type Props = {
-  id?: string;
   className: string;
 };
 
-const Logo: FC<Props> = ({ id, className }) => (
+const Logo: FC<Props> = ({ className }) => (
   <svg
-    id={id}
     viewBox="0 0 188.82951 37.417866"
     className={className}
     xmlns="http://www.w3.org/2000/svg"
@@ -26,9 +24,5 @@ const Logo: FC<Props> = ({ id, className }) => (
     </g>
   </svg>
 );
-
-Logo.defaultProps = {
-  id: undefined,
-};
 
 export default Logo;
