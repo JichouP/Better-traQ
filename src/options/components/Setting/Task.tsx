@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo } from 'react';
 import { Column, useTable } from 'react-table';
-import useStore from '@/options/hooks/useStore';
+import useStorage from '@/options/hooks/useStorage';
 
 const Task = () => {
-  const [task, fetch] = useStore();
+  const [storage, fetch] = useStorage();
   const columns = useMemo<Column[]>(
     () => [
       {
@@ -23,12 +23,12 @@ const Task = () => {
   );
   const data = useMemo(
     () =>
-      task?.map((t) => ({
+      storage?.task.map((t) => ({
         name: t.name,
         keybinds: t.keybinds.map((k) => k.key).join(', '),
         // actions: t.actions.join(', '),
       })) || [],
-    [task]
+    [storage]
   );
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({
