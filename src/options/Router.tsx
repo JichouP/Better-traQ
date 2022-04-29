@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useRecoilState } from 'recoil';
 import Layout from './components/Layout';
+import Changelog from './pages/Changelog';
 import Docs from './pages/Docs';
 import Home from './pages/Home';
 import Setting from './pages/Setting';
@@ -18,6 +19,8 @@ const Router: FC = () => {
             return <Docs />;
           case 'setting':
             return <Setting />;
+          case 'changelog':
+            return <Changelog />;
         }
       })()}
     </Layout>

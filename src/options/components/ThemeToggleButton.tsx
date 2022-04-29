@@ -3,12 +3,7 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import themeState from '../states/themeState';
-
-const onKeyDownHandler = (e: React.KeyboardEvent<HTMLLabelElement>) => {
-  if (e.key === 'Enter') {
-    e.currentTarget.click();
-  }
-};
+import onKeyDownHandler from '../utils/onKeyDownHandler';
 
 const ThemeToggleButton = () => {
   const [theme, setTheme] = useRecoilState(themeState);

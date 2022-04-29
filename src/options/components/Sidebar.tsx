@@ -3,15 +3,12 @@ import { useRecoilState } from 'recoil';
 import BookIcon from '../icons/BookIcon';
 import HomeIcon from '../icons/HomeIcon';
 import Logo from '../icons/Logo';
+import NoteIcon from '../icons/NoteIcon';
 import SettingIcon from '../icons/SettingIcon';
+import Home from '../pages/Home';
 import pageState from '../states/pageState';
-import ThemeToggleButton from './ThemeToggleButton';
-
-const onKeyDownHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
-  if (e.key === 'Enter') {
-    e.currentTarget.click();
-  }
-};
+import onKeyDownHandler from '../utils/onKeyDownHandler';
+import MenuContent from './Sidebar/MenuContent';
 
 const Sidebar = () => {
   const [page, setPage] = useRecoilState(pageState);
@@ -37,42 +34,26 @@ const Sidebar = () => {
         <div className="h-0 m-0 divider" />
         <div>
           <ul className="w-full p-2 text-lg menu rounded-box">
-            <li className="pb-1">
-              <div
-                role="button"
-                className={page === 'home' ? 'active' : ''}
-                onClick={() => setPage('home')}
-                tabIndex={0}
-                onKeyDown={onKeyDownHandler}
-              >
-                <HomeIcon className="w-6" />
-                Home
-              </div>
-            </li>
-            <li className="pb-1">
-              <div
-                role="button"
-                className={page === 'docs' ? 'active' : ''}
-                onClick={() => setPage('docs')}
-                tabIndex={0}
-                onKeyDown={onKeyDownHandler}
-              >
-                <BookIcon className="w-6" />
-                Document
-              </div>
-            </li>
-            <li className="pb-1">
-              <div
-                role="button"
-                className={page === 'setting' ? 'active' : ''}
-                onClick={() => setPage('setting')}
-                tabIndex={0}
-                onKeyDown={onKeyDownHandler}
-              >
-                <SettingIcon className="w-6" />
-                Setting
-              </div>
-            </li>
+            <MenuContent
+              icon={<HomeIcon className="w-6" />}
+              targetPage="home"
+              title="Home"
+            />
+            <MenuContent
+              icon={<BookIcon className="w-6" />}
+              targetPage="docs"
+              title="Document"
+            />
+            <MenuContent
+              icon={<SettingIcon className="w-6" />}
+              targetPage="setting"
+              title="Setting"
+            />
+            <MenuContent
+              icon={<NoteIcon className="w-6" />}
+              targetPage="changelog"
+              title="Changelog"
+            />
           </ul>
         </div>
       </div>

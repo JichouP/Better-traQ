@@ -1,1 +1,1 @@
-type Page = 'home' | 'docs' | 'setting';
+type Page = 'home' | 'docs' | 'setting' | 'changelog';
