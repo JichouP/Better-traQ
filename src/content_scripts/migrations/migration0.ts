@@ -1,4 +1,4 @@
-import defaultTasks from '../default/task';
+import defaultTasks from '@/content_scripts/default/task';
 import storage, { Storage } from '@/store/Storage';
 import storageSetting from '@/store/StorageSetting';
 

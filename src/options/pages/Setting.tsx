@@ -1,6 +1,6 @@
 import React from 'react';
-import Task from '../components/Task';
-import ThemeToggleButton from '../components/ThemeToggleButton';
+import Task from '@/options/components/Setting/Task';
+import ThemeToggleButton from '@/options/components/Setting/ThemeToggleButton';
 
 const Setting = () => (
   <div className="flex flex-col items-center overflow-y-scroll">

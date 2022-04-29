@@ -1,13 +1,13 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import BookIcon from '../icons/BookIcon';
-import HomeIcon from '../icons/HomeIcon';
-import Logo from '../icons/Logo';
-import NoteIcon from '../icons/NoteIcon';
-import SettingIcon from '../icons/SettingIcon';
-import pageState from '../states/pageState';
-import onKeyDownHandler from '../utils/onKeyDownHandler';
 import MenuContent from './Sidebar/MenuContent';
+import BookIcon from '@/options/icons/BookIcon';
+import HomeIcon from '@/options/icons/HomeIcon';
+import Logo from '@/options/icons/Logo';
+import NoteIcon from '@/options/icons/NoteIcon';
+import SettingIcon from '@/options/icons/SettingIcon';
+import pageState from '@/options/states/pageState';
+import onKeyDownHandler from '@/options/utils/onKeyDownHandler';
 
 const Sidebar = () => {
   const [, setPage] = useRecoilState(pageState);

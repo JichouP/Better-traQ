@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { Column, useTable } from 'react-table';
-import useStore from '../hooks/useStore';
+import useStore from '@/options/hooks/useStore';
 
 const Task = () => {
   const [task, fetch] = useStore();

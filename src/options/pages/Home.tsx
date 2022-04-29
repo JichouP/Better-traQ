@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import BookIcon from '../icons/BookIcon';
-import Logo from '../icons/Logo';
-import SettingIcon from '../icons/SettingIcon';
-import pageState from '../states/pageState';
+import BookIcon from '@/options/icons/BookIcon';
+import Logo from '@/options/icons/Logo';
+import SettingIcon from '@/options/icons/SettingIcon';
+import pageState from '@/options/states/pageState';
 
 const Home = () => {
   const [_, setPage] = useRecoilState(pageState);

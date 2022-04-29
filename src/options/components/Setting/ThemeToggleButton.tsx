@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import themeState from '../states/themeState';
-import onKeyDownHandler from '../utils/onKeyDownHandler';
+import themeState from '@/options/states/themeState';
+import onKeyDownHandler from '@/options/utils/onKeyDownHandler';
 
 const ThemeToggleButton = () => {
   const [theme, setTheme] = useRecoilState(themeState);
