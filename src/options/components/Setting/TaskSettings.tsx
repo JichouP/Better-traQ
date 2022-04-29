@@ -44,7 +44,7 @@ const TaskSettings = () => {
   }, []);
 
   useEffect(() => {
-    setTaskString(JSON.stringify(storage?.task, null, 2));
+    setTaskString(JSON.stringify(storage?.task, null, 2) || '');
   }, [storage]);
 
   return (
