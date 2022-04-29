@@ -3,7 +3,7 @@ import { Column, useTable } from 'react-table';
 import useStorage from '@/options/hooks/useStorage';
 
 const CurrentKeybindsTable = () => {
-  const [storage, fetch] = useStorage();
+  const [storage, fetchStorage] = useStorage();
   const columns = useMemo<Column[]>(
     () => [
       {
@@ -37,7 +37,7 @@ const CurrentKeybindsTable = () => {
     });
 
   useEffect(() => {
-    fetch();
+    fetchStorage();
   }, []);
 
   return (

@@ -9,7 +9,7 @@ import zTask from '@/store/zTask';
 const TaskSettings = () => {
   const [taskString, setTaskString] = React.useState<string>('');
   const [isError, setIsError] = React.useState<boolean>(false);
-  const [storage, fetch, setStorage] = useStorage();
+  const [storage, fetchStorage, setStorage] = useStorage();
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTaskString(e.target.value);
@@ -23,7 +23,7 @@ const TaskSettings = () => {
       const newTask = JSON.parse(textareaValue);
       const parsedTask = zTask.parse(newTask);
       setIsError(false);
-      setStorage({ task: parsedTask }).then(fetch);
+      setStorage({ task: parsedTask }).then(fetchStorage);
     } catch (e) {
       setIsError(true);
       console.error(e);
@@ -36,11 +36,11 @@ const TaskSettings = () => {
   const onClickResetDefaultHandler = useCallback(() => {
     setIsError(false);
     setTaskString(JSON.stringify(defaultTasks, null, 2));
-    setStorage({ task: defaultTasks }).then(fetch);
+    setStorage({ task: defaultTasks }).then(fetchStorage);
   }, []);
 
   useEffect(() => {
-    fetch();
+    fetchStorage();
   }, []);
 
   useEffect(() => {
