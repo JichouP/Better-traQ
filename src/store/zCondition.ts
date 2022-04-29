@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
 const zCondition = z.union([
-  z.literal('isSelectedInputOrTextarea'),
-  z.literal('notIsSelectedInputOrTextarea'),
-  z.literal('isSelectedInputOrTextareaEmpty'),
-  z.literal('notIsSelectedInputOrTextareaEmpty'),
+  z.literal('isFocusedInputOrTextarea'),
+  z.literal('notIsFocusedInputOrTextarea'),
+  z.literal('isFocusedEmptyInputOrTextarea'),
+  z.literal('notIsFocusedEmptyInputOrTextarea'),
   z.literal('isOpenSidebar'),
   z.literal('notIsOpenSidebar'),
   z.literal('homeChannelExists'),

@@ -4,7 +4,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'r',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickPreviousPage'],
@@ -14,7 +14,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 't',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickNextPage'],
@@ -24,7 +24,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'q',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorHomeTab'],
@@ -34,7 +34,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'w',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -48,7 +48,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'e',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -62,7 +62,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'a',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorChannelsTab'],
@@ -73,7 +73,7 @@ const defaultTasks: Task[] = [
       {
         key: 'A',
         shiftKey: true,
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -88,7 +88,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'u',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -103,7 +103,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'i',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -118,7 +118,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'o',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -131,7 +131,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 's',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -146,7 +146,7 @@ const defaultTasks: Task[] = [
       {
         key: 'S',
         shiftKey: true,
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -160,7 +160,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'd',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickChannelHeaderChannelNameParentChannelName'],
@@ -170,7 +170,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'f',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -185,7 +185,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'g',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -198,7 +198,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'z',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorActivityTab'],
@@ -208,7 +208,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'x',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -221,7 +221,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'c',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -234,7 +234,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '-',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: [
@@ -247,7 +247,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'n',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['focusChannelViewMessageInput'],
@@ -257,7 +257,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'm',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickChannelViewMessageInputStampButton'],
@@ -268,8 +268,8 @@ const defaultTasks: Task[] = [
       {
         key: 'ArrowUp',
         conditions: [
-          'isSelectedInputOrTextarea',
-          'isSelectedInputOrTextareaEmpty',
+          'isFocusedInputOrTextarea',
+          'isFocusedEmptyInputOrTextarea',
         ],
       },
     ],
@@ -280,7 +280,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'j',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['mouseoverChannelViewMessageListNextMessage'],
@@ -290,7 +290,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'k',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['mouseoverChannelViewMessageListPreviousMessage'],
@@ -300,7 +300,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'b',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['scrollToBottomOfChannelView'],
@@ -310,7 +310,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'p',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickChannelViewLatestMessageStampPicker'],
@@ -320,7 +320,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsSelectedInputOrTextarea', 'notIsOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'notIsOpenSidebar'],
       },
     ],
     actions: ['clickSidebarOpener'],
@@ -330,7 +330,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsSelectedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
       },
     ],
     actions: ['clickSidebarCloser'],
@@ -340,7 +340,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ';',
-        conditions: ['notIsSelectedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
       },
     ],
     actions: ['clickSidebarContentViewers'],
@@ -350,7 +350,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '@',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickChannelViewSelectedMessageSpoilers'],
@@ -360,7 +360,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ' ',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['clickChannelViewSelectedMessageStamps'],
@@ -370,7 +370,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['isSelectedInputOrTextarea'],
+        conditions: ['isFocusedInputOrTextarea'],
       },
     ],
     actions: ['blurActiveInputElement'],
@@ -380,7 +380,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['notIsSelectedInputOrTextarea'],
+        conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
     actions: ['mouseleaveChannelViewAllMessages'],
