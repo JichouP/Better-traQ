@@ -35,7 +35,7 @@ const template = ({
             '48': '48.png',
             '128': '128.png',
           },
-          permissions: ['declarativeContent', 'storage', 'scripting'],
+          permissions: ['storage'],
           background: { scripts: ['background.js'], persistent: false },
           content_scripts: [
             {
