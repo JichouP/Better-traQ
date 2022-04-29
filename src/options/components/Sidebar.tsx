@@ -79,7 +79,7 @@ const Sidebar = () => {
       <footer className="h-16 cursor-default footer footer-center opacity-70">
         <span className="inline-block">
           Made with{' '}
-          <span className="inline-block text-red-500 hover:animate-bounce">
+          <span className="inline-block text-red-500 hover:animate-bounce-reverse">
             ❤
           </span>{' '}
           by JichouP

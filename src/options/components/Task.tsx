@@ -41,10 +41,7 @@ const Task = () => {
   }, []);
 
   return (
-    <table
-      {...getTableProps()}
-      className="table w-full table-compact table-zebra"
-    >
+    <table {...getTableProps()} className="table w-full table-compact">
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -60,7 +57,15 @@ const Task = () => {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map((cell) => (
-                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                <td {...cell.getCellProps()}>
+                  <pre
+                    className={`pl-1 pr-1 w-fit ${
+                      cell.column.id === 'keybinds' ? 'bg-base-300' : ''
+                    }`}
+                  >
+                    {cell.render('Cell')}
+                  </pre>
+                </td>
               ))}
             </tr>
           );
