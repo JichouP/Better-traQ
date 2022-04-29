@@ -20,7 +20,7 @@ const WorkInProgress = () => (
         キーバインド設定は機能しますが仮実装です。手伝ってくれる方は{' '}
         <code>
           <a
-            className="link link-primary"
+            className="link"
             href={`https://${process.env.HOST}/channels/gps/times/JichouP`}
             target="_blank"
             rel="noopener noreferrer"
