@@ -25,6 +25,7 @@ esbuild.build({
   define: {
     'process.env.HOST': `'${HOST}'`,
     'process.env.VERSION': `'${VERSION}'`,
+    'process.env.SERVICE': `'${SERVICE}'`,
   },
   outdir: distDir,
   minify: true,
