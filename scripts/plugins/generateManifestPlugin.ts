@@ -43,7 +43,10 @@ const template = ({
               js: ['content_scripts.js'],
             },
           ],
-          options_page: 'options.html',
+          options_ui: {
+            open_in_tab: true,
+            page: 'options.html',
+          },
         }
       : {
           manifest_version: 3,
