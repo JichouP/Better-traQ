@@ -5,13 +5,12 @@ import HomeIcon from '../icons/HomeIcon';
 import Logo from '../icons/Logo';
 import NoteIcon from '../icons/NoteIcon';
 import SettingIcon from '../icons/SettingIcon';
-import Home from '../pages/Home';
 import pageState from '../states/pageState';
 import onKeyDownHandler from '../utils/onKeyDownHandler';
 import MenuContent from './Sidebar/MenuContent';
 
 const Sidebar = () => {
-  const [page, setPage] = useRecoilState(pageState);
+  const [, setPage] = useRecoilState(pageState);
   return (
     <aside
       id="sidebar"
