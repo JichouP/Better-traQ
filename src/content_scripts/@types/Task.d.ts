@@ -1,5 +1,5 @@
 type Task = {
   name: string;
   keybinds: Keybind[];
-  actions: ActionEnum[];
+  actions: import('@/store/zAction').ActionEnum[];
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react';
 import { Column, useTable } from 'react-table';
 import useStorage from '@/options/hooks/useStorage';
 
-const Task = () => {
+const CurrentKeybindsTable = () => {
   const [storage, fetch] = useStorage();
   const columns = useMemo<Column[]>(
     () => [
@@ -60,7 +60,7 @@ const Task = () => {
                 <td {...cell.getCellProps()}>
                   <pre
                     className={`pl-1 pr-1 w-fit ${
-                      cell.column.id === 'keybinds' ? 'bg-base-300' : ''
+                      cell.column.id === 'keybinds' ? 'bg-base-200' : ''
                     }`}
                   >
                     {cell.render('Cell')}
@@ -75,4 +75,4 @@ const Task = () => {
   );
 };
 
-export default Task;
+export default CurrentKeybindsTable;

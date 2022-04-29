@@ -1,5 +1,5 @@
 import React from 'react';
-import Task from './Task';
+import CurrentKeybindsTable from './CurrentKeybindsTable';
 
 const CurrentKeybinds = () => (
   <>
@@ -7,7 +7,7 @@ const CurrentKeybinds = () => (
       <h1 className="text-2xl">現在のキーバインド一覧</h1>
     </div>
     <div className="mt-4">
-      <Task />
+      <CurrentKeybindsTable />
     </div>
   </>
 );

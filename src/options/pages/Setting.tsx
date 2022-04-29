@@ -1,7 +1,7 @@
 import React from 'react';
 import BetterTraQSetting from '@/options/components/Setting/BetterTraQSetting';
 import CurrentKeybinds from '@/options/components/Setting/CurrentKeybinds';
-import KeybindSettings from '@/options/components/Setting/KeybindSettings';
+import TaskSettings from '@/options/components/Setting/TaskSettings';
 import WorkInProgress from '@/options/components/Setting/WorkInProgress';
 
 const Setting = () => (
@@ -12,10 +12,10 @@ const Setting = () => (
         <BetterTraQSetting />
       </div>
       <div className="mt-8 mb-8">
-        <CurrentKeybinds />
+        <TaskSettings />
       </div>
       <div className="mt-8 mb-8">
-        <KeybindSettings />
+        <CurrentKeybinds />
       </div>
     </div>
   </div>
