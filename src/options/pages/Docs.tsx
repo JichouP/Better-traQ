@@ -8,8 +8,8 @@ import onKeyDownHandler from '../utils/onKeyDownHandler';
 const Docs = () => {
   const [, setPage] = useRecoilState(pageState);
   return (
-    <div className="flex flex-col items-center justify-start overflow-y-scroll text-base">
-      <div className="w-[48rem] mt-8 mb-16 h-screen">
+    <div className="flex flex-col items-center h-full overflow-y-scroll text-base">
+      <div className="w-[48rem] mt-8 mb-16">
         <div className="mt-8 mb-8">
           <h1 className="text-4xl font-bold">ドキュメント</h1>
         </div>

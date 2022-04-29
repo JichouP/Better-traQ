@@ -10,8 +10,8 @@ const Template: FC<TemplateProps> = ({ version, children }) => (
 );
 
 const Changelog = () => (
-  <div className="flex flex-col items-center justify-start overflow-y-scroll text-base">
-    <div className="w-[48rem] mt-8 mb-16 h-screen">
+  <div className="flex flex-col items-center justify-start h-full overflow-y-scroll text-base">
+    <div className="w-[48rem] mt-8 mb-16">
       <div className="mt-8 mb-8">
         <h1 className="text-4xl font-bold">更新履歴</h1>
       </div>
