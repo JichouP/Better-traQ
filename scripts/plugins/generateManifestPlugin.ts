@@ -67,7 +67,7 @@ const template = ({
             '48': '48.png',
             '128': '128.png',
           },
-          permissions: ['declarativeContent', 'storage', 'scripting', 'tabs'],
+          permissions: ['declarativeContent', 'storage'],
           background: {
             service_worker: 'background.js',
             type: 'module',
