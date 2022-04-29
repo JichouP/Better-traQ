@@ -28,7 +28,7 @@ const Home = () => {
               }}
             >
               <BookIcon className="w-6" />{' '}
-              <span className="ml-1">ドキュメント</span>
+              <span className="ml-1 font-normal">ドキュメント</span>
             </button>
             <button
               type="button"
@@ -38,7 +38,8 @@ const Home = () => {
                 setPage('setting');
               }}
             >
-              <SettingIcon className="w-6" /> <span className="ml-1">設定</span>
+              <SettingIcon className="w-6" />{' '}
+              <span className="ml-1 font-normal">設定</span>
             </button>
           </div>
         </div>
