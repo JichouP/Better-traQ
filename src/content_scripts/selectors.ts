@@ -1,4 +1,5 @@
 // regex %\.\w+ >% >%
+
 import homeChannelExists from './conditions/homeChannelExists';
 
 const navigationSelector = (n: number) =>
@@ -72,6 +73,10 @@ const selectors: Record<SelectorEnum, () => string | null> = {
     '#header > header > div > h2 > div > div:nth-child(1)',
   // channelViewMessageList: () =>
   //   '#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1)',
+  channelViewBackground: () =>
+    '#app > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)',
+  channelViewFilterContainer: () =>
+    '#app > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)',
   channelViewMessageList: () => 'div[class*=viewport]',
   channelViewLatestMessage: () => channelViewNthLatestMessage(1),
   channelView2ndLatestMessage: () => channelViewNthLatestMessage(2),

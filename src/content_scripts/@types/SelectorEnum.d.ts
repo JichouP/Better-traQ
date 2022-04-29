@@ -28,6 +28,8 @@ type SelectorEnum =
   | 'navigationSelectorClipTab'
   // ChannelView
   | 'channelHeaderChannelName'
+  | 'channelViewBackground'
+  | 'channelViewFilterContainer'
   | 'channelViewMessageList'
   | 'channelViewLatestMessage'
   | 'channelView2ndLatestMessage'

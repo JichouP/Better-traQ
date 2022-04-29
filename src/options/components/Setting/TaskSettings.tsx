@@ -49,7 +49,7 @@ const TaskSettings = () => {
 
   return (
     <div>
-      <h1 className="text-2xl">キーバインドの設定</h1>
+      <h1 className="text-2xl font-bold">タスクの設定</h1>
       <div className="mt-4">
         <textarea
           className={`w-full h-96 leading-4 rounded-none font-mono textarea textarea-bordered ${
@@ -60,7 +60,7 @@ const TaskSettings = () => {
           ref={textareaRef}
         />
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row mt-4">
         <label
           htmlFor="my-modal"
           className="flex-1 text-base font-normal btn modal-button btn-primary btn-outline"
@@ -97,14 +97,14 @@ const TaskSettings = () => {
 
         <button
           type="button"
-          className="flex-1 ml-2 text-base font-normal btn btn-primary btn-outline"
+          className="flex-1 ml-4 text-base font-normal btn btn-primary btn-outline"
           onClick={onClickResetHandler}
         >
           リセット
         </button>
         <button
           type="button"
-          className="flex-1 ml-2 text-base font-normal btn btn-primary"
+          className="flex-1 ml-4 text-base font-normal btn btn-primary"
           onClick={onClickUpdateHandler}
         >
           更新

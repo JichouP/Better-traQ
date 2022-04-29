@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundSetting from '../components/Setting/BackgroundSetting';
 import BetterTraQSetting from '@/options/components/Setting/BetterTraQSetting';
 import CurrentKeybinds from '@/options/components/Setting/CurrentKeybinds';
 import TaskSettings from '@/options/components/Setting/TaskSettings';
@@ -11,13 +12,16 @@ const Setting = () => (
         <h1 className="text-4xl font-bold">設定</h1>
       </div>
       <WorkInProgress />
-      <div className="mt-8 mb-8">
+      <div className="mt-12 mb-12">
         <BetterTraQSetting />
       </div>
-      <div className="mt-8 mb-8">
+      <div className="mt-12 mb-12">
+        <BackgroundSetting />
+      </div>
+      <div className="mt-12 mb-12">
         <TaskSettings />
       </div>
-      <div className="mt-8 mb-8">
+      <div className="mt-12 mb-12">
         <CurrentKeybinds />
       </div>
     </div>
