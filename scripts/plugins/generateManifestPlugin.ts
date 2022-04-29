@@ -29,7 +29,7 @@ const template = ({
             default_title: `Better ${SERVICE}`,
             // default_popup: 'popup.html',
           },
-          description: `An Extension that Makes ${SERVICE} Useful`,
+          description: `An extension that makes ${SERVICE} useful`,
           icons: {
             '16': '16.png',
             '48': '48.png',
