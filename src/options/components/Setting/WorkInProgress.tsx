@@ -28,7 +28,7 @@ const WorkInProgress = () => (
             #gps/times/JichouP
           </a>
         </code>{' '}
-        まで
+        まで！
       </span>
     </div>
   </div>
