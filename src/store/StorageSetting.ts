@@ -5,7 +5,7 @@ const StorageSettingSchema = z.object({
   isSettingSync: z.boolean().default(true),
 });
 
-type StorageSetting = z.infer<typeof StorageSettingSchema>;
+export type StorageSetting = z.infer<typeof StorageSettingSchema>;
 
 export const get = async (): Promise<StorageSetting> => {
   const setting = await Browser.storage.local.get(

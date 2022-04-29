@@ -1,20 +1,20 @@
 import { useCallback, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import storageState from '../states/storageState';
-import { get, update, Storage } from '@/store/Storage';
+import storageSettingState from '../states/storageSettingState';
+import { get, update, StorageSetting } from '@/store/StorageSetting';
 
-const useStorage = (): [
-  Storage | null,
+const useStorageSetting = (): [
+  StorageSetting | null,
   () => Promise<void>,
-  (data: Partial<Storage>) => Promise<void>
+  (data: Partial<StorageSetting>) => Promise<void>
 ] => {
-  const [state, setState] = useRecoilState(storageState);
+  const [state, setState] = useRecoilState(storageSettingState);
   const fetch = async (): Promise<void> => {
     const data = await get();
     setState(data);
   };
   const set = useCallback(
-    async (newData: Partial<Storage>): Promise<void> => {
+    async (newData: Partial<StorageSetting>): Promise<void> => {
       const data = await get();
       await update({ ...data, ...newData });
       fetch();
@@ -29,4 +29,4 @@ const useStorage = (): [
   return [state, fetch, set];
 };
 
-export default useStorage;
+export default useStorageSetting;

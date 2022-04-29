@@ -63,7 +63,7 @@ const TaskSettings = () => {
       <div className="flex flex-row">
         <label
           htmlFor="my-modal"
-          className="flex-1 btn modal-button btn-primary btn-outline"
+          className="flex-1 text-base font-normal btn modal-button btn-primary btn-outline"
         >
           デフォルトに戻す
         </label>
@@ -77,12 +77,15 @@ const TaskSettings = () => {
               キーバインドをデフォルトに戻しますか？
             </p>
             <div className="modal-action">
-              <label htmlFor="my-modal" className="btn btn-primary btn-outline">
+              <label
+                htmlFor="my-modal"
+                className="text-base font-normal btn btn-primary btn-outline"
+              >
                 キャンセル
               </label>
               <label
                 htmlFor="my-modal"
-                className="btn btn-primary"
+                className="text-base font-normal btn btn-primary"
                 onClick={onClickResetDefaultHandler}
                 onKeyDown={onKeyDownHandler}
               >
@@ -94,14 +97,14 @@ const TaskSettings = () => {
 
         <button
           type="button"
-          className="flex-1 ml-2 btn btn-primary btn-outline"
+          className="flex-1 ml-2 text-base font-normal btn btn-primary btn-outline"
           onClick={onClickResetHandler}
         >
           リセット
         </button>
         <button
           type="button"
-          className="flex-1 ml-2 btn btn-primary"
+          className="flex-1 ml-2 text-base font-normal btn btn-primary"
           onClick={onClickUpdateHandler}
         >
           更新
