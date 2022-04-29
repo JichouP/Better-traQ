@@ -1,6 +1,7 @@
 import browser from 'webextension-polyfill';
 
 browser.runtime.onInstalled.addListener(() => {
+  browser.runtime.openOptionsPage();
   // Page actions are disabled by default and enabled on select tabs
   browser.action.disable();
 
