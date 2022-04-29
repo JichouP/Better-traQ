@@ -8,12 +8,10 @@ type StorageSchema = {
 };
 
 export const zStorageSchema = schemaForType<StorageSchema>()(
-  z
-    .object({
-      migrationVersion: z.number().default(-1),
-      task: zTask,
-    })
-    .strict()
+  z.object({
+    migrationVersion: z.number().default(-1),
+    task: zTask,
+  })
 );
 
 export default zStorageSchema;
