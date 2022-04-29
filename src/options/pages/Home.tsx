@@ -21,25 +21,24 @@ const Home = () => {
           <div className="">
             <button
               type="button"
-              className="text-base normal-case w-36 btn btn-primary"
+              className="w-48 text-base normal-case btn btn-primary"
               tabIndex={0}
               onClick={() => {
                 setPage('docs');
               }}
             >
               <BookIcon className="w-6" />{' '}
-              <span className="ml-1">Document</span>
+              <span className="ml-1">ドキュメント</span>
             </button>
             <button
               type="button"
-              className="ml-8 text-base normal-case w-36 btn btn-primary btn-outline"
+              className="w-48 ml-8 text-base normal-case btn btn-primary btn-outline"
               tabIndex={0}
               onClick={() => {
                 setPage('setting');
               }}
             >
-              <SettingIcon className="w-6" />{' '}
-              <span className="ml-1">Setting</span>
+              <SettingIcon className="w-6" /> <span className="ml-1">設定</span>
             </button>
           </div>
         </div>

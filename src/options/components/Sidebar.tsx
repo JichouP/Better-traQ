@@ -36,22 +36,22 @@ const Sidebar = () => {
             <MenuContent
               icon={<HomeIcon className="w-6" />}
               targetPage="home"
-              title="Home"
+              title="ホーム"
             />
             <MenuContent
               icon={<BookIcon className="w-6" />}
               targetPage="docs"
-              title="Document"
+              title="ドキュメント"
             />
             <MenuContent
               icon={<SettingIcon className="w-6" />}
               targetPage="setting"
-              title="Setting"
+              title="設定"
             />
             <MenuContent
               icon={<NoteIcon className="w-6" />}
               targetPage="changelog"
-              title="Changelog"
+              title="更新履歴"
             />
           </ul>
         </div>
