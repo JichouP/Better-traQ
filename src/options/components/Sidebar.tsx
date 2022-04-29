@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <aside
       id="sidebar"
-      className="flex flex-col justify-between h-screen bg-base-300 w-96"
+      className="flex flex-col justify-between h-screen select-none bg-base-300 w-96"
     >
       <div className="flex flex-col justify-start">
         <header className="justify-center navbar">
