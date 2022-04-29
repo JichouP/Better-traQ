@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
 import * as actions from './actions';
@@ -9,6 +10,8 @@ type TaskHandler = (ev: KeyboardEvent) => void;
 
 const taskHandlerBuilder = async (): Promise<TaskHandler> => {
   const { task } = await storage.get();
+
+  if (!task) return () => {};
 
   return async (ev) => {
     const { key, shiftKey, ctrlKey, altKey, metaKey } = ev;

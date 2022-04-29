@@ -4,10 +4,13 @@ import storageSetting from '@/store/StorageSetting';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const migration0 = async (_data?: Storage): Promise<Storage> => {
-  await storage.clear();
-  await storageSetting.update({
-    isSettingSync: true,
-  });
+  const { isSettingSync } = await storageSetting.get();
+  if (isSettingSync === undefined) {
+    await storage.clear();
+    await storageSetting.update({
+      isSettingSync: true,
+    });
+  }
   const newData: Storage = {
     migrationVersion: 0,
     task: defaultTasks,

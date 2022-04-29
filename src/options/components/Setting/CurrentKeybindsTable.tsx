@@ -23,7 +23,7 @@ const CurrentKeybindsTable = () => {
   );
   const data = useMemo(
     () =>
-      storage?.task.map((t) => ({
+      storage?.task?.map((t) => ({
         name: t.name,
         keybinds: t.keybinds.map((k) => k.key).join(', '),
         // actions: t.actions.join(', '),

@@ -5,7 +5,7 @@ import storage, { Storage } from '@/store/Storage';
 const migrations: ((data: Storage) => Promise<Storage>)[] = [migration0];
 
 const migration = async () => {
-  let data = await storage.unsafeGet();
+  let data = await storage.get();
 
   // check if migration is needed
   if (data.migrationVersion === migrations.length - 1) {
