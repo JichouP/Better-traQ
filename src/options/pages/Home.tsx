@@ -6,7 +6,7 @@ import SettingIcon from '@/options/icons/SettingIcon';
 import pageState from '@/options/states/pageState';
 
 const Home = () => {
-  const [_, setPage] = useRecoilState(pageState);
+  const [, setPage] = useRecoilState(pageState);
   return (
     <div className="hero">
       <div className="text-center hero-content">
