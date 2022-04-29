@@ -17,8 +17,18 @@ const WorkInProgress = () => (
         />
       </svg>
       <span className="text-base">
-        キーバインド設定は仮実装です。手伝ってくれる方は{' '}
-        <code>#gps/times/JichouP</code> まで
+        キーバインド設定は機能しますが仮実装です。手伝ってくれる方は{' '}
+        <code>
+          <a
+            className="link link-primary"
+            href={`https://${process.env.HOST}/channels/gps/times/JichouP`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            #gps/times/JichouP
+          </a>
+        </code>{' '}
+        まで
       </span>
     </div>
   </div>
