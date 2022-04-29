@@ -18,7 +18,6 @@ esbuild.build({
     background: 'src/background/index.ts',
     content_scripts: 'src/content_scripts/index.ts',
     options: 'src/options/index.tsx',
-    popup: 'src/popup/index.tsx',
   },
   bundle: true,
   define: {
