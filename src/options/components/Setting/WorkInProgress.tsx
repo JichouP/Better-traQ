@@ -17,7 +17,7 @@ const WorkInProgress = () => (
         />
       </svg>
       <span className="text-base">
-        キーバインド設定は機能しますが仮実装です。手伝ってくれる方は{' '}
+        タスクの設定は機能しますが仮実装です。手伝ってくれる方は{' '}
         <code>
           <a
             className="link"

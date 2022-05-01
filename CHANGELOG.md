@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 
-- [全環境] キーバインドのカスタマイズ機能を追加 [#10](https://github.com/JichouP/Better-traQ/issues/10)
+- [全環境] タスクのカスタマイズ機能を追加 [#10](https://github.com/JichouP/Better-traQ/issues/10)
 - [全環境] Options ページを追加 [#9](https://github.com/JichouP/Better-traQ/issues/9)
 - [Firefox, Edge] Chrome に加えて、Firefox と Edge もサポート
 
