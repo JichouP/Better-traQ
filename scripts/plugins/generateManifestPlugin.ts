@@ -20,7 +20,7 @@ const template = ({
           manifest_version: 2,
           name: `Better ${SERVICE}`,
           version: `${VERSION}`,
-          page_action: {
+          browser_action: {
             default_icon: {
               '16': '16.png',
               '24': '24.png',
