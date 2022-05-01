@@ -26,6 +26,12 @@ browser.runtime.onInstalled.addListener(() => {
   });
 });
 
-browser.action.onClicked.addListener(() => {
-  browser.runtime.openOptionsPage();
-});
+if (process.env.BROWSER !== 'firefox') {
+  browser.action.onClicked.addListener(() => {
+    browser.runtime.openOptionsPage();
+  });
+} else {
+  browser.browserAction.onClicked.addListener(() => {
+    browser.runtime.openOptionsPage();
+  });
+}

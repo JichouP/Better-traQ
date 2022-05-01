@@ -23,8 +23,9 @@ esbuild.build({
   bundle: true,
   define: {
     'process.env.HOST': `'${HOST}'`,
-    'process.env.VERSION': `'${VERSION}'`,
     'process.env.SERVICE': `'${SERVICE}'`,
+    'process.env.VERSION': `'${VERSION}'`,
+    'process.env.BROWSER': `'${BROWSER}'`,
   },
   outdir: distDir,
   minify: true,
