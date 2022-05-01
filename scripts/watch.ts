@@ -44,5 +44,5 @@ esbuild.build({
     generateManifestPlugin({ HOST, SERVICE, VERSION, BROWSER, distDir }),
     tailwindcssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
   ],
-  loader: { '.svg': 'text' },
+  loader: { '.md': 'text' },
 });

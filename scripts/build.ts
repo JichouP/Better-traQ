@@ -36,4 +36,5 @@ esbuild.build({
     tailwindcssPlugin(`${assetDir}/tailwind.css`, `${distDir}/tailwind.css`),
     zipPlugin(distDir, outDir, `${SERVICE}-${BROWSER}-${VERSION}.zip`),
   ],
+  loader: { '.md': 'text' },
 });
