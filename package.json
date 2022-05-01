@@ -1,6 +1,6 @@
 {
   "name": "better-traq",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "An Extension that Makes traQ Useful",
   "main": "index.js",
   "scripts": {
