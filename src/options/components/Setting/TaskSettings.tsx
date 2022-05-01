@@ -74,7 +74,7 @@ const TaskSettings = () => {
             <p className="py-4 text-lg">
               カスタマイズした設定が初期化されます
               <br />
-              キーバインドをデフォルトに戻しますか？
+              タスクの設定をデフォルトに戻しますか？
             </p>
             <div className="modal-action">
               <label

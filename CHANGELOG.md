@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
+- [全環境] ドキュメントの更新 [#40](https://github.com/JichouP/Better-traQ/issues/40)
+- [全環境] キーバインドの表記ゆれの解消 [#39](https://github.com/JichouP/Better-traQ/issues/39)
 - [全環境] 更新履歴ページを CHANGELOG.md に移動 [#36](https://github.com/JichouP/Better-traQ/issues/36)
 - [Firefox] Firefox で拡張機能のアイコンが表示されない問題を修正 [#34](https://github.com/JichouP/Better-traQ/issues/34)
 
