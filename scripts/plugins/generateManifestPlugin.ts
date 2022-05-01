@@ -47,6 +47,11 @@ const template = ({
             open_in_tab: true,
             page: 'options.html',
           },
+          browser_specific_settings: {
+            gecko: {
+              id: SERVICE === 'traQ' ? '@bettertraq' : '@betterextraq',
+            },
+          },
         }
       : {
           manifest_version: 3,
