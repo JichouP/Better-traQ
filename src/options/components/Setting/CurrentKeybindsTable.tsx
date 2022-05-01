@@ -7,7 +7,7 @@ const CurrentKeybindsTable = () => {
   const columns = useMemo<Column[]>(
     () => [
       {
-        Header: 'キーバインド',
+        Header: 'キー',
         accessor: 'keybinds',
       },
       {

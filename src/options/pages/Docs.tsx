@@ -27,7 +27,7 @@ const Docs = () => {
             >
               設定
             </a>{' '}
-            のキーバインド一覧をご覧ください。キーバインドは{' '}
+            のタスク一覧をご覧ください。タスクは{' '}
             <a
               className="link link-primary"
               onClick={() => {
@@ -119,7 +119,7 @@ const Docs = () => {
             >
               設定
             </a>{' '}
-            からキーバインドをデフォルトに戻してみてください。それでも動かない場合は、お手数ですが{' '}
+            からタスクの設定をデフォルトに戻してみてください。それでも動かない場合は、お手数ですが{' '}
             <a
               href="https://github.com/JichouP/Better-traQ/issues/new"
               target="_blank"
