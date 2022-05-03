@@ -44,6 +44,20 @@ const defaultTasks: Task[] = [
     ],
   },
   {
+    name: 'トップ未読チャンネルをクリック（）',
+    keybinds: [
+      {
+        key: 'e',
+        conditions: [
+          'notIsFocusedInputOrTextarea',
+          'existHomeChannel',
+          'notExistUnreadChannel',
+        ],
+      },
+    ],
+    actions: ['scrollTopOfNavigationBar', 'clickNavigationBarHomeHomeChannel'],
+  },
+  {
     name: 'トップ未読チャンネルをクリック',
     keybinds: [
       {
