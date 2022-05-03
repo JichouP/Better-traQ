@@ -1,6 +1,6 @@
 // regex %\.\w+ >% >%
 
-import homeChannelExists from './conditions/homeChannelExists';
+import existHomeChannel from './conditions/existHomeChannel';
 
 const navigationSelector = (n: number) =>
   `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(${n})`;
@@ -40,11 +40,11 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   nextPage: () => '#popup-navigator > div > div:nth-child(2)',
   navigationSelectorHomeTab: () => navigationSelector(2),
   navigationBarHomeHomeChannel: () =>
-    homeChannelExists()
+    existHomeChannel()
       ? '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)'
       : null,
   navigationBarHomeTopUnreadChannel: () =>
-    homeChannelExists()
+    existHomeChannel()
       ? '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div' // ホームチャンネルが存在する場合は2番目
       : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)', // ホームチャンネルが存在しない場合は1番目
   navigationSelectorChannelsTab: () => navigationSelector(3),

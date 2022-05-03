@@ -7,10 +7,10 @@ const zCondition = z.union([
   z.literal('notIsFocusedEmptyInputOrTextarea'),
   z.literal('isOpenSidebar'),
   z.literal('notIsOpenSidebar'),
-  z.literal('homeChannelExists'),
-  z.literal('notHomeChannelExists'),
-  z.literal('unreadChannelExists'),
-  z.literal('notUnreadChannelExists'),
+  z.literal('existHomeChannel'),
+  z.literal('notExistHomeChannel'),
+  z.literal('existUnreadChannel'),
+  z.literal('notExistUnreadChannel'),
 ]);
 
 export type ConditionEnum = z.infer<typeof zCondition>;
