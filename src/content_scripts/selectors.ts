@@ -68,6 +68,8 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   navigationSelectorUsersTab: () => navigationSelector(5),
   navigationBarUsersUserFilterInput: () =>
     '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div > input',
+  navigationBarUsersUserList: () =>
+    '#app > div > div > div > div > div > div > div > div > div > div:nth-child(3)',
   navigationSelectorClipTab: () => navigationSelector(6),
   channelHeaderChannelName: () =>
     '#header > header > div > h2 > div > div:nth-child(1)',

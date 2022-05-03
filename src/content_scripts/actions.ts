@@ -35,8 +35,10 @@ export { default as clickNavigationBarChannelsChannelCurrentChannelHash } from '
 export { default as clickNavigationBarChannelsChannelFilterStar } from './actions/clickNavigationBarChannelsChannelFilterStar';
 export { default as clickNavigationBarChannelsNextChannel } from './actions/clickNavigationBarChannelsNextChannel';
 export { default as clickNavigationBarChannelsPreviousChannel } from './actions/clickNavigationBarChannelsPreviousChannel';
+export { default as clickNavigationBarChannelsTopSearchResult } from './actions/clickNavigationBarChannelsTopSearchResult';
 export { default as clickNavigationBarHomeHomeChannel } from './actions/clickNavigationBarHomeHomeChannel';
 export { default as clickNavigationBarHomeTopUnreadChannel } from './actions/clickNavigationBarHomeTopUnreadChannel';
+export { default as clickNavigationBarUsersTopSearchResult } from './actions/clickNavigationBarUsersTopSearchResult';
 export { default as clickNavigationSelectorActivityTab } from './actions/clickNavigationSelectorActivityTab';
 export { default as clickNavigationSelectorChannelsTab } from './actions/clickNavigationSelectorChannelsTab';
 export { default as clickNavigationSelectorClipTab } from './actions/clickNavigationSelectorClipTab';
