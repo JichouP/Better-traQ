@@ -26,6 +26,7 @@ export { default as clickChannelViewSelectedMessageContextMenuDeleteMessage } fr
 export { default as clickChannelViewSelectedMessageContextMenuEditMessage } from './actions/clickChannelViewSelectedMessageContextMenuEditMessage';
 export { default as clickChannelViewSelectedMessageContextMenuEmbedMessage } from './actions/clickChannelViewSelectedMessageContextMenuEmbedMessage';
 export { default as clickChannelViewSelectedMessageContextMenuRemovePin } from './actions/clickChannelViewSelectedMessageContextMenuRemovePin';
+export { default as clickChannelViewSelectedMessageDetailButton } from './actions/clickChannelViewSelectedMessageDetailButton';
 export { default as clickChannelViewSelectedMessageSpoilers } from './actions/clickChannelViewSelectedMessageSpoilers';
 export { default as clickChannelViewSelectedMessageStamps } from './actions/clickChannelViewSelectedMessageStamps';
 export { default as clickNavigationBarActivityIsNotAllToggleButton } from './actions/clickNavigationBarActivityIsNotAllToggleButton';

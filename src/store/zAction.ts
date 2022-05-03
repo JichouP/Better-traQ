@@ -53,6 +53,7 @@ const zAction = z.union([
   z.literal('clickChannelViewSelectedMessageContextMenuCopyMarkdown'),
   z.literal('clickChannelViewSelectedMessageContextMenuDeleteMessage'),
   z.literal('clickChannelViewSelectedMessageSpoilers'),
+  z.literal('clickChannelViewSelectedMessageDetailButton'),
   z.literal('clickChannelViewSelectedMessageStamps'),
   z.literal('focusChannelViewMessageInput'),
   z.literal('clickChannelViewMessageInputStampButton'),

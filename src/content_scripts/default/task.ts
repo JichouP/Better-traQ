@@ -370,6 +370,16 @@ const defaultTasks: Task[] = [
     actions: ['clickChannelViewSelectedMessageSpoilers'],
   },
   {
+    name: '選択したメッセージのスタンプ詳細のプルダウンをクリック',
+    keybinds: [
+      {
+        key: 'v',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessageDetailButton'],
+  },
+  {
     name: '選択したメッセージのスタンプをクリック',
     keybinds: [
       {
