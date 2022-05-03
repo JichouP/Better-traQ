@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- [全環境] スタンプ詳細のプルダウンのクリックを追加 [#27](https://github.com/JichouP/Better-traQ/issues/27)
+
 ### Changed
 
 - [全環境] 条件の名前を変更 [#51](https://github.com/JichouP/Better-traQ/issues/51)
