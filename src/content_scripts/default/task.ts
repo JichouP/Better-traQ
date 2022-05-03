@@ -390,6 +390,37 @@ const defaultTasks: Task[] = [
     actions: ['clickChannelViewSelectedMessageStamps'],
   },
   {
+    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    keybinds: [
+      {
+        key: 'Enter',
+        conditions: [
+          'isFocusedInputOrTextarea',
+          'notIsFocusedEmptyInputOrTextarea',
+          'isFocusNavigationBarChannelsChannelFilterInput',
+        ],
+      },
+    ],
+    actions: ['clickNavigationBarChannelsTopSearchResult'],
+  },
+  {
+    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    keybinds: [
+      {
+        key: 'Enter',
+        conditions: [
+          'isFocusedInputOrTextarea',
+          'notIsFocusedEmptyInputOrTextarea',
+          'isFocusNavigationBarUsersUserFilterInput',
+        ],
+      },
+    ],
+    actions: [
+      'clickNavigationBarUsersTopSearchResult',
+      'blurActiveInputElement',
+    ],
+  },
+  {
     name: 'フォーカスを外す',
     keybinds: [
       {

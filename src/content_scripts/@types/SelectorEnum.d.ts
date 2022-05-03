@@ -24,6 +24,7 @@ type SelectorEnum =
   /// Usersタブ
   | 'navigationSelectorUsersTab'
   | 'navigationBarUsersUserFilterInput'
+  | 'navigationBarUsersUserList'
   /// Clipタブ
   | 'navigationSelectorClipTab'
   // ChannelView
