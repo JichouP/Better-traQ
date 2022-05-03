@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const isFocusNavigationBarChannelsChannelFilterInput = (): boolean => {
+const isFocusedNavigationBarChannelsChannelFilterInput = (): boolean => {
   const { activeElement } = document;
   if (!activeElement) return false;
   const channelFilterSelector =
@@ -13,4 +13,4 @@ const isFocusNavigationBarChannelsChannelFilterInput = (): boolean => {
   return channelFilter === activeElement;
 };
 
-export default isFocusNavigationBarChannelsChannelFilterInput;
+export default isFocusedNavigationBarChannelsChannelFilterInput;

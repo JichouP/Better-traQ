@@ -397,7 +397,7 @@ const defaultTasks: Task[] = [
         conditions: [
           'isFocusedInputOrTextarea',
           'notIsFocusedEmptyInputOrTextarea',
-          'isFocusNavigationBarChannelsChannelFilterInput',
+          'isFocusedNavigationBarChannelsChannelFilterInput',
         ],
       },
     ],
@@ -411,7 +411,7 @@ const defaultTasks: Task[] = [
         conditions: [
           'isFocusedInputOrTextarea',
           'notIsFocusedEmptyInputOrTextarea',
-          'isFocusNavigationBarUsersUserFilterInput',
+          'isFocusedNavigationBarUsersUserFilterInput',
         ],
       },
     ],
