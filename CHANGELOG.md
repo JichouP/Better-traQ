@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
   - `notHomeChannelExists` → `notExistHomeChannel`
   - `unreadChannelExists` → `existUnreadChannel`
   - `notUnreadChannelExists` → `notExistUnreadChannel`
+- [全環境] デフォルトのタスク設定を未読消化ボタンが最後ホームに戻ってくるように変更 [#3](https://github.com/JichouP/Better-traQ/issues/3)
 
 ### Fixed
 
