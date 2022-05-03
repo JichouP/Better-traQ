@@ -2,7 +2,7 @@ import { clickHash } from './utils/dispatchEvent';
 import getChannelList from './utils/getChannelList';
 import getIndexOfCurrentChannel from './utils/getIndexOfCurrentChannel';
 
-const clickNavigationBarChannelsChannelCurrentChannelHash = () => {
+const clickNavigationBarChannelsCurrentChannelHash = () => {
   const channelList = getChannelList();
   if (!channelList) return;
   const currentChannelIndex = getIndexOfCurrentChannel();
@@ -16,4 +16,4 @@ const clickNavigationBarChannelsChannelCurrentChannelHash = () => {
   clickHash(targetElement);
 };
 
-export default clickNavigationBarChannelsChannelCurrentChannelHash;
+export default clickNavigationBarChannelsCurrentChannelHash;
