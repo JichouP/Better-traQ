@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [3.0.2] - 2022-??-??
+
+### Added
+
+### Changed
+
+- [全環境] 条件の名前を変更 [#51](https://github.com/JichouP/Better-traQ/issues/51)
+  - `homeChannelExists` → `existHomeChannel`
+  - `notHomeChannelExists` → `notExistHomeChannel`
+  - `unreadChannelExists` → `existUnreadChannel`
+  - `notUnreadChannelExists` → `notExistUnreadChannel`
+
+### Fixed
+
 ## [3.0.1](https://github.com/JichouP/Better-traQ/releases/tag/v3.0.1) - 2022-05-01
 
 ### Fixed
