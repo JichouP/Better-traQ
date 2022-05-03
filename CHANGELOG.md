@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Added
 
 - [全環境] スタンプ詳細のプルダウンのクリックを追加 [#54](https://github.com/JichouP/Better-traQ/issues/54)
+- [全環境] チャンネル/ユーザー検索にフォーカスしているかどうかを判定する条件を追加 [#56](https://github.com/JichouP/Better-traQ/issues/56)
 
 ### Changed
 
