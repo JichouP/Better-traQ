@@ -11,7 +11,7 @@ const inputCurrentChannelNameNavigationBarChannelsChannelFilter = () => {
   if (!channelFilterInputEl) return;
   const currentChannelNames = getCurrentChannelNames();
   if (!currentChannelNames) return;
-  channelFilterInputEl.value = currentChannelNames.join('/');
+  channelFilterInputEl.value = `${currentChannelNames.join('/')}/`;
 };
 
 export default inputCurrentChannelNameNavigationBarChannelsChannelFilter;
