@@ -15,7 +15,7 @@ const zAction = z.union([
   z.literal('expandNavigationBarChannelsTreeToCurrentChannel'),
   z.literal('clickNavigationBarChannelsNextChannel'),
   z.literal('clickNavigationBarChannelsPreviousChannel'),
-  z.literal('clickNavigationBarChannelsChannelCurrentChannelHash'),
+  z.literal('clickNavigationBarChannelsCurrentChannelHash'),
   z.literal('scrollNavigationBarChannelsToCurrentChannel'),
   z.literal('clickNavigationSelectorActivityTab'),
   z.literal('clickNavigationBarActivityIsNotAllToggleButton'),

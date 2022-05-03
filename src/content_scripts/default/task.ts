@@ -136,7 +136,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'clickNavigationBarChannelsChannelCurrentChannelHash',
+      'clickNavigationBarChannelsCurrentChannelHash',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
   },

@@ -31,7 +31,7 @@ export { default as clickChannelViewSelectedMessageSpoilers } from './actions/cl
 export { default as clickChannelViewSelectedMessageStamps } from './actions/clickChannelViewSelectedMessageStamps';
 export { default as clickNavigationBarActivityIsNotAllToggleButton } from './actions/clickNavigationBarActivityIsNotAllToggleButton';
 export { default as clickNavigationBarActivityIsPerChannelToggleButton } from './actions/clickNavigationBarActivityIsPerChannelToggleButton';
-export { default as clickNavigationBarChannelsChannelCurrentChannelHash } from './actions/clickNavigationBarChannelsChannelCurrentChannelHash';
+export { default as clickNavigationBarChannelsCurrentChannelHash } from './actions/clickNavigationBarChannelsCurrentChannelHash';
 export { default as clickNavigationBarChannelsChannelFilterStar } from './actions/clickNavigationBarChannelsChannelFilterStar';
 export { default as clickNavigationBarChannelsNextChannel } from './actions/clickNavigationBarChannelsNextChannel';
 export { default as clickNavigationBarChannelsPreviousChannel } from './actions/clickNavigationBarChannelsPreviousChannel';

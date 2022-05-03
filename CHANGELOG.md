@@ -15,11 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Changed
 
-- [全環境] 条件の名前を変更 [#51](https://github.com/JichouP/Better-traQ/issues/51)
+- [全環境] 条件の名前を変更 [#51](https://github.com/JichouP/Better-traQ/issues/51) [#60](https://github.com/JichouP/Better-traQ/issues/60)
   - `homeChannelExists` → `existHomeChannel`
   - `notHomeChannelExists` → `notExistHomeChannel`
   - `unreadChannelExists` → `existUnreadChannel`
   - `notUnreadChannelExists` → `notExistUnreadChannel`
+  - `clickNavigationBarChannelsChannelCurrentChannelHash` → `clickNavigationBarChannelsCurrentChannelHash`
 - [全環境] デフォルトのタスク設定を未読消化ボタンが最後ホームに戻ってくるように変更 [#3](https://github.com/JichouP/Better-traQ/issues/3)
 
 ### Fixed
