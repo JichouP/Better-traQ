@@ -7,6 +7,7 @@ const zAction = z.union([
   z.literal('clickNavigationSelectorHomeTab'),
   z.literal('clickNavigationBarHomeHomeChannel'),
   z.literal('clickNavigationBarHomeTopUnreadChannel'),
+  z.literal('clickNavigationBarHomeBottomUnreadChannel'),
   z.literal('clickNavigationSelectorChannelsTab'),
   z.literal('focusNavigationBarChannelsChannelFilterInput'),
   z.literal('inputCurrentChannelNameNavigationBarChannelsChannelFilter'),
