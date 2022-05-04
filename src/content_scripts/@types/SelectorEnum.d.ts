@@ -9,6 +9,7 @@ type SelectorEnum =
   | 'navigationSelectorHomeTab'
   | 'navigationBarHomeHomeChannel'
   | 'navigationBarHomeTopUnreadChannel'
+  | 'navigationBarHomeBottomUnreadChannel'
   /// Channelsタブ
   | 'navigationSelectorChannelsTab'
   | 'navigationBarChannelsChannelFilterInput'

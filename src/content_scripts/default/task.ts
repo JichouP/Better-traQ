@@ -44,7 +44,7 @@ const defaultTasks: Task[] = [
     ],
   },
   {
-    name: 'トップ未読チャンネルをクリック（）',
+    name: 'ホームチャンネルをクリック（未読チャンネルがない場合）',
     keybinds: [
       {
         key: 'e',
