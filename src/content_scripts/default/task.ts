@@ -253,6 +253,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
+      'clickNavigationSelectorActivityTab',
       'toggleNavigationBarActivityFollowMode',
     ],
   },
