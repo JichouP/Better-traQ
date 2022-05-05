@@ -262,7 +262,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['fChannelViewMessageInput'],
+    actions: ['fVMessageInput'],
   },
   {
     name: 'スタンプピッカーを開く',
@@ -272,7 +272,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelViewMessageInputStampButton'],
+    actions: ['cVMessageInputStampButton'],
   },
   {
     name: '最新のメッセージを編集',
@@ -285,7 +285,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['cChannelViewLatestMessageContextMenuEditMessage'],
+    actions: ['cVLatestMessageContextMenuEditMessage'],
   },
   {
     name: '次のメッセージを選択',
@@ -295,7 +295,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['oChannelViewMessageListNextMessage'],
+    actions: ['oVMessageListNextMessage'],
   },
   {
     name: '前のメッセージを選択',
@@ -305,7 +305,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['oChannelViewMessageListPrevMessage'],
+    actions: ['oVMessageListPrevMessage'],
   },
   {
     name: '一番下までスクロール',
@@ -315,7 +315,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['sToBottomOfChannelView'],
+    actions: ['sToBottomOfV'],
   },
   {
     name: '最新のメッセージのスタンプピッカーを開く',
@@ -325,7 +325,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelViewLatestMessageStampPicker'],
+    actions: ['cVLatestMessageStampPicker'],
   },
   {
     name: 'サイドバーを開く',
@@ -365,7 +365,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelViewSelectedMessageSpoilers'],
+    actions: ['cVSelectedMessageSpoilers'],
   },
   {
     name: '選択したメッセージのスタンプ詳細のプルダウンをクリック',
@@ -375,7 +375,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelViewSelectedMessageDetailButton'],
+    actions: ['cVSelectedMessageDetailButton'],
   },
   {
     name: '選択したメッセージのスタンプをクリック',
@@ -385,7 +385,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelViewSelectedMessageStamps'],
+    actions: ['cVSelectedMessageStamps'],
   },
   {
     name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
@@ -433,7 +433,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['lChannelViewAllMessages'],
+    actions: ['lVAllMessages'],
   },
 ];
 
