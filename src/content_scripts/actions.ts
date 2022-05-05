@@ -42,7 +42,7 @@ export { default as cNHTopUnreadChannel } from './actions/cNHTopUnreadChannel';
 export { default as cNUTopSearchResult } from './actions/cNUTopSearchResult';
 export { default as cTATab } from './actions/cTATab';
 export { default as cTCTab } from './actions/cTCTab';
-export { default as cNavigationSelectorClipTab } from './actions/cNavigationSelectorClipTab';
+export { default as cTClipTab } from './actions/cTClipTab';
 export { default as cTHTab } from './actions/cTHTab';
 export { default as cTUTab } from './actions/cTUTab';
 export { default as cNextPage } from './actions/cNextPage';

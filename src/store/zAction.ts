@@ -25,7 +25,7 @@ const zAction = z.union([
   z.literal('cTUTab'),
   z.literal('fNUUserFilterInput'),
   z.literal('cNUTopSearchResult'),
-  z.literal('cNavigationSelectorClipTab'),
+  z.literal('cTClipTab'),
   z.literal('cHChannelNameParentChannelName'),
   z.literal('oVMessageListNextMessage'),
   z.literal('oVMessageListPrevMessage'),
