@@ -1,4 +1,4 @@
-export { default as blurActiveInputElement } from './actions/blurActiveInputElement';
+export { default as bActiveInputElement } from './actions/bActiveInputElement';
 export { default as clickChannelHeaderChannelNameParentChannelName } from './actions/clickChannelHeaderChannelNameParentChannelName';
 export { default as clickChannelView2ndLatestMessageStampPicker } from './actions/clickChannelView2ndLatestMessageStampPicker';
 export { default as clickChannelView3rdLatestMessageStampPicker } from './actions/clickChannelView3rdLatestMessageStampPicker';

@@ -1,4 +1,4 @@
-const blurActiveInputElement = () => {
+const bActiveInputElement = () => {
   const { activeElement } = document;
   if (
     activeElement instanceof HTMLInputElement ||
@@ -8,4 +8,4 @@ const blurActiveInputElement = () => {
   }
 };
 
-export default blurActiveInputElement;
+export default bActiveInputElement;

@@ -63,7 +63,7 @@ const zAction = z.union([
   z.literal('clickSidebarOpener'),
   z.literal('clickSidebarCloser'),
   z.literal('clickSidebarContentViewers'),
-  z.literal('blurActiveInputElement'),
+  z.literal('bActiveInputElement'),
   z.literal('mouseleaveChannelViewAllMessages'),
   z.literal('sleep100ms'),
 ]);

@@ -416,10 +416,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: [
-      'clickNavigationBarUsersTopSearchResult',
-      'blurActiveInputElement',
-    ],
+    actions: ['clickNavigationBarUsersTopSearchResult', 'bActiveInputElement'],
   },
   {
     name: 'フォーカスを外す',
@@ -429,7 +426,7 @@ const defaultTasks: Task[] = [
         conditions: ['isFocusedInputOrTextarea'],
       },
     ],
-    actions: ['blurActiveInputElement'],
+    actions: ['bActiveInputElement'],
   },
   {
     name: 'すべての Message Tool を閉じる',
