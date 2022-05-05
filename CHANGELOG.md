@@ -23,11 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 - [全環境] デフォルト設定で、フォローモードをオンにするときに、自動でアクティビティタブに飛ぶように変更 [#63](https://github.com/JichouP/Better-traQ/issues/63)
 - [全環境] チャンネルフィルターにフォーカスして、現在のチャンネルを入力するとき、最後に / を付ける [#61](https://github.com/JichouP/Better-traQ/issues/61)
 - [全環境] 条件の名前を変更 [#51](https://github.com/JichouP/Better-traQ/issues/51) [#60](https://github.com/JichouP/Better-traQ/issues/60)
-  - `homeChannelExists` → `existHomeChannel`
-  - `notHomeChannelExists` → `notExistHomeChannel`
-  - `unreadChannelExists` → `existUnreadChannel`
-  - `notUnreadChannelExists` → `notExistUnreadChannel`
-  - `clickNavigationBarChannelsChannelCurrentChannelHash` → `clickNavigationBarChannelsCurrentChannelHash`
 - [全環境] デフォルトのタスク設定を未読消化ボタンが最後ホームに戻ってくるように変更 [#3](https://github.com/JichouP/Better-traQ/issues/3)
 
 ### Fixed
