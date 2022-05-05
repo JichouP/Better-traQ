@@ -13,7 +13,7 @@ const getChannelNameList = (el: HTMLElement) => {
   return channelNameList;
 };
 
-const expandNavigationBarChannelsTreeToCurrentChannel = async () => {
+const eNavigationBarChannelsTreeToCurrentChannel = async () => {
   const channelNames = getCurrentChannelNames();
   if (!channelNames) return;
   const channelListSelector = selectors.navigationBarChannelsChannelList();
@@ -57,4 +57,4 @@ const expandNavigationBarChannelsTreeToCurrentChannel = async () => {
   }
 };
 
-export default expandNavigationBarChannelsTreeToCurrentChannel;
+export default eNavigationBarChannelsTreeToCurrentChannel;

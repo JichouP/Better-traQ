@@ -92,7 +92,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
+      'eNavigationBarChannelsTreeToCurrentChannel',
       'sleep100ms',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
@@ -107,7 +107,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
+      'eNavigationBarChannelsTreeToCurrentChannel',
       'cNavigationBarChannelsNextChannel',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
@@ -122,7 +122,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
+      'eNavigationBarChannelsTreeToCurrentChannel',
       'cNavigationBarChannelsPrevChannel',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],

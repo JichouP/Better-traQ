@@ -50,7 +50,7 @@ export { default as cPrevPage } from './actions/cPrevPage';
 export { default as cSidebarCloser } from './actions/cSidebarCloser';
 export { default as cSidebarContentViewers } from './actions/cSidebarContentViewers';
 export { default as cSidebarOpener } from './actions/cSidebarOpener';
-export { default as expandNavigationBarChannelsTreeToCurrentChannel } from './actions/expandNavigationBarChannelsTreeToCurrentChannel';
+export { default as eNavigationBarChannelsTreeToCurrentChannel } from './actions/eNavigationBarChannelsTreeToCurrentChannel';
 export { default as focusChannelViewMessageInput } from './actions/focusChannelViewMessageInput';
 export { default as focusNavigationBarChannelsChannelFilterInput } from './actions/focusNavigationBarChannelsChannelFilterInput';
 export { default as focusNavigationBarUsersUserFilterInput } from './actions/focusNavigationBarUsersUserFilterInput';

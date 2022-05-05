@@ -13,7 +13,7 @@ const zAction = z.union([
   z.literal('inputCurrentChannelNameNavigationBarChannelsChannelFilter'),
   z.literal('cNavigationBarChannelsTopSearchResult'),
   z.literal('cNavigationBarChannelsChannelFilterStar'),
-  z.literal('expandNavigationBarChannelsTreeToCurrentChannel'),
+  z.literal('eNavigationBarChannelsTreeToCurrentChannel'),
   z.literal('cNavigationBarChannelsNextChannel'),
   z.literal('cNavigationBarChannelsPrevChannel'),
   z.literal('cNavigationBarChannelsCurrentChannelHash'),
