@@ -6,11 +6,11 @@ export { default as isFocusedEmptyInputOrTextarea } from './conditions/isFocused
 export { default as isFocusedInputOrTextarea } from './conditions/isFocusedInputOrTextarea';
 export { default as isFocusedNCChannelFilterInput } from './conditions/isFocusedNCChannelFilterInput';
 export { default as isFocusedNUUserFilterInput } from './conditions/isFocusedNUUserFilterInput';
-export { default as isOpenSidebar } from './conditions/isOpenSidebar';
+export { default as isOpenS } from './conditions/isOpenS';
 export { default as notExistHomeChannel } from './conditions/notExistHomeChannel';
 export { default as notExistUnreadChannel } from './conditions/notExistUnreadChannel';
 export { default as notIsFocusedEmptyInputOrTextarea } from './conditions/notIsFocusedEmptyInputOrTextarea';
 export { default as notIsFocusedInputOrTextarea } from './conditions/notIsFocusedInputOrTextarea';
 export { default as notIsFocusedNCChannelFilterInput } from './conditions/notIsFocusedNCChannelFilterInput';
 export { default as notIsFocusedNUUserFilterInput } from './conditions/notIsFocusedNUUserFilterInput';
-export { default as notIsOpenSidebar } from './conditions/notIsOpenSidebar';
+export { default as notIsOpenS } from './conditions/notIsOpenS';

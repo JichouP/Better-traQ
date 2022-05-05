@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 import { click } from './utils/dispatchEvent';
 
-const cSidebarCloser = () => {
+const cSCloser = () => {
   const closerSelector = selectors.sidebarCloser();
   if (!closerSelector) return;
   const closerEl = document.querySelector<SVGElement>(closerSelector);
@@ -9,4 +9,4 @@ const cSidebarCloser = () => {
   click(closerEl);
 };
 
-export default cSidebarCloser;
+export default cSCloser;

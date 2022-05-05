@@ -303,30 +303,30 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsFocusedInputOrTextarea', 'notIsOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'notIsOpenS'],
       },
     ],
-    actions: ['cSidebarOpener'],
+    actions: ['cSOpener'],
   },
   {
     name: 'サイドバーを閉じる',
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'isOpenS'],
       },
     ],
-    actions: ['cSidebarCloser'],
+    actions: ['cSCloser'],
   },
   {
     name: '閲覧者を開く/閉じる',
     keybinds: [
       {
         key: ';',
-        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['notIsFocusedInputOrTextarea', 'isOpenS'],
       },
     ],
-    actions: ['cSidebarContentViewers'],
+    actions: ['cSContentViewers'],
   },
   {
     name: '選択したメッセージのスポイラーをクリック',
