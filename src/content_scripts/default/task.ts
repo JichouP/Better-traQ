@@ -20,7 +20,7 @@ const defaultTasks: Task[] = [
     actions: ['cNextPage'],
   },
   {
-    name: 'ホームタブをクリック',
+    name: 'ホームタブ',
     keybinds: [
       {
         key: 'q',
@@ -30,7 +30,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTHTab'],
   },
   {
-    name: 'ホームチャンネルをクリック',
+    name: 'ホームチャンネル',
     keybinds: [
       {
         key: 'w',
@@ -40,7 +40,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeChannel'],
   },
   {
-    name: 'ホームチャンネルをクリック（未読チャンネルがない場合）',
+    name: 'ホームチャンネル（未読チャンネルがない場合）',
     keybinds: [
       {
         key: 'e',
@@ -50,7 +50,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cNHHomeChannel'],
   },
   {
-    name: 'トップ未読チャンネルをクリック',
+    name: '最新未読チャンネル',
     keybinds: [
       {
         key: 'e',
@@ -60,7 +60,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadChannel'],
   },
   {
-    name: 'チャンネルタブをクリック',
+    name: 'チャンネルタブ',
     keybinds: [
       {
         key: 'a',
@@ -86,7 +86,7 @@ const defaultTasks: Task[] = [
     ],
   },
   {
-    name: '次のチャンネルをクリック',
+    name: '次のチャンネル',
     keybinds: [
       {
         key: 'u',
@@ -101,7 +101,7 @@ const defaultTasks: Task[] = [
     ],
   },
   {
-    name: '前のチャンネルをクリック',
+    name: '前のチャンネル',
     keybinds: [
       {
         key: 'i',
@@ -126,7 +126,7 @@ const defaultTasks: Task[] = [
     actions: ['cNCCurrentChannelHash', 'sNCToCurrentChannel'],
   },
   {
-    name: 'チャンネルフィルターにフォーカス',
+    name: 'チャンネル検索',
     keybinds: [
       {
         key: 's',
@@ -136,7 +136,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChannelFilterInput'],
   },
   {
-    name: 'ユーザーフィルターにフォーカス',
+    name: 'ユーザー検索',
     keybinds: [
       {
         key: 'S',
@@ -147,7 +147,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTUTab', 'fNUUserFilterInput'],
   },
   {
-    name: '親チャンネル名をクリック',
+    name: '親チャンネル',
     keybinds: [
       {
         key: 'd',
@@ -157,7 +157,7 @@ const defaultTasks: Task[] = [
     actions: ['cHChannelNameParentChannelName'],
   },
   {
-    name: 'チャンネルフィルターにフォーカスして、現在のチャンネルを入力',
+    name: 'チャンネル検索（現在のチャンネルを入力）',
     keybinds: [
       {
         key: 'f',
@@ -172,7 +172,7 @@ const defaultTasks: Task[] = [
     ],
   },
   {
-    name: 'チャンネルフィルターのスターをクリック',
+    name: 'お気に入りのみ表示',
     keybinds: [
       {
         key: 'g',
@@ -182,7 +182,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cNCChannelFilterStar'],
   },
   {
-    name: 'アクティビティタブをクリック',
+    name: 'アクティビティタブ',
     keybinds: [
       {
         key: 'z',
@@ -192,7 +192,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTATab'],
   },
   {
-    name: '「通知/未読購読チャンネルのみを表示」をクリック',
+    name: '通知/未読購読チャンネルのみを表示',
     keybinds: [
       {
         key: 'x',
@@ -202,7 +202,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cNAIsNotAllToggleButton'],
   },
   {
-    name: '「同じチャンネルでは一つしかメッセージを表示しない」をクリック',
+    name: '同じチャンネルでは一つしかメッセージを表示しない',
     keybinds: [
       {
         key: 'c',
@@ -212,7 +212,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cNAIsPerChannelToggleButton'],
   },
   {
-    name: 'アクティビティのフォーローモードのトグル',
+    name: 'フォローモードのトグル',
     keybinds: [
       {
         key: '-',
@@ -222,7 +222,7 @@ const defaultTasks: Task[] = [
     actions: ['sTopOfNavigationBar', 'cTATab', 'tNAFollowMode'],
   },
   {
-    name: 'メッセージ入力欄にフォーカス',
+    name: '新規メッセージ',
     keybinds: [
       {
         key: 'n',
@@ -232,7 +232,7 @@ const defaultTasks: Task[] = [
     actions: ['fVMessageInput'],
   },
   {
-    name: 'スタンプピッカーを開く',
+    name: 'スタンプピッカー',
     keybinds: [
       {
         key: 'm',
@@ -252,7 +252,7 @@ const defaultTasks: Task[] = [
     actions: ['cVLatestMessageContextMenuEditMessage'],
   },
   {
-    name: '次のメッセージを選択',
+    name: '次のメッセージ',
     keybinds: [
       {
         key: 'j',
@@ -262,7 +262,7 @@ const defaultTasks: Task[] = [
     actions: ['oVMessageListNextMessage'],
   },
   {
-    name: '前のメッセージを選択',
+    name: '前のメッセージ',
     keybinds: [
       {
         key: 'k',
@@ -322,7 +322,7 @@ const defaultTasks: Task[] = [
     actions: ['cSContentViewers'],
   },
   {
-    name: '選択したメッセージのスポイラーをクリック',
+    name: '選択したメッセージのスポイラー',
     keybinds: [
       {
         key: '@',
@@ -332,7 +332,7 @@ const defaultTasks: Task[] = [
     actions: ['cVSelectedMessageSpoilers'],
   },
   {
-    name: '選択したメッセージのスタンプ詳細のプルダウンをクリック',
+    name: '選択したメッセージのスタンプ詳細のプルダウン',
     keybinds: [
       {
         key: 'v',
@@ -342,7 +342,7 @@ const defaultTasks: Task[] = [
     actions: ['cVSelectedMessageDetailButton'],
   },
   {
-    name: '選択したメッセージのスタンプをクリック',
+    name: '選択したメッセージのスタンプ',
     keybinds: [
       {
         key: ' ',
@@ -352,7 +352,7 @@ const defaultTasks: Task[] = [
     actions: ['cVSelectedMessageStamps'],
   },
   {
-    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    name: '検索結果の一番上のチャンネル',
     keybinds: [
       {
         key: 'Enter',
@@ -366,7 +366,7 @@ const defaultTasks: Task[] = [
     actions: ['cNCTopSearchResult'],
   },
   {
-    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    name: '検索結果の一番上のチャンネル',
     keybinds: [
       {
         key: 'Enter',
