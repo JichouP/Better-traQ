@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
-const cNavigationBarChannelsTopSearchResult = () => {
+const cNCTopSearchResult = () => {
   const channelListSelector = selectors.navigationBarChannelsChannelList();
   if (!channelListSelector) return;
   const channelList = document.querySelector(channelListSelector);
@@ -14,4 +14,4 @@ const cNavigationBarChannelsTopSearchResult = () => {
   mousedown(targetEl);
 };
 
-export default cNavigationBarChannelsTopSearchResult;
+export default cNCTopSearchResult;

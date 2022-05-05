@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 import getCurrentChannelNames from './utils/getCurrentChannelNames';
 
-const iCurrentChannelNameNavigationBarChannelsChannelFilter = () => {
+const iCurrentChannelNameNCChannelFilter = () => {
   const channelFilterInputSelector =
     selectors.navigationBarChannelsChannelFilterInput();
   if (!channelFilterInputSelector) return;
@@ -14,4 +14,4 @@ const iCurrentChannelNameNavigationBarChannelsChannelFilter = () => {
   channelFilterInputEl.value = `${currentChannelNames.join('/')}/`;
 };
 
-export default iCurrentChannelNameNavigationBarChannelsChannelFilter;
+export default iCurrentChannelNameNCChannelFilter;

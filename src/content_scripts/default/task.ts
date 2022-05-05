@@ -92,9 +92,9 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'eNavigationBarChannelsTreeToCurrentChannel',
+      'eNCTreeToCurrentChannel',
       'sleep100ms',
-      'sNavigationBarChannelsToCurrentChannel',
+      'sNCToCurrentChannel',
     ],
   },
   {
@@ -107,9 +107,9 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'eNavigationBarChannelsTreeToCurrentChannel',
-      'cNavigationBarChannelsNextChannel',
-      'sNavigationBarChannelsToCurrentChannel',
+      'eNCTreeToCurrentChannel',
+      'cNCNextChannel',
+      'sNCToCurrentChannel',
     ],
   },
   {
@@ -122,9 +122,9 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'cNavigationSelectorChannelsTab',
-      'eNavigationBarChannelsTreeToCurrentChannel',
-      'cNavigationBarChannelsPrevChannel',
-      'sNavigationBarChannelsToCurrentChannel',
+      'eNCTreeToCurrentChannel',
+      'cNCPrevChannel',
+      'sNCToCurrentChannel',
     ],
   },
   {
@@ -135,10 +135,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'cNavigationBarChannelsCurrentChannelHash',
-      'sNavigationBarChannelsToCurrentChannel',
-    ],
+    actions: ['cNCCurrentChannelHash', 'sNCToCurrentChannel'],
   },
   {
     name: 'チャンネルフィルターにフォーカス',
@@ -151,7 +148,7 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorChannelsTab',
-      'fNavigationBarChannelsChannelFilterInput',
+      'fNCChannelFilterInput',
     ],
   },
   {
@@ -190,8 +187,8 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorChannelsTab',
-      'fNavigationBarChannelsChannelFilterInput',
-      'iCurrentChannelNameNavigationBarChannelsChannelFilter',
+      'fNCChannelFilterInput',
+      'iCurrentChannelNameNCChannelFilter',
     ],
   },
   {
@@ -202,7 +199,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNavigationBarChannelsChannelFilterStar'],
+    actions: ['sTopOfNavigationBar', 'cNCChannelFilterStar'],
   },
   {
     name: 'アクティビティタブをクリック',
@@ -395,11 +392,11 @@ const defaultTasks: Task[] = [
         conditions: [
           'isFocusedInputOrTextarea',
           'notIsFocusedEmptyInputOrTextarea',
-          'isFocusedNavigationBarChannelsChannelFilterInput',
+          'isFocusedNCChannelFilterInput',
         ],
       },
     ],
-    actions: ['cNavigationBarChannelsTopSearchResult'],
+    actions: ['cNCTopSearchResult'],
   },
   {
     name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',

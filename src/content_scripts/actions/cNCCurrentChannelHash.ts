@@ -1,19 +1,19 @@
-import { mousedown } from './utils/dispatchEvent';
+import { clickHash } from './utils/dispatchEvent';
 import getChannelList from './utils/getChannelList';
 import getIndexOfCurrentChannel from './utils/getIndexOfCurrentChannel';
 
-const cNavigationBarChannelsPrevChannel = () => {
+const cNCCurrentChannelHash = () => {
   const channelList = getChannelList();
   if (!channelList) return;
   const currentChannelIndex = getIndexOfCurrentChannel();
   if (currentChannelIndex === undefined) return;
-  const targetElementContainer = channelList[currentChannelIndex - 1];
+  const targetElementContainer = channelList[currentChannelIndex];
   if (!targetElementContainer) return;
   const targetElement = targetElementContainer.querySelector<HTMLDivElement>(
-    ':scope > div:nth-child(1)'
+    ':scope > div:nth-child(1) > div:nth-child(1)'
   );
   if (!targetElement) return;
-  mousedown(targetElement);
+  clickHash(targetElement);
 };
 
-export default cNavigationBarChannelsPrevChannel;
+export default cNCCurrentChannelHash;
