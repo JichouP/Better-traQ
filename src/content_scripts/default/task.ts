@@ -163,7 +163,7 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorUsersTab',
-      'fNavigationBarUsersUserFilterInput',
+      'fNUUserFilterInput',
     ],
   },
   {
@@ -400,11 +400,11 @@ const defaultTasks: Task[] = [
         conditions: [
           'isFocusedInputOrTextarea',
           'notIsFocusedEmptyInputOrTextarea',
-          'isFocusedNavigationBarUsersUserFilterInput',
+          'isFocusedNUUserFilterInput',
         ],
       },
     ],
-    actions: ['cNavigationBarUsersTopSearchResult', 'bActiveInputElement'],
+    actions: ['cNUTopSearchResult', 'bActiveInputElement'],
   },
   {
     name: 'フォーカスを外す',

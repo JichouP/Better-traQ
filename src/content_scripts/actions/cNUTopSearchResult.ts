@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const cNavigationBarUsersTopSearchResult = () => {
+const cNUTopSearchResult = () => {
   const channelListSelector = selectors.navigationBarUsersUserList();
   if (!channelListSelector) return;
   const channelList = document.querySelector(channelListSelector);
@@ -10,4 +10,4 @@ const cNavigationBarUsersTopSearchResult = () => {
   targetEl?.click();
 };
 
-export default cNavigationBarUsersTopSearchResult;
+export default cNUTopSearchResult;
