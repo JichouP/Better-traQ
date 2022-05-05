@@ -8,7 +8,7 @@ const zAction = z.union([
   z.literal('cNHHomeChannel'),
   z.literal('cNHTopUnreadChannel'),
   z.literal('cNHBottomUnreadChannel'),
-  z.literal('cNavigationSelectorChannelsTab'),
+  z.literal('cTCTab'),
   z.literal('fNCChannelFilterInput'),
   z.literal('iCurrentChannelNameNCChannelFilter'),
   z.literal('cNCTopSearchResult'),

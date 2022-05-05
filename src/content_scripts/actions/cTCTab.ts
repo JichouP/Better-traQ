@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
-const cNavigationSelectorChannelsTab = () => {
+const cTCTab = () => {
   const channelsTabSelector = selectors.navigationSelectorChannelsTab();
   if (!channelsTabSelector) return;
   document.querySelector<HTMLDivElement>(channelsTabSelector)?.click();
 };
 
-export default cNavigationSelectorChannelsTab;
+export default cTCTab;

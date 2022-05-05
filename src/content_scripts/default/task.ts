@@ -71,7 +71,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNavigationSelectorChannelsTab'],
+    actions: ['sTopOfNavigationBar', 'cTCTab'],
   },
   {
     name: '現在のチャンネルまでツリーを展開',
@@ -83,7 +83,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'cNavigationSelectorChannelsTab',
+      'cTCTab',
       'eNCTreeToCurrentChannel',
       'sleep100ms',
       'sNCToCurrentChannel',
@@ -98,7 +98,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'cNavigationSelectorChannelsTab',
+      'cTCTab',
       'eNCTreeToCurrentChannel',
       'cNCNextChannel',
       'sNCToCurrentChannel',
@@ -113,7 +113,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'cNavigationSelectorChannelsTab',
+      'cTCTab',
       'eNCTreeToCurrentChannel',
       'cNCPrevChannel',
       'sNCToCurrentChannel',
@@ -137,11 +137,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationSelectorChannelsTab',
-      'fNCChannelFilterInput',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChannelFilterInput'],
   },
   {
     name: 'ユーザーフィルターにフォーカス',
@@ -178,7 +174,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'sTopOfNavigationBar',
-      'cNavigationSelectorChannelsTab',
+      'cTCTab',
       'fNCChannelFilterInput',
       'iCurrentChannelNameNCChannelFilter',
     ],
