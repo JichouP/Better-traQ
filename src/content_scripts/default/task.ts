@@ -298,7 +298,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['mouseoverChannelViewMessageListNextMessage'],
+    actions: ['oChannelViewMessageListNextMessage'],
   },
   {
     name: '前のメッセージを選択',
@@ -308,7 +308,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['mouseoverChannelViewMessageListPrevMessage'],
+    actions: ['oChannelViewMessageListPrevMessage'],
   },
   {
     name: '一番下までスクロール',

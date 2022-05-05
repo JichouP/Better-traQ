@@ -56,8 +56,8 @@ export { default as fNavigationBarChannelsChannelFilterInput } from './actions/f
 export { default as fNavigationBarUsersUserFilterInput } from './actions/fNavigationBarUsersUserFilterInput';
 export { default as iCurrentChannelNameNavigationBarChannelsChannelFilter } from './actions/iCurrentChannelNameNavigationBarChannelsChannelFilter';
 export { default as lChannelViewAllMessages } from './actions/lChannelViewAllMessages';
-export { default as mouseoverChannelViewMessageListNextMessage } from './actions/mouseoverChannelViewMessageListNextMessage';
-export { default as mouseoverChannelViewMessageListPrevMessage } from './actions/mouseoverChannelViewMessageListPrevMessage';
+export { default as oChannelViewMessageListNextMessage } from './actions/oChannelViewMessageListNextMessage';
+export { default as oChannelViewMessageListPrevMessage } from './actions/oChannelViewMessageListPrevMessage';
 export { default as scrollNavigationBarChannelsToCurrentChannel } from './actions/scrollNavigationBarChannelsToCurrentChannel';
 export { default as scrollToBottomOfChannelView } from './actions/scrollToBottomOfChannelView';
 export { default as scrollTopOfNavigationBar } from './actions/scrollTopOfNavigationBar';

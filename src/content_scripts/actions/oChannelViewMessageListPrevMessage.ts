@@ -2,7 +2,7 @@ import selectors from '../selectors';
 import lChannelViewAllMessages from './lChannelViewAllMessages';
 import { mouseenter } from './utils/dispatchEvent';
 
-const mouseoverChannelViewMessageListPrevMessage = () => {
+const oChannelViewMessageListPrevMessage = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -43,4 +43,4 @@ const mouseoverChannelViewMessageListPrevMessage = () => {
   return mouseenter(targetMessage);
 };
 
-export default mouseoverChannelViewMessageListPrevMessage;
+export default oChannelViewMessageListPrevMessage;
