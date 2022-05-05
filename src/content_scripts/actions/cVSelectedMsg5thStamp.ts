@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const cVSelectedMsgStamps = () => {
+const cVSelectedMsg5thStamp = () => {
   const messageListSelector = selectors.channelViewMsgList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -12,16 +12,14 @@ const cVSelectedMsgStamps = () => {
     ':scope > div > div[class*=tool]'
   );
   if (!messageTool) return;
-  const targetMsg = messageTool.parentElement as HTMLDivElement;
-  if (!targetMsg) return;
+  const targetMessage = messageTool.parentElement as HTMLDivElement;
+  if (!targetMessage) return;
 
-  const stamps = [
-    ...targetMsg.querySelectorAll<HTMLDivElement>(
-      ':scope > div:nth-last-child(1) > div > div > div:not([data-include-me])'
-    ),
-  ];
+  const stamp = targetMessage.querySelector<HTMLDivElement>(
+    ':scope > div:nth-last-child(1) > div > div:nth-child(5) > div:nth-child(1)'
+  );
 
-  stamps.forEach((stamp) => stamp.click());
+  stamp?.click();
 };
 
-export default cVSelectedMsgStamps;
+export default cVSelectedMsg5thStamp;

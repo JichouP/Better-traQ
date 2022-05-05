@@ -18,6 +18,16 @@ export { default as cVLatestMsgContextMenuEmbedMsg } from './actions/cVLatestMsg
 export { default as cVLatestMsgContextMenuRemovePin } from './actions/cVLatestMsgContextMenuRemovePin';
 export { default as cVLatestMsgStampPicker } from './actions/cVLatestMsgStampPicker';
 export { default as cVMsgInputStampButton } from './actions/cVMsgInputStampButton';
+export { default as cVSelectedMsg1stStamp } from './actions/cVSelectedMsg1stStamp';
+export { default as cVSelectedMsg2ndStamp } from './actions/cVSelectedMsg2ndStamp';
+export { default as cVSelectedMsg3rdStamp } from './actions/cVSelectedMsg3rdStamp';
+export { default as cVSelectedMsg4thStamp } from './actions/cVSelectedMsg4thStamp';
+export { default as cVSelectedMsg5thStamp } from './actions/cVSelectedMsg5thStamp';
+export { default as cVSelectedMsg6thStamp } from './actions/cVSelectedMsg6thStamp';
+export { default as cVSelectedMsg7thStamp } from './actions/cVSelectedMsg7thStamp';
+export { default as cVSelectedMsg8thStamp } from './actions/cVSelectedMsg8thStamp';
+export { default as cVSelectedMsg9thStamp } from './actions/cVSelectedMsg9thStamp';
+export { default as cVSelectedMsg10thStamp } from './actions/cVSelectedMsg10thStamp';
 export { default as cVSelectedMsgContextMenuAddPin } from './actions/cVSelectedMsgContextMenuAddPin';
 export { default as cVSelectedMsgContextMenuClipMsg } from './actions/cVSelectedMsgContextMenuClipMsg';
 export { default as cVSelectedMsgContextMenuCopyLink } from './actions/cVSelectedMsgContextMenuCopyLink';

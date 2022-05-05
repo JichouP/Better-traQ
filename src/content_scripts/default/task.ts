@@ -337,6 +337,106 @@ const defaultTasks: Task[] = [
     actions: ['cVSelectedMsgStamps'],
   },
   {
+    name: '1番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '1',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg1stStamp'],
+  },
+  {
+    name: '2番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '2',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg2ndStamp'],
+  },
+  {
+    name: '3番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '3',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg3rdStamp'],
+  },
+  {
+    name: '4番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '4',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg4thStamp'],
+  },
+  {
+    name: '5番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '5',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg5thStamp'],
+  },
+  {
+    name: '6番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '6',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg6thStamp'],
+  },
+  {
+    name: '7番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '7',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg7thStamp'],
+  },
+  {
+    name: '8番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '8',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg8thStamp'],
+  },
+  {
+    name: '9番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '9',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg9thStamp'],
+  },
+  {
+    name: '10番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '0',
+        conditions: ['niFInputOrTextarea'],
+      },
+    ],
+    actions: ['cVSelectedMsg10thStamp'],
+  },
+  {
     name: '検索結果の一番上のチャンネル',
     keybinds: [
       {

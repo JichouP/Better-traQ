@@ -5,10 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [3.0.2] - 2022-??-??
+## [3.1.0] - 2022-??-??
 
 ### Added
 
+- [全環境] `1234567890` にメッセージに付いたスタンプを個別に押す機能を追加 を追加 [#66](https://github.com/JichouP/Better-traQ/issues/66)
 - [全環境] 一番下の未読チャンネルをクリックする `clickNavigationBarHomeBottomUnreadChannel` を追加 [#62](https://github.com/JichouP/Better-traQ/issues/62)
 - [全環境] チャンネル入力時に、Enter キーで検索結果の一番上のチャンネルに飛ぶ機能を追加 [#58](https://github.com/JichouP/Better-traQ/issues/58)
 - [全環境] チャンネル/ユーザー検索にフォーカスしているかどうかを判定する条件を追加 [#56](https://github.com/JichouP/Better-traQ/issues/56)
