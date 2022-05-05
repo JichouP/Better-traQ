@@ -2,7 +2,7 @@ import selectors from '../selectors';
 import lVAllMessages from './lVAllMessages';
 import { mouseenter } from './utils/dispatchEvent';
 
-const oVMessageListNextMessage = () => {
+const oVPrevMessage = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -25,20 +25,22 @@ const oVMessageListNextMessage = () => {
     latestMessageEl.scrollIntoView({ block: 'center' });
     return mouseenter(latestMessageEl);
   }
-  // メッセージツールがあったら、次のメッセージを選択する
+
+  // メッセージツールがあったら、前のメッセージを選択する
   let targetMessage = messageTool.parentElement
-    ?.nextElementSibling as HTMLDivElement;
+    ?.previousElementSibling as HTMLDivElement;
   if (!targetMessage) return;
-  // 子要素が日付変更線だったら、1個次のメッセージを選択する
+  // 子要素が日付変更線だったら、1個前のメッセージを選択する
   if (
     targetMessage.className.includes('dateSeparator') ||
     targetMessage.className.includes('unreadSeparator')
   ) {
-    targetMessage = targetMessage.nextElementSibling as HTMLDivElement;
+    targetMessage = targetMessage.previousElementSibling as HTMLDivElement;
   }
+  // このタイミングで呼ばないといけないのでインポートして使う
   lVAllMessages();
   targetMessage.scrollIntoView({ block: 'center' });
   return mouseenter(targetMessage);
 };
 
-export default oVMessageListNextMessage;
+export default oVPrevMessage;

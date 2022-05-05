@@ -244,7 +244,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['oVMessageListNextMessage'],
+    actions: ['oVNextMessage'],
   },
   {
     name: '前のメッセージ',
@@ -254,7 +254,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['oVMessageListPrevMessage'],
+    actions: ['oVPrevMessage'],
   },
   {
     name: '一番下までスクロール',
