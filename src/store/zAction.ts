@@ -26,7 +26,7 @@ const zAction = z.union([
   z.literal('fNUUserFilterInput'),
   z.literal('cNUTopSearchResult'),
   z.literal('cTClipTab'),
-  z.literal('cHChNameParentChName'),
+  z.literal('cHParentChName'),
   z.literal('oVMessageListNextMessage'),
   z.literal('oVMessageListPrevMessage'),
   z.literal('sToBottomOfV'),

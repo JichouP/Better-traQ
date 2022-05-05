@@ -1,5 +1,5 @@
 export { default as bActiveInputElement } from './actions/bActiveInputElement';
-export { default as cHChNameParentChName } from './actions/cHChNameParentChName';
+export { default as cHParentChName } from './actions/cHParentChName';
 export { default as cV2ndLatestMessageStampPicker } from './actions/cV2ndLatestMessageStampPicker';
 export { default as cV3rdLatestMessageStampPicker } from './actions/cV3rdLatestMessageStampPicker';
 export { default as cV4thLatestMessageStampPicker } from './actions/cV4thLatestMessageStampPicker';

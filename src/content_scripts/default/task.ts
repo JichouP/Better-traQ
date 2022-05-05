@@ -139,7 +139,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cHChNameParentChName'],
+    actions: ['cHParentChName'],
   },
   {
     name: 'チャンネル検索（現在のチャンネルを入力）',
