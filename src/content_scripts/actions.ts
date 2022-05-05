@@ -43,7 +43,7 @@ export { default as cNUTopSearchResult } from './actions/cNUTopSearchResult';
 export { default as cNavigationSelectorActivityTab } from './actions/cNavigationSelectorActivityTab';
 export { default as cNavigationSelectorChannelsTab } from './actions/cNavigationSelectorChannelsTab';
 export { default as cNavigationSelectorClipTab } from './actions/cNavigationSelectorClipTab';
-export { default as cNavigationSelectorHomeTab } from './actions/cNavigationSelectorHomeTab';
+export { default as cTHTab } from './actions/cTHTab';
 export { default as cNavigationSelectorUsersTab } from './actions/cNavigationSelectorUsersTab';
 export { default as cNextPage } from './actions/cNextPage';
 export { default as cPrevPage } from './actions/cPrevPage';

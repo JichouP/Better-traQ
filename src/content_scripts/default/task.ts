@@ -27,7 +27,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNavigationSelectorHomeTab'],
+    actions: ['sTopOfNavigationBar', 'cTHTab'],
   },
   {
     name: 'ホームチャンネルをクリック',
@@ -37,11 +37,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationSelectorHomeTab',
-      'cNHHomeChannel',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeChannel'],
   },
   {
     name: 'ホームチャンネルをクリック（未読チャンネルがない場合）',
@@ -65,11 +61,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationSelectorHomeTab',
-      'cNHTopUnreadChannel',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadChannel'],
   },
   {
     name: 'チャンネルタブをクリック',

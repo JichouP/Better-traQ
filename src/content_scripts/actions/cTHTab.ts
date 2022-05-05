@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
-const cNavigationSelectorHomeTab = () => {
+const cTHTab = () => {
   const homeTabSelector = selectors.navigationSelectorHomeTab();
   if (!homeTabSelector) return;
   document.querySelector<HTMLDivElement>(homeTabSelector)?.click();
 };
 
-export default cNavigationSelectorHomeTab;
+export default cTHTab;

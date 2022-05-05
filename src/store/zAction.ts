@@ -4,7 +4,7 @@ const zAction = z.union([
   z.literal('cPrevPage'),
   z.literal('cNextPage'),
   z.literal('sTopOfNavigationBar'),
-  z.literal('cNavigationSelectorHomeTab'),
+  z.literal('cTHTab'),
   z.literal('cNHHomeChannel'),
   z.literal('cNHTopUnreadChannel'),
   z.literal('cNHBottomUnreadChannel'),
