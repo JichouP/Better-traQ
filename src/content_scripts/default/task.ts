@@ -191,7 +191,7 @@ const defaultTasks: Task[] = [
       'scrollTopOfNavigationBar',
       'cNavigationSelectorChannelsTab',
       'fNavigationBarChannelsChannelFilterInput',
-      'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
+      'iCurrentChannelNameNavigationBarChannelsChannelFilter',
     ],
   },
   {
