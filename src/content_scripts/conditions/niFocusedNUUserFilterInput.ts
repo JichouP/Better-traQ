@@ -1,5 +1,5 @@
-import isFocusedNUUserFilterInput from './isFocusedNUUserFilterInput';
+import iFocusedNUUserFilterInput from './iFocusedNUUserFilterInput';
 
-const niFocusedNUUserFilterInput = (): boolean => !isFocusedNUUserFilterInput();
+const niFocusedNUUserFilterInput = (): boolean => !iFocusedNUUserFilterInput();
 
 export default niFocusedNUUserFilterInput;

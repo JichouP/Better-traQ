@@ -1,6 +1,6 @@
-import isFocusedNCChannelFilterInput from './isFocusedNCChannelFilterInput';
+import iFocusedNCChannelFilterInput from './iFocusedNCChannelFilterInput';
 
 const niFocusedNCChannelFilterInput = (): boolean =>
-  !isFocusedNCChannelFilterInput();
+  !iFocusedNCChannelFilterInput();
 
 export default niFocusedNCChannelFilterInput;

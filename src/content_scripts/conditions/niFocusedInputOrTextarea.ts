@@ -1,5 +1,5 @@
-import isFocusedInputOrTextarea from './isFocusedInputOrTextarea';
+import iFocusedInputOrTextarea from './iFocusedInputOrTextarea';
 
-const niFocusedInputOrTextarea = (): boolean => !isFocusedInputOrTextarea();
+const niFocusedInputOrTextarea = (): boolean => !iFocusedInputOrTextarea();
 
 export default niFocusedInputOrTextarea;

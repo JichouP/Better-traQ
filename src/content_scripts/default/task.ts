@@ -250,10 +250,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'ArrowUp',
-        conditions: [
-          'isFocusedInputOrTextarea',
-          'isFocusedEmptyInputOrTextarea',
-        ],
+        conditions: ['iFocusedInputOrTextarea', 'iFocusedEmptyInputOrTextarea'],
       },
     ],
     actions: ['cVLatestMessageContextMenuEditMessage'],
@@ -313,7 +310,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['niFocusedInputOrTextarea', 'isOpenS'],
+        conditions: ['niFocusedInputOrTextarea', 'iOpenS'],
       },
     ],
     actions: ['cSCloser'],
@@ -323,7 +320,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ';',
-        conditions: ['niFocusedInputOrTextarea', 'isOpenS'],
+        conditions: ['niFocusedInputOrTextarea', 'iOpenS'],
       },
     ],
     actions: ['cSContentViewers'],
@@ -364,9 +361,9 @@ const defaultTasks: Task[] = [
       {
         key: 'Enter',
         conditions: [
-          'isFocusedInputOrTextarea',
+          'iFocusedInputOrTextarea',
           'niFocusedEmptyInputOrTextarea',
-          'isFocusedNCChannelFilterInput',
+          'iFocusedNCChannelFilterInput',
         ],
       },
     ],
@@ -378,9 +375,9 @@ const defaultTasks: Task[] = [
       {
         key: 'Enter',
         conditions: [
-          'isFocusedInputOrTextarea',
+          'iFocusedInputOrTextarea',
           'niFocusedEmptyInputOrTextarea',
-          'isFocusedNUUserFilterInput',
+          'iFocusedNUUserFilterInput',
         ],
       },
     ],
@@ -391,7 +388,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['isFocusedInputOrTextarea'],
+        conditions: ['iFocusedInputOrTextarea'],
       },
     ],
     actions: ['bActiveInputElement'],

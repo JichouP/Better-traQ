@@ -1,5 +1,5 @@
-import isOpenS from './isOpenS';
+import iOpenS from './iOpenS';
 
-const niOpenS = (): boolean => !isOpenS();
+const niOpenS = (): boolean => !iOpenS();
 
 export default niOpenS;
