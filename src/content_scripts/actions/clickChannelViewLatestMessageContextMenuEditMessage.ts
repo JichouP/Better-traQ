@@ -24,6 +24,14 @@ const clickChannelViewLatestMessageContextMenuEditMessage = () => {
         const targetSelector = selectors.channelViewContextMenuEditMessage();
         if (!targetSelector) return;
         document.querySelector<HTMLDivElement>(targetSelector)?.click();
+        lazy(() => {
+          const editorEl =
+            latestMessageEl.querySelector<HTMLTextAreaElement>(
+              ':scope textarea'
+            );
+          if (!editorEl) return;
+          editorEl.focus();
+        });
       });
     });
   });
