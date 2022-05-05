@@ -58,8 +58,8 @@ export { default as iCurrentChannelNameNavigationBarChannelsChannelFilter } from
 export { default as lChannelViewAllMessages } from './actions/lChannelViewAllMessages';
 export { default as oChannelViewMessageListNextMessage } from './actions/oChannelViewMessageListNextMessage';
 export { default as oChannelViewMessageListPrevMessage } from './actions/oChannelViewMessageListPrevMessage';
-export { default as scrollNavigationBarChannelsToCurrentChannel } from './actions/scrollNavigationBarChannelsToCurrentChannel';
-export { default as scrollToBottomOfChannelView } from './actions/scrollToBottomOfChannelView';
-export { default as scrollTopOfNavigationBar } from './actions/scrollTopOfNavigationBar';
+export { default as sNavigationBarChannelsToCurrentChannel } from './actions/sNavigationBarChannelsToCurrentChannel';
+export { default as sToBottomOfChannelView } from './actions/sToBottomOfChannelView';
+export { default as sTopOfNavigationBar } from './actions/sTopOfNavigationBar';
 export { default as sleep100ms } from './actions/sleep100ms';
 export { default as toggleNavigationBarActivityFollowMode } from './actions/toggleNavigationBarActivityFollowMode';

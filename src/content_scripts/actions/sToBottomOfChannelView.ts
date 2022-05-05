@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const scrollToBottomOfChannelView = () => {
+const sToBottomOfChannelView = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListEl =
@@ -11,4 +11,4 @@ const scrollToBottomOfChannelView = () => {
   });
 };
 
-export default scrollToBottomOfChannelView;
+export default sToBottomOfChannelView;

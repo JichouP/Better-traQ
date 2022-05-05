@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
-const scrollTopOfNavigationBar = () => {
+const sTopOfNavigationBar = () => {
   const navigationBarSelector = selectors.navigationBar();
   if (!navigationBarSelector) return;
   document.querySelector<HTMLDivElement>(navigationBarSelector)?.scrollTo(0, 0);
 };
 
-export default scrollTopOfNavigationBar;
+export default sTopOfNavigationBar;

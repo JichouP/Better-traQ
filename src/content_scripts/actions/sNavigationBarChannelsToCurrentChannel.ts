@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const scrollNavigationBarChannelsToCurrentChannel = () => {
+const sNavigationBarChannelsToCurrentChannel = () => {
   const currentChannelSelector =
     selectors.navigationBarChannelsChannelCurrentChannel();
   if (!currentChannelSelector) return;
@@ -11,4 +11,4 @@ const scrollNavigationBarChannelsToCurrentChannel = () => {
   currentChannel.scrollIntoView({ behavior: 'auto', block: 'center' });
 };
 
-export default scrollNavigationBarChannelsToCurrentChannel;
+export default sNavigationBarChannelsToCurrentChannel;
