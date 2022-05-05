@@ -21,7 +21,7 @@ const zAction = z.union([
   z.literal('cNavigationSelectorActivityTab'),
   z.literal('cNavigationBarActivityIsNotAllToggleButton'),
   z.literal('cNavigationBarActivityIsPerChannelToggleButton'),
-  z.literal('toggleNavigationBarActivityFollowMode'),
+  z.literal('tNavigationBarActivityFollowMode'),
   z.literal('cNavigationSelectorUsersTab'),
   z.literal('fNavigationBarUsersUserFilterInput'),
   z.literal('cNavigationBarUsersTopSearchResult'),

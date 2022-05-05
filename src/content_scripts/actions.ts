@@ -62,4 +62,4 @@ export { default as sNavigationBarChannelsToCurrentChannel } from './actions/sNa
 export { default as sToBottomOfChannelView } from './actions/sToBottomOfChannelView';
 export { default as sTopOfNavigationBar } from './actions/sTopOfNavigationBar';
 export { default as sleep100ms } from './actions/sleep100ms';
-export { default as toggleNavigationBarActivityFollowMode } from './actions/toggleNavigationBarActivityFollowMode';
+export { default as tNavigationBarActivityFollowMode } from './actions/tNavigationBarActivityFollowMode';
