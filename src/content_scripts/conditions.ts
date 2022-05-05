@@ -7,8 +7,8 @@ export { default as iFocusedInputOrTextarea } from './conditions/iFocusedInputOr
 export { default as iFocusedNCChannelFilterInput } from './conditions/iFocusedNCChannelFilterInput';
 export { default as iFocusedNUUserFilterInput } from './conditions/iFocusedNUUserFilterInput';
 export { default as iOpenS } from './conditions/iOpenS';
-export { default as notExistHomeChannel } from './conditions/notExistHomeChannel';
-export { default as notExistUnreadChannel } from './conditions/notExistUnreadChannel';
+export { default as neHomeChannel } from './conditions/neHomeChannel';
+export { default as neUnreadChannel } from './conditions/neUnreadChannel';
 export { default as niFocusedEmptyInputOrTextarea } from './conditions/niFocusedEmptyInputOrTextarea';
 export { default as niFocusedInputOrTextarea } from './conditions/niFocusedInputOrTextarea';
 export { default as niFocusedNCChannelFilterInput } from './conditions/niFocusedNCChannelFilterInput';

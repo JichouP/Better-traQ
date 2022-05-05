@@ -12,9 +12,9 @@ const zCondition = z.union([
   z.literal('iOpenS'),
   z.literal('niOpenS'),
   z.literal('eHomeChannel'),
-  z.literal('notExistHomeChannel'),
+  z.literal('neHomeChannel'),
   z.literal('eUnreadChannel'),
-  z.literal('notExistUnreadChannel'),
+  z.literal('neUnreadChannel'),
 ]);
 
 export type ConditionEnum = z.infer<typeof zCondition>;
