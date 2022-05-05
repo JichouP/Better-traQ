@@ -18,7 +18,7 @@ const zAction = z.union([
   z.literal('cNCPrevChannel'),
   z.literal('cNCCurrentChannelHash'),
   z.literal('sNCToCurrentChannel'),
-  z.literal('cNavigationSelectorActivityTab'),
+  z.literal('cTATab'),
   z.literal('cNAIsNotAllToggleButton'),
   z.literal('cNAIsPerChannelToggleButton'),
   z.literal('tNAFollowMode'),

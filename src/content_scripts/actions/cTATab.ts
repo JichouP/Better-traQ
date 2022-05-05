@@ -1,9 +1,9 @@
 import selectors from '../selectors';
 
-const cNavigationSelectorActivityTab = () => {
+const cTATab = () => {
   const activityTabSelector = selectors.navigationSelectorActivityTab();
   if (!activityTabSelector) return;
   document.querySelector<HTMLDivElement>(activityTabSelector)?.click();
 };
 
-export default cNavigationSelectorActivityTab;
+export default cTATab;

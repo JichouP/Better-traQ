@@ -40,7 +40,7 @@ export { default as cNHBottomUnreadChannel } from './actions/cNHBottomUnreadChan
 export { default as cNHHomeChannel } from './actions/cNHHomeChannel';
 export { default as cNHTopUnreadChannel } from './actions/cNHTopUnreadChannel';
 export { default as cNUTopSearchResult } from './actions/cNUTopSearchResult';
-export { default as cNavigationSelectorActivityTab } from './actions/cNavigationSelectorActivityTab';
+export { default as cTATab } from './actions/cTATab';
 export { default as cTCTab } from './actions/cTCTab';
 export { default as cNavigationSelectorClipTab } from './actions/cNavigationSelectorClipTab';
 export { default as cTHTab } from './actions/cTHTab';

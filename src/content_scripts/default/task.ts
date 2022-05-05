@@ -197,7 +197,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNavigationSelectorActivityTab'],
+    actions: ['sTopOfNavigationBar', 'cTATab'],
   },
   {
     name: '「通知/未読購読チャンネルのみを表示」をクリック',
@@ -227,11 +227,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationSelectorActivityTab',
-      'tNAFollowMode',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTATab', 'tNAFollowMode'],
   },
   {
     name: 'メッセージ入力欄にフォーカス',
