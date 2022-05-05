@@ -37,17 +37,17 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeChannel'],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeCh'],
   },
   {
     name: 'ホームチャンネル（未読チャンネルがない場合）',
     keybinds: [
       {
         key: 'e',
-        conditions: ['niFInputOrTextarea', 'eHomeChannel', 'neUnreadChannel'],
+        conditions: ['niFInputOrTextarea', 'eHomeCh', 'neUnreadCh'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNHHomeChannel'],
+    actions: ['sTopOfNavigationBar', 'cNHHomeCh'],
   },
   {
     name: '最新未読チャンネル',
@@ -57,7 +57,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadChannel'],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadCh'],
   },
   {
     name: 'チャンネルタブ',
@@ -78,12 +78,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'cTCTab',
-      'eNCTreeToCurrentChannel',
-      'sleep100ms',
-      'sNCToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'sleep100ms', 'sNCToCurrentCh'],
   },
   {
     name: '次のチャンネル',
@@ -93,12 +88,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'cTCTab',
-      'eNCTreeToCurrentChannel',
-      'cNCNextChannel',
-      'sNCToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'cNCNextCh', 'sNCToCurrentCh'],
   },
   {
     name: '前のチャンネル',
@@ -108,12 +98,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'cTCTab',
-      'eNCTreeToCurrentChannel',
-      'cNCPrevChannel',
-      'sNCToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'cNCPrevCh', 'sNCToCurrentCh'],
   },
   {
     name: '現在のチャンネルの展開/折りたたみ',
@@ -123,7 +108,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cNCCurrentChannelHash', 'sNCToCurrentChannel'],
+    actions: ['cNCCurrentChHash', 'sNCToCurrentCh'],
   },
   {
     name: 'チャンネル検索',
@@ -133,7 +118,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChannelFilterInput'],
+    actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChFilterInput'],
   },
   {
     name: 'ユーザー検索',
@@ -154,7 +139,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cHChannelNameParentChannelName'],
+    actions: ['cHChNameParentChName'],
   },
   {
     name: 'チャンネル検索（現在のチャンネルを入力）',
@@ -167,8 +152,8 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cTCTab',
-      'fNCChannelFilterInput',
-      'iCurrentChannelNameNCChannelFilter',
+      'fNCChFilterInput',
+      'iCurrentChNameNCChFilter',
     ],
   },
   {
@@ -179,7 +164,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNCChannelFilterStar'],
+    actions: ['sTopOfNavigationBar', 'cNCChFilterStar'],
   },
   {
     name: 'アクティビティタブ',
@@ -209,7 +194,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNAIsPerChannelToggleButton'],
+    actions: ['sTopOfNavigationBar', 'cNAIsPerChToggleButton'],
   },
   {
     name: 'フォローモードのトグル',
@@ -359,7 +344,7 @@ const defaultTasks: Task[] = [
         conditions: [
           'iFInputOrTextarea',
           'niFEmptyInputOrTextarea',
-          'iFNCChannelFilterInput',
+          'iFNCChFilterInput',
         ],
       },
     ],

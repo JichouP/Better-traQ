@@ -1,10 +1,9 @@
 import selectors from '../selectors';
 
-const iFNCChannelFilterInput = (): boolean => {
+const iFNCChFilterInput = (): boolean => {
   const { activeElement } = document;
   if (!activeElement) return false;
-  const channelFilterSelector =
-    selectors.navigationBarChannelsChannelFilterInput();
+  const channelFilterSelector = selectors.navigationBarChannelsChFilterInput();
   if (!channelFilterSelector) return false;
   const channelFilter = document.querySelector<HTMLInputElement>(
     channelFilterSelector
@@ -13,4 +12,4 @@ const iFNCChannelFilterInput = (): boolean => {
   return channelFilter === activeElement;
 };
 
-export default iFNCChannelFilterInput;
+export default iFNCChFilterInput;

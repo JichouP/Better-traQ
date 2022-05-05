@@ -1,8 +1,8 @@
 import selectors from '../selectors';
 
-const cHChannelNameParentChannelName = () => {
+const cHChNameParentChName = () => {
   // Header のチャンネル名の親要素を取得
-  const channelNameSelector = selectors.channelHeaderChannelName();
+  const channelNameSelector = selectors.channelHeaderChName();
   if (!channelNameSelector) return;
   const channelNameEl =
     document.querySelector<HTMLDivElement>(channelNameSelector);
@@ -15,4 +15,4 @@ const cHChannelNameParentChannelName = () => {
   channelNames.at(-1)?.click();
 };
 
-export default cHChannelNameParentChannelName;
+export default cHChNameParentChName;

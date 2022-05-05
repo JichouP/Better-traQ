@@ -1,18 +1,18 @@
 import selectors from '@/content_scripts/selectors';
 
-const getChannelList = (): HTMLDivElement[] | undefined => {
-  const channelListSelector = selectors.navigationBarChannelsChannelList();
+const getChList = (): HTMLDivElement[] | undefined => {
+  const channelListSelector = selectors.navigationBarChannelsChList();
   if (!channelListSelector) return;
   const channelList =
     document.querySelector<HTMLDivElement>(channelListSelector);
   if (!channelList) return;
 
   // クラス名を取得するために一番上のチャンネルコンテナを取得
-  const topChannelContainer = document.querySelector(
+  const topChContainer = document.querySelector(
     `${channelListSelector} > div:nth-child(1)`
   );
-  if (!topChannelContainer) return;
-  const className = topChannelContainer.className.split(' ')[0];
+  if (!topChContainer) return;
+  const className = topChContainer.className.split(' ')[0];
 
   // クラス名からチャンネルのリストを取得する
   const channels = [
@@ -21,4 +21,4 @@ const getChannelList = (): HTMLDivElement[] | undefined => {
   return channels;
 };
 
-export default getChannelList;
+export default getChList;

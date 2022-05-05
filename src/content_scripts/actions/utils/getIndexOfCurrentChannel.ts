@@ -1,10 +1,10 @@
-import getChannelList from './getChannelList';
+import getChList from './getChList';
 
-const getIndexOfCurrentChannel = (): number | undefined => {
-  const channelList = getChannelList();
+const getIndexOfCurrentCh = (): number | undefined => {
+  const channelList = getChList();
   if (!channelList) return;
   return [...channelList].findIndex(
     (channel) => channel.getAttribute('aria-selected') === 'true'
   );
 };
-export default getIndexOfCurrentChannel;
+export default getIndexOfCurrentCh;

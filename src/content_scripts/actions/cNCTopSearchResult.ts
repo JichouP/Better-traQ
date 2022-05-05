@@ -2,7 +2,7 @@ import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
 const cNCTopSearchResult = () => {
-  const channelListSelector = selectors.navigationBarChannelsChannelList();
+  const channelListSelector = selectors.navigationBarChannelsChList();
   if (!channelListSelector) return;
   const channelList = document.querySelector(channelListSelector);
   if (!channelList) return;

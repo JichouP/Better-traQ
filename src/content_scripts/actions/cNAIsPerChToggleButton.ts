@@ -1,10 +1,10 @@
 import selectors from '../selectors';
 
-const cNAIsPerChannelToggleButton = () => {
+const cNAIsPerChToggleButton = () => {
   const toggleButtonSelector =
     selectors.navigationBarActivityIsPerChannelToggleButton();
   if (!toggleButtonSelector) return;
   document.querySelector<HTMLDivElement>(toggleButtonSelector)?.click();
 };
 
-export default cNAIsPerChannelToggleButton;
+export default cNAIsPerChToggleButton;

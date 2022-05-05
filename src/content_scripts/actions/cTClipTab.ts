@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 
 const cTClipTab = () => {
-  const clipTabSelector = selectors.navigationSelectorClipTab();
+  const clipTabSelector = selectors.tClipTab();
   if (!clipTabSelector) return;
   document.querySelector<HTMLDivElement>(clipTabSelector)?.click();
 };

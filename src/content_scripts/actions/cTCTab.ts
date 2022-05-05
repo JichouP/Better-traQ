@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 
 const cTCTab = () => {
-  const channelsTabSelector = selectors.navigationSelectorChannelsTab();
+  const channelsTabSelector = selectors.tcTab();
   if (!channelsTabSelector) return;
   document.querySelector<HTMLDivElement>(channelsTabSelector)?.click();
 };

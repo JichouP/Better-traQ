@@ -5,16 +5,16 @@ const zCondition = z.union([
   z.literal('niFInputOrTextarea'),
   z.literal('iFEmptyInputOrTextarea'),
   z.literal('niFEmptyInputOrTextarea'),
-  z.literal('iFNCChannelFilterInput'),
-  z.literal('niFNCChannelFilterInput'),
+  z.literal('iFNCChFilterInput'),
+  z.literal('niFNCChFilterInput'),
   z.literal('iFNUUserFilterInput'),
   z.literal('niFNUUserFilterInput'),
   z.literal('iOS'),
   z.literal('niOS'),
-  z.literal('eHomeChannel'),
-  z.literal('neHomeChannel'),
-  z.literal('eUnreadChannel'),
-  z.literal('neUnreadChannel'),
+  z.literal('eHomeCh'),
+  z.literal('neHomeCh'),
+  z.literal('eUnreadCh'),
+  z.literal('neUnreadCh'),
 ]);
 
 export type ConditionEnum = z.infer<typeof zCondition>;

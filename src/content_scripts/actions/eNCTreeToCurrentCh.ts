@@ -3,18 +3,18 @@
 /* eslint-disable no-restricted-syntax */
 import selectors from '../selectors';
 import { clickHash } from './utils/dispatchEvent';
-import getCurrentChannelNames from './utils/getCurrentChannelNames';
+import getCurrentChNames from './utils/getCurrentChannelNames';
 import lazy from '@/utils/lazy';
 
-const getChannelNameList = (el: HTMLElement) => {
+const getChNameList = (el: HTMLElement) => {
   const channelNameList = [
     ...el.querySelectorAll<HTMLSpanElement>(':scope > div > div > div > span'),
   ].map((channelNameSpan) => channelNameSpan.innerHTML);
   return channelNameList;
 };
 
-const eNCTreeToCurrentChannel = async () => {
-  const channelNames = getCurrentChannelNames();
+const eNCTreeToCurrentCh = async () => {
+  const channelNames = getCurrentChNames();
   if (!channelNames) return;
   const channelListSelector = selectors.navigationBarChannelsChannelList();
   if (!channelListSelector) return;
@@ -25,7 +25,7 @@ const eNCTreeToCurrentChannel = async () => {
   // コンテナの子・クリック可能な要素を取得
   let currentTarget = channelListContainer;
   for (const [i, channelName] of channelNames.entries()) {
-    const index = getChannelNameList(currentTarget).findIndex(
+    const index = getChNameList(currentTarget).findIndex(
       (v) => v === channelName
     );
     const hash = currentTarget.querySelector<HTMLDivElement>(
@@ -57,4 +57,4 @@ const eNCTreeToCurrentChannel = async () => {
   }
 };
 
-export default eNCTreeToCurrentChannel;
+export default eNCTreeToCurrentCh;
