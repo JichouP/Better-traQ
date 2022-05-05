@@ -3,7 +3,7 @@ type SelectorEnum =
   | 'navigationBar'
   /// Popup
   | 'popupNavigator'
-  | 'previousPage'
+  | 'prevPage'
   | 'nextPage'
   /// Homeタブ
   | 'navigationSelectorHomeTab'

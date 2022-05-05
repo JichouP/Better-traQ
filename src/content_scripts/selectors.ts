@@ -36,7 +36,7 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   navigationBar: () =>
     '#app > div > div > div > div > div > div:nth-child(2) > div:nth-child(1)',
   popupNavigator: () => navigationSelector(1),
-  previousPage: () => '#popup-navigator > div > div:nth-child(1)',
+  prevPage: () => '#popup-navigator > div > div:nth-child(1)',
   nextPage: () => '#popup-navigator > div > div:nth-child(2)',
   navigationSelectorHomeTab: () => navigationSelector(2),
   navigationBarHomeHomeChannel: () =>

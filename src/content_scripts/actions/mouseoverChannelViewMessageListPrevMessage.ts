@@ -2,7 +2,7 @@ import selectors from '../selectors';
 import mouseleaveChannelViewAllMessages from './mouseleaveChannelViewAllMessages';
 import { mouseenter } from './utils/dispatchEvent';
 
-const mouseoverChannelViewMessageListPreviousMessage = () => {
+const mouseoverChannelViewMessageListPrevMessage = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -43,4 +43,4 @@ const mouseoverChannelViewMessageListPreviousMessage = () => {
   return mouseenter(targetMessage);
 };
 
-export default mouseoverChannelViewMessageListPreviousMessage;
+export default mouseoverChannelViewMessageListPrevMessage;

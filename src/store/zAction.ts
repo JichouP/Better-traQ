@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const zAction = z.union([
-  z.literal('clickPreviousPage'),
+  z.literal('clickPrevPage'),
   z.literal('clickNextPage'),
   z.literal('scrollTopOfNavigationBar'),
   z.literal('clickNavigationSelectorHomeTab'),
@@ -15,7 +15,7 @@ const zAction = z.union([
   z.literal('clickNavigationBarChannelsChannelFilterStar'),
   z.literal('expandNavigationBarChannelsTreeToCurrentChannel'),
   z.literal('clickNavigationBarChannelsNextChannel'),
-  z.literal('clickNavigationBarChannelsPreviousChannel'),
+  z.literal('clickNavigationBarChannelsPrevChannel'),
   z.literal('clickNavigationBarChannelsCurrentChannelHash'),
   z.literal('scrollNavigationBarChannelsToCurrentChannel'),
   z.literal('clickNavigationSelectorActivityTab'),
@@ -28,7 +28,7 @@ const zAction = z.union([
   z.literal('clickNavigationSelectorClipTab'),
   z.literal('clickChannelHeaderChannelNameParentChannelName'),
   z.literal('mouseoverChannelViewMessageListNextMessage'),
-  z.literal('mouseoverChannelViewMessageListPreviousMessage'),
+  z.literal('mouseoverChannelViewMessageListPrevMessage'),
   z.literal('scrollToBottomOfChannelView'),
   z.literal('clickChannelViewLatestMessageStampPicker'),
   z.literal('clickChannelView2ndLatestMessageStampPicker'),

@@ -7,7 +7,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickPreviousPage'],
+    actions: ['clickPrevPage'],
   },
   {
     name: '進む',
@@ -123,7 +123,7 @@ const defaultTasks: Task[] = [
     actions: [
       'clickNavigationSelectorChannelsTab',
       'expandNavigationBarChannelsTreeToCurrentChannel',
-      'clickNavigationBarChannelsPreviousChannel',
+      'clickNavigationBarChannelsPrevChannel',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
   },
@@ -308,7 +308,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['mouseoverChannelViewMessageListPreviousMessage'],
+    actions: ['mouseoverChannelViewMessageListPrevMessage'],
   },
   {
     name: '一番下までスクロール',

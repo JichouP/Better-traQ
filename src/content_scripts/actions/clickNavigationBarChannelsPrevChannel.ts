@@ -2,7 +2,7 @@ import { mousedown } from './utils/dispatchEvent';
 import getChannelList from './utils/getChannelList';
 import getIndexOfCurrentChannel from './utils/getIndexOfCurrentChannel';
 
-const clickNavigationBarChannelsPreviousChannel = () => {
+const clickNavigationBarChannelsPrevChannel = () => {
   const channelList = getChannelList();
   if (!channelList) return;
   const currentChannelIndex = getIndexOfCurrentChannel();
@@ -16,4 +16,4 @@ const clickNavigationBarChannelsPreviousChannel = () => {
   mousedown(targetElement);
 };
 
-export default clickNavigationBarChannelsPreviousChannel;
+export default clickNavigationBarChannelsPrevChannel;

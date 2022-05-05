@@ -34,7 +34,7 @@ export { default as clickNavigationBarActivityIsPerChannelToggleButton } from '.
 export { default as clickNavigationBarChannelsCurrentChannelHash } from './actions/clickNavigationBarChannelsCurrentChannelHash';
 export { default as clickNavigationBarChannelsChannelFilterStar } from './actions/clickNavigationBarChannelsChannelFilterStar';
 export { default as clickNavigationBarChannelsNextChannel } from './actions/clickNavigationBarChannelsNextChannel';
-export { default as clickNavigationBarChannelsPreviousChannel } from './actions/clickNavigationBarChannelsPreviousChannel';
+export { default as clickNavigationBarChannelsPrevChannel } from './actions/clickNavigationBarChannelsPrevChannel';
 export { default as clickNavigationBarChannelsTopSearchResult } from './actions/clickNavigationBarChannelsTopSearchResult';
 export { default as clickNavigationBarHomeBottomUnreadChannel } from './actions/clickNavigationBarHomeBottomUnreadChannel';
 export { default as clickNavigationBarHomeHomeChannel } from './actions/clickNavigationBarHomeHomeChannel';
@@ -46,7 +46,7 @@ export { default as clickNavigationSelectorClipTab } from './actions/clickNaviga
 export { default as clickNavigationSelectorHomeTab } from './actions/clickNavigationSelectorHomeTab';
 export { default as clickNavigationSelectorUsersTab } from './actions/clickNavigationSelectorUsersTab';
 export { default as clickNextPage } from './actions/clickNextPage';
-export { default as clickPreviousPage } from './actions/clickPreviousPage';
+export { default as clickPrevPage } from './actions/clickPrevPage';
 export { default as clickSidebarCloser } from './actions/clickSidebarCloser';
 export { default as clickSidebarContentViewers } from './actions/clickSidebarContentViewers';
 export { default as clickSidebarOpener } from './actions/clickSidebarOpener';
@@ -57,7 +57,7 @@ export { default as focusNavigationBarUsersUserFilterInput } from './actions/foc
 export { default as inputCurrentChannelNameNavigationBarChannelsChannelFilter } from './actions/inputCurrentChannelNameNavigationBarChannelsChannelFilter';
 export { default as mouseleaveChannelViewAllMessages } from './actions/mouseleaveChannelViewAllMessages';
 export { default as mouseoverChannelViewMessageListNextMessage } from './actions/mouseoverChannelViewMessageListNextMessage';
-export { default as mouseoverChannelViewMessageListPreviousMessage } from './actions/mouseoverChannelViewMessageListPreviousMessage';
+export { default as mouseoverChannelViewMessageListPrevMessage } from './actions/mouseoverChannelViewMessageListPrevMessage';
 export { default as scrollNavigationBarChannelsToCurrentChannel } from './actions/scrollNavigationBarChannelsToCurrentChannel';
 export { default as scrollToBottomOfChannelView } from './actions/scrollToBottomOfChannelView';
 export { default as scrollTopOfNavigationBar } from './actions/scrollTopOfNavigationBar';
