@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const iFocusedNUUserFilterInput = (): boolean => {
+const iFNUUserFilterInput = (): boolean => {
   const { activeElement } = document;
   if (!activeElement) return false;
   const channelFilterSelector = selectors.navigationBarUsersUserFilterInput();
@@ -12,4 +12,4 @@ const iFocusedNUUserFilterInput = (): boolean => {
   return channelFilter === activeElement;
 };
 
-export default iFocusedNUUserFilterInput;
+export default iFNUUserFilterInput;

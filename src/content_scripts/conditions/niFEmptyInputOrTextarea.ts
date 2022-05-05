@@ -1,4 +1,4 @@
-const niFocusedEmptyInputOrTextarea = (): boolean => {
+const niFEmptyInputOrTextarea = (): boolean => {
   const activeElement = document.activeElement as
     | HTMLInputElement
     | HTMLTextAreaElement;
@@ -10,4 +10,4 @@ const niFocusedEmptyInputOrTextarea = (): boolean => {
   return false;
 };
 
-export default niFocusedEmptyInputOrTextarea;
+export default niFEmptyInputOrTextarea;

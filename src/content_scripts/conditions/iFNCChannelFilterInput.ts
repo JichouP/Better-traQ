@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const iFocusedNCChannelFilterInput = (): boolean => {
+const iFNCChannelFilterInput = (): boolean => {
   const { activeElement } = document;
   if (!activeElement) return false;
   const channelFilterSelector =
@@ -13,4 +13,4 @@ const iFocusedNCChannelFilterInput = (): boolean => {
   return channelFilter === activeElement;
 };
 
-export default iFocusedNCChannelFilterInput;
+export default iFNCChannelFilterInput;

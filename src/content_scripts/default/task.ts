@@ -4,7 +4,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'r',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cPrevPage'],
@@ -14,7 +14,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 't',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cNextPage'],
@@ -24,7 +24,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'q',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTHTab'],
@@ -34,7 +34,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'w',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeChannel'],
@@ -44,11 +44,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'e',
-        conditions: [
-          'niFocusedInputOrTextarea',
-          'eHomeChannel',
-          'neUnreadChannel',
-        ],
+        conditions: ['niFInputOrTextarea', 'eHomeChannel', 'neUnreadChannel'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cNHHomeChannel'],
@@ -58,7 +54,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'e',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadChannel'],
@@ -68,7 +64,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'a',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTCTab'],
@@ -79,7 +75,7 @@ const defaultTasks: Task[] = [
       {
         key: 'A',
         shiftKey: true,
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: [
@@ -94,7 +90,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'u',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: [
@@ -109,7 +105,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'i',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: [
@@ -124,7 +120,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'o',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cNCCurrentChannelHash', 'sNCToCurrentChannel'],
@@ -134,7 +130,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 's',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChannelFilterInput'],
@@ -145,7 +141,7 @@ const defaultTasks: Task[] = [
       {
         key: 'S',
         shiftKey: true,
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTUTab', 'fNUUserFilterInput'],
@@ -155,7 +151,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'd',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cHChannelNameParentChannelName'],
@@ -165,7 +161,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'f',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: [
@@ -180,7 +176,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'g',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cNCChannelFilterStar'],
@@ -190,7 +186,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'z',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTATab'],
@@ -200,7 +196,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'x',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cNAIsNotAllToggleButton'],
@@ -210,7 +206,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'c',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cNAIsPerChannelToggleButton'],
@@ -220,7 +216,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '-',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sTopOfNavigationBar', 'cTATab', 'tNAFollowMode'],
@@ -230,7 +226,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'n',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['fVMessageInput'],
@@ -240,7 +236,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'm',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cVMessageInputStampButton'],
@@ -250,7 +246,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'ArrowUp',
-        conditions: ['iFocusedInputOrTextarea', 'iFocusedEmptyInputOrTextarea'],
+        conditions: ['iFInputOrTextarea', 'iFEmptyInputOrTextarea'],
       },
     ],
     actions: ['cVLatestMessageContextMenuEditMessage'],
@@ -260,7 +256,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'j',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['oVMessageListNextMessage'],
@@ -270,7 +266,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'k',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['oVMessageListPrevMessage'],
@@ -280,7 +276,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'b',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['sToBottomOfV'],
@@ -290,7 +286,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'p',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cVLatestMessageStampPicker'],
@@ -300,7 +296,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['niFocusedInputOrTextarea', 'niOpenS'],
+        conditions: ['niFInputOrTextarea', 'niOpenS'],
       },
     ],
     actions: ['cSOpener'],
@@ -310,7 +306,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['niFocusedInputOrTextarea', 'iOpenS'],
+        conditions: ['niFInputOrTextarea', 'iOpenS'],
       },
     ],
     actions: ['cSCloser'],
@@ -320,7 +316,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ';',
-        conditions: ['niFocusedInputOrTextarea', 'iOpenS'],
+        conditions: ['niFInputOrTextarea', 'iOpenS'],
       },
     ],
     actions: ['cSContentViewers'],
@@ -330,7 +326,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: '@',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cVSelectedMessageSpoilers'],
@@ -340,7 +336,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'v',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cVSelectedMessageDetailButton'],
@@ -350,7 +346,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ' ',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['cVSelectedMessageStamps'],
@@ -361,9 +357,9 @@ const defaultTasks: Task[] = [
       {
         key: 'Enter',
         conditions: [
-          'iFocusedInputOrTextarea',
-          'niFocusedEmptyInputOrTextarea',
-          'iFocusedNCChannelFilterInput',
+          'iFInputOrTextarea',
+          'niFEmptyInputOrTextarea',
+          'iFNCChannelFilterInput',
         ],
       },
     ],
@@ -375,9 +371,9 @@ const defaultTasks: Task[] = [
       {
         key: 'Enter',
         conditions: [
-          'iFocusedInputOrTextarea',
-          'niFocusedEmptyInputOrTextarea',
-          'iFocusedNUUserFilterInput',
+          'iFInputOrTextarea',
+          'niFEmptyInputOrTextarea',
+          'iFNUUserFilterInput',
         ],
       },
     ],
@@ -388,7 +384,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['iFocusedInputOrTextarea'],
+        conditions: ['iFInputOrTextarea'],
       },
     ],
     actions: ['bActiveInputElement'],
@@ -398,7 +394,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['niFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: ['lVAllMessages'],
