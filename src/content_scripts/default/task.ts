@@ -219,10 +219,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationBarActivityIsNotAllToggleButton',
-    ],
+    actions: ['sTopOfNavigationBar', 'cNAIsNotAllToggleButton'],
   },
   {
     name: '「同じチャンネルでは一つしかメッセージを表示しない」をクリック',
@@ -232,10 +229,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationBarActivityIsPerChannelToggleButton',
-    ],
+    actions: ['sTopOfNavigationBar', 'cNAIsPerChannelToggleButton'],
   },
   {
     name: 'アクティビティのフォーローモードのトグル',
@@ -248,7 +242,7 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorActivityTab',
-      'tNavigationBarActivityFollowMode',
+      'tNAFollowMode',
     ],
   },
   {

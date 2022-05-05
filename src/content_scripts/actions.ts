@@ -29,8 +29,8 @@ export { default as cVSelectedMessageContextMenuRemovePin } from './actions/cVSe
 export { default as cVSelectedMessageDetailButton } from './actions/cVSelectedMessageDetailButton';
 export { default as cVSelectedMessageSpoilers } from './actions/cVSelectedMessageSpoilers';
 export { default as cVSelectedMessageStamps } from './actions/cVSelectedMessageStamps';
-export { default as cNavigationBarActivityIsNotAllToggleButton } from './actions/cNavigationBarActivityIsNotAllToggleButton';
-export { default as cNavigationBarActivityIsPerChannelToggleButton } from './actions/cNavigationBarActivityIsPerChannelToggleButton';
+export { default as cNAIsNotAllToggleButton } from './actions/cNAIsNotAllToggleButton';
+export { default as cNAIsPerChannelToggleButton } from './actions/cNAIsPerChannelToggleButton';
 export { default as cNCCurrentChannelHash } from './actions/cNCCurrentChannelHash';
 export { default as cNCChannelFilterStar } from './actions/cNCChannelFilterStar';
 export { default as cNCNextChannel } from './actions/cNCNextChannel';
@@ -62,4 +62,4 @@ export { default as sNCToCurrentChannel } from './actions/sNCToCurrentChannel';
 export { default as sToBottomOfV } from './actions/sToBottomOfV';
 export { default as sTopOfNavigationBar } from './actions/sTopOfNavigationBar';
 export { default as sleep100ms } from './actions/sleep100ms';
-export { default as tNavigationBarActivityFollowMode } from './actions/tNavigationBarActivityFollowMode';
+export { default as tNAFollowMode } from './actions/tNAFollowMode';

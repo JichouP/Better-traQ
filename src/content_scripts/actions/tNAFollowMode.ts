@@ -11,7 +11,7 @@ const isActivity = () => {
   return navigationBarTitleEl.innerHTML.includes('アクティビティ');
 };
 
-const tNavigationBarActivityFollowMode = () => {
+const tNAFollowMode = () => {
   const navigationBarTitleSelector = `${selectors.navigationBar()} > h2`;
   const navigationBarTitleEl = document.querySelector<HTMLDivElement>(
     navigationBarTitleSelector
@@ -46,4 +46,4 @@ const tNavigationBarActivityFollowMode = () => {
   followModeStore.setHandler(handler);
 };
 
-export default tNavigationBarActivityFollowMode;
+export default tNAFollowMode;
