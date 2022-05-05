@@ -296,7 +296,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['niFInputOrTextarea', 'niOpenS'],
+        conditions: ['niFInputOrTextarea', 'niOS'],
       },
     ],
     actions: ['cSOpener'],
@@ -306,7 +306,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'l',
-        conditions: ['niFInputOrTextarea', 'iOpenS'],
+        conditions: ['niFInputOrTextarea', 'iOS'],
       },
     ],
     actions: ['cSCloser'],
@@ -316,7 +316,7 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: ';',
-        conditions: ['niFInputOrTextarea', 'iOpenS'],
+        conditions: ['niFInputOrTextarea', 'iOS'],
       },
     ],
     actions: ['cSContentViewers'],
