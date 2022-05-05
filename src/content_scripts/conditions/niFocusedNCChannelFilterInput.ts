@@ -1,6 +1,6 @@
 import isFocusedNCChannelFilterInput from './isFocusedNCChannelFilterInput';
 
-const notIsFocusedNCChannelFilterInput = (): boolean =>
+const niFocusedNCChannelFilterInput = (): boolean =>
   !isFocusedNCChannelFilterInput();
 
-export default notIsFocusedNCChannelFilterInput;
+export default niFocusedNCChannelFilterInput;

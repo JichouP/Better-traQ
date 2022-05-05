@@ -1,4 +1,4 @@
-const notIsFocusedEmptyInputOrTextarea = (): boolean => {
+const niFocusedEmptyInputOrTextarea = (): boolean => {
   const activeElement = document.activeElement as
     | HTMLInputElement
     | HTMLTextAreaElement;
@@ -10,4 +10,4 @@ const notIsFocusedEmptyInputOrTextarea = (): boolean => {
   return false;
 };
 
-export default notIsFocusedEmptyInputOrTextarea;
+export default niFocusedEmptyInputOrTextarea;
