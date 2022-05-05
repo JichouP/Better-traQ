@@ -391,6 +391,106 @@ const defaultTasks: Task[] = [
     actions: ['clickChannelViewSelectedMessageStamps'],
   },
   {
+    name: '1番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '1',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage1stStamp'],
+  },
+  {
+    name: '2番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '2',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage2ndStamp'],
+  },
+  {
+    name: '3番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '3',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage3rdStamp'],
+  },
+  {
+    name: '4番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '4',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage4thStamp'],
+  },
+  {
+    name: '5番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '5',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage5thStamp'],
+  },
+  {
+    name: '6番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '6',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage6thStamp'],
+  },
+  {
+    name: '7番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '7',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage7thStamp'],
+  },
+  {
+    name: '8番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '8',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage8thStamp'],
+  },
+  {
+    name: '9番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '9',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage9thStamp'],
+  },
+  {
+    name: '10番目のスタンプを押す',
+    keybinds: [
+      {
+        key: '0',
+        conditions: ['notIsFocusedInputOrTextarea'],
+      },
+    ],
+    actions: ['clickChannelViewSelectedMessage10thStamp'],
+  },
+  {
     name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
     keybinds: [
       {

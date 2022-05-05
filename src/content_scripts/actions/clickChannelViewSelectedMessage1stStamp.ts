@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const clickChannelViewSelectedMessageStamps = () => {
+const clickChannelViewSelectedMessage1stStamp = () => {
   const messageListSelector = selectors.channelViewMessageList();
   if (!messageListSelector) return;
   const messageListContainerEl =
@@ -17,11 +17,11 @@ const clickChannelViewSelectedMessageStamps = () => {
 
   const stamps = [
     ...targetMessage.querySelectorAll<HTMLDivElement>(
-      ':scope > div:nth-last-child(1) > div > div > div:not([data-include-me])'
+      ':scope > div:nth-last-child(1) > div > div > div:not([data-include-me]):nth-child(1)'
     ),
   ];
 
   stamps.forEach((stamp) => stamp.click());
 };
 
-export default clickChannelViewSelectedMessageStamps;
+export default clickChannelViewSelectedMessage1stStamp;

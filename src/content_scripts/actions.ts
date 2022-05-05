@@ -18,6 +18,16 @@ export { default as clickChannelViewLatestMessageContextMenuEmbedMessage } from 
 export { default as clickChannelViewLatestMessageContextMenuRemovePin } from './actions/clickChannelViewLatestMessageContextMenuRemovePin';
 export { default as clickChannelViewLatestMessageStampPicker } from './actions/clickChannelViewLatestMessageStampPicker';
 export { default as clickChannelViewMessageInputStampButton } from './actions/clickChannelViewMessageInputStampButton';
+export { default as clickChannelViewSelectedMessage1stStamp } from './actions/clickChannelViewSelectedMessage1stStamp';
+export { default as clickChannelViewSelectedMessage2ndStamp } from './actions/clickChannelViewSelectedMessage2ndStamp';
+export { default as clickChannelViewSelectedMessage3rdStamp } from './actions/clickChannelViewSelectedMessage3rdStamp';
+export { default as clickChannelViewSelectedMessage4thStamp } from './actions/clickChannelViewSelectedMessage4thStamp';
+export { default as clickChannelViewSelectedMessage5thStamp } from './actions/clickChannelViewSelectedMessage5thStamp';
+export { default as clickChannelViewSelectedMessage6thStamp } from './actions/clickChannelViewSelectedMessage6thStamp';
+export { default as clickChannelViewSelectedMessage7thStamp } from './actions/clickChannelViewSelectedMessage7thStamp';
+export { default as clickChannelViewSelectedMessage8thStamp } from './actions/clickChannelViewSelectedMessage8thStamp';
+export { default as clickChannelViewSelectedMessage9thStamp } from './actions/clickChannelViewSelectedMessage9thStamp';
+export { default as clickChannelViewSelectedMessage10thStamp } from './actions/clickChannelViewSelectedMessage10thStamp';
 export { default as clickChannelViewSelectedMessageContextMenuAddPin } from './actions/clickChannelViewSelectedMessageContextMenuAddPin';
 export { default as clickChannelViewSelectedMessageContextMenuClipMessage } from './actions/clickChannelViewSelectedMessageContextMenuClipMessage';
 export { default as clickChannelViewSelectedMessageContextMenuCopyLink } from './actions/clickChannelViewSelectedMessageContextMenuCopyLink';
