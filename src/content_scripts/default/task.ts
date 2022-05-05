@@ -4,82 +4,70 @@ const defaultTasks: Task[] = [
     keybinds: [
       {
         key: 'r',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickPreviousPage'],
+    actions: ['cPrevPage'],
   },
   {
     name: '進む',
     keybinds: [
       {
         key: 't',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickNextPage'],
+    actions: ['cNextPage'],
   },
   {
-    name: 'ホームタブをクリック',
+    name: 'ホームタブ',
     keybinds: [
       {
         key: 'q',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorHomeTab'],
+    actions: ['sTopOfNavigationBar', 'cTHTab'],
   },
   {
-    name: 'ホームチャンネルをクリック',
+    name: 'ホームチャンネル',
     keybinds: [
       {
         key: 'w',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorHomeTab',
-      'clickNavigationBarHomeHomeChannel',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHHomeCh'],
   },
   {
-    name: 'ホームチャンネルをクリック（未読チャンネルがない場合）',
+    name: 'ホームチャンネル（未読チャンネルがない場合）',
     keybinds: [
       {
         key: 'e',
-        conditions: [
-          'notIsFocusedInputOrTextarea',
-          'existHomeChannel',
-          'notExistUnreadChannel',
-        ],
+        conditions: ['niFInputOrTextarea', 'eHomeCh', 'neUnreadCh'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationBarHomeHomeChannel'],
+    actions: ['sTopOfNavigationBar', 'cNHHomeCh'],
   },
   {
-    name: 'トップ未読チャンネルをクリック',
+    name: '最新未読チャンネル',
     keybinds: [
       {
         key: 'e',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorHomeTab',
-      'clickNavigationBarHomeTopUnreadChannel',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTHTab', 'cNHTopUnreadCh'],
   },
   {
-    name: 'チャンネルタブをクリック',
+    name: 'チャンネルタブ',
     keybinds: [
       {
         key: 'a',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorChannelsTab'],
+    actions: ['sTopOfNavigationBar', 'cTCTab'],
   },
   {
     name: '現在のチャンネルまでツリーを展開',
@@ -87,359 +75,314 @@ const defaultTasks: Task[] = [
       {
         key: 'A',
         shiftKey: true,
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'clickNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
-      'sleep100ms',
-      'scrollNavigationBarChannelsToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'sleep100ms', 'sNCToCurrentCh'],
   },
   {
-    name: '次のチャンネルをクリック',
+    name: '次のチャンネル',
     keybinds: [
       {
         key: 'u',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'clickNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
-      'clickNavigationBarChannelsNextChannel',
-      'scrollNavigationBarChannelsToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'cNCNextCh', 'sNCToCurrentCh'],
   },
   {
-    name: '前のチャンネルをクリック',
+    name: '前のチャンネル',
     keybinds: [
       {
         key: 'i',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'clickNavigationSelectorChannelsTab',
-      'expandNavigationBarChannelsTreeToCurrentChannel',
-      'clickNavigationBarChannelsPreviousChannel',
-      'scrollNavigationBarChannelsToCurrentChannel',
-    ],
+    actions: ['cTCTab', 'eNCTreeToCurrentCh', 'cNCPrevCh', 'sNCToCurrentCh'],
   },
   {
     name: '現在のチャンネルの展開/折りたたみ',
     keybinds: [
       {
         key: 'o',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'clickNavigationBarChannelsCurrentChannelHash',
-      'scrollNavigationBarChannelsToCurrentChannel',
-    ],
+    actions: ['cNCCurrentChHash', 'sNCToCurrentCh'],
   },
   {
-    name: 'チャンネルフィルターにフォーカス',
+    name: 'チャンネル検索',
     keybinds: [
       {
         key: 's',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorChannelsTab',
-      'focusNavigationBarChannelsChannelFilterInput',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTCTab', 'fNCChFilterInput'],
   },
   {
-    name: 'ユーザーフィルターにフォーカス',
+    name: 'ユーザー検索',
     keybinds: [
       {
         key: 'S',
         shiftKey: true,
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorUsersTab',
-      'focusNavigationBarUsersUserFilterInput',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTUTab', 'fNUUserFilterInput'],
   },
   {
-    name: '親チャンネル名をクリック',
+    name: '親チャンネル',
     keybinds: [
       {
         key: 'd',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelHeaderChannelNameParentChannelName'],
+    actions: ['cHParentChName'],
   },
   {
-    name: 'チャンネルフィルターにフォーカスして、現在のチャンネルを入力',
+    name: 'チャンネル検索（現在のチャンネルを入力）',
     keybinds: [
       {
         key: 'f',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
     actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorChannelsTab',
-      'focusNavigationBarChannelsChannelFilterInput',
-      'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
+      'sTopOfNavigationBar',
+      'cTCTab',
+      'fNCChFilterInput',
+      'iCurrentChNameNCChFilter',
     ],
   },
   {
-    name: 'チャンネルフィルターのスターをクリック',
+    name: 'お気に入りのみ表示',
     keybinds: [
       {
         key: 'g',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationBarChannelsChannelFilterStar',
-    ],
+    actions: ['sTopOfNavigationBar', 'cNCChFilterStar'],
   },
   {
-    name: 'アクティビティタブをクリック',
+    name: 'アクティビティタブ',
     keybinds: [
       {
         key: 'z',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorActivityTab'],
+    actions: ['sTopOfNavigationBar', 'cTATab'],
   },
   {
-    name: '「通知/未読購読チャンネルのみを表示」をクリック',
+    name: '通知/未読購読チャンネルのみを表示',
     keybinds: [
       {
         key: 'x',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationBarActivityIsNotAllToggleButton',
-    ],
+    actions: ['sTopOfNavigationBar', 'cNAIsNotAllToggleButton'],
   },
   {
-    name: '「同じチャンネルでは一つしかメッセージを表示しない」をクリック',
+    name: '同じチャンネルでは一つしかメッセージを表示しない',
     keybinds: [
       {
         key: 'c',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationBarActivityIsPerChannelToggleButton',
-    ],
+    actions: ['sTopOfNavigationBar', 'cNAIsPerChToggleButton'],
   },
   {
-    name: 'アクティビティのフォーローモードのトグル',
+    name: 'フォローモードのトグル',
     keybinds: [
       {
         key: '-',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: [
-      'scrollTopOfNavigationBar',
-      'clickNavigationSelectorActivityTab',
-      'toggleNavigationBarActivityFollowMode',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTATab', 'tNAFollowMode'],
   },
   {
-    name: 'メッセージ入力欄にフォーカス',
+    name: '新規メッセージ',
     keybinds: [
       {
         key: 'n',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['focusChannelViewMessageInput'],
+    actions: ['fVMsgInput'],
   },
   {
-    name: 'スタンプピッカーを開く',
+    name: 'スタンプピッカー',
     keybinds: [
       {
         key: 'm',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewMessageInputStampButton'],
+    actions: ['cVMsgInputStampButton'],
   },
   {
     name: '最新のメッセージを編集',
     keybinds: [
       {
         key: 'ArrowUp',
-        conditions: [
-          'isFocusedInputOrTextarea',
-          'isFocusedEmptyInputOrTextarea',
-        ],
+        conditions: ['iFInputOrTextarea', 'iFEmptyInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewLatestMessageContextMenuEditMessage'],
+    actions: ['cVLatestMsgContextMenuEditMsg'],
   },
   {
-    name: '次のメッセージを選択',
+    name: '次のメッセージ',
     keybinds: [
       {
         key: 'j',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['mouseoverChannelViewMessageListNextMessage'],
+    actions: ['oVNextMsg'],
   },
   {
-    name: '前のメッセージを選択',
+    name: '前のメッセージ',
     keybinds: [
       {
         key: 'k',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['mouseoverChannelViewMessageListPreviousMessage'],
+    actions: ['oVPrevMsg'],
   },
   {
     name: '一番下までスクロール',
     keybinds: [
       {
         key: 'b',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['scrollToBottomOfChannelView'],
+    actions: ['sToBottomOfV'],
   },
   {
     name: '最新のメッセージのスタンプピッカーを開く',
     keybinds: [
       {
         key: 'p',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewLatestMessageStampPicker'],
+    actions: ['cVLatestMsgStampPicker'],
   },
   {
     name: 'サイドバーを開く',
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsFocusedInputOrTextarea', 'notIsOpenSidebar'],
+        conditions: ['niFInputOrTextarea', 'niOS'],
       },
     ],
-    actions: ['clickSidebarOpener'],
+    actions: ['cSOpener'],
   },
   {
     name: 'サイドバーを閉じる',
     keybinds: [
       {
         key: 'l',
-        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['niFInputOrTextarea', 'iOS'],
       },
     ],
-    actions: ['clickSidebarCloser'],
+    actions: ['cSCloser'],
   },
   {
     name: '閲覧者を開く/閉じる',
     keybinds: [
       {
         key: ';',
-        conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
+        conditions: ['niFInputOrTextarea', 'iOS'],
       },
     ],
-    actions: ['clickSidebarContentViewers'],
+    actions: ['cSContentViewers'],
   },
   {
-    name: '選択したメッセージのスポイラーをクリック',
+    name: '選択したメッセージのスポイラー',
     keybinds: [
       {
         key: '@',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageSpoilers'],
+    actions: ['cVSelectedMsgSpoilers'],
   },
   {
-    name: '選択したメッセージのスタンプ詳細のプルダウンをクリック',
+    name: '選択したメッセージのスタンプ詳細のプルダウン',
     keybinds: [
       {
         key: 'v',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageDetailButton'],
+    actions: ['cVSelectedMsgDetailButton'],
   },
   {
-    name: '選択したメッセージのスタンプをクリック',
+    name: '選択したメッセージのスタンプ',
     keybinds: [
       {
         key: ' ',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageStamps'],
+    actions: ['cVSelectedMsgStamps'],
   },
   {
-    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    name: '検索結果の一番上のチャンネル',
     keybinds: [
       {
         key: 'Enter',
         conditions: [
-          'isFocusedInputOrTextarea',
-          'notIsFocusedEmptyInputOrTextarea',
-          'isFocusedNavigationBarChannelsChannelFilterInput',
+          'iFInputOrTextarea',
+          'niFEmptyInputOrTextarea',
+          'iFNCChFilterInput',
         ],
       },
     ],
-    actions: ['clickNavigationBarChannelsTopSearchResult'],
+    actions: ['cNCTopSearchResult'],
   },
   {
-    name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
+    name: '検索結果の一番上のチャンネル',
     keybinds: [
       {
         key: 'Enter',
         conditions: [
-          'isFocusedInputOrTextarea',
-          'notIsFocusedEmptyInputOrTextarea',
-          'isFocusedNavigationBarUsersUserFilterInput',
+          'iFInputOrTextarea',
+          'niFEmptyInputOrTextarea',
+          'iFNUUserFilterInput',
         ],
       },
     ],
-    actions: [
-      'clickNavigationBarUsersTopSearchResult',
-      'blurActiveInputElement',
-    ],
+    actions: ['cNUTopSearchResult', 'bActiveInputElement'],
   },
   {
     name: 'フォーカスを外す',
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['isFocusedInputOrTextarea'],
+        conditions: ['iFInputOrTextarea'],
       },
     ],
-    actions: ['blurActiveInputElement'],
+    actions: ['bActiveInputElement'],
   },
   {
-    name: 'すべての Message Tool を閉じる',
+    name: 'すべての Msg Tool を閉じる',
     keybinds: [
       {
         key: 'Escape',
-        conditions: ['notIsFocusedInputOrTextarea'],
+        conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['mouseleaveChannelViewAllMessages'],
+    actions: ['lVAllMsgs'],
   },
 ];
 

@@ -1,20 +1,20 @@
 import { z } from 'zod';
 
 const zCondition = z.union([
-  z.literal('isFocusedInputOrTextarea'),
-  z.literal('notIsFocusedInputOrTextarea'),
-  z.literal('isFocusedEmptyInputOrTextarea'),
-  z.literal('notIsFocusedEmptyInputOrTextarea'),
-  z.literal('isFocusedNavigationBarChannelsChannelFilterInput'),
-  z.literal('notIsFocusedNavigationBarChannelsChannelFilterInput'),
-  z.literal('isFocusedNavigationBarUsersUserFilterInput'),
-  z.literal('notIsFocusedNavigationBarUsersUserFilterInput'),
-  z.literal('isOpenSidebar'),
-  z.literal('notIsOpenSidebar'),
-  z.literal('existHomeChannel'),
-  z.literal('notExistHomeChannel'),
-  z.literal('existUnreadChannel'),
-  z.literal('notExistUnreadChannel'),
+  z.literal('iFInputOrTextarea'),
+  z.literal('niFInputOrTextarea'),
+  z.literal('iFEmptyInputOrTextarea'),
+  z.literal('niFEmptyInputOrTextarea'),
+  z.literal('iFNCChFilterInput'),
+  z.literal('niFNCChFilterInput'),
+  z.literal('iFNUUserFilterInput'),
+  z.literal('niFNUUserFilterInput'),
+  z.literal('iOS'),
+  z.literal('niOS'),
+  z.literal('eHomeCh'),
+  z.literal('neHomeCh'),
+  z.literal('eUnreadCh'),
+  z.literal('neUnreadCh'),
 ]);
 
 export type ConditionEnum = z.infer<typeof zCondition>;
