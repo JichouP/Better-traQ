@@ -46,7 +46,7 @@ const defaultTasks: Task[] = [
         key: 'e',
         conditions: [
           'niFocusedInputOrTextarea',
-          'existHomeChannel',
+          'eHomeChannel',
           'notExistUnreadChannel',
         ],
       },

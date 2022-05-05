@@ -1,5 +1,5 @@
-import existUnreadChannel from './existUnreadChannel';
+import eUnreadChannel from './eUnreadChannel';
 
-const notExistUnreadChannel = (): boolean => !existUnreadChannel();
+const notExistUnreadChannel = (): boolean => !eUnreadChannel();
 
 export default notExistUnreadChannel;

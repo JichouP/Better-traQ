@@ -11,9 +11,9 @@ const zCondition = z.union([
   z.literal('niFocusedNUUserFilterInput'),
   z.literal('iOpenS'),
   z.literal('niOpenS'),
-  z.literal('existHomeChannel'),
+  z.literal('eHomeChannel'),
   z.literal('notExistHomeChannel'),
-  z.literal('existUnreadChannel'),
+  z.literal('eUnreadChannel'),
   z.literal('notExistUnreadChannel'),
 ]);
 

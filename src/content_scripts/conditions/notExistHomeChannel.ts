@@ -1,5 +1,5 @@
-import existHomeChannel from './existHomeChannel';
+import eHomeChannel from './eHomeChannel';
 
-const notExistHomeChannel = (): boolean => !existHomeChannel();
+const notExistHomeChannel = (): boolean => !eHomeChannel();
 
 export default notExistHomeChannel;

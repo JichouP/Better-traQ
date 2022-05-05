@@ -1,6 +1,6 @@
-const existUnreadChannel = (): boolean =>
+const eUnreadChannel = (): boolean =>
   document.querySelector(
     '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div > h3'
   )?.innerHTML === '未読';
 
-export default existUnreadChannel;
+export default eUnreadChannel;

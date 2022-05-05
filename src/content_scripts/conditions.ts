@@ -1,7 +1,7 @@
 // ファイル名順
 
-export { default as existHomeChannel } from './conditions/existHomeChannel';
-export { default as existUnreadChannel } from './conditions/existUnreadChannel';
+export { default as eHomeChannel } from './conditions/eHomeChannel';
+export { default as eUnreadChannel } from './conditions/eUnreadChannel';
 export { default as iFocusedEmptyInputOrTextarea } from './conditions/iFocusedEmptyInputOrTextarea';
 export { default as iFocusedInputOrTextarea } from './conditions/iFocusedInputOrTextarea';
 export { default as iFocusedNCChannelFilterInput } from './conditions/iFocusedNCChannelFilterInput';
