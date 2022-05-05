@@ -22,7 +22,7 @@ const zAction = z.union([
   z.literal('cNAIsNotAllToggleButton'),
   z.literal('cNAIsPerChannelToggleButton'),
   z.literal('tNAFollowMode'),
-  z.literal('cNavigationSelectorUsersTab'),
+  z.literal('cTUTab'),
   z.literal('fNUUserFilterInput'),
   z.literal('cNUTopSearchResult'),
   z.literal('cNavigationSelectorClipTab'),

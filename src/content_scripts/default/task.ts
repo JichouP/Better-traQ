@@ -148,11 +148,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: [
-      'sTopOfNavigationBar',
-      'cNavigationSelectorUsersTab',
-      'fNUUserFilterInput',
-    ],
+    actions: ['sTopOfNavigationBar', 'cTUTab', 'fNUUserFilterInput'],
   },
   {
     name: '親チャンネル名をクリック',

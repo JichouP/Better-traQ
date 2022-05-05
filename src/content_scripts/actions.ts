@@ -44,7 +44,7 @@ export { default as cTATab } from './actions/cTATab';
 export { default as cTCTab } from './actions/cTCTab';
 export { default as cNavigationSelectorClipTab } from './actions/cNavigationSelectorClipTab';
 export { default as cTHTab } from './actions/cTHTab';
-export { default as cNavigationSelectorUsersTab } from './actions/cNavigationSelectorUsersTab';
+export { default as cTUTab } from './actions/cTUTab';
 export { default as cNextPage } from './actions/cNextPage';
 export { default as cPrevPage } from './actions/cPrevPage';
 export { default as cSidebarCloser } from './actions/cSidebarCloser';
