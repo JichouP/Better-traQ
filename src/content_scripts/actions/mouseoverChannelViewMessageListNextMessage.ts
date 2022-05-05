@@ -1,5 +1,5 @@
 import selectors from '../selectors';
-import mouseleaveChannelViewAllMessages from './mouseleaveChannelViewAllMessages';
+import lChannelViewAllMessages from './lChannelViewAllMessages';
 import { mouseenter } from './utils/dispatchEvent';
 
 const mouseoverChannelViewMessageListNextMessage = () => {
@@ -21,7 +21,7 @@ const mouseoverChannelViewMessageListNextMessage = () => {
       latestMessageSelector
     );
     if (!latestMessageEl) return;
-    mouseleaveChannelViewAllMessages();
+    lChannelViewAllMessages();
     latestMessageEl.scrollIntoView({ block: 'center' });
     return mouseenter(latestMessageEl);
   }
@@ -36,7 +36,7 @@ const mouseoverChannelViewMessageListNextMessage = () => {
   ) {
     targetMessage = targetMessage.nextElementSibling as HTMLDivElement;
   }
-  mouseleaveChannelViewAllMessages();
+  lChannelViewAllMessages();
   targetMessage.scrollIntoView({ block: 'center' });
   return mouseenter(targetMessage);
 };

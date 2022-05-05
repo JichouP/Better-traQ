@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 import { mouseleave } from './utils/dispatchEvent';
 
-const mouseleaveChannelViewAllMessages = () => {
+const lChannelViewAllMessages = () => {
   document.body.click();
 
   const messageListSelector = selectors.channelViewMessageList();
@@ -15,4 +15,4 @@ const mouseleaveChannelViewAllMessages = () => {
   messageList.forEach(mouseleave);
 };
 
-export default mouseleaveChannelViewAllMessages;
+export default lChannelViewAllMessages;

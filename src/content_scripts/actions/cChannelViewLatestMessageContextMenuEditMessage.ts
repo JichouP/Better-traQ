@@ -1,5 +1,5 @@
 import selectors from '../selectors';
-import mouseleaveChannelViewAllMessages from './mouseleaveChannelViewAllMessages';
+import lChannelViewAllMessages from './lChannelViewAllMessages';
 import { click, mouseenter } from './utils/dispatchEvent';
 import lazy from '@/utils/lazy';
 
@@ -11,7 +11,7 @@ const cChannelViewLatestMessageContextMenuEditMessage = () => {
   );
   if (!latestMessageEl) return;
   // マウスポインタでメッセージツールが出ている場合
-  mouseleaveChannelViewAllMessages();
+  lChannelViewAllMessages();
   lazy(() => {
     mouseenter(latestMessageEl);
     lazy(() => {

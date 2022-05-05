@@ -64,7 +64,7 @@ const zAction = z.union([
   z.literal('cSidebarCloser'),
   z.literal('cSidebarContentViewers'),
   z.literal('bActiveInputElement'),
-  z.literal('mouseleaveChannelViewAllMessages'),
+  z.literal('lChannelViewAllMessages'),
   z.literal('sleep100ms'),
 ]);
 

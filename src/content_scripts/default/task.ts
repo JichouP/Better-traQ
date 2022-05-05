@@ -436,7 +436,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['mouseleaveChannelViewAllMessages'],
+    actions: ['lChannelViewAllMessages'],
   },
 ];
 
