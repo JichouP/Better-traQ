@@ -7,7 +7,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickPrevPage'],
+    actions: ['cPrevPage'],
   },
   {
     name: '進む',
@@ -17,7 +17,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickNextPage'],
+    actions: ['cNextPage'],
   },
   {
     name: 'ホームタブをクリック',
@@ -27,7 +27,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorHomeTab'],
+    actions: ['scrollTopOfNavigationBar', 'cNavigationSelectorHomeTab'],
   },
   {
     name: 'ホームチャンネルをクリック',
@@ -39,8 +39,8 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorHomeTab',
-      'clickNavigationBarHomeHomeChannel',
+      'cNavigationSelectorHomeTab',
+      'cNavigationBarHomeHomeChannel',
     ],
   },
   {
@@ -55,7 +55,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationBarHomeHomeChannel'],
+    actions: ['scrollTopOfNavigationBar', 'cNavigationBarHomeHomeChannel'],
   },
   {
     name: 'トップ未読チャンネルをクリック',
@@ -67,8 +67,8 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorHomeTab',
-      'clickNavigationBarHomeTopUnreadChannel',
+      'cNavigationSelectorHomeTab',
+      'cNavigationBarHomeTopUnreadChannel',
     ],
   },
   {
@@ -79,7 +79,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorChannelsTab'],
+    actions: ['scrollTopOfNavigationBar', 'cNavigationSelectorChannelsTab'],
   },
   {
     name: '現在のチャンネルまでツリーを展開',
@@ -91,7 +91,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'clickNavigationSelectorChannelsTab',
+      'cNavigationSelectorChannelsTab',
       'expandNavigationBarChannelsTreeToCurrentChannel',
       'sleep100ms',
       'scrollNavigationBarChannelsToCurrentChannel',
@@ -106,9 +106,9 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'clickNavigationSelectorChannelsTab',
+      'cNavigationSelectorChannelsTab',
       'expandNavigationBarChannelsTreeToCurrentChannel',
-      'clickNavigationBarChannelsNextChannel',
+      'cNavigationBarChannelsNextChannel',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
   },
@@ -121,9 +121,9 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'clickNavigationSelectorChannelsTab',
+      'cNavigationSelectorChannelsTab',
       'expandNavigationBarChannelsTreeToCurrentChannel',
-      'clickNavigationBarChannelsPrevChannel',
+      'cNavigationBarChannelsPrevChannel',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
   },
@@ -136,7 +136,7 @@ const defaultTasks: Task[] = [
       },
     ],
     actions: [
-      'clickNavigationBarChannelsCurrentChannelHash',
+      'cNavigationBarChannelsCurrentChannelHash',
       'scrollNavigationBarChannelsToCurrentChannel',
     ],
   },
@@ -150,7 +150,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorChannelsTab',
+      'cNavigationSelectorChannelsTab',
       'focusNavigationBarChannelsChannelFilterInput',
     ],
   },
@@ -165,7 +165,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorUsersTab',
+      'cNavigationSelectorUsersTab',
       'focusNavigationBarUsersUserFilterInput',
     ],
   },
@@ -177,7 +177,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelHeaderChannelNameParentChannelName'],
+    actions: ['cChannelHeaderChannelNameParentChannelName'],
   },
   {
     name: 'チャンネルフィルターにフォーカスして、現在のチャンネルを入力',
@@ -189,7 +189,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorChannelsTab',
+      'cNavigationSelectorChannelsTab',
       'focusNavigationBarChannelsChannelFilterInput',
       'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
     ],
@@ -204,7 +204,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationBarChannelsChannelFilterStar',
+      'cNavigationBarChannelsChannelFilterStar',
     ],
   },
   {
@@ -215,7 +215,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['scrollTopOfNavigationBar', 'clickNavigationSelectorActivityTab'],
+    actions: ['scrollTopOfNavigationBar', 'cNavigationSelectorActivityTab'],
   },
   {
     name: '「通知/未読購読チャンネルのみを表示」をクリック',
@@ -227,7 +227,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationBarActivityIsNotAllToggleButton',
+      'cNavigationBarActivityIsNotAllToggleButton',
     ],
   },
   {
@@ -240,7 +240,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationBarActivityIsPerChannelToggleButton',
+      'cNavigationBarActivityIsPerChannelToggleButton',
     ],
   },
   {
@@ -253,7 +253,7 @@ const defaultTasks: Task[] = [
     ],
     actions: [
       'scrollTopOfNavigationBar',
-      'clickNavigationSelectorActivityTab',
+      'cNavigationSelectorActivityTab',
       'toggleNavigationBarActivityFollowMode',
     ],
   },
@@ -275,7 +275,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewMessageInputStampButton'],
+    actions: ['cChannelViewMessageInputStampButton'],
   },
   {
     name: '最新のメッセージを編集',
@@ -288,7 +288,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['clickChannelViewLatestMessageContextMenuEditMessage'],
+    actions: ['cChannelViewLatestMessageContextMenuEditMessage'],
   },
   {
     name: '次のメッセージを選択',
@@ -328,7 +328,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewLatestMessageStampPicker'],
+    actions: ['cChannelViewLatestMessageStampPicker'],
   },
   {
     name: 'サイドバーを開く',
@@ -338,7 +338,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea', 'notIsOpenSidebar'],
       },
     ],
-    actions: ['clickSidebarOpener'],
+    actions: ['cSidebarOpener'],
   },
   {
     name: 'サイドバーを閉じる',
@@ -348,7 +348,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
       },
     ],
-    actions: ['clickSidebarCloser'],
+    actions: ['cSidebarCloser'],
   },
   {
     name: '閲覧者を開く/閉じる',
@@ -358,7 +358,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea', 'isOpenSidebar'],
       },
     ],
-    actions: ['clickSidebarContentViewers'],
+    actions: ['cSidebarContentViewers'],
   },
   {
     name: '選択したメッセージのスポイラーをクリック',
@@ -368,7 +368,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageSpoilers'],
+    actions: ['cChannelViewSelectedMessageSpoilers'],
   },
   {
     name: '選択したメッセージのスタンプ詳細のプルダウンをクリック',
@@ -378,7 +378,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageDetailButton'],
+    actions: ['cChannelViewSelectedMessageDetailButton'],
   },
   {
     name: '選択したメッセージのスタンプをクリック',
@@ -388,7 +388,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessageStamps'],
+    actions: ['cChannelViewSelectedMessageStamps'],
   },
   {
     name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
@@ -402,7 +402,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['clickNavigationBarChannelsTopSearchResult'],
+    actions: ['cNavigationBarChannelsTopSearchResult'],
   },
   {
     name: 'チャンネルリスト検索結果の一番上のチャンネルをクリック',
@@ -416,7 +416,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['clickNavigationBarUsersTopSearchResult', 'bActiveInputElement'],
+    actions: ['cNavigationBarUsersTopSearchResult', 'bActiveInputElement'],
   },
   {
     name: 'フォーカスを外す',
