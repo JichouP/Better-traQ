@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Fixed
 
+- [全環境] ドキュメントを修正 [#73](https://github.com/JichouP/Better-traQ/issues/73)
 - [全環境] 編集をクリックしたあと、自動で編集エリアにフォーカスする [#64](https://github.com/JichouP/Better-traQ/issues/64)
 
 ## [3.0.1](https://github.com/JichouP/Better-traQ/releases/tag/v3.0.1) - 2022-05-01
