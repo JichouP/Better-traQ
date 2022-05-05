@@ -1,5 +1,5 @@
 export { default as bActiveInputElement } from './actions/bActiveInputElement';
-export { default as cChannelHeaderChannelNameParentChannelName } from './actions/cChannelHeaderChannelNameParentChannelName';
+export { default as cHChannelNameParentChannelName } from './actions/cHChannelNameParentChannelName';
 export { default as cChannelView2ndLatestMessageStampPicker } from './actions/cChannelView2ndLatestMessageStampPicker';
 export { default as cChannelView3rdLatestMessageStampPicker } from './actions/cChannelView3rdLatestMessageStampPicker';
 export { default as cChannelView4thLatestMessageStampPicker } from './actions/cChannelView4thLatestMessageStampPicker';

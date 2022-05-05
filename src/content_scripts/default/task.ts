@@ -177,7 +177,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['cChannelHeaderChannelNameParentChannelName'],
+    actions: ['cHChannelNameParentChannelName'],
   },
   {
     name: 'チャンネルフィルターにフォーカスして、現在のチャンネルを入力',

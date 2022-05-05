@@ -1,6 +1,6 @@
 import selectors from '../selectors';
 
-const cChannelHeaderChannelNameParentChannelName = () => {
+const cHChannelNameParentChannelName = () => {
   // Header のチャンネル名の親要素を取得
   const channelNameSelector = selectors.channelHeaderChannelName();
   if (!channelNameSelector) return;
@@ -15,4 +15,4 @@ const cChannelHeaderChannelNameParentChannelName = () => {
   channelNames.at(-1)?.click();
 };
 
-export default cChannelHeaderChannelNameParentChannelName;
+export default cHChannelNameParentChannelName;
