@@ -327,7 +327,7 @@ const defaultTasks: Task[] = [
     actions: ['cVSelectedMsgDetailButton'],
   },
   {
-    name: '選択したメッセージのスタンプ',
+    name: '選択したメッセージのすべてのスタンプを押す',
     keybinds: [
       {
         key: ' ',

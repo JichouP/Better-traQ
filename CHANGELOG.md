@@ -5,10 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [3.1.0] - 2022-??-??
+## [3.1.0] - 2022-05-06
 
 ### Added
 
+- [全環境] ストレージ初期化ボタンを追加 [#72](https://github.com/JichouP/Better-traQ/issues/72)
 - [全環境] 命名規則の変更により、初期化を行うマイグレーションを追加 [#70](https://github.com/JichouP/Better-traQ/issues/70)
 - [全環境] `1234567890` にメッセージに付いたスタンプを個別に押す機能を追加 を追加 [#66](https://github.com/JichouP/Better-traQ/issues/66)
 - [全環境] 一番下の未読チャンネルをクリックする `clickNavigationBarHomeBottomUnreadChannel` を追加 [#62](https://github.com/JichouP/Better-traQ/issues/62)
