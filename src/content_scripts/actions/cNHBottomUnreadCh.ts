@@ -2,7 +2,7 @@ import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
 const cNHBottomUnreadCh = () => {
-  const unreadChSelector = selectors.navigationBarHomeBottomUnreadChannel();
+  const unreadChSelector = selectors.navigationBarHomeBottomUnreadCh();
   if (!unreadChSelector) return;
   const unreadChEl = document.querySelector<HTMLDivElement>(unreadChSelector);
   if (!unreadChEl) return;

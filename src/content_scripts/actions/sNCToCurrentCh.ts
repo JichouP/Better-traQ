@@ -1,8 +1,7 @@
 import selectors from '../selectors';
 
 const sNCToCurrentCh = () => {
-  const currentChSelector =
-    selectors.navigationBarChannelsChannelCurrentChannel();
+  const currentChSelector = selectors.navigationBarChannelsChCurrentCh();
   if (!currentChSelector) return;
   const currentCh = document.querySelector<HTMLDivElement>(currentChSelector);
   if (!currentCh) return;

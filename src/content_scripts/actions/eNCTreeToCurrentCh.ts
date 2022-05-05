@@ -16,7 +16,7 @@ const getChNameList = (el: HTMLElement) => {
 const eNCTreeToCurrentCh = async () => {
   const channelNames = getCurrentChNames();
   if (!channelNames) return;
-  const channelListSelector = selectors.navigationBarChannelsChannelList();
+  const channelListSelector = selectors.navigationBarChannelsChList();
   if (!channelListSelector) return;
   const channelListContainer =
     document.querySelector<HTMLDivElement>(channelListSelector);

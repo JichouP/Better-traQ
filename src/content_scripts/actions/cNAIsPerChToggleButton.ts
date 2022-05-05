@@ -2,7 +2,7 @@ import selectors from '../selectors';
 
 const cNAIsPerChToggleButton = () => {
   const toggleButtonSelector =
-    selectors.navigationBarActivityIsPerChannelToggleButton();
+    selectors.navigationBarActivityIsPerChToggleButton();
   if (!toggleButtonSelector) return;
   document.querySelector<HTMLDivElement>(toggleButtonSelector)?.click();
 };
