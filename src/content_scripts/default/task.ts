@@ -214,7 +214,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['fVMessageInput'],
+    actions: ['fVMsgInput'],
   },
   {
     name: 'スタンプピッカー',
@@ -224,7 +224,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVMessageInputStampButton'],
+    actions: ['cVMsgInputStampButton'],
   },
   {
     name: '最新のメッセージを編集',
@@ -234,7 +234,7 @@ const defaultTasks: Task[] = [
         conditions: ['iFInputOrTextarea', 'iFEmptyInputOrTextarea'],
       },
     ],
-    actions: ['cVLatestMessageContextMenuEditMessage'],
+    actions: ['cVLatestMsgContextMenuEditMsg'],
   },
   {
     name: '次のメッセージ',
@@ -244,7 +244,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['oVNextMessage'],
+    actions: ['oVNextMsg'],
   },
   {
     name: '前のメッセージ',
@@ -254,7 +254,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['oVPrevMessage'],
+    actions: ['oVPrevMsg'],
   },
   {
     name: '一番下までスクロール',
@@ -274,7 +274,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVLatestMessageStampPicker'],
+    actions: ['cVLatestMsgStampPicker'],
   },
   {
     name: 'サイドバーを開く',
@@ -314,7 +314,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVSelectedMessageSpoilers'],
+    actions: ['cVSelectedMsgSpoilers'],
   },
   {
     name: '選択したメッセージのスタンプ詳細のプルダウン',
@@ -324,7 +324,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVSelectedMessageDetailButton'],
+    actions: ['cVSelectedMsgDetailButton'],
   },
   {
     name: '選択したメッセージのスタンプ',
@@ -334,7 +334,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVSelectedMessageStamps'],
+    actions: ['cVSelectedMsgStamps'],
   },
   {
     name: '検索結果の一番上のチャンネル',
@@ -375,14 +375,14 @@ const defaultTasks: Task[] = [
     actions: ['bActiveInputElement'],
   },
   {
-    name: 'すべての Message Tool を閉じる',
+    name: 'すべての Msg Tool を閉じる',
     keybinds: [
       {
         key: 'Escape',
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['lVAllMessages'],
+    actions: ['lVAllMsgs'],
   },
 ];
 

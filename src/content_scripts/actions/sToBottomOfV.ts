@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 
 const sToBottomOfV = () => {
-  const messageListSelector = selectors.channelViewMessageList();
+  const messageListSelector = selectors.channelViewMsgList();
   if (!messageListSelector) return;
   const messageListEl =
     document.querySelector<HTMLDivElement>(messageListSelector);

@@ -29,17 +29,14 @@ const tNAFollowMode = () => {
       window.clearInterval(followModeStore.getHandler());
       return followModeStore.setHandler(0);
     }
-    const latestMessageSelector =
-      selectors.navigationBarActivityLatestMessage();
-    if (!latestMessageSelector) return;
-    const latestMessage = document.querySelector<HTMLDivElement>(
-      latestMessageSelector
-    );
-    if (!latestMessage) return;
+    const latestMsgSelector = selectors.navigationBarActivityLatestMsg();
+    if (!latestMsgSelector) return;
+    const latestMsg = document.querySelector<HTMLDivElement>(latestMsgSelector);
+    if (!latestMsg) return;
 
-    if (latestMessage !== followModeStore.getLatestMessage()) {
-      followModeStore.setLatestMessage(latestMessage);
-      latestMessage.click();
+    if (latestMsg !== followModeStore.getLatestMsg()) {
+      followModeStore.setLatestMsg(latestMsg);
+      latestMsg.click();
     }
   }, 100);
   navigationBarTitleEl.innerHTML = 'アクティビティ🔴';

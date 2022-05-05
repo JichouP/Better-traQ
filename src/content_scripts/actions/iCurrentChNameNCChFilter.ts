@@ -3,7 +3,7 @@ import getCurrentChNames from './utils/getCurrentChannelNames';
 
 const iCurrentChNameNCChFilter = () => {
   const channelFilterInputSelector =
-    selectors.navigationBarChannelsChannelFilterInput();
+    selectors.navigationBarChannelsChFilterInput();
   if (!channelFilterInputSelector) return;
   const channelFilterInputEl = document.querySelector<HTMLInputElement>(
     channelFilterInputSelector

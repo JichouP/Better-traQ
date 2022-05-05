@@ -1,11 +1,11 @@
 export class FollowModeStore {
   handler: number;
 
-  latestMessage: HTMLDivElement | null;
+  latestMsg: HTMLDivElement | null;
 
   constructor() {
     this.handler = 0;
-    this.latestMessage = null;
+    this.latestMsg = null;
   }
 
   isFollowMode(): boolean {
@@ -20,12 +20,12 @@ export class FollowModeStore {
     this.handler = handler;
   }
 
-  getLatestMessage(): HTMLDivElement | null {
-    return this.latestMessage;
+  getLatestMsg(): HTMLDivElement | null {
+    return this.latestMsg;
   }
 
-  setLatestMessage(latestMessage: HTMLDivElement): void {
-    this.latestMessage = latestMessage;
+  setLatestMsg(latestMsg: HTMLDivElement): void {
+    this.latestMsg = latestMsg;
   }
 }
 

@@ -5,15 +5,15 @@ import eHomeCh from './conditions/eHomeCh';
 const navigationSelector = (n: number) =>
   `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(${n})`;
 
-// const channelViewNthLatestMessage = (n: number) =>
+// const channelViewNthLatestMsg = (n: number) =>
 // `#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-last-child(${n})`;
-const channelViewNthLatestMessage = (n: number) =>
+const channelViewNthLatestMsg = (n: number) =>
   `div[class*=viewport] > div:nth-last-child(${n})`;
 
 const navigationBarActivityButton = (n: number) =>
   `#app > div > div > div > div > div > div > div > div > div > button:nth-child(${n})`;
 
-const channelViewMessageTool = (n: number) =>
+const channelViewMsgTool = (n: number) =>
   `#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > div > svg:nth-child(${n})`;
 
 const channelViewContextMenuNthChild = (n: number) =>
@@ -25,7 +25,7 @@ const channelViewContextMenuNthLastChild = (n: number) =>
 /**
  * コンテキストメニューが自分のメッセージのものかどうか
  */
-const ifMyMessageContextMenu = (): boolean =>
+const ifMyMsgContextMenu = (): boolean =>
   document.querySelector(channelViewContextMenuNthLastChild(1))?.innerHTML ===
   ' 削除 ';
 
@@ -67,7 +67,7 @@ const selectors: Record<SelectorEnum, () => string | null> = {
     navigationBarActivityButton(1),
   navigationBarActivityIsPerChToggleButton: () =>
     navigationBarActivityButton(2),
-  navigationBarActivityLatestMessage: () =>
+  navigationBarActivityLatestMsg: () =>
     '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > a:nth-child(1) > div',
   tuTab: () => navigationSelector(5),
   navigationBarUsersUserFilterInput: () =>
@@ -77,47 +77,47 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   tClipTab: () => navigationSelector(6),
   channelHeaderChName: () =>
     '#header > header > div > h2 > div > div:nth-child(1)',
-  // channelViewMessageList: () =>
+  // channelViewMsgList: () =>
   //   '#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1)',
   channelViewBackground: () =>
     '#app > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)',
   channelViewFilterContainer: () =>
     '#app > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)',
-  channelViewMessageList: () => 'div[class*=viewport]',
-  channelViewLatestMessage: () => channelViewNthLatestMessage(1),
-  channelView2ndLatestMessage: () => channelViewNthLatestMessage(2),
-  channelView3rdLatestMessage: () => channelViewNthLatestMessage(3),
-  channelView4thLatestMessage: () => channelViewNthLatestMessage(4),
-  channelView5thLatestMessage: () => channelViewNthLatestMessage(5),
-  channelView6thLatestMessage: () => channelViewNthLatestMessage(6),
-  channelView7thLatestMessage: () => channelViewNthLatestMessage(7),
-  channelView8thLatestMessage: () => channelViewNthLatestMessage(8),
-  channelView9thLatestMessage: () => channelViewNthLatestMessage(9),
-  channelViewMessageToolStamp: () => channelViewMessageTool(1),
-  channelViewMessageToolDots: () => channelViewMessageTool(2),
+  channelViewMsgList: () => 'div[class*=viewport]',
+  channelViewLatestMsg: () => channelViewNthLatestMsg(1),
+  channelView2ndLatestMsg: () => channelViewNthLatestMsg(2),
+  channelView3rdLatestMsg: () => channelViewNthLatestMsg(3),
+  channelView4thLatestMsg: () => channelViewNthLatestMsg(4),
+  channelView5thLatestMsg: () => channelViewNthLatestMsg(5),
+  channelView6thLatestMsg: () => channelViewNthLatestMsg(6),
+  channelView7thLatestMsg: () => channelViewNthLatestMsg(7),
+  channelView8thLatestMsg: () => channelViewNthLatestMsg(8),
+  channelView9thLatestMsg: () => channelViewNthLatestMsg(9),
+  channelViewMsgToolStamp: () => channelViewMsgTool(1),
+  channelViewMsgToolDots: () => channelViewMsgTool(2),
   channelViewContextMenuList: () => '#message-menu-popup > div > div',
   channelViewContextMenuRemovePin: () => channelViewContextMenuNthChild(1),
   channelViewContextMenuAddPin: () => channelViewContextMenuNthChild(1),
-  channelViewContextMenuClipMessage: () => channelViewContextMenuNthChild(2),
-  channelViewContextMenuEditMessage: () =>
-    ifMyMessageContextMenu() ? channelViewContextMenuNthChild(3) : null,
+  channelViewContextMenuClipMsg: () => channelViewContextMenuNthChild(2),
+  channelViewContextMenuEditMsg: () =>
+    ifMyMsgContextMenu() ? channelViewContextMenuNthChild(3) : null,
   channelViewContextMenuCopyLink: () =>
-    ifMyMessageContextMenu()
+    ifMyMsgContextMenu()
       ? channelViewContextMenuNthChild(4)
       : channelViewContextMenuNthChild(3),
-  channelViewContextMenuEmbedMessage: () =>
-    ifMyMessageContextMenu()
+  channelViewContextMenuEmbedMsg: () =>
+    ifMyMsgContextMenu()
       ? channelViewContextMenuNthChild(5)
       : channelViewContextMenuNthChild(4),
   channelViewContextMenuCopyMarkdown: () =>
-    ifMyMessageContextMenu()
+    ifMyMsgContextMenu()
       ? channelViewContextMenuNthLastChild(2)
       : channelViewContextMenuNthLastChild(1),
-  channelViewContextMenuDeleteMessage: () =>
-    ifMyMessageContextMenu() ? channelViewContextMenuNthLastChild(1) : null,
-  channelViewMessageInput: () =>
+  channelViewContextMenuDeleteMsg: () =>
+    ifMyMsgContextMenu() ? channelViewContextMenuNthLastChild(1) : null,
+  channelViewMsgInput: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div > textarea',
-  channelViewMessageInputStampButton: () =>
+  channelViewMsgInputStampButton: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(3) > div[title=スタンプを挿入]',
   sidebarOpener: () => '#sidebar-opener > div > svg',
   sidebarCloser: () =>
