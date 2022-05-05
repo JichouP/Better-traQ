@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 
-const clickChannelViewSelectedMessage10thStamp = () => {
-  const messageListSelector = selectors.channelViewMessageList();
+const cVSelectedMsg4thStamp = () => {
+  const messageListSelector = selectors.channelViewMsgList();
   if (!messageListSelector) return;
   const messageListContainerEl =
     document.querySelector<HTMLDivElement>(messageListSelector);
@@ -15,13 +15,11 @@ const clickChannelViewSelectedMessage10thStamp = () => {
   const targetMessage = messageTool.parentElement as HTMLDivElement;
   if (!targetMessage) return;
 
-  const stamps = [
-    ...targetMessage.querySelectorAll<HTMLDivElement>(
-      ':scope > div:nth-last-child(1) > div > div > div:not([data-include-me]):nth-child(1)'
-    ),
-  ];
+  const stamp = targetMessage.querySelector<HTMLDivElement>(
+    ':scope > div:nth-last-child(1) > div > div:nth-child(4) > div:nth-child(1)'
+  );
 
-  stamps.forEach((stamp) => stamp.click());
+  stamp?.click();
 };
 
-export default clickChannelViewSelectedMessage10thStamp;
+export default cVSelectedMsg4thStamp;

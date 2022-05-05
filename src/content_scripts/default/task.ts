@@ -344,7 +344,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage1stStamp'],
+    actions: ['cVSelectedMsg1stStamp'],
   },
   {
     name: '2番目のスタンプを押す',
@@ -354,7 +354,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage2ndStamp'],
+    actions: ['cVSelectedMsg2ndStamp'],
   },
   {
     name: '3番目のスタンプを押す',
@@ -364,7 +364,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage3rdStamp'],
+    actions: ['cVSelectedMsg3rdStamp'],
   },
   {
     name: '4番目のスタンプを押す',
@@ -374,7 +374,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage4thStamp'],
+    actions: ['cVSelectedMsg4thStamp'],
   },
   {
     name: '5番目のスタンプを押す',
@@ -384,7 +384,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage5thStamp'],
+    actions: ['cVSelectedMsg5thStamp'],
   },
   {
     name: '6番目のスタンプを押す',
@@ -394,7 +394,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage6thStamp'],
+    actions: ['cVSelectedMsg6thStamp'],
   },
   {
     name: '7番目のスタンプを押す',
@@ -404,7 +404,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage7thStamp'],
+    actions: ['cVSelectedMsg7thStamp'],
   },
   {
     name: '8番目のスタンプを押す',
@@ -414,7 +414,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage8thStamp'],
+    actions: ['cVSelectedMsg8thStamp'],
   },
   {
     name: '9番目のスタンプを押す',
@@ -424,7 +424,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage9thStamp'],
+    actions: ['cVSelectedMsg9thStamp'],
   },
   {
     name: '10番目のスタンプを押す',
@@ -434,7 +434,7 @@ const defaultTasks: Task[] = [
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['clickChannelViewSelectedMessage10thStamp'],
+    actions: ['cVSelectedMsg10thStamp'],
   },
   {
     name: '検索結果の一番上のチャンネル',
