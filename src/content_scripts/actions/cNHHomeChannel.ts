@@ -1,7 +1,7 @@
 import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
-const cNavigationBarHomeHomeChannel = () => {
+const cNHHomeChannel = () => {
   const homeChannelSelector = selectors.navigationBarHomeHomeChannel();
   if (!homeChannelSelector) return;
   const homeChannelEl =
@@ -10,4 +10,4 @@ const cNavigationBarHomeHomeChannel = () => {
   mousedown(homeChannelEl);
 };
 
-export default cNavigationBarHomeHomeChannel;
+export default cNHHomeChannel;

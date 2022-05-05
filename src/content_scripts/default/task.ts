@@ -40,7 +40,7 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorHomeTab',
-      'cNavigationBarHomeHomeChannel',
+      'cNHHomeChannel',
     ],
   },
   {
@@ -55,7 +55,7 @@ const defaultTasks: Task[] = [
         ],
       },
     ],
-    actions: ['sTopOfNavigationBar', 'cNavigationBarHomeHomeChannel'],
+    actions: ['sTopOfNavigationBar', 'cNHHomeChannel'],
   },
   {
     name: 'トップ未読チャンネルをクリック',
@@ -68,7 +68,7 @@ const defaultTasks: Task[] = [
     actions: [
       'sTopOfNavigationBar',
       'cNavigationSelectorHomeTab',
-      'cNavigationBarHomeTopUnreadChannel',
+      'cNHTopUnreadChannel',
     ],
   },
   {

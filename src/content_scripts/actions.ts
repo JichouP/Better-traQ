@@ -36,9 +36,9 @@ export { default as cNavigationBarChannelsChannelFilterStar } from './actions/cN
 export { default as cNavigationBarChannelsNextChannel } from './actions/cNavigationBarChannelsNextChannel';
 export { default as cNavigationBarChannelsPrevChannel } from './actions/cNavigationBarChannelsPrevChannel';
 export { default as cNavigationBarChannelsTopSearchResult } from './actions/cNavigationBarChannelsTopSearchResult';
-export { default as cNavigationBarHomeBottomUnreadChannel } from './actions/cNavigationBarHomeBottomUnreadChannel';
-export { default as cNavigationBarHomeHomeChannel } from './actions/cNavigationBarHomeHomeChannel';
-export { default as cNavigationBarHomeTopUnreadChannel } from './actions/cNavigationBarHomeTopUnreadChannel';
+export { default as cNHBottomUnreadChannel } from './actions/cNHBottomUnreadChannel';
+export { default as cNHHomeChannel } from './actions/cNHHomeChannel';
+export { default as cNHTopUnreadChannel } from './actions/cNHTopUnreadChannel';
 export { default as cNavigationBarUsersTopSearchResult } from './actions/cNavigationBarUsersTopSearchResult';
 export { default as cNavigationSelectorActivityTab } from './actions/cNavigationSelectorActivityTab';
 export { default as cNavigationSelectorChannelsTab } from './actions/cNavigationSelectorChannelsTab';

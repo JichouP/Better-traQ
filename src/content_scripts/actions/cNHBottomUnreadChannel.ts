@@ -1,8 +1,9 @@
 import selectors from '../selectors';
 import { mousedown } from './utils/dispatchEvent';
 
-const cNavigationBarHomeTopUnreadChannel = () => {
-  const unreadChannelSelector = selectors.navigationBarHomeTopUnreadChannel();
+const cNHBottomUnreadChannel = () => {
+  const unreadChannelSelector =
+    selectors.navigationBarHomeBottomUnreadChannel();
   if (!unreadChannelSelector) return;
   const unreadChannelEl = document.querySelector<HTMLDivElement>(
     unreadChannelSelector
@@ -11,4 +12,4 @@ const cNavigationBarHomeTopUnreadChannel = () => {
   mousedown(unreadChannelEl);
 };
 
-export default cNavigationBarHomeTopUnreadChannel;
+export default cNHBottomUnreadChannel;
