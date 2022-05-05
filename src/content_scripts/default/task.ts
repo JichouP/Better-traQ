@@ -151,7 +151,7 @@ const defaultTasks: Task[] = [
     actions: [
       'scrollTopOfNavigationBar',
       'cNavigationSelectorChannelsTab',
-      'focusNavigationBarChannelsChannelFilterInput',
+      'fNavigationBarChannelsChannelFilterInput',
     ],
   },
   {
@@ -166,7 +166,7 @@ const defaultTasks: Task[] = [
     actions: [
       'scrollTopOfNavigationBar',
       'cNavigationSelectorUsersTab',
-      'focusNavigationBarUsersUserFilterInput',
+      'fNavigationBarUsersUserFilterInput',
     ],
   },
   {
@@ -190,7 +190,7 @@ const defaultTasks: Task[] = [
     actions: [
       'scrollTopOfNavigationBar',
       'cNavigationSelectorChannelsTab',
-      'focusNavigationBarChannelsChannelFilterInput',
+      'fNavigationBarChannelsChannelFilterInput',
       'inputCurrentChannelNameNavigationBarChannelsChannelFilter',
     ],
   },
@@ -265,7 +265,7 @@ const defaultTasks: Task[] = [
         conditions: ['notIsFocusedInputOrTextarea'],
       },
     ],
-    actions: ['focusChannelViewMessageInput'],
+    actions: ['fChannelViewMessageInput'],
   },
   {
     name: 'スタンプピッカーを開く',
