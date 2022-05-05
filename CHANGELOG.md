@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 
+- [全環境] 命名規則の変更により、初期化を行うマイグレーションを追加 [#70](https://github.com/JichouP/Better-traQ/issues/70)
 - [全環境] `1234567890` にメッセージに付いたスタンプを個別に押す機能を追加 を追加 [#66](https://github.com/JichouP/Better-traQ/issues/66)
 - [全環境] 一番下の未読チャンネルをクリックする `clickNavigationBarHomeBottomUnreadChannel` を追加 [#62](https://github.com/JichouP/Better-traQ/issues/62)
 - [全環境] チャンネル入力時に、Enter キーで検索結果の一番上のチャンネルに飛ぶ機能を追加 [#58](https://github.com/JichouP/Better-traQ/issues/58)
