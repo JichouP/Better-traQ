@@ -2,11 +2,22 @@
 
 [![CodeQL](https://github.com/JichouP/Better-traQ/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/JichouP/Better-traQ/actions/workflows/codeql-analysis.yml)
 
-An Extension that Makes traQ Useful
+Better traQ は traQ をキーボードのみで操作することを目指して作られた拡張機能です。
 
 ![screenshot](https://raw.githubusercontent.com/JichouP/Better-traQ/master/screenshot/screenshot.png)
 
-## Build (Firefox)
+## Install
+
+### Google Chrome / Edge
+
+[Better traQ ― chrome ウェブストア](https://chrome.google.com/webstore/etail/better-traq/hojfibacpmpjkajifooeclgkdfogehej)  
+[Better ex-traQ ― chrome ウェブストア](https://chrome.google.com/webstore/detail/better-ex-traq/fjpoplgpdijjllnbplfhckgmgjcepemj)
+
+### Firefox
+
+[Github Release](https://github.com/JichouP/Better-traQ/releases/latest) から `.xpi` をインストールしてください。
+
+## Build (for Firefox)
 
 ```bash
 # Install Dependencies
