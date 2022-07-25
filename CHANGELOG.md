@@ -5,11 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [3.1.1] - 2022-07-25
+## [3.1.1](https://github.com/JichouP/Better-traQ/releases/tag/v3.1.1) - 2022-07-25
 
 - [全環境] `p` で選択したメッセージのスタンプピッカーを開くように修正 [#79](https://github.com/JichouP/Better-traQ/issues/79)
 
-## [3.1.0] - 2022-05-06
+## [3.1.0](https://github.com/JichouP/Better-traQ/releases/tag/v3.1.0) - 2022-05-06
 
 ### Added
 
