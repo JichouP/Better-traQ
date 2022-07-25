@@ -38,6 +38,7 @@ export { default as cVSelectedMsgContextMenuEmbedMsg } from './actions/cVSelecte
 export { default as cVSelectedMsgContextMenuRemovePin } from './actions/cVSelectedMsgContextMenuRemovePin';
 export { default as cVSelectedMsgDetailButton } from './actions/cVSelectedMsgDetailButton';
 export { default as cVSelectedMsgSpoilers } from './actions/cVSelectedMsgSpoilers';
+export { default as cVSelectedMsgStampPicker } from './actions/cVSelectedMsgStampPicker';
 export { default as cVSelectedMsgStamps } from './actions/cVSelectedMsgStamps';
 export { default as cNAIsNotAllToggleButton } from './actions/cNAIsNotAllToggleButton';
 export { default as cNAIsPerChToggleButton } from './actions/cNAIsPerChToggleButton';

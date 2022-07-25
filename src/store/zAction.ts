@@ -39,6 +39,7 @@ const zAction = z.union([
   z.literal('cV7thLatestMsgStampPicker'),
   z.literal('cV8thLatestMsgStampPicker'),
   z.literal('cV9thLatestMsgStampPicker'),
+  z.literal('cVSelectedMsgStampPicker'),
   z.literal('cVLatestMsgContextMenuRemovePin'),
   z.literal('cVLatestMsgContextMenuAddPin'),
   z.literal('cVLatestMsgContextMenuClipMsg'),

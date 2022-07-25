@@ -267,14 +267,14 @@ const defaultTasks: Task[] = [
     actions: ['sToBottomOfV'],
   },
   {
-    name: '最新のメッセージのスタンプピッカーを開く',
+    name: '選択中のメッセージのスタンプピッカーを開く',
     keybinds: [
       {
         key: 'p',
         conditions: ['niFInputOrTextarea'],
       },
     ],
-    actions: ['cVLatestMsgStampPicker'],
+    actions: ['cVSelectedMsgStampPicker'],
   },
   {
     name: 'サイドバーを開く',
