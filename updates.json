@@ -3,6 +3,10 @@
     "@bettertraq": {
       "updates": [
         {
+          "version": "3.1.1",
+          "update_link": "https://github.com/JichouP/Better-traQ/releases/download/v3.1.1/traQ-firefox-3.1.1.xpi"
+        },
+        {
           "version": "3.1.0",
           "update_link": "https://github.com/JichouP/Better-traQ/releases/download/v3.1.0/traQ-firefox-3.1.0.xpi"
         },
@@ -18,6 +22,10 @@
     },
     "@betterextraq": {
       "updates": [
+        {
+          "version": "3.1.1",
+          "update_link": "https://github.com/JichouP/Better-traQ/releases/download/v3.1.1/ex-traQ-firefox-3.1.1.xpi"
+        },
         {
           "version": "3.1.0",
           "update_link": "https://github.com/JichouP/Better-traQ/releases/download/v3.1.0/ex-traQ-firefox-3.1.0.xpi"
