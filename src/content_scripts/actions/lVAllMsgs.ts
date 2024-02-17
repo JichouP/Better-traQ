@@ -2,7 +2,8 @@ import selectors from '../selectors';
 import { mouseleave } from './utils/dispatchEvent';
 
 const lVAllMsgs = () => {
-  document.body.click();
+  document.body.dispatchEvent(new MouseEvent('mousedown'));
+  document.body.dispatchEvent(new MouseEvent('mouseup'));
 
   const messageListSelector = selectors.channelViewMsgList();
   if (!messageListSelector) return;
