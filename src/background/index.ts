@@ -1,9 +1,11 @@
 import browser from 'webextension-polyfill';
 
-browser.runtime.onInstalled.addListener(() => {
-  browser.runtime.openOptionsPage();
-  // Page actions are disabled by default and enabled on select tabs
-  browser.action.disable();
+browser.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === "install" || reason === "update") {
+    browser.runtime.openOptionsPage();
+    // Page actions are disabled by default and enabled on select tabs
+    browser.action.disable();
+  }
 
   // Clear all rules to ensure only our expected rules are set
   browser.declarativeContent.onPageChanged.removeRules(undefined, () => {
