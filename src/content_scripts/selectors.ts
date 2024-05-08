@@ -3,7 +3,7 @@
 import eHomeCh from './conditions/eHomeCh';
 
 const navigationSelector = (n: number) =>
-  `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(${n})`;
+  `#app > div > div > div > div > div > div:nth-child(1) > div:nth-child(1) > button:nth-child(${n})`;
 
 // const channelViewNthLatestMsg = (n: number) =>
 // `#app > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-last-child(${n})`;
@@ -41,21 +41,21 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   thTab: () => navigationSelector(2),
   navigationBarHomeHomeCh: () =>
     eHomeCh()
-      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)'
+      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1) > a'
       : null,
   navigationBarHomeTopUnreadCh: () =>
     eHomeCh()
-      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)' // ホームチャンネルが存在する場合は2番目
-      : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)', // ホームチャンネルが存在しない場合は1番目
+      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a' // ホームチャンネルが存在する場合は2番目
+      : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a', // ホームチャンネルが存在しない場合は1番目
   navigationBarHomeBottomUnreadCh: () =>
     eHomeCh()
-      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-last-child(1) > div:nth-child(1)' // ホームチャンネルが存在する場合は2番目
-      : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3) > div:nth-last-child(1) > div:nth-child(1)', // ホームチャンネルが存在しない場合は1番目
+      ? '#app > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-last-child(1) > div:nth-child(1) > a' // ホームチャンネルが存在する場合は2番目
+      : '#app > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3) > div:nth-last-child(1) > div:nth-child(1) > a', // ホームチャンネルが存在しない場合は1番目
   tcTab: () => navigationSelector(3),
   navigationBarChannelsChFilterInput: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > div > input',
   navigationBarChannelsChFilterStar: () =>
-    '#app > div > div > div > div > div > div > div > div > div > div > button',
+    '#app > div > div > div > div > div > div:nth-child(2) > div > div > div > div > button:nth-child(2)',
   navigationBarChannelsChList: () =>
     '#app > div > div > div > div > div > div > div > div > div > div:nth-child(3)',
   navigationBarChannelsChCurrentCh: () =>
@@ -118,7 +118,7 @@ const selectors: Record<SelectorEnum, () => string | null> = {
   channelViewMsgInput: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div > textarea',
   channelViewMsgInputStampButton: () =>
-    '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(3) > div[title=スタンプを挿入]',
+    '#app > div > div > div > div > div > div > div > div > div > div > div > div > div > div:nth-child(3) > button[title=スタンプを挿入]',
   sidebarOpener: () => '#sidebar-opener > div > svg',
   sidebarCloser: () =>
     '#app > div > div > div > div > div > div > div > div > div > div > div > button > div',

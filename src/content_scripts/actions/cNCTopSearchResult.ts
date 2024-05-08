@@ -1,5 +1,5 @@
 import selectors from '../selectors';
-import { mousedown } from './utils/dispatchEvent';
+import { click } from './utils/dispatchEvent';
 
 const cNCTopSearchResult = () => {
   const channelListSelector = selectors.navigationBarChannelsChList();
@@ -7,11 +7,11 @@ const cNCTopSearchResult = () => {
   const channelList = document.querySelector(channelListSelector);
   if (!channelList) return;
   const targetEl = channelList.querySelector<HTMLDivElement>(
-    ':scope > div:nth-child(1) > div:nth-child(1)'
+    ':scope > div:nth-child(1) > div:nth-child(1) > a'
   );
   if (!targetEl) return;
 
-  mousedown(targetEl);
+  click(targetEl);
 };
 
 export default cNCTopSearchResult;
