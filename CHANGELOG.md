@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [3.2.0](https://github.com/JichouP/Better-traQ/releases/tag/v3.2.0) - 2024-05-14
+
+- [全環境] traQ_S-UI v3.20.0 の変更によるセレクターなどの対応
+
 ## [3.1.2](https://github.com/JichouP/Better-traQ/releases/tag/v3.1.2) - 2024-04-02
 
 - [全環境] オプションページのタイミングを拡張機能のインストール時とアップデート時に制限する
